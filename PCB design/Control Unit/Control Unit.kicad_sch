@@ -454,7 +454,7 @@
     (property "Value" "009155004541006" (id 1) (at 103.505 137.16 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x02_P2.54mm_Vertical" (id 2) (at 102.235 134.62 0)
+    (property "Footprint" "SamacSys_Parts2:009155004541006" (id 2) (at 102.235 134.62 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 102.235 134.62 0)
@@ -473,7 +473,7 @@
     (property "Value" "Conn_02x04_Male" (id 1) (at 129.54 69.215 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x02_P2.54mm_Vertical" (id 2) (at 137.795 56.515 0)
+    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x04_P2.54mm_Vertical" (id 2) (at 137.795 56.515 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 137.795 56.515 0)
@@ -496,7 +496,7 @@
     (property "Value" "009155004541006" (id 1) (at 92.71 137.16 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x04_P2.54mm_Vertical" (id 2) (at 91.44 134.62 0)
+    (property "Footprint" "SamacSys_Parts2:009155004541006" (id 2) (at 91.44 134.62 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 91.44 134.62 0)
@@ -515,7 +515,7 @@
     (property "Value" "009155004541006" (id 1) (at 114.935 137.16 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x02_P2.54mm_Vertical" (id 2) (at 113.665 134.62 0)
+    (property "Footprint" "SamacSys_Parts2:009155004541006" (id 2) (at 113.665 134.62 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 113.665 134.62 0)
@@ -534,7 +534,7 @@
     (property "Value" "Conn_02x02_Male" (id 1) (at 137.668 111.76 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Footprint" "SamacSys_Parts2:009155004541006" (id 2) (at 138.303 116.84 0)
+    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x02_P2.54mm_Vertical" (id 2) (at 138.303 116.84 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 138.303 116.84 0)
@@ -553,7 +553,7 @@
     (property "Value" "Conn_02x02_Male" (id 1) (at 137.16 99.695 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Footprint" "SamacSys_Parts2:009155004541006" (id 2) (at 137.795 104.775 0)
+    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x02_P2.54mm_Vertical" (id 2) (at 137.795 104.775 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 137.795 104.775 0)
@@ -572,7 +572,7 @@
     (property "Value" "Conn_02x02_Male" (id 1) (at 137.16 87.63 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Footprint" "SamacSys_Parts2:009155004541006" (id 2) (at 137.795 92.71 0)
+    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x02_P2.54mm_Vertical" (id 2) (at 137.795 92.71 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 137.795 92.71 0)
@@ -755,10 +755,10 @@
       (reference "D202") (unit 1) (value "SBR3U40S1F-7") (footprint "Diode_SMD:D_SOD-123F")
     )
     (path "/f76b3e98-dc7d-411f-a94c-513a6f8ea502/f1165b27-d87a-43fb-9d6b-1ef6d6c106f3"
-      (reference "D203") (unit 1) (value "SMLMN2BCTT86C") (footprint "Diode_SMD:D_0805_2012Metric")
+      (reference "D203") (unit 1) (value "APT2012LSECK{slash}J4-PRV") (footprint "Diode_SMD:D_0805_2012Metric")
     )
     (path "/f76b3e98-dc7d-411f-a94c-513a6f8ea502/660ba98f-6484-4130-8659-c3b9e53193c7"
-      (reference "D204") (unit 1) (value "SMLMN2BCTT86C") (footprint "Diode_SMD:D_0805_2012Metric")
+      (reference "D204") (unit 1) (value "APT2012LSECK{slash}J4-PRV") (footprint "Diode_SMD:D_0805_2012Metric")
     )
     (path "/f76b3e98-dc7d-411f-a94c-513a6f8ea502/8beb3c72-614e-4f50-8cf5-d7b099f3a0a7/32f1ca6e-6bd9-4e1e-bd15-34cf1bb8666d"
       (reference "D501") (unit 1) (value "B330A") (footprint "Diode_SMD:D_SMA")
@@ -779,25 +779,25 @@
       (reference "IC501") (unit 1) (value "MAX1626ESA+T") (footprint "SamacSys_Parts:SOIC127P600X175-8N")
     )
     (path "/93074e93-03fc-4846-be6f-f2aa90c21a98"
-      (reference "J101") (unit 1) (value "009155004541006") (footprint "Connector_PinHeader_2.54mm:PinHeader_2x04_P2.54mm_Vertical")
+      (reference "J101") (unit 1) (value "009155004541006") (footprint "SamacSys_Parts2:009155004541006")
     )
     (path "/08b3f4f6-7248-4aaf-b34e-73c51df905fd"
-      (reference "J102") (unit 1) (value "009155004541006") (footprint "Connector_PinHeader_2.54mm:PinHeader_2x02_P2.54mm_Vertical")
+      (reference "J102") (unit 1) (value "009155004541006") (footprint "SamacSys_Parts2:009155004541006")
     )
     (path "/cc37307a-cafa-48e7-95c7-aea7c4e33955"
-      (reference "J103") (unit 1) (value "009155004541006") (footprint "Connector_PinHeader_2.54mm:PinHeader_2x02_P2.54mm_Vertical")
+      (reference "J103") (unit 1) (value "009155004541006") (footprint "SamacSys_Parts2:009155004541006")
     )
     (path "/327b7098-febe-4034-9d38-5603c0d3ce36"
-      (reference "J104") (unit 1) (value "Conn_02x04_Male") (footprint "Connector_PinHeader_2.54mm:PinHeader_2x02_P2.54mm_Vertical")
+      (reference "J104") (unit 1) (value "Conn_02x04_Male") (footprint "Connector_PinHeader_2.54mm:PinHeader_2x04_P2.54mm_Vertical")
     )
     (path "/f61581cd-94bf-4d1f-a346-de01bae4a2ec"
-      (reference "J105") (unit 1) (value "Conn_02x02_Male") (footprint "SamacSys_Parts2:009155004541006")
+      (reference "J105") (unit 1) (value "Conn_02x02_Male") (footprint "Connector_PinHeader_2.54mm:PinHeader_2x02_P2.54mm_Vertical")
     )
     (path "/e83791b3-5093-4279-b417-80f296cb14e9"
-      (reference "J106") (unit 1) (value "Conn_02x02_Male") (footprint "SamacSys_Parts2:009155004541006")
+      (reference "J106") (unit 1) (value "Conn_02x02_Male") (footprint "Connector_PinHeader_2.54mm:PinHeader_2x02_P2.54mm_Vertical")
     )
     (path "/dff3a829-acae-4004-8e8a-168d9318e67c"
-      (reference "J107") (unit 1) (value "Conn_02x02_Male") (footprint "SamacSys_Parts2:009155004541006")
+      (reference "J107") (unit 1) (value "Conn_02x02_Male") (footprint "Connector_PinHeader_2.54mm:PinHeader_2x02_P2.54mm_Vertical")
     )
     (path "/f76b3e98-dc7d-411f-a94c-513a6f8ea502/db50d213-e2c3-435d-bb9b-3e94f99efb27"
       (reference "J201") (unit 1) (value "USB4085-GF-A") (footprint "Connector_USB:USB_C_Receptacle_GCT_USB4085")
@@ -830,7 +830,7 @@
       (reference "Q501") (unit 1) (value "SI2305CDS-T1-BE3") (footprint "Package_TO_SOT_SMD:SOT-23")
     )
     (path "/f76b3e98-dc7d-411f-a94c-513a6f8ea502/c6633573-2db6-4d70-afcb-6a688588cb5a"
-      (reference "R201") (unit 1) (value "100k") (footprint "Resistor_SMD:R_1206_3216Metric")
+      (reference "R201") (unit 1) (value "100k") (footprint "Resistor_SMD:R_0805_2012Metric")
     )
     (path "/f76b3e98-dc7d-411f-a94c-513a6f8ea502/c93efbf6-9795-4420-9c82-28c1b1bbe424"
       (reference "R202") (unit 1) (value "10k") (footprint "Resistor_SMD:R_0805_2012Metric")
@@ -893,10 +893,10 @@
       (reference "R221") (unit 1) (value "10k") (footprint "Resistor_SMD:R_0805_2012Metric")
     )
     (path "/f76b3e98-dc7d-411f-a94c-513a6f8ea502/a09bbe4a-7213-4135-a408-fa11637e1569"
-      (reference "R222") (unit 1) (value "82R") (footprint "Resistor_SMD:R_0805_2012Metric")
+      (reference "R222") (unit 1) (value "750R") (footprint "Resistor_SMD:R_0805_2012Metric")
     )
     (path "/f76b3e98-dc7d-411f-a94c-513a6f8ea502/37ce306e-5cda-4ba2-b18b-f555db20f341"
-      (reference "R223") (unit 1) (value "82R") (footprint "Resistor_SMD:R_0805_2012Metric")
+      (reference "R223") (unit 1) (value "750R") (footprint "Resistor_SMD:R_0805_2012Metric")
     )
     (path "/f76b3e98-dc7d-411f-a94c-513a6f8ea502/f0924715-e16e-42eb-87af-a1d9b6b3206d"
       (reference "R224") (unit 1) (value "100k") (footprint "Resistor_SMD:R_0805_2012Metric")
@@ -932,7 +932,7 @@
       (reference "U301") (unit 1) (value "BME280") (footprint "Package_LGA:Bosch_LGA-8_2.5x2.5mm_P0.65mm_ClockwisePinNumbering")
     )
     (path "/f76b3e98-dc7d-411f-a94c-513a6f8ea502/c9fb069b-c252-4d60-ad8a-f62a48ee9208/17a7734e-32b6-493e-ab70-5d02229393f5"
-      (reference "U302") (unit 1) (value "DS18B20") (footprint "ESP32:ESP32-MINI-1")
+      (reference "U302") (unit 1) (value "DS18B20") (footprint "Package_TO_SOT_THT:TO-92_Inline")
     )
     (path "/f76b3e98-dc7d-411f-a94c-513a6f8ea502/1ef4194f-7c4a-4936-b127-fce47f6b68f5/69ea0cf1-90b6-48ec-8234-4f0bbc3a0df1"
       (reference "U401") (unit 1) (value "RFM96W-433S2") (footprint "RF_Module:HOPERF_RFM9XW_SMD")
