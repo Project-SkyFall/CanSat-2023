@@ -33,9 +33,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.762,
-          "height": 1.524,
-          "width": 1.524
+          "drill": 0.0,
+          "height": 0.4,
+          "width": 0.65
         },
         "silk_line_width": 0.15,
         "silk_text_italic": false,
@@ -45,7 +45,7 @@
         "silk_text_upright": false,
         "zones": {
           "45_degree_only": false,
-          "min_clearance": 0.508
+          "min_clearance": 0.39999999999999997
         }
       },
       "diff_pair_dimensions": [
@@ -457,15 +457,15 @@
     ],
     [
       "be7311a4-60ce-43db-bade-5a5d8d91c45f",
-      "Camera1"
+      "Camera"
     ],
     [
       "fd105e3e-a5c8-4685-9253-14de7f5d8a60",
-      "Camera transmit1"
+      "Camera transmit"
     ],
     [
       "4bd20eea-2350-4a44-915b-d272fd99d34d",
-      "Switch-mode battery charger1"
+      "Switch-mode battery charger"
     ],
     [
       "0fa768be-1f96-46b6-9de8-842bdf92827d",
