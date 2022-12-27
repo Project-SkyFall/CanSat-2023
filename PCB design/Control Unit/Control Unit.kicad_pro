@@ -60,7 +60,9 @@
           "width": 0.5
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        "silk_over_copper|154965200|78441400|519fbb80-6ce2-497b-9343-0a16212e7310|404d5cd6-97d7-4533-8b57-06753e246f62"
+      ],
       "meta": {
         "version": 2
       },
@@ -95,7 +97,7 @@
         "skew_out_of_range": "error",
         "through_hole_pad_without_hole": "error",
         "too_many_vias": "error",
-        "track_dangling": "warning",
+        "track_dangling": "error",
         "track_width": "error",
         "tracks_crossing": "error",
         "unconnected_items": "error",
