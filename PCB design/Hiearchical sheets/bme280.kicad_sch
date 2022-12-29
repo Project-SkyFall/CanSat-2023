@@ -592,7 +592,7 @@
     (property "Value" "DS18B20" (id 1) (at 147.32 66.0399 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Footprint" "ESP32:ESP32-MINI-1" (id 2) (at 128.905 71.12 0)
+    (property "Footprint" "Package_TO_SOT_THT:TO-92_Inline" (id 2) (at 128.905 71.12 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "http://datasheets.maximintegrated.com/en/ds/DS18B20.pdf" (id 3) (at 150.495 58.42 0)
