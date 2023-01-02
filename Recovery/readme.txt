@@ -1,0 +1,1 @@
+Už jsem na to přišel :D
