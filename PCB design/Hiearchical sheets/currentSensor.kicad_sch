@@ -445,7 +445,7 @@
     (uuid ece1422e-2625-4905-8cea-5e493d5ced9b)
     (property "Reference" "C401" (id 0) (at 109.855 80.01 90))
     (property "Value" "10u" (id 1) (at 109.855 82.55 90))
-    (property "Footprint" "Capacitor_SMD:C_0402_1005Metric" (id 2) (at 113.665 86.0298 0)
+    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric" (id 2) (at 113.665 86.0298 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 109.855 86.995 0)

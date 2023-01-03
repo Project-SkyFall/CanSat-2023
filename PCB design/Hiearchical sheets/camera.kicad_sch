@@ -690,7 +690,7 @@
     (uuid dba5c8bc-3df5-4e46-9db1-693a01049596)
     (property "Reference" "R501" (id 0) (at 114.3 92.71 90))
     (property "Value" "5k" (id 1) (at 114.3 95.25 90))
-    (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (id 2) (at 114.3 100.203 90)
+    (property "Footprint" "Resistor_SMD:R_0805_2012Metric" (id 2) (at 114.3 100.203 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 114.3 98.425 0)
