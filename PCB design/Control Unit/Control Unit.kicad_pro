@@ -34,8 +34,8 @@
         "other_text_upright": false,
         "pads": {
           "drill": 0.0,
-          "height": 0.6,
-          "width": 1.475
+          "height": 1.15,
+          "width": 0.3
         },
         "silk_line_width": 0.15,
         "silk_text_italic": false,
@@ -61,6 +61,8 @@
         }
       ],
       "drc_exclusions": [
+        "items_not_allowed|144004600|78812600|b0babb8f-b464-49c2-a913-e186c4d025c0|00000000-0000-0000-0000-000000000000",
+        "silk_over_copper|154965200|77501600|519fbb80-6ce2-497b-9343-0a16212e7310|404d5cd6-97d7-4533-8b57-06753e246f62",
         "silk_over_copper|154965200|78441400|519fbb80-6ce2-497b-9343-0a16212e7310|404d5cd6-97d7-4533-8b57-06753e246f62"
       ],
       "meta": {
@@ -97,7 +99,7 @@
         "skew_out_of_range": "error",
         "through_hole_pad_without_hole": "error",
         "too_many_vias": "error",
-        "track_dangling": "error",
+        "track_dangling": "warning",
         "track_width": "error",
         "tracks_crossing": "error",
         "unconnected_items": "error",

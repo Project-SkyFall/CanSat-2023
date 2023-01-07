@@ -957,6 +957,12 @@
     (path "/6c61bf2c-61a2-4a06-9847-510a016bc26c/9929dfc8-5e98-4b1f-b1b8-fba011e459be"
       (reference "SW203") (unit 1) (value "LaskaKit tlačítko") (footprint "LaskaKit:Tlačítko SMD LaskaKit")
     )
+    (path "/6c61bf2c-61a2-4a06-9847-510a016bc26c/2f6db86c-0e2d-4784-add8-32bb89692200/c6e475f9-654e-469e-807a-4a06addf9e32"
+      (reference "SW1001") (unit 1) (value "CU_CONN") (footprint "1Knihovna:Cu_Conn")
+    )
+    (path "/6c61bf2c-61a2-4a06-9847-510a016bc26c/2f6db86c-0e2d-4784-add8-32bb89692200/ec5e70ab-1556-4247-b4a9-316a5ddc1bb1"
+      (reference "SW1002") (unit 1) (value "CU_CONN") (footprint "1Knihovna:Cu_Conn")
+    )
     (path "/6c61bf2c-61a2-4a06-9847-510a016bc26c/ad558fec-2f68-43a7-a994-b5bd9d8aaf9e/92b30fcd-8867-446d-b910-0b465c95e2d1"
       (reference "TH301") (unit 1) (value "NRBE104J3435B2J") (footprint "Connector_Molex:Molex_PicoBlade_53047-0210_1x02_P1.25mm_Vertical")
     )
