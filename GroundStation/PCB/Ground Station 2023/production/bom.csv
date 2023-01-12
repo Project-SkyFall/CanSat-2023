@@ -1,0 +1,10 @@
+Designator,Footprint,Quantity,Value,LCSC Part #
+"BT1, BT2",Battery box,2,Battery_Cell,
+J1,Lora deska,1,LORA,
+J2,BME280,1,BME280,
+J3,StepDown,1,StepDown,
+J4,Raspberry pi 4B,1,Raspberry PI 4B,
+J5,GPS,1,GY-NEO6MV2,
+J6,AD,1,AD,
+J7,JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical,1,USB-C,
+SW1,JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical,1,Přepínač,
