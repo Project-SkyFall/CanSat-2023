@@ -1,13 +1,4 @@
-# SPDX-FileCopyrightText: 2018 Brent Rubell for Adafruit Industries
-#
-# SPDX-License-Identifier: MIT
 
-"""
-Example for using the RFM9x Radio with Raspberry Pi.
-
-Learn Guide: https://learn.adafruit.com/lora-and-lorawan-for-raspberry-pi
-Author: Brent Rubell for Adafruit Industries
-"""
 # Import Python System Libraries
 import time
 # Import Blinka Libraries
