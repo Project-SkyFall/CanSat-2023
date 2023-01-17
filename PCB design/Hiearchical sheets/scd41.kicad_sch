@@ -264,6 +264,11 @@
     (uuid e902078d-0802-4673-b060-74e93c2764cc)
   )
 
+  (text "I^{2}C address\n0x62" (at 93.98 81.28 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 243ee74a-3b61-4b67-be6d-68a560a93303)
+  )
+
   (hierarchical_label "VDD" (shape input) (at 82.55 52.07 0)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 1e9cda86-daa1-48e3-a930-578e46460fb9)

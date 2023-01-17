@@ -128,6 +128,7 @@
         0.2,
         0.25,
         0.3,
+        0.5,
         0.6,
         1.0,
         1.5,
@@ -399,7 +400,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "../Other/3D export/Side Unit.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""
@@ -460,13 +461,15 @@
       "Panel 3"
     ],
     [
-      "f921cf02-9788-4938-b726-5b7746dafe66",
+      "3b4d1544-d2af-4424-a842-a311023f479d",
       "Spectroscope Unit"
     ],
     [
-      "e75cd224-36e3-48d9-bd7f-232ca2ca1934",
+      "95fda9cf-5818-4cf9-ae1d-4ebbf6beffeb",
       "Light Intensity Unit"
     ]
   ],
-  "text_variables": {}
+  "text_variables": {
+    "version": "v3.0"
+  }
 }

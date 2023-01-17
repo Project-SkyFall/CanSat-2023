@@ -1819,7 +1819,7 @@
     (property "Reference" "C705" (id 0) (at 225.425 78.7399 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "1u" (id 1) (at 225.425 81.2799 0)
+    (property "Value" "1uF" (id 1) (at 225.425 81.2799 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Capacitor_SMD:C_0805_2012Metric" (id 2) (at 222.5802 83.82 0)

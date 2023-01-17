@@ -211,6 +211,7 @@
     )
   )
 
+
   (junction (at 99.695 79.375) (diameter 0) (color 0 0 0 0)
     (uuid 79b237b6-ec1f-44d4-ac65-0831caff07b6)
   )
@@ -278,15 +279,14 @@
     (uuid ee40ba7b-87a1-4af3-9a21-bd2c1b58a3be)
   )
 
-  (text "https://cz.mouser.com/ProductDetail/Keystone-Electronics/2989?qs=wOxb8XianXg1rW%2F0w0aO2Q%3D%3D"
-    (at 179.07 43.18 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 1d5b1dca-5017-4234-8d63-dbb4bebd2e16)
-  )
   (text "https://cz.mouser.com/ProductDetail/Diodes-Incorporated/PT7C4339WEX?qs=A65YvgP4j%252BH0vUAOW%252BocrQ%3D%3D"
-    (at 186.69 85.725 0)
+    (at 130.175 53.34 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 4bcb574b-6036-4712-b299-acc71bdbe949)
+  )
+  (text "R - 0xD1\nW - 0xD0" (at 136.525 72.39 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid b2354634-3432-44b7-90f7-6fb900e0c537)
   )
 
   (label "GND" (at 58.42 28.575 180)

@@ -45,7 +45,7 @@
         "silk_text_upright": false,
         "zones": {
           "45_degree_only": false,
-          "min_clearance": 0.127
+          "min_clearance": 0.254
         }
       },
       "diff_pair_dimensions": [
@@ -60,7 +60,24 @@
           "width": 0.3
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        "silk_over_copper|157002011|72430064|6f654d05-57a5-48de-a4a7-fc278be07833|fcd3a7bb-a509-4bcf-9d8b-668d2311fc3d",
+        "silk_over_copper|157004707|72478183|b5e763e9-170d-47db-80c2-f4b7fd13a633|fcd3a7bb-a509-4bcf-9d8b-668d2311fc3d",
+        "silk_over_copper|157006890|72502959|90f9dad6-ce7a-4e74-a521-7d5a7884bd63|fcd3a7bb-a509-4bcf-9d8b-668d2311fc3d",
+        "silk_over_copper|157011437|72543202|76834c22-64cb-4134-9137-c89179286bc4|fcd3a7bb-a509-4bcf-9d8b-668d2311fc3d",
+        "silk_over_copper|157015045|72569735|1725bb97-dbe8-4e7a-83d1-0cb6acfd6b37|fcd3a7bb-a509-4bcf-9d8b-668d2311fc3d",
+        "silk_over_copper|157021769|72612504|f666627c-ab99-4f9d-8273-cf92c0b7e3c4|fcd3a7bb-a509-4bcf-9d8b-668d2311fc3d",
+        "silk_over_copper|157026733|72640503|1c6098e1-d50b-457a-8360-d160e9b10a06|fcd3a7bb-a509-4bcf-9d8b-668d2311fc3d",
+        "silk_over_copper|157035540|72685352|25770504-9ff6-4782-8a17-093158a19680|fcd3a7bb-a509-4bcf-9d8b-668d2311fc3d",
+        "silk_over_copper|157041804|72714541|122c45a7-2253-40ac-94ee-3193a2748d2e|fcd3a7bb-a509-4bcf-9d8b-668d2311fc3d",
+        "silk_over_copper|157075422|72470363|7ed9814a-b586-4a4f-a7b6-760f8b6b601b|fcd3a7bb-a509-4bcf-9d8b-668d2311fc3d",
+        "silk_over_copper|157368662|72632528|ee304bb0-7723-435d-83ca-93f4b5cd952a|fcd3a7bb-a509-4bcf-9d8b-668d2311fc3d",
+        "silk_over_copper|157628995|72776441|86b0df44-c7f2-43ca-ad09-a0194e089c72|fcd3a7bb-a509-4bcf-9d8b-668d2311fc3d",
+        "silk_over_copper|157722743|72827853|971673cf-1f9b-47e0-86fe-3cd1649e86ae|fcd3a7bb-a509-4bcf-9d8b-668d2311fc3d",
+        "silk_over_copper|158132709|73046973|d738f2ec-250c-4fc6-8fef-428c3fea838e|fcd3a7bb-a509-4bcf-9d8b-668d2311fc3d",
+        "silk_over_copper|158153802|73057972|860f6854-27f6-4929-9cae-f1116513107a|fcd3a7bb-a509-4bcf-9d8b-668d2311fc3d",
+        "silk_over_copper|158418690|73195022|4b37cc22-01dc-426e-8755-30944d08d35e|fcd3a7bb-a509-4bcf-9d8b-668d2311fc3d"
+      ],
       "meta": {
         "version": 2
       },
@@ -400,7 +417,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "../Other/3D export/Power Unit.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""
