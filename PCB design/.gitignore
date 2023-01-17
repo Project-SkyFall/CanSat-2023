@@ -1,5 +1,8 @@
 Control\ Unit/Control\ Unit-backups/
+#Control\ Unit/Control\ Unit.kicad_prl
 Power\ Unit/Power\ Unit-backups/
-Side\ Unit/Side\ Unit-backups/
+#Power\ Unit/Power\ Unit.kicad_prl
+Side\ Unit/Side\ Unit-backups
+**.kicad_prl
 **autosave**
 **auto_saved_files**
