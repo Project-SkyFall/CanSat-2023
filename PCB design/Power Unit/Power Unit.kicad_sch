@@ -571,7 +571,7 @@
       (reference "C401") (unit 1) (value "10uF") (footprint "Capacitor_SMD:C_0805_2012Metric")
     )
     (path "/6c61bf2c-61a2-4a06-9847-510a016bc26c/4bd20eea-2350-4a44-915b-d272fd99d34d/8f96eb2f-95b3-4e9f-9dcf-ad54ca7e4284"
-      (reference "C701") (unit 1) (value "0.1uF") (footprint "Capacitor_SMD:C_0805_2012Metric")
+      (reference "C701") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_0805_2012Metric")
     )
     (path "/6c61bf2c-61a2-4a06-9847-510a016bc26c/4bd20eea-2350-4a44-915b-d272fd99d34d/4d0b5aed-f21a-4438-903f-96095e7e3c9f"
       (reference "C702") (unit 1) (value "22uF") (footprint "Capacitor_SMD:C_0805_2012Metric")
@@ -580,7 +580,7 @@
       (reference "C703") (unit 1) (value "4.7uF") (footprint "Capacitor_SMD:C_0805_2012Metric")
     )
     (path "/6c61bf2c-61a2-4a06-9847-510a016bc26c/4bd20eea-2350-4a44-915b-d272fd99d34d/69a34392-8b5d-470d-a3b7-1b899fded96c"
-      (reference "C704") (unit 1) (value "C") (footprint "Capacitor_SMD:C_0805_2012Metric")
+      (reference "C704") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_0805_2012Metric")
     )
     (path "/6c61bf2c-61a2-4a06-9847-510a016bc26c/4bd20eea-2350-4a44-915b-d272fd99d34d/001cb5ce-3429-445d-81ec-124ce65fb4c0"
       (reference "C705") (unit 1) (value "1uF") (footprint "Capacitor_SMD:C_0805_2012Metric")
@@ -862,10 +862,10 @@
       (reference "R703") (unit 1) (value "820k") (footprint "Resistor_SMD:R_0805_2012Metric")
     )
     (path "/6c61bf2c-61a2-4a06-9847-510a016bc26c/4bd20eea-2350-4a44-915b-d272fd99d34d/00e57128-ee7c-4aad-bd6d-6c815c9575a4"
-      (reference "R704") (unit 1) (value "R") (footprint "Resistor_SMD:R_0805_2012Metric")
+      (reference "R704") (unit 1) (value "3k16") (footprint "Resistor_SMD:R_0805_2012Metric")
     )
     (path "/6c61bf2c-61a2-4a06-9847-510a016bc26c/4bd20eea-2350-4a44-915b-d272fd99d34d/151f230d-6008-4517-97f1-ef17fa1764e8"
-      (reference "R705") (unit 1) (value "R") (footprint "Resistor_SMD:R_0805_2012Metric")
+      (reference "R705") (unit 1) (value "10k") (footprint "Resistor_SMD:R_0805_2012Metric")
     )
     (path "/6c61bf2c-61a2-4a06-9847-510a016bc26c/4bd20eea-2350-4a44-915b-d272fd99d34d/3ed6836c-14a1-4726-bf3b-dd800502d13f"
       (reference "R706") (unit 1) (value "27k4") (footprint "Resistor_SMD:R_0805_2012Metric")
