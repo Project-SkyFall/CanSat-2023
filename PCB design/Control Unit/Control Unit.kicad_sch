@@ -702,7 +702,7 @@
       (reference "AE401") (unit 1) (value "Antenna_Shield") (footprint "CanSat:U.FL_Hirose_U.FL-R-SMT-1_Vertical")
     )
     (path "/f76b3e98-dc7d-411f-a94c-513a6f8ea502/684ddb30-2c93-40b3-bbe5-5cc381be35fb/90e52624-72d2-4223-af0e-8eaf4ca0e922"
-      (reference "BT701") (unit 1) (value "Backup battery") (footprint "CanSat:2989")
+      (reference "BT702") (unit 1) (value "Backup battery") (footprint "CanSat:2989")
     )
     (path "/f76b3e98-dc7d-411f-a94c-513a6f8ea502/6080a645-a9f7-4509-9e6a-4778400f7cde"
       (reference "C201") (unit 1) (value "10uF") (footprint "Capacitor_SMD:C_0805_2012Metric")
@@ -899,20 +899,20 @@
     (path "/f76b3e98-dc7d-411f-a94c-513a6f8ea502/0195baff-d7d6-4996-a41a-72715e73808d"
       (reference "R220") (unit 1) (value "5k") (footprint "Resistor_SMD:R_0805_2012Metric")
     )
-    (path "/f76b3e98-dc7d-411f-a94c-513a6f8ea502/9b84137d-6218-4f0f-8489-c88c007eba28"
-      (reference "R221") (unit 1) (value "5k") (footprint "Resistor_SMD:R_0805_2012Metric")
-    )
     (path "/f76b3e98-dc7d-411f-a94c-513a6f8ea502/f0924715-e16e-42eb-87af-a1d9b6b3206d"
-      (reference "R222") (unit 1) (value "100k") (footprint "Resistor_SMD:R_0805_2012Metric")
+      (reference "R221") (unit 1) (value "100k") (footprint "Resistor_SMD:R_0805_2012Metric")
     )
-    (path "/f76b3e98-dc7d-411f-a94c-513a6f8ea502/8c9e6f9e-5fe7-484a-9621-0749227d42c0"
-      (reference "R223") (unit 1) (value "5k") (footprint "Resistor_SMD:R_0805_2012Metric")
+    (path "/f76b3e98-dc7d-411f-a94c-513a6f8ea502/9b84137d-6218-4f0f-8489-c88c007eba28"
+      (reference "R222") (unit 1) (value "5k") (footprint "Resistor_SMD:R_0805_2012Metric")
     )
     (path "/f76b3e98-dc7d-411f-a94c-513a6f8ea502/e6fe2ea0-6026-4cbc-9814-4e9db0cf50e2"
-      (reference "R224") (unit 1) (value "10k") (footprint "Resistor_SMD:R_0805_2012Metric")
+      (reference "R223") (unit 1) (value "10k") (footprint "Resistor_SMD:R_0805_2012Metric")
     )
     (path "/f76b3e98-dc7d-411f-a94c-513a6f8ea502/c93efbf6-9795-4420-9c82-28c1b1bbe424"
-      (reference "R225") (unit 1) (value "10k") (footprint "Resistor_SMD:R_0805_2012Metric")
+      (reference "R224") (unit 1) (value "10k") (footprint "Resistor_SMD:R_0805_2012Metric")
+    )
+    (path "/f76b3e98-dc7d-411f-a94c-513a6f8ea502/8c9e6f9e-5fe7-484a-9621-0749227d42c0"
+      (reference "R225") (unit 1) (value "5k") (footprint "Resistor_SMD:R_0805_2012Metric")
     )
     (path "/f76b3e98-dc7d-411f-a94c-513a6f8ea502/e38ad02c-1df1-4e9c-84a7-ea7dc1bde6d8"
       (reference "R226") (unit 1) (value "10k") (footprint "Resistor_SMD:R_0805_2012Metric")

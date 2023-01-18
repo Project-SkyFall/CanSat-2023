@@ -575,7 +575,7 @@
     (property "Reference" "U501" (id 0) (at 143.6244 116.84 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "AD5246" (id 1) (at 143.6244 119.38 0)
+    (property "Value" "AD5246BKSZ100" (id 1) (at 143.6244 119.38 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "SamacSys_Parts2:SOT65P210X110-6N" (id 2) (at 144.145 128.27 0)

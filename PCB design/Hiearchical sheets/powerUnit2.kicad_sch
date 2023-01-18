@@ -802,6 +802,7 @@
     (uuid ea3d29e0-15e6-42bd-aa9f-e51c46d87053)
   )
 
+  (no_connect (at 247.015 105.41) (uuid 00f296b3-e5c0-4a99-aad5-5ee80b264f82))
   (no_connect (at 220.345 118.11) (uuid ec26b045-017d-4225-befb-a38a3c88339a))
 
   (wire (pts (xy 187.325 64.77) (xy 203.2 64.77))

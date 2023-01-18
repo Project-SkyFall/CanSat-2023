@@ -211,7 +211,6 @@
     )
   )
 
-
   (junction (at 99.695 79.375) (diameter 0) (color 0 0 0 0)
     (uuid 79b237b6-ec1f-44d4-ac65-0831caff07b6)
   )
@@ -342,7 +341,7 @@
   (symbol (lib_id "Device:Battery_Cell") (at 99.695 76.835 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 90e52624-72d2-4223-af0e-8eaf4ca0e922)
-    (property "Reference" "BT701" (id 0) (at 94.615 74.295 0)
+    (property "Reference" "BT702" (id 0) (at 94.615 74.295 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "Backup battery" (id 1) (at 94.615 76.835 0)

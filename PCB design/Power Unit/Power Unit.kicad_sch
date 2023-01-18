@@ -465,7 +465,7 @@
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
     (property "Sheet file" "../Hiearchical sheets/powerUnit2.kicad_sch" (id 1) (at 92.71 131.3946 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
+      (effects (font (size 1.27 1.27)) (justify left top) hide)
     )
     (pin "M_SWITCH" output (at 123.19 128.27 0)
       (effects (font (size 1.27 1.27)) (justify right))
@@ -475,7 +475,7 @@
       (effects (font (size 1.27 1.27)) (justify right))
       (uuid c0de1d13-1ec7-4235-9904-cfa6740e926e)
     )
-    (pin "GND" passive (at 123.19 73.025 0)
+    (pin "GND" passive (at 123.19 67.945 0)
       (effects (font (size 1.27 1.27)) (justify right))
       (uuid fca804f0-8539-4d17-8110-6de53c9fde38)
     )
@@ -495,7 +495,7 @@
       (effects (font (size 1.27 1.27)) (justify right))
       (uuid 73dc8c8d-0809-48c4-93c7-4fcc996b4b53)
     )
-    (pin "VCC" input (at 123.19 67.945 0)
+    (pin "VCC" input (at 123.19 73.025 0)
       (effects (font (size 1.27 1.27)) (justify right))
       (uuid 37c465d8-cb76-411c-ae3a-ccca084f4776)
     )
@@ -696,8 +696,8 @@
     (path "/6c61bf2c-61a2-4a06-9847-510a016bc26c/be7311a4-60ce-43db-bade-5a5d8d91c45f/df510dc3-6297-4153-889b-b897d7a5f648"
       (reference "J504") (unit 1) (value "Conn_01x02") (footprint "Connector_Molex:Molex_PicoBlade_53047-0210_1x02_P1.25mm_Vertical")
     )
-    (path "/6c61bf2c-61a2-4a06-9847-510a016bc26c/4bd20eea-2350-4a44-915b-d272fd99d34d/d50601f3-8319-4fe0-8bdc-1152db718b25"
-      (reference "L701") (unit 1) (value "BMRA000606302R2MA1") (footprint "1Knihovna:BMRA000606302R2MA1")
+    (path "/6c61bf2c-61a2-4a06-9847-510a016bc26c/4bd20eea-2350-4a44-915b-d272fd99d34d/a858367a-501b-42ac-b3f1-22a7b737fd67"
+      (reference "L701") (unit 1) (value "SRP7050AA-2R2M") (footprint "1Knihovna:L_Bourns_SRP7050AA")
     )
     (path "/6c61bf2c-61a2-4a06-9847-510a016bc26c/2f6db86c-0e2d-4784-add8-32bb89692200/9104a50b-4588-491b-bd84-d459e2fbba47"
       (reference "L1001") (unit 1) (value "27nH") (footprint "Inductor_SMD:L_0805_2012Metric")
@@ -988,7 +988,7 @@
       (reference "U401") (unit 1) (value "INA219AxD") (footprint "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm")
     )
     (path "/6c61bf2c-61a2-4a06-9847-510a016bc26c/be7311a4-60ce-43db-bade-5a5d8d91c45f/2fd5a89b-3c5d-4f20-a7d8-118996e27fcd"
-      (reference "U501") (unit 1) (value "AD5246") (footprint "SamacSys_Parts2:SOT65P210X110-6N")
+      (reference "U501") (unit 1) (value "AD5246BKSZ100") (footprint "SamacSys_Parts2:SOT65P210X110-6N")
     )
     (path "/6c61bf2c-61a2-4a06-9847-510a016bc26c/fd105e3e-a5c8-4685-9253-14de7f5d8a60/a06fb49e-83d2-4881-a02d-8614d728937a"
       (reference "U601") (unit 1) (value "TBS_UNIFY_PRO32_5G8_nano") (footprint "1Knihovna:TBS UNIFY PRO32 5G8 nano")
@@ -1012,10 +1012,10 @@
       (reference "U901") (unit 1) (value "SCD41") (footprint "SamacSys_Parts2:XDCR_SCD41-D-R2")
     )
     (path "/6c61bf2c-61a2-4a06-9847-510a016bc26c/2f6db86c-0e2d-4784-add8-32bb89692200/86d63895-6edf-4603-b017-e848e23e4977"
-      (reference "U1001") (unit 1) (value "NEO-M9N") (footprint "RF_GPS:ublox_NEO")
+      (reference "U1002") (unit 1) (value "NEO-M9N") (footprint "RF_GPS:ublox_NEO")
     )
-    (path "/6c61bf2c-61a2-4a06-9847-510a016bc26c/0ad2d1dd-621d-415d-9a72-7f0fdf02c357/d6956476-45eb-44a1-90b0-97998be47d51"
-      (reference "U1101") (unit 1) (value "OPA333xxDBV") (footprint "Package_TO_SOT_SMD:SOT-23-5")
+    (path "/6c61bf2c-61a2-4a06-9847-510a016bc26c/0ad2d1dd-621d-415d-9a72-7f0fdf02c357/72fb6ec4-d623-40ec-a6d2-41ffa56aedf3"
+      (reference "U1101") (unit 1) (value "MCP6486UT-E/OT") (footprint "Package_TO_SOT_SMD:SOT-23-5")
     )
     (path "/6c61bf2c-61a2-4a06-9847-510a016bc26c/0ad2d1dd-621d-415d-9a72-7f0fdf02c357/63936b85-5b1a-4b4d-862e-8ff05d245b32"
       (reference "U1102") (unit 1) (value "ME2-02") (footprint "1Knihovna:ME2-O2")

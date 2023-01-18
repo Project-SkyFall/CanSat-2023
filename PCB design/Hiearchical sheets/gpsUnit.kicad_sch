@@ -908,10 +908,20 @@
     (uuid fe7adf55-4906-4748-8198-2edb63488f4d)
   )
 
+  (text "https://cz.mouser.com/c/passive-components/capacitors/supercapacitors-ultracapacitors/?capacitance=100000%20uF~~6000%20F&height=2.5%20mm~~7.5%20mm&length=5%20mm~~7.5%20mm&voltage%20rating%20dc=2.5%20VDC~~6%20VDC&instock=y&normallystocked=y&sort=diameter&rp=passive-components%2Fcapacitors%2Fsupercapacitors-ultracapacitors%7C~Capacitance%7C~Height%7C~Voltage%20Rating%20DC%7C~Length"
+    (at 127.635 38.735 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 2e49b72e-99cf-42cd-89a9-c3837a8f85fe)
+  )
   (text "https://cz.mouser.com/ProductDetail/Keystone-Electronics/2989?qs=wOxb8XianXg1rW%2F0w0aO2Q%3D%3D"
     (at 74.295 29.21 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 2fedb346-219c-4001-be78-94fbdf7683e5)
+  )
+  (text "https://cz.mouser.com/ProductDetail/KEMET/FGH0V474ZF?qs=iaWy59%2Fd4KCkWSZfTIxxzw%3D%3D"
+    (at 149.86 35.56 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid b0031049-9bf1-4dd4-944e-62e571643f0a)
   )
 
   (label "GND" (at 118.11 99.695 0)
@@ -1025,7 +1035,7 @@
   (symbol (lib_id "Dovolená:NEO-M9N") (at 119.38 72.39 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 86d63895-6edf-4603-b017-e848e23e4977)
-    (property "Reference" "U1001" (id 0) (at 135.89 91.44 0)
+    (property "Reference" "U1002" (id 0) (at 135.89 91.44 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "NEO-M9N" (id 1) (at 135.89 93.98 0)
