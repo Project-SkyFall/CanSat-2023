@@ -5,9 +5,10 @@
   (paper "A4")
 
   (title_block
-    (title "CanSat 2023")
+    (title "Control Unit - CanSat 2023")
+    (date "2023-01-18")
     (rev "2022")
-    (company "The Project SkyFall")
+    (company "Project SkyFall")
     (comment 1 "David Haisman")
   )
 

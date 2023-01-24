@@ -72,8 +72,10 @@
         "silk_over_copper|157041804|72714541|122c45a7-2253-40ac-94ee-3193a2748d2e|fcd3a7bb-a509-4bcf-9d8b-668d2311fc3d",
         "silk_over_copper|157075422|72470363|7ed9814a-b586-4a4f-a7b6-760f8b6b601b|fcd3a7bb-a509-4bcf-9d8b-668d2311fc3d",
         "silk_over_copper|157368662|72632528|ee304bb0-7723-435d-83ca-93f4b5cd952a|fcd3a7bb-a509-4bcf-9d8b-668d2311fc3d",
+        "silk_over_copper|157442012|72673172|ee304bb0-7723-435d-83ca-93f4b5cd952a|fcd3a7bb-a509-4bcf-9d8b-668d2311fc3d",
         "silk_over_copper|157628995|72776441|86b0df44-c7f2-43ca-ad09-a0194e089c72|fcd3a7bb-a509-4bcf-9d8b-668d2311fc3d",
         "silk_over_copper|157722743|72827853|971673cf-1f9b-47e0-86fe-3cd1649e86ae|fcd3a7bb-a509-4bcf-9d8b-668d2311fc3d",
+        "silk_over_copper|157985330|72969471|d738f2ec-250c-4fc6-8fef-428c3fea838e|fcd3a7bb-a509-4bcf-9d8b-668d2311fc3d",
         "silk_over_copper|158132709|73046973|d738f2ec-250c-4fc6-8fef-428c3fea838e|fcd3a7bb-a509-4bcf-9d8b-668d2311fc3d",
         "silk_over_copper|158153802|73057972|860f6854-27f6-4929-9cae-f1116513107a|fcd3a7bb-a509-4bcf-9d8b-668d2311fc3d",
         "silk_over_copper|158418690|73195022|4b37cc22-01dc-426e-8755-30944d08d35e|fcd3a7bb-a509-4bcf-9d8b-668d2311fc3d"
@@ -454,7 +456,7 @@
       "workbook_filename": ""
     },
     "page_layout_descr_file": "",
-    "plot_directory": "",
+    "plot_directory": "C:/Users/David/OneDrive - SPŠE a VOŠ Pardubice/škola/Maturita/Výrobek/Měsíční hlášení/Říjen/",
     "spice_adjust_passive_values": false,
     "spice_external_command": "spice \"%I\"",
     "subpart_first_id": 65,
