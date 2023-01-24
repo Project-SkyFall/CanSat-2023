@@ -382,7 +382,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "Gstation LoRa.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""
