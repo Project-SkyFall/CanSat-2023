@@ -1,11 +1,14 @@
 #include "globalVars.h"
 #include "temperature.h"
 
+MyBme::MyBme(byte address){
+    _address = address;
+}
+
 bool MyBme::setup(bool debug){
-    address = 0x76;
     debug ? Serial.println("---BME setup---") : 0;
     status = FAIL;
-    if(!begin(address)) return false;
+    if(!begin(_address)) return false;
 
     setSampling(Adafruit_BME280::MODE_FORCED,
                 Adafruit_BME280::SAMPLING_X1,
@@ -32,7 +35,7 @@ bool MyDS18B20::setup(bool verbose){
 void MyBme::getData(){
     if(status == SLEEP) return;
 
-    if(!wireCheck(address)){
+    if(!wireCheck(_address)){
         status = FAIL;
         return;
     }

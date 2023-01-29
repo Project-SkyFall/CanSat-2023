@@ -4,7 +4,7 @@ unsigned long prevMillis;
 int refreshRate = 1000;
 bool doDebug;
 
-MyBme bme;
+MyBme bme(0x76);
 MyGPS gps;
 MyLora lora;
 MyINA ina(0x40);
@@ -28,12 +28,9 @@ void setup(void) {
   Wire.begin(21, 22, 400000ul);
   //Wire1.begin(19, 18, 100000ul);
   SPI.begin(33, 27, 14);
-
   oneWire.begin(4);
 
   pinMode(RUN_SEVER_PIN, INPUT);
-
-  while(!Serial){}
 
   Serial.println('\n');
   printResult(rtc.setup(true));
@@ -44,13 +41,14 @@ void setup(void) {
   printResult(lora.setup(true));
   printResult(ina.setup(true));
   printResult(oxygen.setup(true));
+
   if(!digitalRead(RUN_SEVER_PIN)){
     printResult(wifi.setup(ssid, password, true));
     printResult(server.setup(true));
   }
 
   //xTaskCreate(controlTask, "Control Task", 4096, NULL, 15, NULL);
-  xTaskCreate(runServer, "Run Server", 4096, NULL, 5, NULL);
+  xTaskCreate(runServer, "Run Server", 4096, NULL, 3, NULL);
   xTaskCreate(printData, "Print Data", 4096, NULL, 5, NULL);
   xTaskCreate(saveData, "Save Data Task", 4096, NULL, 7, &saveData_handle);
   xTaskCreate(loraSend, "Lora Send Task", 4096, NULL, 10, &loraSend_handle);

@@ -6,15 +6,18 @@
 
 class MyBme : public Adafruit_BME280{
     public:
+    MyBme(byte address);
     bool setup(bool debug=false);
     void getData();
     void printData();
 
-    byte address;
     byte status;
     float temperature;
     float pressure;
     float humidity;
+
+    private:
+    byte _address;
 };
 
 class MyDS18B20 : public DallasTemperature{
