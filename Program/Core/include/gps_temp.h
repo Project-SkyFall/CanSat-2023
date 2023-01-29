@@ -1,4 +1,4 @@
-#ifndef GPS_TEMP_H
+/*#ifndef GPS_TEMP_H
 #define GPS_TEMP_H
 
 #include "TinyGPS++.h"
@@ -10,4 +10,4 @@ void gpsPrintData();
 
 extern TinyGPSPlus gps;
 
-#endif
+#endif*/

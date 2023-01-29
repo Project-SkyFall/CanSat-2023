@@ -1,4 +1,33 @@
 {
-	"folders": [],
-	"settings": {}
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../Server"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"initializer_list": "cpp",
+			"istream": "cpp",
+			"ostream": "cpp",
+			"array": "cpp",
+			"*.tcc": "cpp",
+			"deque": "cpp",
+			"string": "cpp",
+			"unordered_map": "cpp",
+			"unordered_set": "cpp",
+			"vector": "cpp",
+			"string_view": "cpp",
+			"memory": "cpp",
+			"random": "cpp",
+			"regex": "cpp",
+			"atomic": "cpp",
+			"fstream": "cpp",
+			"sstream": "cpp",
+			"streambuf": "cpp"
+		},
+		"liveServer.settings.multiRootWorkspaceName": "Server"
+	}
 }

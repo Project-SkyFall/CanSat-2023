@@ -1,11 +1,11 @@
 #include "globalVars.h"
 #include "myLora.h"
 
-bool MyLora::setup(){
-    Serial.println("---LORA setup---");
+bool MyLora::setup(bool verbose){
+    verbose ? Serial.println("---LORA setup---") : 0;
 
-    LoRa.setPins(32, 13, 10);
-    if(!LoRa.begin(433E6)) return false; 
+    setPins(32, 13, 10);
+    if(!begin(433E6)) return false; 
 
     return true;
 }
@@ -13,25 +13,14 @@ bool MyLora::setup(){
 void MyLora::send(){
     Serial.println("Sending");
 
-    if(!LoRa.beginPacket()) return;
+    if(!beginPacket()) return;
 
-    LoRa.print("Ola amigo");
+    print("Ola amigo");
 
-    LoRa.endPacket(true);
+    endPacket(true);
 }
 
-void loraSendTask(void *pvParameters){
-    while(true){
-        //lora.send();
-        Serial.println("Trying to send");
-        if(LoRa.beginPacket()){
-            Serial.println("Sending");
-
-            LoRa.print("Ola amigo");
-
-            LoRa.endPacket(true);
-        }
-
-        vTaskDelay(refreshRate/portTICK_PERIOD_MS);
-    }
+void MyLora::printStatus(){
+    Serial.print("Sending data: ");
+    status == OK ? Serial.println("OK") : Serial.println("FAIL");
 }

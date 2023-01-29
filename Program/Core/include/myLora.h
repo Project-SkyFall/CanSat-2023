@@ -5,8 +5,10 @@
 
 class MyLora : public LoRaClass{
     public:
-    bool setup();
+    byte status;
+    bool setup(bool verbose);
     void send();
+    void printStatus();
 };
 
 extern MyLora lora;

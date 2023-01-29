@@ -1,39 +1,67 @@
-/*#include "server.h"
-#include "mySD.h"
+#include "globalVars.h"
 
-char* defaultRoute = "source/web";
+char ssid[] = "Project-SkyFall";
+char password[] = "1234abcd";
 
-void serverSetup(){
+bool MyWiFi::setup(char *ssid, char *password, bool verbose){
+    Serial.println("---WiFi setup---");
+    softAP(ssid, password);
+    IPAddress AP_LOCAL_IP(192, 168, 10, 10);
+    IPAddress AP_GATEWAY_IP(192, 168, 10, 10);
+    IPAddress AP_NETWORK_MASK(255, 255, 255, 0);
+    softAPConfig(AP_LOCAL_IP, AP_GATEWAY_IP, AP_NETWORK_MASK);
+    Serial.print("CanSat IP address: "); Serial.println(WiFi.softAPIP());
+    return true;
+}
+
+char* defaultRoute = "/server/";
+
+bool MyServer::setup(bool verbose){
+    verbose ? Serial.println("--Server setup--") : 0;
+    on("/", initialRequest);
+    //MyServer::on("/pre-flight-settings", preFlightSettings);
+    serveStatic("/", SD, defaultRoute);
+    //MyServer::serveStatic("/", SD, defaultRoute);
+    begin();
+    return true;
+};
+
+/*void serverSetup(){
     server.on("/", initialRequest);
     server.on("/pre-flight-settings", preFlightSettings);
     server.serveStatic("/", SD, defaultRoute);
-}
+}*/
 
 void sdOpenSend(String path){
     String output;
-    if(SD.open(defaultRoute + path)){
+    myFile = SD.open(defaultRoute + path);
+    if(myFile){
         if(myFile.size() == 0){
-            server.send(204, "html/text", "No content");
+            Serial.println("No content");
+            server.send(204, "text/html", "No content");
             return;
         }
         while(myFile.available()){
             output += (char)myFile.read();
         }
-        server.send(200, "html/text", output);
+        Serial.println("Data loaded OK");
+        server.send(200, "text/html", output);
         return;
     }
-    server.send(404, "html/text", "File not found");
+    Serial.println("File not found");
+    server.send(404, "text/html", "File not found");
 }
 
 void initialRequest(){
     if(server.method() == HTTP_GET){
-        sdOpenSend("/index.html");
+        sdOpenSend("index.htm");
+        //server.send(200, "text/plain", "OK");
         return;
     }
-    server.send(405, "html/text", "Bad method");
+    server.send(405, "text/plain", "Bad method");
 }
 
-void preFlightSettings(){
+/*void preFlightSettings(){
     if(server.method() == HTTP_GET){
         sdOpenSend("/preFlightSettings.html");
         return;

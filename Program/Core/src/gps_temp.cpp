@@ -1,4 +1,4 @@
-#include "globalVars.h"
+/*#include "globalVars.h"
 #include "gps_temp.h"
 
 unsigned long prevMillisGPSlostFix;
@@ -58,7 +58,7 @@ void gpsGetData(){
       bitWrite(gpsStatus, DEVICE_ERROR, 1);
       bitWrite(gpsStatus, GPS_LOST_FIX, 1);*/
       //Serial.print("No chars");
-      bitWrite(gpsStatus, GPS_STATUS, FAIL);
+      /*bitWrite(gpsStatus, GPS_STATUS, FAIL);
     }
   }
   else{
@@ -103,9 +103,9 @@ void gpsGetData(){
     bitWrite(gpsStatus, GPS_DISTANCEBETWEEN_UPDATED, 1);
     Serial.println(gpsDistanceBetween = gps.distanceBetween(latitude, longitude, targetLat, targetLng)); Serial.println("   ");
   }*/
-}
+//}
 
-void gpsPrintData(){
+/*void gpsPrintData(){
   if(bitRead(gpsStatus, GPS_STATUS) == OK){
     //Serial.print(gps.charsProcessed() - prevCharsProcessed); Serial.print("   ");
     Serial.print(latitude, 5); Serial.print(" ");
@@ -124,7 +124,7 @@ void gpsPrintData(){
   /*else if(isGPSok == SLEEP){
     Serial.println("GPS is sleeping");
   }*/
-  else if(bitRead(gpsStatus, GPS_STATUS) == FAIL){
+  /*else if(bitRead(gpsStatus, GPS_STATUS) == FAIL){
     Serial.println("GPS failed");
   }
 }
@@ -143,4 +143,4 @@ void gpsFeedObjectTask(void *pvParameters){
     gpsFeedObject();
     vTaskDelay(1);
   }
-}
+}*/

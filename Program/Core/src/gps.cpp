@@ -1,42 +1,51 @@
-/*#include "gps.h"
 #include "globalVars.h"
 
-unsigned long lastTime;
+bool MyGPS::setup(bool verbose){
 
-bool MyGPS::setup(){
+    verbose ? Serial.println("---GPS setup---") : 0;
 
-    Serial.println("---GPS setup---");
+    if(!begin()) return false;
 
-    if(!gps.begin()) return false;
-
-    gps.setI2COutput(COM_TYPE_UBX); //Set the I2C port to output UBX only (turn off NMEA noise)
-    gps.saveConfigSelective(VAL_CFG_SUBSEC_IOPORT); //Save (only) the communications port settings to flash and BBR
+    setI2COutput(COM_TYPE_UBX); //Set the I2C port to output UBX only (turn off NMEA noise)
+    saveConfigSelective(VAL_CFG_SUBSEC_IOPORT); //Save (only) the communications port settings to flash and BBR
 
     return true;
 }
 
-void MyGPS::getData(){
-    if (millis() - lastTime > 1000){
-    lastTime = millis(); //Update the timer
-    
-    long latitude = gps.getLatitude();
-    Serial.print(F("Lat: "));
-    Serial.print(latitude);
+byte MyGPS::getData(){
 
-    long longitude = gps.getLongitude();
-    Serial.print(F(" Long: "));
-    Serial.print(longitude);
-    Serial.print(F(" (degrees * 10^-7)"));
+  if(status == SLEEP) return SLEEP;
 
-    long altitude = gps.getAltitude();
-    Serial.print(F(" Alt: "));
-    Serial.print(altitude);
-    Serial.print(F(" (mm)"));
-
-    byte SIV = gps.getSIV();
-    Serial.print(F(" SIV: "));
-    Serial.print(SIV);
-
-    Serial.println();
+  if(wireCheck(address) != 0){
+      status = FAIL;
+      return FAIL;
   }
-}*/
+
+  if(status == FAIL){
+      setup();
+      return FAIL;
+  }
+  
+  latitude = getLatitude();
+  longitude = getLongitude();
+  altitude = getAltitude();
+  siv = getSIV();
+  return true;
+}
+
+void MyGPS::printData(){
+  Serial.print("GPS: ");
+  if(status == SLEEP){
+    Serial.println("SLEEPING");
+      return;
+  }
+  else if(status == FAIL){
+    Serial.println("FAILED");
+    return;
+  }
+
+  Serial.print(latitude); Serial.print((" N - "));
+  Serial.print(longitude); Serial.print(" E - ");
+  Serial.print(altitude); Serial.print(" mm - ");
+  Serial.print(siv); Serial.println(" SIV");
+}
