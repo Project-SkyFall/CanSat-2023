@@ -29,7 +29,7 @@ bool wireCheck(byte address);
 
 void printResult(bool input);
 
-extern int refreshRate;
+//extern int refreshRate;
 extern bool doDebug;
 
 extern OneWire oneWire;

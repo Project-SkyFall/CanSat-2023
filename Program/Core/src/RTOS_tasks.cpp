@@ -8,6 +8,7 @@ void controlTask(void *pvParameters){
 }
 
 void getData(void *pvParameters){
+    getData_lastTime = xTaskGetTickCount();
     while(true){
         rtc.getData();
         bme.getData();
@@ -15,14 +16,17 @@ void getData(void *pvParameters){
         oxygen.getData();
         ina.getData();
         ds18.getData();
+        vTaskResume(printData_hadle);
         vTaskResume(saveData_handle);
         vTaskResume(loraSend_handle);
-        vTaskDelay(refreshRate/portTICK_PERIOD_MS);
+        xTaskDelayUntil(&getData_lastTime, refreshRate/portTICK_PERIOD_MS);
     }
 }
 
 void printData(void *pvParameters){
     while(true){
+        vTaskSuspend(NULL);
+
         Serial.println("\n--------------------------------------------------");
 
         rtc.printData();
@@ -34,9 +38,6 @@ void printData(void *pvParameters){
 
         sd.printStatus();
         lora.printStatus();
-
-        //Serial.println("--------------------------------------------------\n");
-        vTaskDelay(refreshRate/portTICK_PERIOD_MS);
     }
 }
 

@@ -1,7 +1,7 @@
 #include "globalVars.h"
 
 unsigned long prevMillis;
-int refreshRate = 1000;
+//int refreshRate = 1000;
 bool doDebug;
 
 MyBme bme(0x76);
@@ -18,8 +18,12 @@ MyOxygen oxygen(36);
 MyDS18B20 ds18(&oneWire, 4);
 MyNeo neo(21, 9, NEO_GRBW + NEO_KHZ800);
 
+TaskHandle_t printData_hadle;
 TaskHandle_t saveData_handle;
 TaskHandle_t loraSend_handle;
+
+TickType_t getData_lastTime;
+TickType_t refreshRate = 1000;
 
 OneWire oneWire;
 
@@ -51,7 +55,7 @@ void setup(void) {
 
   //xTaskCreate(controlTask, "Control Task", 4096, NULL, 15, NULL);
   xTaskCreate(runServer, "Run Server", 4096, NULL, 3, NULL);
-  xTaskCreate(printData, "Print Data", 4096, NULL, 5, NULL);
+  xTaskCreate(printData, "Print Data", 4096, NULL, 5, &printData_hadle);
   xTaskCreate(saveData, "Save Data Task", 4096, NULL, 7, &saveData_handle);
   xTaskCreate(loraSend, "Lora Send Task", 4096, NULL, 10, &loraSend_handle);
   xTaskCreate(getData, "Get Data Task", 4096, NULL, 5, NULL);
