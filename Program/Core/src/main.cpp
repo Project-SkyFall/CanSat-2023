@@ -16,6 +16,7 @@ MyWiFi wifi;
 MyTime rtc;
 MyOxygen oxygen(36);
 MyDS18B20 ds18(&oneWire, 4);
+MyNeo neo(21, 9, NEO_GRBW + NEO_KHZ800);
 
 TaskHandle_t saveData_handle;
 TaskHandle_t loraSend_handle;
@@ -41,6 +42,7 @@ void setup(void) {
   printResult(lora.setup(true));
   printResult(ina.setup(true));
   printResult(oxygen.setup(true));
+  printResult(neo.setup(true));
 
   if(!digitalRead(RUN_SEVER_PIN)){
     printResult(wifi.setup(ssid, password, true));
@@ -53,6 +55,7 @@ void setup(void) {
   xTaskCreate(saveData, "Save Data Task", 4096, NULL, 7, &saveData_handle);
   xTaskCreate(loraSend, "Lora Send Task", 4096, NULL, 10, &loraSend_handle);
   xTaskCreate(getData, "Get Data Task", 4096, NULL, 5, NULL);
+  xTaskCreate(runNeo, "Run Neo Pixels", 2048, NULL, 3, NULL);
 
   /*xTaskCreate(
     gpsGetDataTask,

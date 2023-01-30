@@ -13,6 +13,8 @@ void runServer(void *pvParameters);
 
 void saveData(void *pvParameters);
 
+void runNeo(void *pvParameters);
+
 void gpsGetDataTask(void *pvParameters);
 void gpsFeedObjectTask(void *pvParameters);
 

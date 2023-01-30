@@ -17,6 +17,7 @@
 #include "myTime.h"
 #include "RTOS_tasks.h"
 #include "myOxygen.h"
+#include "myNeo.h"
 
 #define FAIL 0
 #define OK 1

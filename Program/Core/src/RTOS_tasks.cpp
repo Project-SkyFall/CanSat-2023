@@ -61,3 +61,10 @@ void loraSend(void *pvParameters){
         lora.status = OK;
     }
 }
+
+void runNeo(void *pvParameters){
+    while(true){
+        neo.animation();
+        vTaskDelay(1);
+    }
+}
