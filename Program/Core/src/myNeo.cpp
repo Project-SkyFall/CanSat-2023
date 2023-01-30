@@ -12,7 +12,9 @@ bool MyNeo::setup(bool verbose){
     updateLength(_numPixels);
     setPin(_pin);
     
-    neo.begin();
+    begin();
+
+    clear();
 
     return true;
 }
