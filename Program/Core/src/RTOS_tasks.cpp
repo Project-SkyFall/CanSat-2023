@@ -14,7 +14,7 @@ void getData(void *pvParameters){
         //gps.getData();
         oxygen.getData();
         ina.getData();
-        //ds18.getData();
+        ds18.getData();
         vTaskResume(saveData_handle);
         vTaskResume(loraSend_handle);
         vTaskDelay(refreshRate/portTICK_PERIOD_MS);
@@ -27,7 +27,7 @@ void printData(void *pvParameters){
 
         rtc.printData();
         bme.printData();
-        //ds18.printData();
+        ds18.printData();
         gps.printData();
         oxygen.printData();
         ina.printData();

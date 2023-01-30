@@ -22,7 +22,7 @@ class MyBme : public Adafruit_BME280{
 
 class MyDS18B20 : public DallasTemperature{
     public:
-    //MyDS18B20(OneWire*, uint8_t);
+    MyDS18B20(OneWire* bus, uint8_t pin);
     using DallasTemperature::DallasTemperature;
     bool setup(bool verbose=false);
     void getData();
@@ -33,6 +33,7 @@ class MyDS18B20 : public DallasTemperature{
 
     private:
     uint8_t _pin;
+    OneWire* _bus;
 };
 
 void bmeGetDataTask(void *pvParameters);

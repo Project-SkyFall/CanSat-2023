@@ -15,7 +15,7 @@ MyServer server(80);
 MyWiFi wifi;
 MyTime rtc;
 MyOxygen oxygen(36);
-//MyDS18B20 ds18(&oneWire);
+MyDS18B20 ds18(&oneWire, 4);
 
 TaskHandle_t saveData_handle;
 TaskHandle_t loraSend_handle;
@@ -37,7 +37,7 @@ void setup(void) {
   printResult(sd.setup(true));
   printResult(gps.setup(true));
   printResult(bme.setup(true));
-  //printResult(ds18.setup(true));
+  printResult(ds18.setup(true));
   printResult(lora.setup(true));
   printResult(ina.setup(true));
   printResult(oxygen.setup(true));

@@ -20,8 +20,15 @@ bool MyBme::setup(bool debug){
     return true;
 }
 
+MyDS18B20::MyDS18B20(OneWire* bus, uint8_t pin){
+    _bus = bus;
+    _pin = pin;
+}
+
 bool MyDS18B20::setup(bool verbose){
     verbose ? Serial.println("-----------------DS18B20 setup------------------") : 0;
+    setOneWire(_bus);
+    setPullupPin(_pin);
     begin();
 
     /*if(!isConnected(&4)){
