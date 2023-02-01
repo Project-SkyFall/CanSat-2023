@@ -33,7 +33,7 @@ void setup() {
    // Change sync word (0xF3) to match the receiver
   // The sync word assures you don't get LoRa messages from other LoRa transceivers
   // ranges from 0-0xFF
-  LoRa.setSyncWord(0xF3);
+  LoRa.setSyncWord(0xF2);
   Serial.println("LoRa Initializing OK!");
 }
 
@@ -49,5 +49,5 @@ void loop() {
 
   counter++;
 
-  delay(1000);
+  delay(500);
 }
