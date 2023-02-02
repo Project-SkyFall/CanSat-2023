@@ -17,6 +17,7 @@ lat = ""
 latd = ""
 lon = ""
 lond = ""
+dataword = ""
         
 def gps():
         global msg                              
@@ -31,6 +32,7 @@ def gps():
         msg_code = "$GPGGA"                #kod zprávy kterou hledáme
         if msg_code.encode() in gps_data:  #zjistujeme zda zpráva obsahuje náš kod
                 msg = gps_data.decode()       #pokud ano ulozime zpravu do promenne
+                ser.flushInput()
         #print(msg)
         if msg != "":
                 word = msg.split(",")
@@ -40,8 +42,36 @@ def gps():
                         lon = float(word[4][0:3]) + (float(word[4][3:12]) / 60.0)
                         lond = word[5]
                         utc = word[1][0:2] + ":" + word[1][2:4] + ":" + word[1][4:6]
-        print(utc,", ","{:.8}".format(lat),latd,", ","{:.8}".format(lon),lond)
+                        
+def DataWord():
+        global utc
+        global lat
+        global latd
+        global lon
+        global lond
+        global dataword
+
+        latword = ("%0.8s" % lat)
+        lonword = ("%0.8s" % lon)
+        
+        dataword = ("")
+        #dataword = ("GPS; ")
+        dataword += ("%s; " % utc)
+        dataword += ("%s; " % latword)
+        dataword += ("%s; " % latd)
+        dataword += ("%s; " % lonword)
+        dataword += ("%s; " % lond)
+
+        print(dataword)
+
+        with open("/home/pi/Desktop/gps.txt", "w") as file:
+                file.write(dataword)
+        
+        
+        
+        
 
 while True:
         gps()
-        time.sleep(1)
+        DataWord()
+        time.sleep(0.1)

@@ -21,26 +21,64 @@ ads = ADS.ADS1015(i2c)
 # Create differential input between channel 0 and 1
 chan = AnalogIn(ads, ADS.P0, ADS.P1)
 
-print("         raw,   volt,  temp, humi, press,  alti")
+dataword = ("")
+raw = ("")
+voltage = ("")
+temperature = ("")
+humidity = ("")
+pressure = ("")
+altitude = ("")
 
-while True:
-    #print("{:>5}\t{:>5}".format("raw", "v"))
-    #print("{:>5}\t{:>5.3f}".format(chan.value, chan.voltage))
-    #print()
+def ADSread():
+    global raw
+    global voltage
 
-    #print("\nTemperature: %0.1f C" % bme280.temperature)
-    #print("Humidity: %0.1f %%" % bme280.relative_humidity)
-    #print("Pressure: %0.1f hPa" % bme280.pressure)
-    #print("Altitude = %0.2f meters" % bme280.altitude)
-    #print("---------------------------------------------------")
-    dataword = ("ADSBME; ")
-    dataword +=("%6i; " % chan.value)
-    dataword +=("%0.3f; " %chan.voltage)
-    dataword +=("%0.1f; " % bme280.temperature)
-    dataword +=("%0.1f; " % bme280.relative_humidity)
-    dataword +=("%0.1f; " % bme280.pressure)
-    dataword +=("%0.2f; " % bme280.altitude)
+    raw = ("%6i" % chan.value)
+    voltage =("%0.3f" %chan.voltage)
+
+def BMEread():
+    global temperature
+    global humidity
+    global pressure
+    global altitude
+
+    temperature = ("%0.1f" % bme280.temperature)
+    humidity = ("%0.1f" % bme280.relative_humidity)
+    pressure = ("%0.1f" % bme280.pressure)
+    altitude = ("%0.2f" % bme280.altitude)
+
+def DataWord():
+    global raw
+    global voltage
+    global temperature
+    global humidity
+    global pressure
+    global altitude
+    global dataword
     
+    dataword = ("")
+    #dataword = ("ADSBME; ")
+    dataword +=("%s; " % voltage)
+    dataword +=("%s; " % raw)
+    dataword +=("%s; " % temperature)
+    dataword +=("%s; " % humidity)
+    dataword +=("%s; " % pressure)
+
+    dataword +=("%s; " % altitude)
+
     print(dataword)
+
     
-    time.sleep(1)
+    with open("/home/pi/Desktop/adsbme.txt", "w") as file:
+        if file.writable():
+            file.write(dataword)
+
+    
+    
+    
+while True:
+    ADSread()
+    BMEread()
+    DataWord()
+
+    time.sleep(0.5)
