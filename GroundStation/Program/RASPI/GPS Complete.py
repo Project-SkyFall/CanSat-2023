@@ -26,12 +26,12 @@ def gps():
         global latd
         global lon
         global lond
-        gps_data=ser.readline()         #ctení ze seriálu
+        gps_data=ser.readline()                 #ctení ze seriálu
         #print (gps_data)
         sleep(0.15)
-        msg_code = "$GPGGA"                #kod zprávy kterou hledáme
-        if msg_code.encode() in gps_data:  #zjistujeme zda zpráva obsahuje náš kod
-                msg = gps_data.decode()       #pokud ano ulozime zpravu do promenne
+        msg_code = "$GPGGA"                     #kod zprávy kterou hledáme
+        if msg_code.encode() in gps_data:       #zjistujeme zda zpráva obsahuje náš kod
+                msg = gps_data.decode()         #pokud ano ulozime zpravu do promenne
                 ser.flushInput()
         #print(msg)
         if msg != "":
