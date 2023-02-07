@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <title>CanSat 2023</title>
+</head>
+
+<body>
+  <header>
+    <a href="index.htm">
+      <img src="src/favicon.ico" alt="logo" class="logo">
+    </a>
+    <h1>
+      The Project<br>
+      <span>SkyFall</span>
+    </h1>
+  </header>
+  <main>
+    <form>
+      <fieldset class="sensor-state">
+        <legend>Sensor state</legend>
+        <table>
+          <tr>
+            <th></th>
+            <th>Enabled</th>
+            <th>Disabled</th>
+          </tr>
+          <tr>
+            <th>BME280</th>
+            <th>
+              <input type="radio" name="BME280">
+            </th>
+            <th>
+              <input type="radio" name="BME280">
+            </th>
+          </tr>
+          <tr>
+            <th>BH1750</th>
+            <th>
+              <input type="radio" name="BH1750">
+            </th>
+            <th>
+              <input type="radio" name="BH1750">
+            </th>
+          </tr>
+          <tr>
+            <th>AS7265X</th>
+            <th>
+              <input type="radio" name="AS7265X">
+            </th>
+            <th>
+              <input type="radio" name="AS7265X">
+            </th>
+          </tr>
+        </table>
+      </fieldset>
+      <button>Send</button>
+    </form>
+  </main>
+</body>
+
+</html>
