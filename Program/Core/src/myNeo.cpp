@@ -7,7 +7,7 @@ MyNeo::MyNeo(uint16_t numPixels, uint8_t pin, neoPixelType type){
 }
 
 bool MyNeo::setup(bool verbose){
-    verbose ? Serial.println("------------------NeoPixel setup------------------") : 0;
+    verbose ? Serial.println("---NeoPixel setup---------------------------------") : 0;
     updateType(_type);
     updateLength(_numPixels);
     setPin(_pin);

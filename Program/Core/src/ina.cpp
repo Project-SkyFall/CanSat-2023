@@ -5,7 +5,7 @@ MyINA::MyINA(byte address){
 }
 
 bool MyINA::setup(bool verbose){
-    verbose ? Serial.println("--INA219 setup-") : 0;
+    verbose ? Serial.println("---INA219 setup-----------------------------------") : 0;
     if(!begin()){
         status = FAIL;
         return false;

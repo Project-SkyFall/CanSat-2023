@@ -1,7 +1,4 @@
 #include "globalVars.h"
-#include "temperature.h"
-#include "myTime.h"
-#include "mySD.h"
 
 bool wireCheck(byte address){
     Wire.beginTransmission(address);
@@ -10,5 +7,5 @@ bool wireCheck(byte address){
 }
 
 void printResult(bool input){
-    input ? Serial.println("------OK-------\n") : Serial.println("-----FAIL------\n");
+    input ? Serial.println("---OK---------------------------------------------\n") : Serial.println("---FAIL-------------------------------------------\n");
 }

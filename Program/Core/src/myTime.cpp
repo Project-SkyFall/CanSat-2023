@@ -2,7 +2,7 @@
 #include "myTime.h"
 
 bool MyTime::setup(bool verbose){
-    verbose ? Serial.println("---RTC setup---") : 0;
+    verbose ? Serial.println("---RTC setup--------------------------------------") : 0;
 
     getData();
     status = OK;

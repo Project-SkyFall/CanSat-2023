@@ -2,7 +2,7 @@
 
 bool MyGPS::setup(bool verbose){
 
-    verbose ? Serial.println("---GPS setup---") : 0;
+    verbose ? Serial.println("---GPS setup--------------------------------------") : 0;
 
     if(!begin()) return false;
 

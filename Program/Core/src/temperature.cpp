@@ -6,7 +6,7 @@ MyBme::MyBme(byte address){
 }
 
 bool MyBme::setup(bool debug){
-    debug ? Serial.println("---BME setup---") : 0;
+    debug ? Serial.println("---BME setup--------------------------------------") : 0;
     status = FAIL;
     if(!begin(_address)) return false;
 
@@ -26,7 +26,7 @@ MyDS18B20::MyDS18B20(OneWire* bus, uint8_t pin){
 }
 
 bool MyDS18B20::setup(bool verbose){
-    verbose ? Serial.println("-----------------DS18B20 setup------------------") : 0;
+    verbose ? Serial.println("---DS18B20 setup----------------------------------") : 0;
     setOneWire(_bus);
     setPullupPin(_pin);
     begin();

@@ -3,7 +3,7 @@
 #define sdCSpin 26
 
 bool MySD::setup(bool verbose){
-    verbose ? Serial.println("---SDc setup---") : 0;
+    verbose ? Serial.println("---SDc setup-------------------------------------") : 0;
 
     static bool firstTime = true;
 

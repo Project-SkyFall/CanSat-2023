@@ -5,7 +5,7 @@ MyOxygen::MyOxygen(uint8_t pin){
 }
 
 bool MyOxygen::setup(bool verbose){
-    verbose ? Serial.println("-------------------Oxygen setup-------------------") : 0;
+    verbose ? Serial.println("---Oxygen setup-----------------------------------") : 0;
 
     pinMode(_pin, INPUT);
 
