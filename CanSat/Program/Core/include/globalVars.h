@@ -18,6 +18,7 @@
 #include "RTOS_tasks.h"
 #include "myOxygen.h"
 #include "myNeo.h"
+#include "myBNO.h"
 
 #define FAIL 0
 #define OK 1

@@ -9,11 +9,11 @@ class MyTime{
     void printData();
     void getData();
 
-    uint8_t day = 27;
-    uint8_t month = 1;
+    uint8_t day = 2;
+    uint8_t month = 2;
     uint16_t year = 2023;
 
-    uint8_t hour = 12;
+    uint8_t hour = 9;
     uint8_t minute = 0;
     uint8_t second = 0;
 

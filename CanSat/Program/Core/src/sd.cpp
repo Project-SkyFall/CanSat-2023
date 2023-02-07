@@ -1,6 +1,8 @@
 #include "globalVars.h"
 
-#define sdCSpin 26
+MySD::MySD(uint8_t cs){
+    _cs = cs;
+}
 
 bool MySD::setup(bool verbose){
     verbose ? Serial.println("---SDc setup-------------------------------------") : 0;
@@ -11,12 +13,11 @@ bool MySD::setup(bool verbose){
         SD.end();
     }
 
-    if(!SD.begin(sdCSpin)){
+    if(!SD.begin(_cs)){
         status = FAIL;
         return false;
     }
 
-    
     if(!firstTime){
         status = OK;
         return true;

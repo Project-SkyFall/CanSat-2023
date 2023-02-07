@@ -16,10 +16,10 @@ void getData(void *pvParameters){
         oxygen.getData();
         ina.getData();
         ds18.getData();
-        vTaskResume(printData_hadle);
-        vTaskResume(saveData_handle);
         vTaskResume(loraSend_handle);
+        //vTaskResume(saveData_handle);
         xTaskDelayUntil(&getData_lastTime, refreshRate/portTICK_PERIOD_MS);
+        vTaskResume(printData_hadle);
     }
 }
 
@@ -51,21 +51,23 @@ void runServer(void *pvParameters){
 
 void saveData(void *pvParameters){
     while(true){
-        vTaskSuspend(NULL);
-        sd.save();
+        //vTaskSuspend(NULL);
+        if(xSemaphoreTake(spiSemaphore_hadle, portMAX_DELAY)){
+            sd.save();
+        }
     }
 }
 
 void loraSend(void *pvParameters){
     while(true){
         vTaskSuspend(NULL);
-        lora.status = OK;
+        xSemaphoreGive(spiSemaphore_hadle);
+        lora.sendData();
     }
 }
 
 void runNeo(void *pvParameters){
     while(true){
         neo.animation();
-        vTaskDelay(1);
     }
 }

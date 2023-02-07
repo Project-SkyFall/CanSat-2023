@@ -9,8 +9,11 @@
 //template <class Vol, class Fmt>
 #define USE_FCNTL_H 1
 class MySD{
+
+    uint8_t _cs;
+
     public:
-    //MySD(FSImplPtr impl);
+    MySD(uint8_t cs);;
     bool setup(bool verbose = false);
     bool save();
     void printStatus();
@@ -19,10 +22,12 @@ class MySD{
     //String postfix;
     String path;
     byte status;
+
+    const uint8_t& cs = _cs;
 };
 
-template <typename T> void /*MyFile::*/myPrint(T input);
-template <typename T> void /*MyFile::*/myPrintln(T input);
+template <typename T> void myPrint(T input);
+template <typename T> void myPrintln(T input);
 
 /*class MyFile{
     public:

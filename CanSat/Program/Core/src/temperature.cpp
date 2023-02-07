@@ -60,7 +60,8 @@ void MyBme::getData(){
 
 void MyDS18B20::getData(){
     if(status == SLEEP) return;
-
+    status = FAIL;
+    return;
     /*if(!isConnected(&_pin)){
         if(!setup()){
             status = FAIL;
