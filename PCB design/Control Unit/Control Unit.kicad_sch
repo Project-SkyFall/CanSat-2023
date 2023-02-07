@@ -709,7 +709,7 @@
       (reference "AE401") (unit 1) (value "Antenna_Shield") (footprint "CanSat:U.FL_Hirose_U.FL-R-SMT-1_Vertical")
     )
     (path "/f76b3e98-dc7d-411f-a94c-513a6f8ea502/684ddb30-2c93-40b3-bbe5-5cc381be35fb/90e52624-72d2-4223-af0e-8eaf4ca0e922"
-      (reference "BT702") (unit 1) (value "Backup battery") (footprint "CanSat:2989")
+      (reference "BT701") (unit 1) (value "Backup battery") (footprint "CanSat:2989")
     )
     (path "/f76b3e98-dc7d-411f-a94c-513a6f8ea502/6080a645-a9f7-4509-9e6a-4778400f7cde"
       (reference "C201") (unit 1) (value "10uF") (footprint "Capacitor_SMD:C_0805_2012Metric")
@@ -788,9 +788,6 @@
     )
     (path "/f76b3e98-dc7d-411f-a94c-513a6f8ea502/fa794f31-b434-4ecb-b9b8-4df780f619cf"
       (reference "H204") (unit 1) (value "MountingHole") (footprint "MountingHole:MountingHole_3.2mm_M3")
-    )
-    (path "/f76b3e98-dc7d-411f-a94c-513a6f8ea502/8beb3c72-614e-4f50-8cf5-d7b099f3a0a7/71a3bbef-83a7-45c4-808f-b12a4b87d588"
-      (reference "IC501") (unit 1) (value "MAX1626ESA+T") (footprint "SamacSys_Parts:SOIC127P600X175-8N")
     )
     (path "/327b7098-febe-4034-9d38-5603c0d3ce36"
       (reference "J101") (unit 1) (value "Conn_02x04_Male") (footprint "Connector_PinHeader_2.54mm:PinHeader_2x04_P2.54mm_Vertical")
@@ -956,6 +953,9 @@
     )
     (path "/f76b3e98-dc7d-411f-a94c-513a6f8ea502/1ef4194f-7c4a-4936-b127-fce47f6b68f5/69ea0cf1-90b6-48ec-8234-4f0bbc3a0df1"
       (reference "U401") (unit 1) (value "RFM96W-433S2") (footprint "RF_Module:HOPERF_RFM9XW_SMD")
+    )
+    (path "/f76b3e98-dc7d-411f-a94c-513a6f8ea502/8beb3c72-614e-4f50-8cf5-d7b099f3a0a7/71a3bbef-83a7-45c4-808f-b12a4b87d588"
+      (reference "U501") (unit 1) (value "MAX1626ESA+T") (footprint "SOIC127P600X175-8N")
     )
     (path "/f76b3e98-dc7d-411f-a94c-513a6f8ea502/684ddb30-2c93-40b3-bbe5-5cc381be35fb/cccc6665-68d4-4edb-8f19-8d4c6490ce58"
       (reference "U701") (unit 1) (value "PT7C4339") (footprint "Package_SO:SOIC-8-1EP_3.9x4.9mm_P1.27mm_EP2.29x3mm")
