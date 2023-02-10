@@ -9,7 +9,6 @@ MyGPS gps;
 MyLora lora(&SPI, 433E6, 32, 13, 39, 0x60);
 MyINA ina(0x40);
 MySD sd(26);
-//SdFat SDfat;
 File myFile;
 MyServer server(80);
 MyWiFi wifi;
@@ -39,8 +38,8 @@ void setup(void) {
   oneWire.begin(4);
   SPI.begin(33, 27, 14);
   
-  pinMode(lora.cs, OUTPUT); pinMode(lora.cs, HIGH);
-  pinMode(sd.cs, OUTPUT); pinMode(sd.cs, HIGH);
+  pinMode(lora.cs, OUTPUT); digitalWrite(lora.cs, HIGH);
+  pinMode(sd.cs, OUTPUT); digitalWrite(sd.cs, HIGH);
 
   pinMode(RUN_SEVER_PIN, INPUT);
 
@@ -89,5 +88,4 @@ void setup(void) {
 }
 
 void loop(void) {
-  vTaskDelay(1);
 }
