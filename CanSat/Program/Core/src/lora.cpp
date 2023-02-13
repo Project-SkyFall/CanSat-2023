@@ -1,6 +1,8 @@
 #include "globalVars.h"
 
-MyLora::MyLora(SPIClass* bus, double frequency, uint8_t cs, uint8_t reset, uint8_t dio0, uint8_t id){
+MyLora::MyLora(SPIClass* bus, double frequency, uint8_t cs, uint8_t reset, uint8_t dio0, uint8_t id):
+    _spiSettings(LORA_DEFAULT_SPI_FREQUENCY, MSBFIRST, SPI_MODE0),
+    _spi(&LORA_DEFAULT_SPI){
     _bus = bus;
     _frequency = frequency;
     _cs = cs;
@@ -18,7 +20,7 @@ bool MyLora::setup(bool verbose){
     
     setSyncWord(_id);
     //onReceivve(onReceive_callback);
-    //onTxDone(onTxDone_callback);
+    onTxDone(onTxDone_callback);
     receive();
 
     status = OK;
@@ -79,7 +81,7 @@ void MyLora::onTxDone(void(*callback)()){
     _onTxDone = callback;
     if(callback){
         pinMode(_dio0, INPUT);
-        attachInterrupt(_dio0, onDio0Rise, RISING);
+        attachInterrupt(digitalPinToInterrupt(_dio0), onDio0Rise, RISING);
         Serial.println("DIO0 interupt attached");
     }
     else{
@@ -88,20 +90,18 @@ void MyLora::onTxDone(void(*callback)()){
     }
 }
 
-void MyLora::onDio0Rise(){
-    Serial.println("Dio0Rised");
-    //lora.handleDio0Rise();
+ISR_PREFIX void MyLora::onDio0Rise(){
+    lora.handleDio0Rise();
 }
 
 void MyLora::handleDio0Rise(){
     Serial.println("Interupt?!");
-    uint8_t irqFlags = readRegister(0x12, 0x00);
-    Serial.println(irqFlags);
+    uint8_t irqFlags = readRegister(0x12);
     writeRegister(0x12, irqFlags);
 }
 
-uint8_t MyLora::readRegister(uint8_t address, uint8_t value){
-    return singleTransfer(address & 0x7f, value);
+uint8_t MyLora::readRegister(uint8_t address){
+    return singleTransfer(address & 0x7f, 0x00);
 }
 
 void MyLora::writeRegister(uint8_t address, uint8_t value){
@@ -137,4 +137,20 @@ void onReceive_callback(int packetSize){
 
 void onTxDone_callback(){
     Serial.println("Sending done");
+}
+
+uint8_t MyLora::singleTransfer(uint8_t address, uint8_t value)
+{
+  uint8_t response;
+
+  digitalWrite(_cs, LOW);
+
+  _spi->beginTransaction(_spiSettings);
+  _spi->transfer(address);
+  response = _spi->transfer(value);
+  _spi->endTransaction();
+
+  digitalWrite(_cs, HIGH);
+
+  return response;
 }

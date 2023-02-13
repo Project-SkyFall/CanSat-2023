@@ -3,7 +3,11 @@
 
 #include <LoRa.h>
 
-#define loraCSpin 32
+#if (ESP8266 || ESP32)
+    #define ISR_PREFIX ICACHE_RAM_ATTR
+#else
+    #define ISR_PREFIX
+#endif
 
 class MyLora : public LoRaClass{
     public: 
@@ -18,6 +22,7 @@ class MyLora : public LoRaClass{
     void handleDio0Rise();
     
     template <typename T> void myPrint(T input);
+    void dumpRegisters(Stream& out);
 
     byte status;
 
@@ -25,6 +30,8 @@ class MyLora : public LoRaClass{
 
     private:
     SPIClass* _bus;
+    SPISettings _spiSettings;
+    SPIClass* _spi;
     double _frequency;
     uint8_t _cs;
     uint8_t _reset;
@@ -34,7 +41,7 @@ class MyLora : public LoRaClass{
     void (*_onReceive)(int);
     void (*_onTxDone)();
 
-    uint8_t readRegister(uint8_t address, uint8_t value);
+    uint8_t readRegister(uint8_t address);
     void writeRegister(uint8_t address, uint8_t value);
     uint8_t singleTransfer(uint8_t address, uint8_t value);
 };
