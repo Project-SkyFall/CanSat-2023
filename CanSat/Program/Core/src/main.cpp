@@ -17,6 +17,7 @@ MyOxygen oxygen(36);
 MyDS18B20 ds18(&oneWire, 4);
 MyNeo neo(16, 10, NEO_GRBW + NEO_KHZ800);
 MyIMU bno;
+MyCO2 scd(0x62);
 
 TaskHandle_t printData_hadle;
 TaskHandle_t saveData_handle;
@@ -53,6 +54,7 @@ void setup(void) {
   printResult(ina.setup(true));
   printResult(oxygen.setup(true));
   printResult(neo.setup(true));
+  printResult(scd.setup(true));
 
   if(!digitalRead(RUN_SEVER_PIN)){
     printResult(wifi.setup(ssid, password, true));

@@ -19,6 +19,7 @@
 #include "myOxygen.h"
 #include "myNeo.h"
 #include "myBNO.h"
+#include "myCO2.h"
 
 #define FAIL 0
 #define OK 1
