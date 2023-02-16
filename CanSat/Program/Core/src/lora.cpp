@@ -27,6 +27,16 @@ bool MyLora::setup(bool verbose){
     return true;
 }
 
+void MyLora::dumpRegisters(Stream& out)
+{
+  for (int i = 0; i < 128; i++) {
+    out.print("0x");
+    out.print(i, HEX);
+    out.print(": 0b");
+    out.println(readRegister(i), BIN);
+  }
+}
+
 template <typename T> void MyLora::myPrint(T input){
     print(input); print(";");
 }
