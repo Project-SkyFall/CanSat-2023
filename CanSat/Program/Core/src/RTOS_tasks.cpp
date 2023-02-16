@@ -63,8 +63,8 @@ void saveData(void *pvParameters){
 void loraSend(void *pvParameters){
     while(true){
         vTaskSuspend(NULL);
-        xSemaphoreGive(spiSemaphore_hadle);
         lora.sendData();
+        xSemaphoreGive(spiSemaphore_hadle);
     }
 }
 
