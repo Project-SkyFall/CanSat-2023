@@ -13,9 +13,13 @@ bool MySD::setup(bool verbose){
         SD.end();
     }
 
-    if(!SD.begin(_cs)){
+    while(!SD.begin(_cs)){
+        byte i;
+        i++;
+        if(i > 5){
         status = FAIL;
         return false;
+        }
     }
 
     if(!firstTime){
