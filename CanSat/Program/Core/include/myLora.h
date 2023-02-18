@@ -31,7 +31,6 @@ class MyLora : public LoRaClass{
     const uint8_t& cs = _cs;
 
     private:
-    SPIClass* _bus;
     SPISettings _spiSettings;
     SPIClass* _spi;
     double _frequency;

@@ -61,8 +61,7 @@
 
 MyLora::MyLora(SPIClass* bus, double frequency, uint8_t cs, uint8_t reset, uint8_t dio0, uint8_t id):
     _spiSettings(LORA_DEFAULT_SPI_FREQUENCY, MSBFIRST, SPI_MODE0),
-    _spi(&LORA_DEFAULT_SPI){
-    _bus = bus;
+    _spi(bus){
     _frequency = frequency;
     _cs = cs;
     _reset = reset;
