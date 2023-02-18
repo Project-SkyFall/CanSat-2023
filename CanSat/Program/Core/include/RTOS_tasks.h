@@ -15,6 +15,8 @@ void saveData(void *pvParameters);
 
 void runNeo(void *pvParameters);
 
+void isrHandleDioRise(void *pvParameters);
+
 void gpsGetDataTask(void *pvParameters);
 void gpsFeedObjectTask(void *pvParameters);
 

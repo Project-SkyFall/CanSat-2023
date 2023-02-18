@@ -70,6 +70,7 @@ void setup(void) {
   xTaskCreate(loraSend, "Lora Send Task", 4096, NULL, 10, &loraSend_handle);
   xTaskCreate(getData, "Get Data Task", 4096, NULL, 5, NULL);
   xTaskCreate(runNeo, "Run Neo Pixels", 2048, NULL, 3, &runNeo_handle);
+  xTaskCreate(isrHandleDioRise, "ISR DIO Rise", 2048, NULL, 15, &isrHandleDioRise_handle);
 
   /*xTaskCreate(
     gpsGetDataTask,

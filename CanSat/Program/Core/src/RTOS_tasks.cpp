@@ -73,3 +73,12 @@ void runNeo(void *pvParameters){
         neo.animation();
     }
 }
+
+void isrHandleDioRise(void *pvParameters){
+    while(true){
+        vTaskSuspend(NULL);
+        xSemaphoreTake(spiSemaphore_hadle, portMAX_DELAY);
+        lora.handleDio0Rise();
+        xSemaphoreGive(spiSemaphore_hadle);
+    }
+}

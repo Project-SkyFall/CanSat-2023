@@ -121,8 +121,9 @@ void MyLora::onTxDone(void(*callback)()){
     }
 }
 
-ISR_PREFIX void MyLora::onDio0Rise(){
-    lora.handleDio0Rise();
+ISR_PREFIX void IRAM_ATTR MyLora::onDio0Rise(){
+    //lora.handleDio0Rise();
+    vTaskResume(isrHandleDioRise_handle);
 }
 
 void MyLora::handleDio0Rise(){
