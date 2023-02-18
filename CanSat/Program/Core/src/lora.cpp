@@ -87,6 +87,27 @@ void MyLora::onReceive(void(*callback)(int)){
 
 }
 
+int MyLora::endPacket(bool async)
+{
+  
+  if ((async) && (_onTxDone))
+      writeRegister(REG_DIO_MAPPING_1, 0x40); // DIO0 => TXDONE
+
+  // put in TX mode
+  writeRegister(REG_OP_MODE, MODE_LONG_RANGE_MODE | MODE_TX);
+
+  if (!async) {
+    // wait for TX done
+    while ((readRegister(REG_IRQ_FLAGS) & IRQ_TX_DONE_MASK) == 0) {
+      yield();
+    }
+    // clear IRQ's
+    writeRegister(REG_IRQ_FLAGS, IRQ_TX_DONE_MASK);
+  }
+
+  return 1;
+}
+
 void MyLora::onTxDone(void(*callback)()){
     _onTxDone = callback;
     if(callback){

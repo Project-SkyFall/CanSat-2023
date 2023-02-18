@@ -16,6 +16,8 @@ class MyLora : public LoRaClass{
     void sendData();
     void printStatus();
 
+    int endPacket(bool async);
+
     void onReceive(void(*callback)(int));
     void onTxDone(void(*callback)());
     static void onDio0Rise();
