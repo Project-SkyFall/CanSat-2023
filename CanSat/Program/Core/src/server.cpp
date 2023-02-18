@@ -4,7 +4,7 @@ char ssid[] = "Project-SkyFall";
 char password[] = "1234abcd";
 
 bool MyWiFi::setup(char *ssid, char *password, bool verbose){
-    Serial.println("---WiFi setup---");
+    verbose ? Serial.println("---WiFi setup-------------------------------------") : 0;
     softAP(ssid, password);
     IPAddress AP_LOCAL_IP(192, 168, 10, 10);
     IPAddress AP_GATEWAY_IP(192, 168, 10, 10);
@@ -17,7 +17,7 @@ bool MyWiFi::setup(char *ssid, char *password, bool verbose){
 char* defaultRoute = "/server/";
 
 bool MyServer::setup(bool verbose){
-    verbose ? Serial.println("--Server setup--") : 0;
+    verbose ? Serial.println("---Server setup-----------------------------------") : 0;
     on("/", initialRequest);
     //MyServer::on("/pre-flight-settings", preFlightSettings);
     serveStatic("/", SD, defaultRoute);
