@@ -1,6 +1,15 @@
 #include "globalVars.h"
 #include "RTOS_tasks.h"
 
+void myTaskResume(TaskHandle_t taskHandle){
+    try{
+        vTaskResume(taskHandle);
+    }
+    catch(...){
+        Serial.println("Could not resume task");
+    }
+}
+
 void controlTask(void *pvParameters){
     while(true){
         !digitalRead(RUN_SEVER_PIN) ? server.mode(true) : server.mode(false);
