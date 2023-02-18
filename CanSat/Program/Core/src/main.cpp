@@ -24,6 +24,7 @@ TaskHandle_t printData_hadle;
 TaskHandle_t saveData_handle;
 TaskHandle_t loraSend_handle;
 TaskHandle_t runNeo_handle;
+TaskHandle_t isrHandleDioRise_handle;
 
 TickType_t getData_lastTime;
 TickType_t refreshRate = 1000;

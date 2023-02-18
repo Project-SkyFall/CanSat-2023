@@ -198,22 +198,6 @@ void MyLora::writeRegister(uint8_t address, uint8_t value){
     singleTransfer(address | 0x80, value);
 }
 
-uint8_t MyLora::singleTransfer(uint8_t address, uint8_t value){
-    /*uint8_t response;
-
-    digitalWrite(_cs, LOW);
-
-    _spi->beginTransaction(_spiSettings);
-    _spi->transfer(address);
-    response = _spi->transfer(value);
-    _spi->endTransaction();
-
-    digitalWrite(_cs, HIGH);
-
-    return response;*/
-    return 0;
-}
-
 void onReceive_callback(int packetSize){
     if(packetSize == 0) return;
     // Header
