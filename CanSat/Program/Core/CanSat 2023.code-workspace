@@ -23,7 +23,10 @@
 			"atomic": "cpp",
 			"fstream": "cpp",
 			"sstream": "cpp",
-			"streambuf": "cpp"
+			"streambuf": "cpp",
+			"exception": "cpp",
+			"iosfwd": "cpp",
+			"new": "cpp"
 		},
 		"liveServer.settings.multiRootWorkspaceName": "Server"
 	}
