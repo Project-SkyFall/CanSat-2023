@@ -21,6 +21,8 @@ void gpsGetDataTask(void *pvParameters);
 void gpsFeedObjectTask(void *pvParameters);
 
 void myTaskResume(TaskHandle_t taskHandle);
+
+extern TaskHandle_t runServer_handle;
 extern TaskHandle_t printData_hadle;
 extern TaskHandle_t saveData_handle;
 extern TaskHandle_t loraSend_handle;

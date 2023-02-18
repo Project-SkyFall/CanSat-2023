@@ -57,6 +57,7 @@ void printData(void *pvParameters){
 
 
 void runServer(void *pvParameters){
+    vTaskSuspend(NULL);
     while(true){
        server.handleClient();
        vTaskDelay(1); 
