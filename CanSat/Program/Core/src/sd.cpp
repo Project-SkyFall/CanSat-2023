@@ -17,8 +17,8 @@ bool MySD::setup(bool verbose){
         byte i;
         i++;
         if(i > 5){
-        status = FAIL;
-        return false;
+            status = FAIL;
+            return false;
         }
     }
 
