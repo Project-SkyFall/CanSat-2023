@@ -5,15 +5,20 @@
 #include <WiFiClient.h>
 #include <WebServer.h>
 #include <ESPmDNS.h>
-/*#include <AsyncTCP.h>
-#include <ESPAsyncWebServer.h>*/
 
 extern char ssid[];
 extern char password[];
 
 class MyWiFi : public WiFiClass{
     public:
-    bool setup(char *ssid, char *password, bool verbose = false);
+    MyWiFi(char *ssid, char *password);
+    bool setup(bool verbose = false);
+
+    byte status;
+
+    private:
+    char *_ssid;
+    char *_password;
 };
 
 extern MyWiFi wifi;
@@ -21,7 +26,10 @@ extern MyWiFi wifi;
 class MyServer : public WebServer{//AsyncWebServer{
     public:
     MyServer(int port){};
-    bool setup(bool verbose);
+    bool setup(bool verbose=false);
+    void mode(bool run);
+    void printStatus();
+
 };
 
 extern MyServer server;

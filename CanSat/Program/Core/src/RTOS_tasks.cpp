@@ -3,6 +3,7 @@
 
 void controlTask(void *pvParameters){
     while(true){
+        !digitalRead(RUN_SEVER_PIN) ? server.mode(true) : server.mode(false);
         vTaskDelay(1);
     }
 }
@@ -40,6 +41,8 @@ void printData(void *pvParameters){
 
         sd.printStatus();
         lora.printStatus();
+
+        server.printStatus();
     }
 }
 

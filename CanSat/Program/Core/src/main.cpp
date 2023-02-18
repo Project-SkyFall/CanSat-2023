@@ -11,7 +11,7 @@ MyINA ina(0x40);
 MySD sd(26);
 File myFile;
 MyServer server(80);
-MyWiFi wifi;
+MyWiFi wifi(ssid, password);
 MyTime rtc;
 MyOxygen oxygen(36);
 MyDS18B20 ds18(&oneWire, 4);
@@ -19,6 +19,7 @@ MyNeo neo(16, 10, NEO_GRBW + NEO_KHZ800);
 MyIMU bno;
 MyCO2 scd(0x62);
 
+TaskHandle_t runServer_handle;
 TaskHandle_t printData_hadle;
 TaskHandle_t saveData_handle;
 TaskHandle_t loraSend_handle;
@@ -56,15 +57,9 @@ void setup(void) {
   printResult(neo.setup(true));
   printResult(scd.setup(true));
 
-  if(!digitalRead(RUN_SEVER_PIN)){
-    printResult(wifi.setup(ssid, password, true));
-    printResult(server.setup(true));
-  }
-
   spiSemaphore_hadle = xSemaphoreCreateBinary();
 
-  //xTaskCreate(controlTask, "Control Task", 4096, NULL, 15, NULL);
-  xTaskCreate(runServer, "Run Server", 4096, NULL, 3, NULL);
+  xTaskCreate(runServer, "Run Server", 4096, NULL, 3, &runServer_handle);
   xTaskCreate(printData, "Print Data", 4096, NULL, 5, &printData_hadle);
   xTaskCreate(saveData, "Save Data Task", 4096, NULL, 7, &saveData_handle);
   xTaskCreate(loraSend, "Lora Send Task", 4096, NULL, 10, &loraSend_handle);

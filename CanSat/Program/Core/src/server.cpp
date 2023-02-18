@@ -3,14 +3,22 @@
 char ssid[] = "Project-SkyFall";
 char password[] = "1234abcd";
 
-bool MyWiFi::setup(char *ssid, char *password, bool verbose){
+MyWiFi::MyWiFi(char *ssid, char *password):
+    _ssid(ssid),
+    _password(password)
+    {}
+
+bool MyWiFi::setup(bool verbose){
     verbose ? Serial.println("---WiFi setup-------------------------------------") : 0;
-    softAP(ssid, password);
+    softAP(_ssid, _password);
     IPAddress AP_LOCAL_IP(192, 168, 10, 10);
     IPAddress AP_GATEWAY_IP(192, 168, 10, 10);
     IPAddress AP_NETWORK_MASK(255, 255, 255, 0);
     softAPConfig(AP_LOCAL_IP, AP_GATEWAY_IP, AP_NETWORK_MASK);
-    Serial.print("CanSat IP address: "); Serial.println(WiFi.softAPIP());
+    setTxPower(WIFI_POWER_5dBm);
+
+    Serial.print("WiFi AP power: "); Serial.print(getTxPower()); Serial.println("dBm");
+    Serial.print("CanSat IP address: "); Serial.println(softAPIP());
     return true;
 }
 
@@ -59,6 +67,36 @@ void initialRequest(){
         return;
     }
     server.send(405, "text/plain", "Bad method");
+}
+
+void MyServer::mode(bool run){
+    if(run){
+        if(wifi.status != OK){
+            wifi.setup(true);
+            server.setup(true);
+            myTaskResume(runServer_handle);
+
+            wifi.status = OK;
+        }
+    }
+    else{
+        if(wifi.status != SLEEP){
+            wifi.softAPdisconnect(true);
+            close();
+            vTaskSuspend(runServer_handle);
+
+            wifi.status = SLEEP;
+        }
+    }
+}
+
+void MyServer::printStatus(){
+    Serial.print("Server: ");
+    if(wifi.status == OK){
+        Serial.println("RUNNING");
+        return;
+    }
+    Serial.println("SUSPENDED");
 }
 
 /*void preFlightSettings(){
