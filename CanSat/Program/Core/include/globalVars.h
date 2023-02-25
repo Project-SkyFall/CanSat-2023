@@ -8,6 +8,7 @@
 #include <OneWire.h>
 
 enum class Status : int8_t {status_OK = 1, status_FAIL = -1, status_NACK = 0, status_SLEEP = 2};
+enum class Mode {mode_RUN = 0, mode_SLEEP = 1};
 
 #define RUN_SEVER_PIN 35
 
