@@ -1,5 +1,9 @@
 #include "globalVars.h"
 
+#include "myServer.h"
+#include "mySD.h"
+#include "RTOS_tasks.h"
+
 char ssid[] = "Project-SkyFall";
 char password[] = "1234abcd";
 
@@ -71,28 +75,28 @@ void initialRequest(){
 
 void MyServer::mode(bool run){
     if(run){
-        if(wifi.status != OK){
+        if(wifi.status != Status::status_OK){
             wifi.setup(true);
             server.setup(true);
             myTaskResume(runServer_handle);
 
-            wifi.status = OK;
+            wifi.status = Status::status_OK;
         }
     }
     else{
-        if(wifi.status != SLEEP){
+        if(wifi.status != Status::status_SLEEP){
             wifi.softAPdisconnect(true);
             close();
             vTaskSuspend(runServer_handle);
 
-            wifi.status = SLEEP;
+            wifi.status = Status::status_SLEEP;
         }
     }
 }
 
 void MyServer::printStatus(){
     Serial.print("Server: ");
-    if(wifi.status == OK){
+    if(wifi.status == Status::status_OK){
         Serial.println("RUNNING");
         return;
     }

@@ -1,4 +1,5 @@
 #include "globalVars.h"
+
 #include "temperature.h"
 
 MyBme::MyBme(byte address){
@@ -7,7 +8,7 @@ MyBme::MyBme(byte address){
 
 bool MyBme::setup(bool debug){
     debug ? Serial.println("---BME setup--------------------------------------") : 0;
-    status = FAIL;
+    status = Status::status_FAIL;
     if(!begin(_address)) return false;
 
     setSampling(Adafruit_BME280::MODE_FORCED,
@@ -16,7 +17,7 @@ bool MyBme::setup(bool debug){
                 Adafruit_BME280::SAMPLING_X1,
                 Adafruit_BME280::FILTER_OFF);
 
-    status = OK;
+    status = Status::status_OK;
     return true;
 }
 
@@ -35,18 +36,18 @@ bool MyDS18B20::setup(bool verbose){
         status = FAIL;
         return false;
     }*/
-    status = OK;
+    status = Status::status_OK;
     return true;
 }
 
 void MyBme::getData(){
-    if(status == SLEEP) return;
+    if(status == Status::status_SLEEP) return;
 
     if(!wireCheck(_address)){
-        status = FAIL;
+        status = Status::status_FAIL;
         return;
     }
-    else if(status == FAIL){
+    else if(status == Status::status_FAIL){
         if(!setup()) return;
     }
 
@@ -55,12 +56,12 @@ void MyBme::getData(){
     pressure = readPressure() / 100.0F;
     humidity = readHumidity();
 
-    status = OK;
+    status = Status::status_OK;
 }
 
 void MyDS18B20::getData(){
-    if(status == SLEEP) return;
-    status = FAIL;
+    if(status == Status::status_SLEEP) return;
+    status = Status::status_FAIL;
     return;
     /*if(!isConnected(&_pin)){
         if(!setup()){
@@ -76,11 +77,11 @@ void MyDS18B20::getData(){
 
 void MyBme::printData(){
     Serial.print("BME280: ");
-    if(status == SLEEP){
+    if(status == Status::status_SLEEP){
         Serial.println("SLEEPING");
         return;
     }
-    else if(status == FAIL){
+    else if(status == Status::status_FAIL){
         Serial.println("FAILED");
         return;
     }
@@ -91,11 +92,11 @@ void MyBme::printData(){
 
 void MyDS18B20::printData(){
     Serial.print("DS18B20: ");
-    if(status == SLEEP){
+    if(status == Status::status_SLEEP){
         Serial.println("SLEEPING");
         return;
     }
-    else if(status == FAIL){
+    else if(status == Status::status_FAIL){
         Serial.println("FAILED");
         return;
     }

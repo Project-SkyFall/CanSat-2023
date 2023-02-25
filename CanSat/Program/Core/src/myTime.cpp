@@ -1,11 +1,12 @@
 #include "globalVars.h"
+
 #include "myTime.h"
 
 bool MyTime::setup(bool verbose){
     verbose ? Serial.println("---RTC setup--------------------------------------") : 0;
 
     getData();
-    status = OK;
+    status = Status::status_OK;
     return true;
 }
 
@@ -28,11 +29,11 @@ void MyTime::getData(){
 
 void MyTime::printData(){
     Serial.print("RTC: ");
-    if(status == SLEEP){
+    if(status == Status::status_SLEEP){
         Serial.println("SLEEPING");
         return;
     }
-    else if(status == FAIL){
+    else if(status == Status::status_FAIL){
         Serial.println("FAILED");
         return;
     }

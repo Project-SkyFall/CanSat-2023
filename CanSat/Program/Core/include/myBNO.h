@@ -10,7 +10,7 @@ class MyIMU : public Adafruit_BNO055{
     void getData();
     void printData();
 
-    byte status;
+    Status status;
 
     float roll;
     float pitch;

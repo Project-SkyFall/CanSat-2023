@@ -1,5 +1,21 @@
 #include "globalVars.h"
 
+#include "myLora.h"
+
+#include "RTOS_tasks.h"
+
+#include "myTime.h"
+#include "temperature.h"
+#include "gps.h"
+#include "myINA.h"
+#include "mySD.h"
+#include "myServer.h"
+#include "myOxygen.h"
+#include "myNeo.h"
+#include "myINA.h"
+#include "myCO2.h"
+#include "myBNO.h"
+
 // registers
 #define REG_FIFO                 0x00
 #define REG_OP_MODE              0x01
@@ -66,22 +82,22 @@ MyLora::MyLora(SPIClass* bus, double frequency, uint8_t cs, uint8_t reset, uint8
     _cs = cs;
     _reset = reset;
     _dio0 = dio0;
-    _id = id;
+    _id = id; 
 }
 
 bool MyLora::setup(bool verbose){
-    status = FAIL;
+    status = Status::status_FAIL;
     verbose ? Serial.println("---LORA setup-------------------------------------") : 0;
 
     setPins(_cs, _reset, _dio0);
     if(!begin(_frequency)) return false; 
     
     setSyncWord(_id);
-    //onReceivve(onReceive_callback);
-    onTxDone(onTxDone_callback);
+    onReceive(onReceive_callback);
+    //onTxDone(onTxDone_callback);
     receive();
 
-    status = OK;
+    status = Status::status_OK;
     return true;
 }
 
@@ -101,16 +117,16 @@ template <typename T> void MyLora::myPrint(T input){
 
 void MyLora::sendData(){
     static int cycle;
-    if(status == FAIL){
+    if(status == Status::status_FAIL){
         if(!setup()) return;
     }
 
     if(!beginPacket()){
-        status = FAIL;
+        status = Status::status_FAIL;
         return;
     }
     /*  Header  */
-    write(_id);
+    //write(_id);
 
     /*  Message  */
     myPrint(rtc.dateTime_string);
@@ -120,15 +136,30 @@ void MyLora::sendData(){
 
 
     endPacket(true);
+    //myTaskResume(loraCheckTxDone_handle);
 
     receive();
 
-    status = OK;
+    status = Status::status_OK;
 }
 
 void MyLora::printStatus(){
     Serial.print("Sending data: ");
-    status == OK ? Serial.println("OK") : Serial.println("FAIL");
+    if(status == Status::status_FAIL){
+        Serial.println("FAIL");
+        return;
+    }
+    checkTxDone() ? Serial.println("SEND") : Serial.println("NACK");
+    lora.stopCheckTxDone = true;
+}
+
+bool MyLora::checkTxDone(){
+    if(readRegister(REG_IRQ_FLAGS) & IRQ_TX_DONE_MASK) {
+        // clear IRQ's
+        writeRegister(REG_IRQ_FLAGS, IRQ_TX_DONE_MASK);
+        return true;
+    }
+    return false;
 }
 
 void MyLora::onReceive(void(*callback)(int)){
@@ -217,6 +248,8 @@ uint8_t MyLora::singleTransfer(uint8_t address, uint8_t value)
 {
   uint8_t response;
 
+  xSemaphoreTake(spiSemaphore_hadle, portMAX_DELAY);
+
   digitalWrite(_cs, LOW);
 
   _spi->beginTransaction(_spiSettings);
@@ -225,6 +258,8 @@ uint8_t MyLora::singleTransfer(uint8_t address, uint8_t value)
   _spi->endTransaction();
 
   digitalWrite(_cs, HIGH);
+
+  xSemaphoreGive(spiSemaphore_hadle);
 
   return response;
 }

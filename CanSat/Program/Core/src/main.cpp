@@ -1,12 +1,26 @@
 #include "globalVars.h"
 
-unsigned long prevMillis;
-//int refreshRate = 1000;
+#include "RTOS_tasks.h"
+
+#include "myTime.h"
+#include "temperature.h"
+#include "gps.h"
+#include "myLora.h"
+#include "myINA.h"
+#include "mySD.h"
+#include "myServer.h"
+#include "myOxygen.h"
+#include "myNeo.h"
+#include "myINA.h"
+#include "myCO2.h"
+#include "myBNO.h"
+
 bool doDebug;
+String serialBuffer;
 
 MyBme bme(0x76);
 MyGPS gps;
-MyLora lora(&SPI, 433E6, 32, 13, 39, 0x60);
+MyLora lora(&SPI, 433E6, 32, 13, 39, 0xFF);
 MyINA ina(0x40);
 MySD sd(26);
 File myFile;
@@ -22,9 +36,11 @@ MyCO2 scd(0x62);
 TaskHandle_t runServer_handle;
 TaskHandle_t printData_hadle;
 TaskHandle_t saveData_handle;
+TaskHandle_t getData_task;
 TaskHandle_t loraSend_handle;
 TaskHandle_t runNeo_handle;
 TaskHandle_t isrHandleDioRise_handle;
+TaskHandle_t loraCheckTxDone_handle;
 
 TickType_t getData_lastTime;
 TickType_t refreshRate = 1000;
@@ -64,11 +80,14 @@ void setup(void) {
   xTaskCreate(printData, "Print Data", 4096, NULL, 5, &printData_hadle);
   xTaskCreate(saveData, "Save Data Task", 4096, NULL, 7, &saveData_handle);
   xTaskCreate(loraSend, "Lora Send Task", 4096, NULL, 10, &loraSend_handle);
-  xTaskCreate(getData, "Get Data Task", 4096, NULL, 5, NULL);
+  xTaskCreate(getData, "Get Data Task", 4096, NULL, 5, &getData_task);
   xTaskCreate(runNeo, "Run Neo Pixels", 2048, NULL, 3, &runNeo_handle);
+
   xTaskCreate(controlTask, "Control Task", 8192, NULL, 1, NULL);
 
   xTaskCreate(isrHandleDioRise, "ISR DIO Rise", 2048, NULL, 15, &isrHandleDioRise_handle);
+
+  xSemaphoreGive(spiSemaphore_hadle) ? Serial.println("SPI semaphore released") : Serial.println("SPI semaphore not released");
 
   /*xTaskCreate(
     gpsGetDataTask,

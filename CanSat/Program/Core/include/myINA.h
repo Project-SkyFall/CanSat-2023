@@ -10,7 +10,7 @@ class MyINA : public Adafruit_INA219{
     void getData();
     void printData();
 
-    byte status;
+    Status status;
     float current;
     float power;
 

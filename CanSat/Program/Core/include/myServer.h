@@ -14,7 +14,7 @@ class MyWiFi : public WiFiClass{
     MyWiFi(char *ssid, char *password);
     bool setup(bool verbose = false);
 
-    byte status;
+    Status status;
 
     private:
     char *_ssid;

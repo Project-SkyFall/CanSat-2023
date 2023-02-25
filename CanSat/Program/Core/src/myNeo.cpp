@@ -1,5 +1,19 @@
 #include "globalVars.h"
 
+#include "myNeo.h"
+
+#include "myTime.h"
+#include "temperature.h"
+#include "gps.h"
+#include "myLora.h"
+#include "myINA.h"
+#include "mySD.h"
+#include "myServer.h"
+#include "myOxygen.h"
+#include "myINA.h"
+#include "myCO2.h"
+#include "myBNO.h"
+
 /*MyNeo::MyNeo(uint16_t numPixels, uint8_t pin, neoPixelType type){
     _numPixels = numPixels;
     _pin = pin;
@@ -46,7 +60,7 @@ void MyNeo::animation(){
   //uint8_t *statusArray = new byte(_numPixels);
   //static uint8_t statusArray[_numPixels];
   static uint8_t step;
-  static uint8_t *statusArray = (uint8_t *) malloc(_numPixels*sizeof(uint8_t));
+  static Status *statusArray = (Status *) malloc(_numPixels*sizeof(Status));
 
   if(step == 0){
     statusArray[0] = bme.status;
@@ -58,20 +72,20 @@ void MyNeo::animation(){
     statusArray[6] = rtc.status;
     statusArray[7] = bno.status;
 
-    statusArray[8] = SLEEP;
-    statusArray[9] = SLEEP;
-    statusArray[10] = SLEEP;
-    statusArray[11] = SLEEP;
-    statusArray[12] = SLEEP;
-    statusArray[13] = SLEEP;
-    statusArray[14] = SLEEP;
-    statusArray[15] = SLEEP;
+    statusArray[8] = Status::status_SLEEP;
+    statusArray[9] = Status::status_SLEEP;
+    statusArray[10] = Status::status_SLEEP;
+    statusArray[11] = Status::status_SLEEP;
+    statusArray[12] = Status::status_SLEEP;
+    statusArray[13] = Status::status_SLEEP;
+    statusArray[14] = Status::status_SLEEP;
+    statusArray[15] = Status::status_SLEEP;
   }
 
   clear();
   for(int i = 0; i < _numPixels/2; i++){
-    setPixelColor(i, translateColor(statusArray[i], 100));
-    setPixelColor(i+_numPixels/2, translateColor(statusArray[i+_numPixels/2], 100));
+    setPixelColor(i, translateColor(statusArray[i], 10));
+    setPixelColor(i+_numPixels/2, translateColor(statusArray[i+_numPixels/2], 10));
   }
   show();
   step++;
@@ -83,15 +97,15 @@ void MyNeo::animation(){
 
 }
 
-uint32_t MyNeo::translateColor(byte status, byte brightness){
+uint32_t MyNeo::translateColor(Status status, byte brightness){
 
   if(brightness > 100) brightness = 100;
 
-  if(status == FAIL) return Adafruit_NeoPixel::Color(255*brightness/100, 0, 0, 0);
+  if(status == Status::status_FAIL) return Adafruit_NeoPixel::Color(255*brightness/100, 0, 0, 0);
 
-  if(status == OK) return Adafruit_NeoPixel::Color(0, 255*brightness/100, 0, 0);
+  if(status == Status::status_OK) return Adafruit_NeoPixel::Color(0, 255*brightness/100, 0, 0);
 
-  if(status == SLEEP) return Adafruit_NeoPixel::Color(0, 180*brightness/100, 255*brightness/100);
+  if(status == Status::status_SLEEP) return Adafruit_NeoPixel::Color(0, 180*brightness/100, 255*brightness/100);
 
   return 0;
 

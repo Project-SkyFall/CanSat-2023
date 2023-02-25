@@ -21,7 +21,7 @@ class MySD{
     uint16_t postfix;
     //String postfix;
     String path;
-    byte status;
+    Status status;
 
     const uint8_t& cs = _cs;
 };

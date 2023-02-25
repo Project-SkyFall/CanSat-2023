@@ -22,11 +22,15 @@ class MyLora : public LoRaClass{
     void onTxDone(void(*callback)());
     static void onDio0Rise();
     void handleDio0Rise();
+
+    bool checkTxDone();
     
     template <typename T> void myPrint(T input);
     void dumpRegisters(Stream& out);
 
-    byte status;
+    Status status;
+    bool isTxDone;
+    bool stopCheckTxDone;
 
     const uint8_t& cs = _cs;
 

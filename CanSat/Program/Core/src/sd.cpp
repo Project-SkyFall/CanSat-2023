@@ -1,5 +1,20 @@
 #include "globalVars.h"
 
+#include "mySD.h"
+
+#include "myTime.h"
+#include "temperature.h"
+#include "gps.h"
+#include "myLora.h"
+#include "myINA.h"
+#include "mySD.h"
+#include "myServer.h"
+#include "myOxygen.h"
+#include "myNeo.h"
+#include "myINA.h"
+#include "myCO2.h"
+#include "myBNO.h"
+
 MySD::MySD(uint8_t cs){
     _cs = cs;
 }
@@ -17,13 +32,13 @@ bool MySD::setup(bool verbose){
         byte i;
         i++;
         if(i > 5){
-            status = FAIL;
+            status = Status::status_FAIL;
             return false;
         }
     }
 
     if(!firstTime){
-        status = OK;
+        status = Status::status_OK;
         return true;
     }
 
@@ -47,19 +62,19 @@ bool MySD::setup(bool verbose){
     myFile.close();
     Serial.println(path);
     
-    status = OK;
+    status = Status::status_OK;
     return true;
 }
 
 bool MySD::save(){
-    if(status == FAIL && !setup()){
+    if(status == Status::status_FAIL && !setup()){
         //Serial.println("SD card disconnected");
         return false;
     }
     //Serial.print("Saving data: ");
     myFile = SD.open(path, FILE_WRITE);
     if(!myFile){
-        status = FAIL;
+        status = Status::status_FAIL;
         //Serial.println("FAIL");
         return false;
     }
@@ -70,13 +85,13 @@ bool MySD::save(){
     myFile.close();
     //Serial.println("OK");
 
-    status = OK;
+    status = Status::status_OK;
     return true;
 }
 
 void MySD::printStatus(){
     Serial.print("Saving data: ");
-    status == OK ? Serial.println("OK") : Serial.println("FAIL");
+    status == Status::status_OK ? Serial.println("OK") : Serial.println("FAIL");
 }
 
 template <typename T> void /*MyFile::*/myPrint(T input){

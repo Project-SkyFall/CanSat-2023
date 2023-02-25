@@ -1,5 +1,7 @@
 #include "globalVars.h"
 
+#include "myOxygen.h"
+
 MyOxygen::MyOxygen(uint8_t pin){
     _pin = pin;
 }
@@ -9,12 +11,12 @@ bool MyOxygen::setup(bool verbose){
 
     pinMode(_pin, INPUT);
 
-    status = OK;
+    status = Status::status_OK;
     return true;
 }
 
 void MyOxygen::getData(){
-    if(status == SLEEP) return;
+    if(status == Status::status_SLEEP) return;
 
     int val = analogRead(_pin);
 
@@ -23,11 +25,11 @@ void MyOxygen::getData(){
 
 void MyOxygen::printData(){
     Serial.print("OXYGEN: ");
-    if(status == SLEEP){
+    if(status == Status::status_SLEEP){
         Serial.println("SLEEPING");
         return;
     }
-    else if(status == FAIL){
+    else if(status == Status::status_FAIL){
         Serial.println("FAILED");
         return;
     }

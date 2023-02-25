@@ -11,7 +11,7 @@ class MyBme : public Adafruit_BME280{
     void getData();
     void printData();
 
-    byte status;
+    Status status;
     float temperature;
     float pressure;
     float humidity;
@@ -28,7 +28,7 @@ class MyDS18B20 : public DallasTemperature{
     void getData();
     void printData();
 
-    byte status;
+    Status status;
     float temperature;
 
     private:

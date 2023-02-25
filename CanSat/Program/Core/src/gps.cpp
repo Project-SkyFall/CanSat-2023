@@ -1,5 +1,7 @@
 #include "globalVars.h"
 
+#include "gps.h"
+
 bool MyGPS::setup(bool verbose){
 
     verbose ? Serial.println("---GPS setup--------------------------------------") : 0;
@@ -12,34 +14,34 @@ bool MyGPS::setup(bool verbose){
     return true;
 }
 
-byte MyGPS::getData(){
+void MyGPS::getData(){
 
-  if(status == SLEEP) return SLEEP;
+  if(status == Status::status_SLEEP) return;
 
   if(wireCheck(address) != 0){
-      status = FAIL;
-      return FAIL;
+      status = Status::status_FAIL;
+      return;
   }
 
-  if(status == FAIL){
+  if(status == Status::status_FAIL){
       setup();
-      return FAIL;
+      return;
   }
   
   latitude = getLatitude();
   longitude = getLongitude();
   altitude = getAltitude();
   siv = getSIV();
-  return true;
+  return;
 }
 
 void MyGPS::printData(){
   Serial.print("GPS: ");
-  if(status == SLEEP){
+  if(status == Status::status_SLEEP){
     Serial.println("SLEEPING");
       return;
   }
-  else if(status == FAIL){
+  else if(status == Status::status_FAIL){
     Serial.println("FAILED");
     return;
   }

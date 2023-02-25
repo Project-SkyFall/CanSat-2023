@@ -1,5 +1,7 @@
 #include "globalVars.h"
 
+#include "myINA.h"
+
 MyINA::MyINA(byte address){
     _address = address;
 }
@@ -7,22 +9,22 @@ MyINA::MyINA(byte address){
 bool MyINA::setup(bool verbose){
     verbose ? Serial.println("---INA219 setup-----------------------------------") : 0;
     if(!begin()){
-        status = FAIL;
+        status = Status::status_FAIL;
         return false;
     }
-    status = OK;
+    status = Status::status_OK;
     return true;
 }
 
 void MyINA::getData(){
-    if(status == SLEEP) return;
+    if(status == Status::status_SLEEP) return;
 
     if(!wireCheck(_address)){
-        status = FAIL;
+        status = Status::status_FAIL;
         return;
     }
 
-    if(status == FAIL){
+    if(status == Status::status_FAIL){
         if(!setup()) return;
     }
 
@@ -32,11 +34,11 @@ void MyINA::getData(){
 
 void MyINA::printData(){
     Serial.print("INA219: ");
-    if(status == SLEEP){
+    if(status == Status::status_SLEEP){
         Serial.println("SLEEPING");
         return;
     }
-    else if(status == FAIL){
+    else if(status == Status::status_FAIL){
         Serial.println("FAILED");
         return;
     }

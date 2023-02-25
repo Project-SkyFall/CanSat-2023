@@ -7,23 +7,7 @@
 #include <Wire.h>
 #include <OneWire.h>
 
-#include "myServer.h"
-#include "gps.h"
-#include "temperature.h"
-#include "myLora.h"
-#include "gps_temp.h"
-#include "myINA.h"
-#include "mySD.h"
-#include "myTime.h"
-#include "RTOS_tasks.h"
-#include "myOxygen.h"
-#include "myNeo.h"
-#include "myBNO.h"
-#include "myCO2.h"
-
-#define FAIL 0
-#define OK 1
-#define SLEEP 2
+enum class Status : int8_t {status_OK = 1, status_FAIL = -1, status_NACK = 0, status_SLEEP = 2};
 
 #define RUN_SEVER_PIN 35
 
@@ -31,8 +15,8 @@ bool wireCheck(byte address);
 
 void printResult(bool input);
 
-//extern int refreshRate;
 extern bool doDebug;
+extern String serialBuffer;
 
 extern OneWire oneWire;
 

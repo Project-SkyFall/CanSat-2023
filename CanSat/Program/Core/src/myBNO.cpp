@@ -1,5 +1,7 @@
 #include "globalVars.h"
 
+#include "myBNO.h"
+
 MyIMU::MyIMU(){
 
 }

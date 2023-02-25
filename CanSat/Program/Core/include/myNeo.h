@@ -8,9 +8,9 @@ class MyNeo : public Adafruit_NeoPixel{
     MyNeo(uint16_t numPixels, uint8_t pin, neoPixelType type);
     bool setup(bool verbose=false);
     void animation();
-    uint32_t translateColor(byte status, byte brightness);
+    uint32_t translateColor(Status status, byte brightness);
 
-    byte status;
+    Status status;
 
     private:
     uint16_t _numPixels;

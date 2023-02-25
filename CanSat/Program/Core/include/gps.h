@@ -7,10 +7,10 @@
 class MyGPS : public SFE_UBLOX_GNSS{
     public:
     byte address;
-    byte status;
+    Status status;
 
     bool setup(bool verbose = false);
-    byte getData();
+    void getData();
     void printData();
 
     long latitude;

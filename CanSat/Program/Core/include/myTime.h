@@ -9,18 +9,18 @@ class MyTime{
     void printData();
     void getData();
 
-    uint8_t day = 2;
+    uint8_t day = 24;
     uint8_t month = 2;
     uint16_t year = 2023;
 
-    uint8_t hour = 9;
+    uint8_t hour = 8;
     uint8_t minute = 0;
     uint8_t second = 0;
 
     String date_string;
     String dateTime_string;
 
-    byte status;
+    Status status;
 
 };
 

@@ -11,7 +11,7 @@ class MyCO2 : public SensirionI2CScd4x{
     void getData();
     void printData();
 
-    byte status;
+    Status status;
 
     private:
     uint8_t _address;

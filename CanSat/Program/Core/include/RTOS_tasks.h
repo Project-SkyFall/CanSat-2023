@@ -15,6 +15,8 @@ void saveData(void *pvParameters);
 
 void runNeo(void *pvParameters);
 
+void loraCheckTxDone(void *pvParameters);
+
 void isrHandleDioRise(void *pvParameters);
 
 void gpsGetDataTask(void *pvParameters);
@@ -26,8 +28,10 @@ extern TaskHandle_t runServer_handle;
 extern TaskHandle_t printData_hadle;
 extern TaskHandle_t saveData_handle;
 extern TaskHandle_t loraSend_handle;
+extern TaskHandle_t getData_task;
 extern TaskHandle_t runNeo_handle;
 extern TaskHandle_t isrHandleDioRise_handle;
+extern TaskHandle_t loraCheckTxDone_handle;
 
 extern TickType_t getData_lastTime;
 extern TickType_t refreshRate;
