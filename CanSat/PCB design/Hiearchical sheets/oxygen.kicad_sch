@@ -417,7 +417,7 @@
     (property "Reference" "C1101" (id 0) (at 172.72 89.5349 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "100nF" (id 1) (at 172.72 92.0749 0)
+    (property "Value" "0.1uF" (id 1) (at 172.72 92.0749 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Capacitor_SMD:C_0805_2012Metric" (id 2) (at 169.8752 94.615 0)

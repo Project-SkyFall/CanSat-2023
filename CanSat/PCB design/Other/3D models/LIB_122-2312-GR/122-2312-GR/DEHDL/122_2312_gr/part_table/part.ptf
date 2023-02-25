@@ -1,0 +1,11 @@
+FILE_TYPE = MULTI_PHYS_TABLE;
+
+PART '122_2312_GR'
+CLASS = DISCRETE
+{========================================================================================}
+:"MANUFACTURER_NAME", "MANUFACTURER_PART_NUMBER"= "PART_NUMBER", "JEDEC_TYPE", "PACK_TYPE", "MOUSER_PART_NUMBER", "MOUSER_PRICE/STOCK", "DESCRIPTION", "DATASHEET", "HEIGHT";
+{========================================================================================}
+ "Eagle Plastic Devices", "122-2312-GR" (!) = "", "1222312GR", "Other", "122-2312-GR", "https://www.mouser.co.uk/ProductDetail/Eagle-Plastic-Devices/122-2312-GR?qs=OJcA7q8ZHwv5mHhRwvfAvw%3D%3D", "Single Cell Holder", "", "5.4 mm"
+END_PART
+
+END.

@@ -736,13 +736,13 @@
       (reference "C208") (unit 1) (value "1uF") (footprint "Capacitor_SMD:C_0805_2012Metric")
     )
     (path "/f76b3e98-dc7d-411f-a94c-513a6f8ea502/c9fb069b-c252-4d60-ad8a-f62a48ee9208/8d91fba1-8886-4a37-831b-de5af95353f4"
-      (reference "C301") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_0805_2012Metric")
+      (reference "C301") (unit 1) (value "0.1uF") (footprint "Capacitor_SMD:C_0805_2012Metric")
     )
     (path "/f76b3e98-dc7d-411f-a94c-513a6f8ea502/c9fb069b-c252-4d60-ad8a-f62a48ee9208/4b9bb8e3-235c-4062-8b3c-3b3939695cfb"
-      (reference "C302") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_0805_2012Metric")
+      (reference "C302") (unit 1) (value "0.1uF") (footprint "Capacitor_SMD:C_0805_2012Metric")
     )
     (path "/f76b3e98-dc7d-411f-a94c-513a6f8ea502/c9fb069b-c252-4d60-ad8a-f62a48ee9208/c5e6e612-ffb5-47f8-8b5e-d287558d5270"
-      (reference "C303") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_0805_2012Metric")
+      (reference "C303") (unit 1) (value "0.1uF") (footprint "Capacitor_SMD:C_0805_2012Metric")
     )
     (path "/f76b3e98-dc7d-411f-a94c-513a6f8ea502/8beb3c72-614e-4f50-8cf5-d7b099f3a0a7/08c7d4b0-cbd6-4b73-94bb-f4060bdcddd2"
       (reference "C501") (unit 1) (value "TPSB686K010R0600") (footprint "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B")

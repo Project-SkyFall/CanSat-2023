@@ -470,20 +470,20 @@
       "Panel 1"
     ],
     [
-      "1a650689-6afb-47ee-915d-96042f4274d0",
-      "Panel 2"
-    ],
-    [
-      "a7e8cc3e-7f02-4588-a9f8-5e7c6074ce88",
-      "Panel 3"
-    ],
-    [
       "3b4d1544-d2af-4424-a842-a311023f479d",
       "Spectroscope Unit"
     ],
     [
       "95fda9cf-5818-4cf9-ae1d-4ebbf6beffeb",
       "Light Intensity Unit"
+    ],
+    [
+      "1a650689-6afb-47ee-915d-96042f4274d0",
+      "Panel 2"
+    ],
+    [
+      "a7e8cc3e-7f02-4588-a9f8-5e7c6074ce88",
+      "Panel 3"
     ]
   ],
   "text_variables": {
