@@ -7,5 +7,5 @@ bool wireCheck(byte address){
 }
 
 void printResult(bool input){
-    input ? Serial.println("---OK---------------------------------------------\n") : Serial.println("---FAIL-------------------------------------------\n");
+    input ? Serial.println("===OK=============================================\n") : Serial.println("===FAIL===========================================\n");
 }
