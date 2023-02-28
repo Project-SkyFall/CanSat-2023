@@ -61,7 +61,7 @@ void loop() {
 
   //Serial.print(dataread);
   if (openable == true) {
-    if (dataread[l] != (42)) {
+    while (dataread[l] != (42)) {
       while (dataread[l] != (13)) {
         lines[j] += dataread[l];
         l++;

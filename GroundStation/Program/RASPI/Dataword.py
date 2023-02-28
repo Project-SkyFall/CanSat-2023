@@ -2,6 +2,15 @@ import time
 
 adsbmeread = ("")
 gpsread = ("")
+loraread = ("")
+
+def LORAread():
+    global loraread
+
+    with open("/home/pi/Desktop/lora.txt", "r") as file0:
+        if file0.readable():
+            loraread = file0.read()
+    print(loraread)
 
 def ADSBMEread():
     global adsbmeread
@@ -23,7 +32,7 @@ def DataWord():
     dataword = ("")
     dataword += (adsbmeread)
     dataword += (gpsread)
-    #dataword += (loraread)
+    dataword += (loraread)
 
     with open("/home/pi/Desktop/Data.txt", "a") as file3:
         file3.write("\n%s" % dataword)
@@ -34,5 +43,6 @@ def DataWord():
 while True:
     ADSBMEread()
     GPSread()
+    LORAread()
     DataWord()
     time.sleep(1)

@@ -19,7 +19,7 @@ bme280.sea_level_pressure = 1013.25
 # Create the ADC object using the I2C bus
 ads = ADS.ADS1015(i2c)
 # Create differential input between channel 0 and 1
-chan = AnalogIn(ads, ADS.P0, ADS.P1)
+chan = AnalogIn(ads, ADS.P0)
 
 dataword = ("")
 raw = ("")
