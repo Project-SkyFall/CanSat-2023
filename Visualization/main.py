@@ -38,7 +38,7 @@ black = (0,0,0)
 
 # LOAD FONT
 Font = pg.font.Font(r"font/myriad-pro/MyriadPro-Light.otf", 14)
-Font_RT = pg.font.Font(r"font/myriad-pro/MriadPro-Light.otf", 11)
+Font_RT = pg.font.Font(r"font/myriad-pro/MyriadPro-Light.otf", 11)
 
 # SETUP PHASE I
 # COORDINATES FOR "dead or alive" AND "up and down"
@@ -269,7 +269,7 @@ def phase1():
         Text_Recieve = Font.render(recieve, True, black)
         Text_Recieve_Rect = Text_Recieve.get_rect(center=(128,438))
         screen.blit(Text_Recieve, Text_Recieve_Rect)
-        
+        return
     
     
 #    roll -=0.05
