@@ -266,6 +266,8 @@ def phase1():
         yaw = data[19]
     
     except:
+        screen.fill(black)
+        screen.blit(background, background_Rect)
         Text_Recieve = Font.render(recieve, True, black)
         Text_Recieve_Rect = Text_Recieve.get_rect(center=(128,438))
         screen.blit(Text_Recieve, Text_Recieve_Rect)
