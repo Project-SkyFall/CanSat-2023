@@ -37,8 +37,8 @@ phase = 1
 black = (0,0,0)
 
 # LOAD FONT
-Font = pg.font.Font(r"font\myriad-pro\MyriadPro-Light.otf", 14)
-Font_RT = pg.font.Font(r"font\myriad-pro\MyriadPro-Light.otf", 11)
+Font = pg.font.Font(r"font/myriad-pro/MyriadPro-Light.otf", 14)
+Font_RT = pg.font.Font(r"font/myriad-pro/MriadPro-Light.otf", 11)
 
 # SETUP PHASE I
 # COORDINATES FOR "dead or alive" AND "up and down"
@@ -94,15 +94,15 @@ heightMin = 0
 heightMax = 1000
 
 # LOAD IMAGES
-background = pg.image.load(r"GUI_grafika\GG_background2.png")
-RucickaTemp = pg.image.load(r"GUI_grafika\RucickaTemp2.png")
-Alive = pg.image.load(r"GUI_grafika\Active3.png")
-Down = pg.image.load(r"GUI_grafika\Down3.png")
-Dead = pg.image.load(r"GUI_grafika\Inactive3.png")
-RucickaHeight = pg.image.load(r"GUI_grafika\RucickaHeight3.png")
-RucickaCO2O2 = pg.image.load(r"GUI_grafika\RucickaO2CO22.png")
-RucickaPress = pg.image.load(r"GUI_grafika\RucickaPress2.png")
-Up = pg.image.load(r"GUI_grafika\Up3.png")
+background = pg.image.load(r"GUI_grafika/GG_background2.png")
+RucickaTemp = pg.image.load(r"GUI_grafika/RucickaTemp2.png")
+Alive = pg.image.load(r"GUI_grafika/Active3.png")
+Down = pg.image.load(r"GUI_grafika/Down3.png")
+Dead = pg.image.load(r"GUI_grafika/Inactive3.png")
+RucickaHeight = pg.image.load(r"GUI_grafika/RucickaHeight3.png")
+RucickaCO2O2 = pg.image.load(r"GUI_grafika/RucickaO2CO22.png")
+RucickaPress = pg.image.load(r"GUI_grafika/RucickaPress2.png")
+Up = pg.image.load(r"GUI_grafika/Up3.png")
 
 # GET RECTS
 background_Rect = background.get_rect()
@@ -168,7 +168,7 @@ def phase1():
         print("chyba cteni souboru")
         return
 
-    if (line_pre != None) and (line = line_pre):
+    if (line_pre != None) and (line == line_pre):
         print("data shodna s predchozimi")
         return
 
@@ -233,37 +233,44 @@ def phase1():
 #            data[6+i] = 0
 
     # TODO PARSE AND ASING DATA
-    press = data[0]
+    try:
+        press = data[0]
     
-    temp = data[1]
+        temp = data[1]
 
-    co2 = data[2]
+        co2 = data[2]
 
-    o2 = data[3]
+        o2 = data[3]
 
-    height = data[4]
+        height = data[4]
 
-    speed = data[5]
+        speed = data[5]
 
-    dORa0 = data[6]
-    dORa1 = data[7]
-    dORa2 = data[8]
-    dORa3 = data[9]
-    dORa4 = data[10]
-    dORa5 = data[11]
-    dORa6 = data[12]
-    dORa7 = data[13]
+        dORa0 = data[6]
+        dORa1 = data[7]
+        dORa2 = data[8]
+        dORa3 = data[9]
+        dORa4 = data[10]
+        dORa5 = data[11]
+        dORa6 = data[12]
+        dORa7 = data[13]
 
-    humidity = data[14]
+        humidity = data[14]
 
-    transfer = data[15]
+        transfer = data[15]
 
-    battery = data[16]
+        battery = data[16]
 
-    roll = data[17]
-    pitch = data[18]
-    yaw = data[19]
-
+        roll = data[17]
+        pitch = data[18]
+        yaw = data[19]
+    
+    except:
+        Text_Recieve = Font.render(recieve, True, black)
+        Text_Recieve_Rect = Text_Recieve.get_rect(center=(128,438))
+        screen.blit(Text_Recieve, Text_Recieve_Rect)
+        
+    
     
 #    roll -=0.05
 #    pitch -=0.05
@@ -403,10 +410,6 @@ def phase1():
 
     Text_Sent = Font.render(sent, True, black)
     Text_Sent_Rect = Text_Sent.get_rect(center=(128,374))
-
-    Text_Recieve = Font.render(recieve, True, black)
-    Text_Recieve_Rect = Text_Recieve.get_rect(center=(128,438))
-    
     
     
     # SHOW TEXTS AND DIALS
