@@ -413,6 +413,9 @@ def phase1():
     Text_Sent = Font.render(sent, True, black)
     Text_Sent_Rect = Text_Sent.get_rect(center=(128,374))
     
+    Text_Recieve = Font.render(recieve, True, black)
+    Text_Recieve_Rect = Text_Recieve.get_rect(center=(128,438))
+    
     
     # SHOW TEXTS AND DIALS
     screen.blits(blit_sequence=((Text_Press, Text_Press_Rect),
