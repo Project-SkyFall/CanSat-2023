@@ -1,4 +1,4 @@
-20354759544080005
+20364838813807695
 1Knihovna
 2989
 
@@ -42,12 +42,26 @@ ECX-31B
 2
 2
 1Knihovna
+ESP32-DevKitM-1
+
+
+0
+34
+34
+1Knihovna
 Hard_Jumper
 
 
 0
 2
 2
+1Knihovna
+JS5208
+
+
+0
+6
+6
 1Knihovna
 JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical
 JST PH series connector, B2B-PH-K (http://www.jst-mfg.com/product/pdf/eng/ePH.pdf), generated with kicad-footprint-generator
@@ -126,6 +140,13 @@ mounting hole 3.2mm no annular m3
 0
 0
 1Knihovna
+OLED-SPI
+
+
+0
+7
+7
+1Knihovna
 PCM12SMTR
 
 
@@ -146,6 +167,20 @@ Through hole socket strip THT 2x04 2.54mm double row
 0
 8
 8
+1Knihovna
+RFM96W-breakout-board
+
+
+0
+14
+14
+1Knihovna
+R_0207
+
+
+0
+2
+2
 1Knihovna
 R_0805_2012Metric
 Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
@@ -244,6 +279,13 @@ Connector
 0
 20
 17
+1Knihovna
+WS2811_SMD
+
+
+0
+4
+4
 1Knihovna
 XDCR_SCD41-D-R2
 

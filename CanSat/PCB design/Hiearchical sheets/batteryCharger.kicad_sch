@@ -1473,7 +1473,7 @@
   )
 
   (text "https://cz.mouser.com/c/passive-components/inductors-chokes-coils/power-inductors-smd/?inductance=2.2%20uH&maximum%20dc%20current=2.5%20A~~-&package%20%2F%20case=7%20mm%20x%206.5%20mm%20x%204.5%20mm~~7.8%20mm%20x%207.6%20mm%20x%202.9%20mm&shielding=Shielded&rp=passive-components%2Finductors-chokes-coils%2Fpower-inductors-smd%7C~Maximum%20DC%20Current%7C~Package%20%2F%20Case"
-    (at 94.615 40.005 0)
+    (at -26.035 -5.08 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 0fa30f12-1b07-4290-884d-fb2b60823172)
   )
@@ -1482,7 +1482,7 @@
     (uuid 1cbea540-74af-4569-bb3d-46a2c098fa4f)
   )
   (text "https://cz.mouser.com/ProductDetail/Stanley-Electric/FHD1105P-TR?qs=sGAEpiMZZMvyj6n1w4pZD6eAxfjFR14DuOtrz2vP2AZZWKBixkD4kA%3D%3D"
-    (at 123.825 127 0)
+    (at 311.15 127 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 26d64db5-fc26-40ba-a6fd-d6267434a02d)
   )
@@ -1516,7 +1516,7 @@
     (uuid f3707092-f495-4a99-bab0-a6ddd0960a0e)
   )
   (text "https://cz.mouser.com/ProductDetail/Stanley-Electric/FHR1105P-TR?qs=sGAEpiMZZMvyj6n1w4pZD6eAxfjFR14DZeBiTTt6g8o1Gaj5fmCdbQ%3D%3D"
-    (at 123.825 128.905 0)
+    (at 311.15 128.905 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid f4b2b837-71d8-4a36-a592-bdbb7d0a7dc5)
   )
