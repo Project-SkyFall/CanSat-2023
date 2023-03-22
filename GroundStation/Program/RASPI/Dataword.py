@@ -33,9 +33,9 @@ def DataWord():
     dataword += (adsbmeread)
     dataword += (gpsread)
     dataword += (loraread)
-
-    with open("/home/pi/Desktop/Data.txt", "a") as file3:
-        file3.write("\n%s" % dataword)
+    # opravit společně s lora transmit
+    #with open("/home/pi/Desktop/Data.txt", "a") as file3:
+    #    file3.write("\n%s" % dataword)
         
 
     print(dataword)
