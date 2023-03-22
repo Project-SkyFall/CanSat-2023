@@ -50,7 +50,7 @@ rfm9x = adafruit_rfm9x.RFM9x(spi, CS, RESET, RADIO_FREQ_MHZ)
 # You can however adjust the transmit power (in dB).  The default is 13 dB but
 # high power radios like the RFM95 can go up to 23 dB:
 rfm9x.tx_power = 23
-rfm9x._write_u8(0xB9, 0x60)
+rfm9x._write_u8(0xB9, 0xFF)
 
 
 # configure the interrupt pin and event handling.
