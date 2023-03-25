@@ -5,6 +5,7 @@
 
 class MyTime{
     public:
+    MyTime(uint8_t address);
     bool setup(bool verbose = false);
     void printData();
     void getData();

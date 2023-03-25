@@ -26,7 +26,7 @@ MySD sd(26);
 File myFile;
 MyServer server(80);
 MyWiFi wifi("Project-SkyFall", "1234abcd");
-MyTime rtc;
+MyTime rtc(0x68);
 MyOxygen oxygen(36);
 MyDS18B20 ds18(&oneWire, 4);
 MyNeo neo(16, 10, NEO_GRB + NEO_KHZ800);

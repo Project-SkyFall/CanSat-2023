@@ -2,11 +2,15 @@
 
 #include "myTime.h"
 
+MyTime::MyTime(uint8_t address):
+    _address(address){
+    }
+
 bool MyTime::setup(bool verbose){
     verbose ? Serial.println("---RTC setup--------------------------------------") : 0;
 
     //getData();
-    wireCheck(0x68) ? Serial.println("I2C ok") : Serial.println("I2C not ok");
+    wireCheck(_address) ? Serial.println("I2C ok") : Serial.println("I2C not ok");
 
     status = Status::status_OK;
     return true;
@@ -23,7 +27,6 @@ void MyTime::getData(){
         second = 0;
         minute++;
     }
-    
 
     date_string = ((String)day + "." + (String)month + "." + (String)year);
     dateTime_string = ((String)day + "." + (String)month + "." + (String)year + "-" + (String)hour + ":" + (String)minute + ":" + (String)second);
