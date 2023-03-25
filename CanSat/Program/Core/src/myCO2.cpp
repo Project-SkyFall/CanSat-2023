@@ -16,7 +16,7 @@ byte MyCO2::setup(bool verbose){
         return false;
     }
 
-    if(!startPeriodicMeasurement() != 0){
+    if(startPeriodicMeasurement() != 0){
         isWorking = IsWorking::isWorking_FALSE;
         return false;
     }
