@@ -6,8 +6,9 @@
 #include <WebServer.h>
 #include <ESPmDNS.h>
 
-extern char ssid[];
-extern char password[];
+
+/*extern char ssid[];
+extern char password[];*/
 
 class MyWiFi : public WiFiClass{
     public:

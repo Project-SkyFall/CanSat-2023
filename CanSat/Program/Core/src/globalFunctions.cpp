@@ -1,8 +1,8 @@
 #include "globalVars.h"
 
-bool wireCheck(byte address){
-    Wire.beginTransmission(address);
-    byte val = Wire.endTransmission();
+bool wireCheck(byte address, TwoWire &theWire){
+    theWire.beginTransmission(address);
+    byte val = theWire.endTransmission();
     return (val == 0 ? true : false);
 }
 

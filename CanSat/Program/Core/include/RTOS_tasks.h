@@ -22,7 +22,8 @@ void isrHandleDioRise(void *pvParameters);
 void gpsGetDataTask(void *pvParameters);
 void gpsFeedObjectTask(void *pvParameters);
 
-void myTaskResume(TaskHandle_t taskHandle);
+void ds18getData(void *pvParameters);
+void gpsGetData(void *pvParameters);
 
 extern TaskHandle_t runServer_handle;
 extern TaskHandle_t printData_hadle;
@@ -32,6 +33,8 @@ extern TaskHandle_t getData_task;
 extern TaskHandle_t runNeo_handle;
 extern TaskHandle_t isrHandleDioRise_handle;
 extern TaskHandle_t loraCheckTxDone_handle;
+extern TaskHandle_t ds18getData_handle;
+extern TaskHandle_t gpsGetData_handle;
 
 extern TickType_t getData_lastTime;
 extern TickType_t refreshRate;

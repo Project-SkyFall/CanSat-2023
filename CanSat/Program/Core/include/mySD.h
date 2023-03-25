@@ -21,7 +21,10 @@ class MySD{
     uint16_t postfix;
     //String postfix;
     String path;
-    Status status;
+
+    Status status = Status::status_NACK;
+    Mode mode = Mode::mode_RUN;
+    IsWorking isWorking = IsWorking::isWorking_FALSE;
 
     const uint8_t& cs = _cs;
 };

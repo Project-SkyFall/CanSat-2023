@@ -13,15 +13,6 @@
 #include "myNeo.h"
 #include "gps.h"
 
-void myTaskResume(TaskHandle_t taskHandle){
-    try{
-        vTaskResume(taskHandle);
-    }
-    catch(...){
-        Serial.println("Could not resume task");
-    }
-}
-
 void controlTask(void *pvParameters){
     while(true){
         !digitalRead(RUN_SEVER_PIN) ? server.mode(true) : server.mode(false);
@@ -32,17 +23,30 @@ void controlTask(void *pvParameters){
 void getData(void *pvParameters){
     getData_lastTime = xTaskGetTickCount();
     while(true){
+
+        rtc.status = Status::status_NACK;
+        bme.status = Status::status_NACK;
+        gps.status = Status::status_NACK;
+        oxygen.status = Status::status_NACK;
+        ina.status = Status::status_NACK;
+        //ds18.status = Status::status_NACK;
+        scd.status = Status::status_NACK;
+        lora.status = Status::status_NACK;
+        sd.status = Status::status_NACK;
+
+        vTaskResume(ds18getData_handle);
+        vTaskResume(gpsGetData_handle);
         rtc.getData();
         bme.getData();
-        //gps.getData();
+        gps.getData();
         oxygen.getData();
         ina.getData();
-        ds18.getData();
         scd.getData();
+
         vTaskResume(loraSend_handle);
         vTaskResume(saveData_handle);
-        xTaskDelayUntil(&getData_lastTime, refreshRate/portTICK_PERIOD_MS);
         vTaskResume(printData_hadle);
+        xTaskDelayUntil(&getData_lastTime, refreshRate/portTICK_PERIOD_MS);
     }
 }
 
@@ -59,14 +63,34 @@ void printData(void *pvParameters){
         ina.printData();
         ds18.printData();
         scd.printData();
+        Serial.print(analogRead(37)); Serial.println(" V");
+
+        Serial.println();
 
         sd.printStatus();
         lora.printStatus();
+
+        Serial.println();
 
         server.printStatus();
     }
 }
 
+void ds18getData(void *pvParameters){
+    while(true){
+        vTaskSuspend(NULL);
+        ds18.status = Status::status_NACK;
+        ds18.getData();
+    }
+}
+
+void gpsGetData(void *pvParameters){
+    while(true){
+        vTaskSuspend(NULL);
+        gps.status = Status::status_NACK;
+        gps.getData();
+    }
+}
 
 void runServer(void *pvParameters){
     vTaskSuspend(NULL);
@@ -79,9 +103,11 @@ void runServer(void *pvParameters){
 void saveData(void *pvParameters){
     while(true){
         vTaskSuspend(NULL);
-        xSemaphoreTake(spiSemaphore_hadle, portMAX_DELAY);
-        sd.save();
-        xSemaphoreGive(spiSemaphore_hadle);
+        sd.status = Status::status_NACK;
+        if(xSemaphoreTake(spiSemaphore_hadle, refreshRate/portTICK_PERIOD_MS)){
+            sd.save();
+            xSemaphoreGive(spiSemaphore_hadle);
+        }
     }
 }
 
@@ -101,9 +127,6 @@ void runNeo(void *pvParameters){
 void isrHandleDioRise(void *pvParameters){
     while(true){
         vTaskSuspend(NULL);
-        if(xSemaphoreTake(spiSemaphore_hadle, portMAX_DELAY)){
-            lora.handleDio0Rise();
-            xSemaphoreGive(spiSemaphore_hadle);
-        }
+        lora.handleDio0Rise();
     }
 }

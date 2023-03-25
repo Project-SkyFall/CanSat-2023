@@ -15,67 +15,69 @@
 #include "myCO2.h"
 #include "myBNO.h"
 
-MySD::MySD(uint8_t cs){
-    _cs = cs;
+MySD::MySD(uint8_t cs):
+    _cs(cs){
 }
 
 bool MySD::setup(bool verbose){
-    verbose ? Serial.println("---SDc setup-------------------------------------") : 0;
-
     static bool firstTime = true;
+    verbose ? Serial.println("---SDc setup-------------------------------------") : 0;
 
     if(!firstTime){
         SD.end();
     }
 
-    while(!SD.begin(_cs)){
-        byte i;
-        i++;
-        if(i > 5){
-            status = Status::status_FAIL;
-            return false;
-        }
+    if(!SD.begin(_cs)){
+        isWorking = IsWorking::isWorking_FALSE;
+        return false;
     }
 
     if(!firstTime){
-        status = Status::status_OK;
+        isWorking = IsWorking::isWorking_TRUE;
         return true;
     }
 
+    firstTime = false;
+    
     while(true){
-        firstTime = false;
         postfix++;
         path = ("/datasaves/" + rtc.date_string + "/Project SkyFall-CanSat 2023 - " + rtc.date_string + " - " + postfix + ".csv");
         if(!SD.exists(path)){
             break;
         }
     }
-    Serial.print("Creating data file: ");
+    verbose ? Serial.print("Creating data file: "): 0;
     myFile = SD.open(path, FILE_WRITE, true);
     if(!myFile){
-        Serial.println("FAIL");
+        verbose ? Serial.println("FAIL") : 0;
+        isWorking = IsWorking::isWorking_FALSE;
         return false;
     }
     myPrint("Timestamp");
     myPrint("Temperature"); myPrint("Pressure"); myPrintln("Humidity");
 
     myFile.close();
-    Serial.println(path);
+    verbose ? Serial.println(path) : 0;
     
-    status = Status::status_OK;
+    isWorking = IsWorking::isWorking_TRUE;
     return true;
 }
 
 bool MySD::save(){
-    if(status == Status::status_FAIL && !setup()){
-        //Serial.println("SD card disconnected");
-        return false;
+
+    status = Status::status_NACK;
+
+    if(isWorking == IsWorking::isWorking_FALSE){
+        if(!setup()){
+            status = Status::status_FAIL;
+            return false;
+        }
     }
-    //Serial.print("Saving data: ");
+
     myFile = SD.open(path, FILE_WRITE);
     if(!myFile){
+        isWorking = IsWorking::isWorking_FALSE;
         status = Status::status_FAIL;
-        //Serial.println("FAIL");
         return false;
     }
 
@@ -83,7 +85,6 @@ bool MySD::save(){
     myPrint(bme.temperature); myPrint(bme.pressure); myPrintln(bme.humidity);
 
     myFile.close();
-    //Serial.println("OK");
 
     status = Status::status_OK;
     return true;
@@ -91,6 +92,10 @@ bool MySD::save(){
 
 void MySD::printStatus(){
     Serial.print("Saving data: ");
+    if(status == Status::status_NACK){
+        Serial.println("NACK");
+        return;
+    }
     status == Status::status_OK ? Serial.println("OK") : Serial.println("FAIL");
 }
 

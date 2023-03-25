@@ -5,7 +5,9 @@
 bool MyTime::setup(bool verbose){
     verbose ? Serial.println("---RTC setup--------------------------------------") : 0;
 
-    getData();
+    //getData();
+    wireCheck(0x68) ? Serial.println("I2C ok") : Serial.println("I2C not ok");
+
     status = Status::status_OK;
     return true;
 }
@@ -25,6 +27,8 @@ void MyTime::getData(){
 
     date_string = ((String)day + "." + (String)month + "." + (String)year);
     dateTime_string = ((String)day + "." + (String)month + "." + (String)year + "-" + (String)hour + ":" + (String)minute + ":" + (String)second);
+
+    status = Status::status_OK;
 }
 
 void MyTime::printData(){
@@ -37,5 +41,10 @@ void MyTime::printData(){
         Serial.println("FAILED");
         return;
     }
+    else if(status == Status::status_NACK){
+        Serial.println("NACK");
+        return;
+    }
+
     Serial.println(dateTime_string);
 }

@@ -75,9 +75,10 @@
 
 #define MAX_PKT_LENGTH           255
 
-MyLora::MyLora(SPIClass* bus, double frequency, uint8_t cs, uint8_t reset, uint8_t dio0, uint8_t id):
+MyLora::MyLora(SPIClass* bus, double frequency, uint8_t cs, uint8_t reset, uint8_t dio0, uint8_t id, uint8_t txPower):
     _spiSettings(LORA_DEFAULT_SPI_FREQUENCY, MSBFIRST, SPI_MODE0),
-    _spi(bus){
+    _spi(bus),
+    _txPower(txPower){
     _frequency = frequency;
     _cs = cs;
     _reset = reset;
@@ -86,42 +87,39 @@ MyLora::MyLora(SPIClass* bus, double frequency, uint8_t cs, uint8_t reset, uint8
 }
 
 bool MyLora::setup(bool verbose){
-    status = Status::status_FAIL;
     verbose ? Serial.println("---LORA setup-------------------------------------") : 0;
 
     setPins(_cs, _reset, _dio0);
-    if(!begin(_frequency)) return false; 
+    if(!begin(_frequency)){
+        isWorking = IsWorking::isWorking_FALSE;
+        return false;
+    }
     
+    enableCrc();
     setSyncWord(_id);
-    onReceive(onReceive_callback);
+    setTxPower(_txPower);
+    //onReceive(onReceive_callback);
     //onTxDone(onTxDone_callback);
     receive();
 
-    status = Status::status_OK;
+    isWorking = IsWorking::isWorking_TRUE;
     return true;
 }
 
-void MyLora::dumpRegisters(Stream& out)
-{
-  for (int i = 0; i < 128; i++) {
-    out.print("0x");
-    out.print(i, HEX);
-    out.print(": 0b");
-    out.println(readRegister(i), BIN);
-  }
-}
-
-template <typename T> void MyLora::myPrint(T input){
-    print(input); print(";");
-}
-
 void MyLora::sendData(){
-    static int cycle;
-    if(status == Status::status_FAIL){
-        if(!setup()) return;
+    static uint16_t cycle;
+
+    status = Status::status_NACK;
+
+    if(isWorking == IsWorking::isWorking_FALSE){
+        if(!setup()){
+            status = Status::status_FAIL;
+            return;
+        }
     }
 
     if(!beginPacket()){
+        isWorking = IsWorking::isWorking_FALSE;
         status = Status::status_FAIL;
         return;
     }
@@ -140,7 +138,7 @@ void MyLora::sendData(){
 
     receive();
 
-    status = Status::status_OK;
+    //status = Status::status_OK;
 }
 
 void MyLora::printStatus(){
@@ -153,6 +151,20 @@ void MyLora::printStatus(){
     lora.stopCheckTxDone = true;
 }
 
+void MyLora::dumpRegisters(Stream& out)
+{
+  for (int i = 0; i < 128; i++) {
+    out.print("0x");
+    out.print(i, HEX);
+    out.print(": 0b");
+    out.println(readRegister(i), BIN);
+  }
+}
+
+/*template <typename T> void MyLora::myPrint(T input){
+    print(input); print(";");
+}*/
+
 bool MyLora::checkTxDone(){
     if(readRegister(REG_IRQ_FLAGS) & IRQ_TX_DONE_MASK) {
         // clear IRQ's
@@ -162,19 +174,6 @@ bool MyLora::checkTxDone(){
     return false;
 }
 
-void MyLora::onReceive(void(*callback)(int)){
-
-    if(callback){
-        pinMode(_dio0, INPUT);
-        attachInterrupt(_dio0, onDio0Rise, RISING);
-        Serial.println("DIO0 interupt attached");
-    }
-    else{
-        detachInterrupt(_dio0);
-        Serial.println("DIO0 interupt detached");
-    }
-
-}
 
 int MyLora::endPacket(bool async)
 {
@@ -195,6 +194,19 @@ int MyLora::endPacket(bool async)
   }
 
   return 1;
+}
+
+void MyLora::onReceive(void(*callback)(int)){
+    _onReceive = callback;
+    if(callback){
+        pinMode(_dio0, INPUT);
+        attachInterrupt(_dio0, onDio0Rise, RISING);
+        Serial.println("DIO0 interupt attached");
+    }
+    else{
+        detachInterrupt(_dio0);
+        Serial.println("DIO0 interupt detached");
+    }
 }
 
 void MyLora::onTxDone(void(*callback)()){
@@ -219,6 +231,9 @@ void MyLora::handleDio0Rise(){
     Serial.println("Interupt?!");
     uint8_t irqFlags = readRegister(0x12);
     writeRegister(REG_IRQ_FLAGS, irqFlags);
+    if (_onReceive) {
+        _onReceive(10);
+    }
 }
 
 uint8_t MyLora::readRegister(uint8_t address){
@@ -231,13 +246,15 @@ void MyLora::writeRegister(uint8_t address, uint8_t value){
 
 void onReceive_callback(int packetSize){
     if(packetSize == 0) return;
+    Serial.println("Doing some shit in onReceive_callback");
     // Header
-    uint8_t id = lora.read();
+    //uint8_t id = lora.read();
     // Message
     String incoming = "";
-    while(lora.available()){
+    for(int i=0; i < 3; i++){
         incoming += (char)lora.read();
     }
+    Serial.println(incoming);
 }
 
 void onTxDone_callback(){

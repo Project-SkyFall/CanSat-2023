@@ -16,10 +16,12 @@ bool MyOxygen::setup(bool verbose){
 }
 
 void MyOxygen::getData(){
-    if(status == Status::status_SLEEP) return;
-
     int val = analogRead(_pin);
-
+    if(val < 500){
+        status = Status::status_FAIL;
+        return;
+    }
+    status = Status::status_OK;
     concentration = map(val, 0, 4095, 0, 25);
 }
 
@@ -31,6 +33,10 @@ void MyOxygen::printData(){
     }
     else if(status == Status::status_FAIL){
         Serial.println("FAILED");
+        return;
+    }
+    else if(status == Status::status_NACK){
+        Serial.println("NACK");
         return;
     }
 

@@ -2,37 +2,50 @@
 
 #include "gps.h"
 
+MyGPS::MyGPS(byte address):
+  _address(address)
+  {}
+
 bool MyGPS::setup(bool verbose){
+  verbose ? Serial.println("---GPS setup--------------------------------------") : 0;
 
-    verbose ? Serial.println("---GPS setup--------------------------------------") : 0;
+  if(!begin(Wire1, _address)){
+    isWorking = IsWorking::isWorking_FALSE;
+    return false;
+  }
 
-    if(!begin()) return false;
+  setI2COutput(COM_TYPE_UBX); //Set the I2C port to output UBX only (turn off NMEA noise)
+  saveConfigSelective(VAL_CFG_SUBSEC_IOPORT); //Save (only) the communications port settings to flash and BBR
 
-    setI2COutput(COM_TYPE_UBX); //Set the I2C port to output UBX only (turn off NMEA noise)
-    saveConfigSelective(VAL_CFG_SUBSEC_IOPORT); //Save (only) the communications port settings to flash and BBR
-
-    return true;
+  isWorking = IsWorking::isWorking_TRUE;
+  return true;
 }
 
 void MyGPS::getData(){
-
-  if(status == Status::status_SLEEP) return;
-
-  if(wireCheck(address) != 0){
-      status = Status::status_FAIL;
-      return;
+  if(mode == Mode::mode_SLEEP){
+    status = Status::status_SLEEP;
+    return;
   }
 
-  if(status == Status::status_FAIL){
-      setup();
+  if(!wireCheck(_address, Wire1)){
+    isWorking = IsWorking::isWorking_FALSE;
+    status = Status::status_FAIL;
+    return;
+  }
+
+  if(isWorking == IsWorking::isWorking_FALSE){
+    if(!setup()){
+      status = Status::status_FAIL;
       return;
+    }
   }
   
   latitude = getLatitude();
   longitude = getLongitude();
   altitude = getAltitude();
   siv = getSIV();
-  return;
+
+  status = Status::status_OK;
 }
 
 void MyGPS::printData(){
@@ -43,6 +56,10 @@ void MyGPS::printData(){
   }
   else if(status == Status::status_FAIL){
     Serial.println("FAILED");
+    return;
+  }
+  else if(status == Status::status_NACK){
+    Serial.println("NACK");
     return;
   }
 

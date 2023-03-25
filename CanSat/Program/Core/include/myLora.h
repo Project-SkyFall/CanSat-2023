@@ -1,7 +1,9 @@
 #ifndef MYLORA_H
 #define MYLORA_H
 
-#include <LoRa.h>
+#include <LoRa_CanSat.h>
+
+#include "globalVars.h"
 
 #if (ESP8266 || ESP32)
     #define ISR_PREFIX ICACHE_RAM_ATTR
@@ -9,14 +11,14 @@
     #define ISR_PREFIX
 #endif
 
-class MyLora : public LoRaClass{
+class MyLora : public LoRa_CanSat{
     public: 
-    MyLora(SPIClass* bus, double frequency, uint8_t cs, uint8_t reset, uint8_t dio0, uint8_t id);
+    MyLora(SPIClass* bus, double frequency, uint8_t cs, uint8_t reset, uint8_t dio0, uint8_t id, uint8_t txPower = 17);
     bool setup(bool verbose=false);
     void sendData();
     void printStatus();
 
-    int endPacket(bool async);
+    int endPacket(bool async=false);
 
     void onReceive(void(*callback)(int));
     void onTxDone(void(*callback)());
@@ -25,10 +27,14 @@ class MyLora : public LoRaClass{
 
     bool checkTxDone();
     
-    template <typename T> void myPrint(T input);
+    //template <typename T> void myPrint(T input);
     void dumpRegisters(Stream& out);
 
-    Status status;
+    Status status = Status::status_NACK;
+    Mode mode = Mode::mode_RUN;
+    IsWorking isWorking = IsWorking::isWorking_FALSE;
+
+
     bool isTxDone;
     bool stopCheckTxDone;
 
@@ -42,6 +48,7 @@ class MyLora : public LoRaClass{
     uint8_t _reset;
     uint8_t _dio0;
     uint8_t _id;
+    uint8_t _txPower;
     
     void (*_onReceive)(int);
     void (*_onTxDone)();

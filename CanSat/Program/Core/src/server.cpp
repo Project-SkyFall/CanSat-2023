@@ -4,8 +4,9 @@
 #include "mySD.h"
 #include "RTOS_tasks.h"
 
-char ssid[] = "Project-SkyFall";
-char password[] = "1234abcd";
+/*const char ssid[] = "Project-SkyFall";
+const char password[] = "1234abcd";*/
+const char defaultRoute[] = "/server/";
 
 MyWiFi::MyWiFi(char *ssid, char *password):
     _ssid(ssid),
@@ -26,7 +27,6 @@ bool MyWiFi::setup(bool verbose){
     return true;
 }
 
-char* defaultRoute = "/server/";
 
 bool MyServer::setup(bool verbose){
     verbose ? Serial.println("---Server setup-----------------------------------") : 0;
@@ -78,7 +78,7 @@ void MyServer::mode(bool run){
         if(wifi.status != Status::status_OK){
             wifi.setup(true);
             server.setup(true);
-            myTaskResume(runServer_handle);
+            vTaskResume(runServer_handle);
 
             wifi.status = Status::status_OK;
         }

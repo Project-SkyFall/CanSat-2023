@@ -101,9 +101,9 @@ uint32_t MyNeo::translateColor(Status status, byte brightness){
 
   if(brightness > 100) brightness = 100;
 
-  if(status == Status::status_FAIL) return Adafruit_NeoPixel::Color(255*brightness/100, 0, 0, 0);
+  if(status == Status::status_FAIL) return Adafruit_NeoPixel::Color(255*brightness/100, 0, 0);
 
-  if(status == Status::status_OK) return Adafruit_NeoPixel::Color(0, 255*brightness/100, 0, 0);
+  if(status == Status::status_OK) return Adafruit_NeoPixel::Color(0, 255*brightness/100, 0);
 
   if(status == Status::status_SLEEP) return Adafruit_NeoPixel::Color(0, 180*brightness/100, 255*brightness/100);
 

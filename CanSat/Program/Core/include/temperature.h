@@ -11,7 +11,10 @@ class MyBme : public Adafruit_BME280{
     void getData();
     void printData();
 
-    Status status;
+    Status status = Status::status_NACK;
+    Mode mode = Mode::mode_RUN;
+    IsWorking isWorking = IsWorking::isWorking_FALSE;
+    
     float temperature;
     float pressure;
     float humidity;
@@ -28,7 +31,9 @@ class MyDS18B20 : public DallasTemperature{
     void getData();
     void printData();
 
-    Status status;
+    Status status = Status::status_NACK;
+    Mode mode = Mode::mode_RUN;
+    IsWorking isWorking = IsWorking::isWorking_FALSE;
     float temperature;
 
     private:

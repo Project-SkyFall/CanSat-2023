@@ -12,9 +12,15 @@ class MyCO2 : public SensirionI2CScd4x{
     void printData();
 
     Status status;
+    Mode mode;
+    IsWorking isWorking;
+
+    uint16_t co2;
+    float temperature, humidity;
 
     private:
     uint8_t _address;
+    bool _isDataReady;
 };
 
 extern MyCO2 scd;
