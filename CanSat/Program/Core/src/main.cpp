@@ -37,7 +37,7 @@ MyCO2 scd(0x62);
 TaskHandle_t runServer_handle;
 TaskHandle_t printData_hadle;
 TaskHandle_t saveData_handle;
-TaskHandle_t getData_task;
+TaskHandle_t getData_handle;
 TaskHandle_t loraSend_handle;
 TaskHandle_t runNeo_handle;
 TaskHandle_t isrHandleDioRise_handle;
@@ -94,7 +94,7 @@ void setup(void) {
   xTaskCreate(ds18getData, "DS18B20 get data", 2048, NULL, 3, &ds18getData_handle);
   xTaskCreate(gpsGetData, "GPS get data", 4096, NULL, 3, &gpsGetData_handle);
 
-  xTaskCreate(getData, "Get Data Task", 4096, NULL, 5, &getData_task);
+  xTaskCreate(getData, "Get Data Task", 4096, NULL, 5, &getData_handle);
   xSemaphoreGive(spiSemaphore_hadle)/* ? Serial.println("SPI semaphore released") : Serial.println("SPI semaphore not released")*/;
 
   /*xTaskCreate(
