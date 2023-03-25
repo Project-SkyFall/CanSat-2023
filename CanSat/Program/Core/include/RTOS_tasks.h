@@ -1,6 +1,8 @@
 #ifndef RTOS_TASKS_H
 #define RTOS_TASKS_H
 
+#define pollingDelay 800/portTICK_PERIOD_MS - (xTaskGetTickCount()-getData_lastTime)/portTICK_PERIOD_MS
+
 void controlTask(void *pvParameters);
 
 void printData(void *pvParameters);
@@ -29,7 +31,7 @@ extern TaskHandle_t runServer_handle;
 extern TaskHandle_t printData_hadle;
 extern TaskHandle_t saveData_handle;
 extern TaskHandle_t loraSend_handle;
-extern TaskHandle_t getData_task;
+extern TaskHandle_t getData_handle;
 extern TaskHandle_t runNeo_handle;
 extern TaskHandle_t isrHandleDioRise_handle;
 extern TaskHandle_t loraCheckTxDone_handle;

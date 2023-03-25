@@ -19,29 +19,26 @@ void controlTask(void *pvParameters){
         vTaskDelay(1);
     }
 }
-
 void getData(void *pvParameters){
     getData_lastTime = xTaskGetTickCount();
     while(true){
-
         rtc.status = Status::status_NACK;
         bme.status = Status::status_NACK;
         gps.status = Status::status_NACK;
         oxygen.status = Status::status_NACK;
         ina.status = Status::status_NACK;
-        //ds18.status = Status::status_NACK;
         scd.status = Status::status_NACK;
-        lora.status = Status::status_NACK;
-        sd.status = Status::status_NACK;
 
         vTaskResume(ds18getData_handle);
         vTaskResume(gpsGetData_handle);
         rtc.getData();
         bme.getData();
-        gps.getData();
         oxygen.getData();
         ina.getData();
         scd.getData();
+
+        ulTaskGenericNotifyTake(0, pdTRUE, pollingDelay); // gps
+        //ulTaskGenericNotifyTake(1, pdTRUE, pollingDelay); // ds18 //TODO fix ulTaskFenerciNotifyTake - index 1
 
         vTaskResume(loraSend_handle);
         vTaskResume(saveData_handle);
@@ -76,19 +73,21 @@ void printData(void *pvParameters){
     }
 }
 
-void ds18getData(void *pvParameters){
-    while(true){
-        vTaskSuspend(NULL);
-        ds18.status = Status::status_NACK;
-        ds18.getData();
-    }
-}
-
 void gpsGetData(void *pvParameters){
     while(true){
         vTaskSuspend(NULL);
         gps.status = Status::status_NACK;
         gps.getData();
+        xTaskGenericNotify(getData_handle, 0, 1, eSetBits, 0);
+    }
+}
+
+void ds18getData(void *pvParameters){
+    while(true){
+        vTaskSuspend(NULL);
+        ds18.status = Status::status_NACK;
+        ds18.getData();
+        //xTaskGenericNotify(getData_handle, 1, 1, eSetBits, 0); //TODO fix xTaskGenericNotify - index 1
     }
 }
 
@@ -114,6 +113,7 @@ void saveData(void *pvParameters){
 void loraSend(void *pvParameters){
     while(true){
         vTaskSuspend(NULL);
+        lora.status = Status::status_NACK;
         lora.sendData();
     }
 }
