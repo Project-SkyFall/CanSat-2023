@@ -40,9 +40,9 @@ void MyGPS::getData(){
     }
   }
   
-  latitude = getLatitude();
-  longitude = getLongitude();
-  altitude = getAltitude();
+  latitude = getLatitude()*10^-7;
+  longitude = getLongitude()*10^-7;
+  altitude = getAltitude()*10^3;
   siv = getSIV();
 
   status = Status::status_OK;
