@@ -284,7 +284,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 4bcb574b-6036-4712-b299-acc71bdbe949)
   )
-  (text "R - 0xD1\nW - 0xD0" (at 136.525 72.39 0)
+  (text "I^{2}C address\n0x68" (at 136.525 72.39 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid b2354634-3432-44b7-90f7-6fb900e0c537)
   )
