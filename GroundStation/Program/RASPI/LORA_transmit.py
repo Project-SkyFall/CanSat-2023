@@ -10,7 +10,7 @@ RESET = DigitalInOut(board.D25)
 spi = busio.SPI(board.SCK, MOSI=board.MOSI, MISO=board.MISO)
 rfm9x = adafruit_rfm9x.RFM9x(spi, CS, RESET, 433.0)
 #rfm9x.tx_power = 23
-prev_packet = "Patita"                              #Reset main storing variable
+prev_packet = ""                              #Reset main storing variable
 packet_text = ""
 checked_packet = ""
 final = ""
@@ -24,6 +24,28 @@ ckedit = 0
 uartpacket = ""
 
 rfm9x._write_u8(0xB9, 0xFF)
+
+filecommfile = open('/home/pi/Desktop/filecomm.txt', 'r')
+
+def commfromfile():
+    global packet_text
+    global vysledek
+    global checked_packet
+    
+    line = filecommfile.readline()
+    prev_packet = line.strip()
+    #print(line)
+
+    delka2 = (len(line))
+    packet_text = line[12:delka2 - 3]
+    vysledek = False
+    ControlK()
+    if vysledek == True:
+        checked_packet = packet_text
+        #print(checked_packet)
+    else:
+        print("bad ck")
+    
 
 def uartcomm():
     global uartpacket
@@ -74,7 +96,7 @@ def ControlK():
     for znak in packet_text:
         if a > 0:
             #print (znak)
-            soucet += (ord(znak))
+            soucet += int((ord(znak)))
         if a < 0:
             #print (znak)
             ck += znak
@@ -83,7 +105,8 @@ def ControlK():
     #print (soucet)
     #print (ck)
     try:
-        ckedit = int(ck)    #print (ckedit)
+        ckedit = int(ck)
+        
     except:
         print ("Cant convert CK")
     if ckedit == soucet:
@@ -96,7 +119,6 @@ def ControlK():
         #print("false")
         soucet = 0
         ck = ""
-    
 
     
 
@@ -105,13 +127,14 @@ def LoraReceive():                              #Basic lora function
     global packet_text
     global checked_packet
     global prev_packet                          #Definition of variables
+    global filecomm
     packet = None                               #Variable for storing packets (set to NONE every loop)
 
     packet = rfm9x.receive(with_header=True)    #Listening for packets, Header - first 4 letters of message
 
     if packet != None:
         prev_packet = packet
-
+        #print(prev_packet)
         with open("/home/pi/Desktop/received_data.txt", "a") as file1:
             file1.write("\n%s" % prev_packet)
 
@@ -151,9 +174,13 @@ def LoraSEND():
 
     rfm9x.send(bytes("message number {}".format(text), "UTF-8"))
 while True:
+    commfromfile()
     LoraReceive()
     DataWord()
     uartcomm()
+    
 
 
     #time.sleep(0.0001)
+filecommfile.close()
+
