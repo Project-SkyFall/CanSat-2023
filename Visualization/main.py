@@ -169,7 +169,7 @@ def phase1():
         return
 
     if (line_pre != None) and (line == line_pre):
-        print("data shodna s predchozimi")
+        #print("data shodna s predchozimi")
         return
 
     data_str = line.strip().split(";")
@@ -234,32 +234,32 @@ def phase1():
 
     # TODO PARSE AND ASING DATA
     try:
-        press = data[0]
+        press = data[4]
     
-        temp = data[1]
+        temp = data[3]
 
-        co2 = data[2]
+        co2 = data[8]
 
-        o2 = data[3]
+        o2 = data[21]
 
-        height = data[4]
+        height = data[12]
 
-        speed = data[5]
+        speed = data[13]
 
-        dORa0 = data[6]
-        dORa1 = data[7]
-        dORa2 = data[8]
-        dORa3 = data[9]
-        dORa4 = data[10]
-        dORa5 = data[11]
-        dORa6 = data[12]
-        dORa7 = data[13]
+        dORa0 = data[2]
+        dORa1 = data[16]
+        dORa2 = data[20]
+        dORa3 = data[7]
+        dORa4 = data[1]
+        dORa5 = data[26]
+        dORa6 = data[9]
+        dORa7 = data[44]
 
-        humidity = data[14]
+        humidity = data[5]
 
-        transfer = data[15]
+        transfer = 1000 / data[46]
 
-        battery = data[16]
+        battery = data[6]
 
         roll = data[17]
         pitch = data[18]
@@ -404,7 +404,7 @@ def phase1():
     Text_Humidity = Font.render(str(round(humidity, 1)), True, black)
     Text_Humidity_Rect = Text_Humidity.get_rect(center=(399,200))
     
-    Text_Transfer = Font.render(str(round(transfer)), True, black)
+    Text_Transfer = Font.render(str(round(transfer, 1)), True, black)
     Text_Transfer_Rect = Text_Transfer.get_rect(center=(150,293))
     
     Text_Battery = Font.render(str(round(battery, 1)), True, black)
@@ -462,4 +462,3 @@ while True:
         phase1()
     elif (phase == 0):
         break
-
