@@ -25,7 +25,7 @@ uartpacket = ""
 
 rfm9x._write_u8(0xB9, 0xFF)
 
-filecommfile = open('/home/pi/Desktop/filecomm.txt', 'r')
+#filecommfile = open('/home/pi/Desktop/filecomm.txt', 'r')
 
 def commfromfile():
     global packet_text
@@ -47,35 +47,19 @@ def commfromfile():
         print("bad ck")
     
 
-def uartcomm():
+def Dataword():
     global uartpacket
     global checked_packet
     global final
-    vec = ""
-    slovo = ""
-
-    a = 0
-    delka = (len(checked_packet))
-    for znak in checked_packet:
-        #print ("cw_data2;")
-        if a < 9:
-            slovo += znak
-        if a > 8 and a < (delka - 8) :
-            vec += znak
-        a = a + 1
-    #print(slovo)
-    #print(vec)
-    if slovo == "cw_data1;":
-        final = vec
-    elif slovo == "cw_data2;":
-        final += vec
+    #print(checked_packet)
+    if checked_packet != "":
+        delka = len(checked_packet)
+        final = checked_packet[9:delka - 8]
         print(final)
-        with open("/home/pi/Desktop/Data.txt", "w") as file3:
-            file3.write("%s" % final)
+        with open("/home/pi/Desktop/Lora.txt", "w") as lorafile:
+            lorafile.write("%s" % final)
         final = ""
-    checked_packet = ""
-    
-    
+        checked_packet = ""
 
 def doNothing():
     nothing = True
@@ -135,52 +119,36 @@ def LoraReceive():                              #Basic lora function
     if packet != None:
         prev_packet = packet
         #print(prev_packet)
-        with open("/home/pi/Desktop/received_data.txt", "a") as file1:
-            file1.write("\n%s" % prev_packet)
+        with open("/home/pi/Desktop/LoRaCharsReceived.txt", "a") as errorfile:
+            errorfile.write("\n%s" % prev_packet)
 
         try:
             packet_text = str(prev_packet, "utf-8") #Decoding packet to an UTF-8 symbol package
         except:
             print("error during decoding")
 
-            with open("/home/pi/Desktop/received_data.txt", "a") as file1:
-                file1.write("\nerror during decoding")
+            with open("/home/pi/Desktop/LoRaCharsReceived.txt", "a") as errorfile:
+                errorfile.write("\nerror during decoding")
                 
         finally:
             vysledek = False
             ControlK()
             if vysledek == True:
                 checked_packet = packet_text
-                print(checked_packet)
+                #print(checked_packet)
             else:
                 print("bad ck")
             
-
-def DataWord():
-    global packet_text
-
-    dataword = ("")
-    dataword += ("%s" % packet_text)
-
-    #print (dataword)
-
-    with open("/home/pi/Desktop/lora.txt", "w") as file:
-        if file.writable():
-            file.write(dataword)
-
 def LoraSEND():
     counter = 0
     text = "cw_editRef;2000;"
 
     rfm9x.send(bytes("message number {}".format(text), "UTF-8"))
 while True:
-    commfromfile()
+    #commfromfile()
     LoraReceive()
-    DataWord()
-    uartcomm()
-    
-
+    Dataword()
 
     #time.sleep(0.0001)
-filecommfile.close()
+#filecommfile.close()
 
