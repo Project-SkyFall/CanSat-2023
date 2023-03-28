@@ -37,8 +37,8 @@ phase = 1
 black = (0,0,0)
 
 # LOAD FONT
-Font = pg.font.Font(r"font\myriad-pro\MyriadPro-Light.otf", 14)
-Font_RT = pg.font.Font(r"font\myriad-pro\MyriadPro-Light.otf", 11)
+Font = pg.font.Font(r"font/myriad-pro/MyriadPro-Light.otf", 14)
+Font_RT = pg.font.Font(r"font/myriad-pro/MyriadPro-Light.otf", 11)
 
 # SETUP PHASE I
 # COORDINATES FOR "dead or alive" AND "up and down"
@@ -94,15 +94,15 @@ heightMin = 0
 heightMax = 1000
 
 # LOAD IMAGES
-background = pg.image.load(r"GUI_grafika\GG_background2.png")
-RucickaTemp = pg.image.load(r"GUI_grafika\RucickaTemp2.png")
-Alive = pg.image.load(r"GUI_grafika\Active3.png")
-Down = pg.image.load(r"GUI_grafika\Down3.png")
-Dead = pg.image.load(r"GUI_grafika\Inactive3.png")
-RucickaHeight = pg.image.load(r"GUI_grafika\RucickaHeight3.png")
-RucickaCO2O2 = pg.image.load(r"GUI_grafika\RucickaO2CO22.png")
-RucickaPress = pg.image.load(r"GUI_grafika\RucickaPress2.png")
-Up = pg.image.load(r"GUI_grafika\Up3.png")
+background = pg.image.load(r"GUI_grafika/GG_background2.png")
+RucickaTemp = pg.image.load(r"GUI_grafika/RucickaTemp2.png")
+Alive = pg.image.load(r"GUI_grafika/Active3.png")
+Down = pg.image.load(r"GUI_grafika/Down3.png")
+Dead = pg.image.load(r"GUI_grafika/Inactive3.png")
+RucickaHeight = pg.image.load(r"GUI_grafika/RucickaHeight3.png")
+RucickaCO2O2 = pg.image.load(r"GUI_grafika/RucickaO2CO22.png")
+RucickaPress = pg.image.load(r"GUI_grafika/RucickaPress2.png")
+Up = pg.image.load(r"GUI_grafika/Up3.png")
 
 # GET RECTS
 background_Rect = background.get_rect()
@@ -178,21 +178,22 @@ def phase1():
             print("data shodna s predchozimi")
             return
 
-        data_str = line.strip().split(";")
-        line_pre = line
+        if line != "" :
+            data_str = line.strip().split(";")
+            line_pre = line
 
-        data = []
-        text = False
-        recieve = ""
-        for dat_str in data_str:
-            try:
-                dat = float(dat_str)
-                data.append(dat)
-            except:
-                recieve += dat_str
+            data = []
+            text = False
+            recieve = ""
+            for dat_str in data_str:
+                try:
+                    dat = float(dat_str)
+                    data.append(dat)
+                except:
+                    recieve += dat_str
 
-        print(data)
-        print(recieve)
+            print(data)
+            print(recieve)
 
     
     global press_pre
@@ -301,7 +302,6 @@ def phase1():
 
     transfer = data[51]
     currentAntena = data[52]
-
 
     # CALCULATE LAND IN
     if speed != 0:
@@ -531,6 +531,10 @@ while True:
             sys.exit()
             quit()
         if event.type == pg.KEYDOWN:
+            if event.__dict__["unicode"] == "\x1b":
+                pg.quit()
+                sys.exit
+                quit()
             if event.__dict__["unicode"] == "\x08":
                 sent = sent[0:-1]
             elif event.__dict__["unicode"] == '\r':
