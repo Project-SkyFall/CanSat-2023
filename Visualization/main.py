@@ -408,7 +408,13 @@ def phase1():
     for rect_to_show in rects_to_show:
         rect = pg.draw.polygon(screen, (220,220,220), rect_to_show)
         line = pg.draw.polygon(screen, black, rect_to_show, 1)
-        
+
+    # TIME RECREATION
+    if test:
+        time = 311299235959.0
+    time = str(int(time))
+    RT = (time[6:8] + ":" + time[8:10] + ":" + time[10:12] +
+          "        " + time[0:2] + "." + time[2:4] + ".20" + time[4:6])
 
     # TEXTS
     Text_Name = Font.render(r"X-Sat", True, black)
@@ -441,7 +447,7 @@ def phase1():
     Text_LandIn = Font.render(str(round(landIn, 1)), True, black)
     Text_LandIn_Rect = Text_LandIn.get_rect(center=(657,430))
 
-    Text_RT = Font_RT.render(r"00:00:00    00.00.0000", True, black)
+    Text_RT = Font_RT.render(RT, True, black)
     Text_RT_Rect = Text_RT.get_rect(center=(650, 451))
 
     Text_Humidity = Font.render(str(round(humidity, 1)), True, black)
@@ -533,7 +539,7 @@ while True:
         if event.type == pg.KEYDOWN:
             if event.__dict__["unicode"] == "\x1b":
                 pg.quit()
-                sys.exit
+                sys.exit()
                 quit()
             if event.__dict__["unicode"] == "\x08":
                 sent = sent[0:-1]
@@ -548,4 +554,3 @@ while True:
         phase1()
     elif (phase == 0):
         break
-
