@@ -4,6 +4,8 @@ import matplotlib as mpl
 import math
 from Model import Valec
 import time
+import Plots
+import pygame.camera as pgCam
 
 #ROTATE
 def new_pos(mini, maxi, miniPos, maxiPos, value, rotation=False):
@@ -28,15 +30,16 @@ path = "/home/pi/Desktop/Data.txt"
 command_path = "/home/pi/Desktop/Command.txt"
 
 # SETUP
-flags = pg.FULLSCREEN
+flags = (pg.FULLSCREEN)
 size = (800, 480)
 screen = pg.display.set_mode(size, flags)
-pg.font.init()
+
 
 phase = 1
 black = (0,0,0)
 
 # LOAD FONT
+pg.font.init()
 Font = pg.font.Font(r"font/myriad-pro/MyriadPro-Light.otf", 14)
 Font_RT = pg.font.Font(r"font/myriad-pro/MyriadPro-Light.otf", 11)
 
@@ -143,8 +146,21 @@ recieve = ""
 press_pre = None
 temp_pre = None
 
+
+
+# SETUP PHASE II
+# LOAD IMAGES
+background2 = pg.image.load(r"GUI_grafika2/GG_background2.png")
+background_Rect2 = background2.get_rect()
+
+# DATA PATH
+data_path = "/home/pi/Desktop/Backup-data"
+
+# SET SCALE FOR CHARTS
+scale = 2/5
+
 # TEST
-test = False
+test = True
 if test:
     j = 0
     dolu0 = False
@@ -155,6 +171,18 @@ if test:
 
 # SET PRE TEXT VALUE
 line_pre = None
+
+# SETUP CAM
+pgCam.init()
+camList = pgCam.list_cameras()
+print("Cams:", camList)
+numOfCam = input("Insert Cam Number: ")
+
+camsize = (120,90)
+cam = pgCam.Camera(camList[int(numOfCam)], camsize)
+cam.start()
+Cam_Rect = pg.Rect((580,50), camsize, border_radius=10)
+
 
 # PHASE I
 def phase1():
@@ -492,6 +520,8 @@ def phase1():
     Text_vteE = Font_RT.render(str(round(vteE, 1)), True, black)
     Text_vteE_Rect = Text_vteE.get_rect(center=(744, 255))
 
+    # GET CAM IMAGE
+    Cam_Image = pg.transform.smoothscale_by(cam.get_image(), camsize[0]/640)
     
     # SHOW TEXTS AND DIALS
     screen.blits(blit_sequence=((Text_Name, Text_Name_Rect),
@@ -524,25 +554,101 @@ def phase1():
                                 (RucickaPress2, RucickaPress_Rect2),
                                 (RucickaCO22, RucickaCO2_Rect2),
                                 (RucickaO22, RucickaO2_Rect2),
-                                (RucickaHeight, RucickaHeight_Rect2)))
+                                (RucickaHeight, RucickaHeight_Rect2),
+                                (Cam_Image, Cam_Rect)))
     pg.display.flip()
 
+def ToPhaseII():
+        # LOAD DATA
+    global header
+    global recieved
+    data = []
+    if test:
+        header = ["random","random","random","random","random","oxygen",
+                  "co2", "temperature", "pressure", "lightIntensity",
+                  "humidity","asx0","asx1","asx2","asx3","asx4","asx5",
+                  "asx6","asx7","asx8","asx9","asx10","asx11","asx12","asx13",
+                  "asx14","asx15","asx16","asx17"]
+        for i in range(40):
+            data.append([])
+            for j in range(29):
+                data[i].append(j*j-i*j+i)
+    else:
+        try:
+            fh = open(data_path, "r")
+        except:
+            print("chyba cteni souboru 2")
+            return
+        line = fh.readline()
+        header = line.strip().split(';')
+        while ((line == fh.readline()) != None):
+            strline = line.strip().split(';')
+            intline = []
+            for string in strline:
+                intline.append(float(string))
+            data.append(intline)
+        fh.close()
+
+    global dataInv
+    dataInv = []
+    recieved = []
+    for i in range(len(header)):
+        dataInv.append([])
+        recieved.append(False)
+
+    for i in range(len(data)):
+        for j in range(len(data[0])):
+            if not recieved[j]:
+                if (data[i][j] != '0.0') and (data[i][j] != '0'):
+                    recieved[j] = True
+            data[i][j] = float(data[i][j])
+            dataInv[j].append(data[i][j])
+
+#    print(data)
+ #   print(dataInv)
+  #  print(recieved)
+
+    Plots.plots(dataInv, header)
+    global screen
+    screen = pg.display.set_mode(size, flags)
+
+
+def phase2():
+    # SETUP SCREEN
+    screen.fill(black)
+    screen.blit(background2, background_Rect2)
+
+    # LOAD CHARTS AND CREATE RECTS
+    Plot_Oxygen = pg.transform.smoothscale_by(pg.image.load(r"GUI_grafika2/Plotoxygen.png"),scale)
+    Plot_Oxygen_Rect = Plot_Oxygen.get_rect(center=(100, 100))
+
+    screen.blit(Plot_Oxygen, Plot_Oxygen_Rect)
+
+    pg.display.flip()
 
     
 # MAIN
 while True:
     for event in pg.event.get():
         if event.type == pg.QUIT:
+            cam.stop()
             pg.quit()
             sys.exit()
             quit()
         if event.type == pg.KEYDOWN:
+            if event.__dict__["scancode"] == 79:
+                phase = 2
+                ToPhaseII()
+            elif event.__dict__["scancode"] == 80:
+                phase = 1
+            
             if event.__dict__["unicode"] == "\x1b":
+                cam.stop()
                 pg.quit()
                 sys.exit()
                 quit()
-            if event.__dict__["unicode"] == "\x08":
-                sent = sent[0:-1]
+            elif event.__dict__["unicode"] == "\x08":
+                sent = sent[0:-1]    
             elif event.__dict__["unicode"] == '\r':
                 fh = open(command_path, "w")
                 fh.write(sent)
@@ -552,5 +658,6 @@ while True:
             
     if (phase == 1):
         phase1()
-    elif (phase == 0):
-        break
+    elif phase == 2:
+        phase2()
+0
