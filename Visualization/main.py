@@ -160,7 +160,7 @@ data_path = "/home/pi/Desktop/Backup-data"
 scale = 2/5
 
 # TEST
-test = True
+test = False
 if test:
     j = 0
     dolu0 = False
