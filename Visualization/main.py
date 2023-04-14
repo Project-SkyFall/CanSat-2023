@@ -176,12 +176,12 @@ line_pre = None
 pgCam.init()
 camList = pgCam.list_cameras()
 print("Cams:", camList)
-numOfCam = input("Insert Cam Number: ")
+numOfCam = 0
 
-camsize = (120,90)
+camsize = (253,169)
 cam = pgCam.Camera(camList[int(numOfCam)], camsize)
 cam.start()
-Cam_Rect = pg.Rect((580,50), camsize, border_radius=10)
+Cam_Rect = pg.Rect((size[0]-190,32), camsize, border_radius=10)
 
 
 # PHASE I
