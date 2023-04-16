@@ -191,10 +191,10 @@ camList = pgCam.list_cameras()
 print("Cams:", camList)
 numOfCam = 0
 
-camsize = (253,169)
+camsize = (201,139)
 cam = pgCam.Camera(camList[int(numOfCam)], camsize)
 cam.start()
-Cam_Rect = pg.Rect((size[0]-190,32), camsize, border_radius=10)
+Cam_Rect = pg.Rect((593,66), camsize, border_radius=10)
 
 
 # PHASE I
@@ -534,7 +534,7 @@ def phase1():
     Text_vteE_Rect = Text_vteE.get_rect(center=(744, 255))
 
     # GET CAM IMAGE
-    Cam_Image = pg.transform.smoothscale_by(cam.get_image(), camsize[0]/640)
+    Cam_Image = pg.transform.smoothscale(cam.get_image(), camsize)
     
     # SHOW TEXTS AND DIALS
     screen.blits(blit_sequence=((Text_Name, Text_Name_Rect),
