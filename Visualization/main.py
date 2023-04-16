@@ -1,11 +1,14 @@
 import pygame as pg
 import sys
-import matplotlib as mpl
+import matplotlib.pyplot as plt
 import math
 from Model import Valec
 import time
 import Plots
 import pygame.camera as pgCam
+
+# INIT PYPLOT FIG
+fig = plt.figure(figsize=(6,3.7))
 
 #ROTATE
 def new_pos(mini, maxi, miniPos, maxiPos, value, rotation=False):
@@ -30,7 +33,7 @@ path = "/home/pi/Desktop/Data.txt"
 command_path = "/home/pi/Desktop/Command.txt"
 
 # SETUP
-flags = (pg.FULLSCREEN)
+flags = pg.FULLSCREEN | pg.SHOWN
 size = (800, 480)
 screen = pg.display.set_mode(size, flags)
 
@@ -158,9 +161,19 @@ data_path = "/home/pi/Desktop/Backup-data"
 
 # SET SCALE FOR CHARTS
 scale = 2/5
+plotsize = (600*scale, 370*scale)
+
+# SET CENTER POINTS FOR CHARTS
+o2_center = (150, 200)
+co2_center = (400, 200)
+lightIntensity_center = (650, 200)
+pressure_center = (150, 380)
+specter_center = (400, 380)
+temperature_center = (650, 380)
+
 
 # TEST
-test = False
+test = True
 if test:
     j = 0
     dolu0 = False
@@ -572,7 +585,7 @@ def ToPhaseII():
         for i in range(40):
             data.append([])
             for j in range(29):
-                data[i].append(j*j-i*j+i)
+                data[i].append(j*j-i*j+i+i*i)
     else:
         try:
             fh = open(data_path, "r")
@@ -608,9 +621,13 @@ def ToPhaseII():
  #   print(dataInv)
   #  print(recieved)
 
-    Plots.plots(dataInv, header)
-    global screen
-    screen = pg.display.set_mode(size, flags)
+    # MAKE NEW WINDOW
+#    global screen
+    Plots.plots(dataInv, header, fig)
+#    pg.quit()
+#    pg.init()
+#    screen = pg.display.set_mode(size, flags)
+    
 
 
 def phase2():
@@ -620,9 +637,30 @@ def phase2():
 
     # LOAD CHARTS AND CREATE RECTS
     Plot_Oxygen = pg.transform.smoothscale_by(pg.image.load(r"GUI_grafika2/Plotoxygen.png"),scale)
-    Plot_Oxygen_Rect = Plot_Oxygen.get_rect(center=(100, 100))
+    Plot_Oxygen_Rect = Plot_Oxygen.get_rect(center=o2_center)
 
-    screen.blit(Plot_Oxygen, Plot_Oxygen_Rect)
+    Plot_CO2 = pg.transform.smoothscale_by(pg.image.load(r"GUI_grafika2/Plotco2.png"),scale)
+    Plot_CO2_Rect = Plot_CO2.get_rect(center=co2_center)
+
+    Plot_LightIntensity = pg.transform.smoothscale_by(pg.image.load(r"GUI_grafika2/PlotlightIntensity.png"),scale)
+    Plot_LightIntensity_Rect = Plot_LightIntensity.get_rect(center=lightIntensity_center)
+
+    Plot_Pressure = pg.transform.smoothscale_by(pg.image.load(r"GUI_grafika2/Plotpressure.png"),scale)
+    Plot_Pressure_Rect = Plot_Pressure.get_rect(center=pressure_center)
+
+    Plot_Specter = pg.transform.smoothscale_by(pg.image.load(r"GUI_grafika2/Plotspecter.png"),scale)
+    Plot_Specter_Rect = Plot_Specter.get_rect(center=specter_center)
+
+    Plot_Temperature = pg.transform.smoothscale_by(pg.image.load(r"GUI_grafika2/Plottemperature.png"),scale)
+    Plot_Temperature_Rect = Plot_Temperature.get_rect(center=temperature_center)
+
+
+    screen.blits(blit_sequence=((Plot_Oxygen, Plot_Oxygen_Rect),
+                                (Plot_CO2, Plot_CO2_Rect),
+                                (Plot_LightIntensity, Plot_LightIntensity_Rect),
+                                (Plot_Pressure, Plot_Pressure_Rect),
+                                (Plot_Specter, Plot_Specter_Rect),
+                                (Plot_Temperature, Plot_Temperature_Rect)))
 
     pg.display.flip()
 
@@ -655,9 +693,34 @@ while True:
                 fh.close()
             else:
                 sent = sent + event.__dict__["unicode"]
+
+        if event.type == pg.MOUSEBUTTONDOWN and phase == 2:
+            if (event.__dict__["pos"][0] > o2_center[0]-(plotsize[0]/2)) and (event.__dict__["pos"][0] < o2_center[0]+(plotsize[0]/2)) and (
+                event.__dict__["pos"][1] > o2_center[1]-(plotsize[1]/2)) and (event.__dict__["pos"][1] < o2_center[1]+(plotsize[1]/2)):
+                fig = Plots.makePlot(header, "oxygen", dataInv, fig)
+                
+            elif (event.__dict__["pos"][0] > co2_center[0]-(plotsize[0]/2)) and (event.__dict__["pos"][0] < co2_center[0]+(plotsize[0]/2)) and (
+                event.__dict__["pos"][1] > co2_center[1]-(plotsize[1]/2)) and (event.__dict__["pos"][1] < co2_center[1]+(plotsize[1]/2)):
+                fig = Plots.makePlot(header, "co2", dataInv, fig)
+                
+            elif (event.__dict__["pos"][0] > lightIntensity_center[0]-(plotsize[0]/2)) and (event.__dict__["pos"][0] < lightIntensity_center[0]+(plotsize[0]/2)) and (
+                event.__dict__["pos"][1] > lightIntensity_center[1]-(plotsize[1]/2)) and (event.__dict__["pos"][1] < lightIntensity_center[1]+(plotsize[1]/2)):
+                fig = Plots.makePlot(header, "lightIntensity", dataInv, fig)
+                
+            elif (event.__dict__["pos"][0] > pressure_center[0]-(plotsize[0]/2)) and (event.__dict__["pos"][0] < pressure_center[0]+(plotsize[0]/2)) and (
+                event.__dict__["pos"][1] > pressure_center[1]-(plotsize[1]/2)) and (event.__dict__["pos"][1] < pressure_center[1]+(plotsize[1]/2)):
+                fig = Plots.makePlot(header, "pressure", dataInv, fig)
+                
+            elif (event.__dict__["pos"][0] > specter_center[0]-(plotsize[0]/2)) and (event.__dict__["pos"][0] < specter_center[0]+(plotsize[0]/2)) and (
+                event.__dict__["pos"][1] > specter_center[1]-(plotsize[1]/2)) and (event.__dict__["pos"][1] < specter_center[1]+(plotsize[1]/2)):
+                fig = Plots.makePlot(header, "specter", dataInv, fig)
+                
+            elif (event.__dict__["pos"][0] > temperature_center[0]-(plotsize[0]/2)) and (event.__dict__["pos"][0] < temperature_center[0]+(plotsize[0]/2)) and (
+                event.__dict__["pos"][1] > temperature_center[1]-(plotsize[1]/2)) and (event.__dict__["pos"][1] < temperature_center[1]+(plotsize[1]/2)):
+                fig = Plots.makePlot(header, "temperature", dataInv, fig)
             
     if (phase == 1):
         phase1()
     elif phase == 2:
         phase2()
-0
+

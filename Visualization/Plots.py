@@ -2,8 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # make 1 plot and either save it as .png or plot it out
-def makePlot(header, label, dataInv, show=True):
-    fig = plt.figure(figsize=(6,3.7))
+def makePlot(header, label, dataInv, fig, show=True):
     ax = plt.subplot(111)
     if label == "specter":
         ax.set_xlabel("wavelenght")
@@ -30,9 +29,11 @@ def makePlot(header, label, dataInv, show=True):
         ax.plot(dataInv[0], dataInv[header.index(label)], '-b')
     if show:
         plt.show()
+        fig = plt.figure(figsize=(6,3.7))
     else:
         fig.savefig("GUI_grafika2/Plot"+label+".png")
-    plt.close(fig)
+    fig.clear()
+    return fig
 
 def sliceData(start, end, dataInv):
     isStart = False
@@ -57,9 +58,9 @@ def sliceData(start, end, dataInv):
 
     plots()
 
-def plots(dataInv, header):
+def plots(dataInv, header, fig):
     plotList = ["oxygen", "co2", "temperature", "pressure", "lightIntensity",
                 "specter"]
 
     for label in plotList:
-        makePlot(header, label, dataInv, False)
+        fig = makePlot(header, label, dataInv, fig, False)
