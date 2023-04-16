@@ -173,7 +173,7 @@ temperature_center = (650, 380)
 
 
 # TEST
-test = True
+test = False
 if test:
     j = 0
     dolu0 = False
