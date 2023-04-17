@@ -1,3 +1,4 @@
 (fp_lib_table
   (lib (name "CanSat")(type "KiCad")(uri "C:/Users/David/OneDrive - SPŠE a VOŠ Pardubice/Dokumenty/KiCad/6.0/footprints/CanSat.pretty")(options "")(descr ""))
+  (lib (name "CanSat_2023")(type "KiCad")(uri "C:/Projekty/CanSat 2023/PCB design/CanSat/PCB design/Other/Library/CanSat_2023.pretty")(options "")(descr ""))
 )
