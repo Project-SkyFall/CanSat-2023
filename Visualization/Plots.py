@@ -35,7 +35,7 @@ def makePlot(header, label, dataInv, fig, show=True):
     fig.clear()
     return fig
 
-def sliceData(start, end, dataInv):
+def sliceData(start, end, dataInv, header, fig):
     isStart = False
     isEnd = False
     for i in range(len(dataInv[0])):
@@ -56,7 +56,7 @@ def sliceData(start, end, dataInv):
         else:
             dataInv[i] = dataInv[i][:startIndex]+dataInv[i][endIndex:]
 
-    plots()
+    plots(dataInv, header, fig)
 
 def plots(dataInv, header, fig):
     plotList = ["oxygen", "co2", "temperature", "pressure", "lightIntensity",

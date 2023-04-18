@@ -164,16 +164,19 @@ scale = 2/5
 plotsize = (600*scale, 370*scale)
 
 # SET CENTER POINTS FOR CHARTS
-o2_center = (150, 200)
-co2_center = (400, 200)
-lightIntensity_center = (650, 200)
-pressure_center = (150, 380)
-specter_center = (400, 380)
-temperature_center = (650, 380)
+o2_center = (155, 205)
+co2_center = (155, 380)
+lightIntensity_center = (645, 205)
+pressure_center = (400, 380)
+specter_center = (645, 380)
+temperature_center = (400, 205)
 
+# SETUP SLICE TEXT
+slicetext = ""
+delete = False
 
 # TEST
-test = False
+test = True
 if test:
     j = 0
     dolu0 = False
@@ -577,7 +580,7 @@ def ToPhaseII():
     global recieved
     data = []
     if test:
-        header = ["random","random","random","random","random","oxygen",
+        header = ["time","lat","long","random","random","oxygen",
                   "co2", "temperature", "pressure", "lightIntensity",
                   "humidity","asx0","asx1","asx2","asx3","asx4","asx5",
                   "asx6","asx7","asx8","asx9","asx10","asx11","asx12","asx13",
@@ -621,13 +624,7 @@ def ToPhaseII():
  #   print(dataInv)
   #  print(recieved)
 
-    # MAKE NEW WINDOW
-#    global screen
     Plots.plots(dataInv, header, fig)
-#    pg.quit()
-#    pg.init()
-#    screen = pg.display.set_mode(size, flags)
-    
 
 
 def phase2():
@@ -635,6 +632,61 @@ def phase2():
     screen.fill(black)
     screen.blit(background2, background_Rect2)
 
+    # TIMESTAMP
+    time2 = dataInv[0][0]
+    if test:
+        time2 = 311299235959.0
+    time2 = str(int(time2))
+    day2 = time2[0:2]+"."+time2[2:4]+".20"+time2[4:6]
+    hour2 = time2[6:8]+":"+time2[8:10]
+    sec2 = time2[10:12]
+
+    Text_day2 = Font_RT.render(day2, True, black)
+    Text_day2_Rect = Text_day2.get_rect(center=(515, 42))
+    
+    Text_hour2 = Font_RT.render(hour2, True, black)
+    Text_hour2_Rect = Text_hour2.get_rect(center=(440, 42))
+
+    Text_sec2 = Font_RT.render(sec2, True, black)
+    Text_sec2_Rect = Text_sec2.get_rect(center=(470, 42))
+
+    # GPS STAMP
+    try:
+        lat = dataInv[header.index("lat")][0]
+        long = dataInv[header.index("long")][0]
+    except:
+        lat = dataInv[header.index("latitude")][0]
+        long = dataInv[header.index("longitude")][0]
+    
+    degN = int(lat)
+    minN = int((lat-degN)*60)
+    vteN = round(((lat-degN)*60-minN)*60, 1)
+
+    degE = int(long)
+    minE = int((long-degE)*60)
+    vteE = round(((long-degE)*60-minE)*60, 1)
+
+    Text_degN = Font_RT.render(str(round(degN)), True, black)
+    Text_degN_Rect = Text_degN.get_rect(center=(437, 55))
+
+    Text_minN = Font_RT.render(str(round(minN)), True, black)
+    Text_minN_Rect = Text_minN.get_rect(center=(453, 55))
+
+    Text_vteN = Font_RT.render(str(round(vteN, 1)), True, black)
+    Text_vteN_Rect = Text_vteN.get_rect(center=(471, 55))
+
+    Text_degE = Font_RT.render(str(round(degE)), True, black)
+    Text_degE_Rect = Text_degE.get_rect(center=(501, 55))
+
+    Text_minE = Font_RT.render(str(round(minE)), True, black)
+    Text_minE_Rect = Text_minE.get_rect(center=(517, 55))
+
+    Text_vteE = Font_RT.render(str(round(vteE, 1)), True, black)
+    Text_vteE_Rect = Text_vteE.get_rect(center=(535, 55))
+
+    Text_slice = Font.render(slicetext, True, black)
+    Text_slice_Rect = Text_slice.get_rect(center=(434, 82))
+    
     # LOAD CHARTS AND CREATE RECTS
     Plot_Oxygen = pg.transform.smoothscale_by(pg.image.load(r"GUI_grafika2/Plotoxygen.png"),scale)
     Plot_Oxygen_Rect = Plot_Oxygen.get_rect(center=o2_center)
@@ -662,6 +714,17 @@ def phase2():
                                 (Plot_Specter, Plot_Specter_Rect),
                                 (Plot_Temperature, Plot_Temperature_Rect)))
 
+    screen.blits(blit_sequence=((Text_day2, Text_day2_Rect),
+                                (Text_hour2, Text_hour2_Rect),
+                                (Text_sec2, Text_sec2_Rect),
+                                (Text_degN, Text_degN_Rect),
+                                (Text_minN, Text_minN_Rect),
+                                (Text_vteN, Text_vteN_Rect),
+                                (Text_degE, Text_degE_Rect),
+                                (Text_minE, Text_minE_Rect),
+                                (Text_vteE, Text_vteE_Rect),
+                                (Text_slice, Text_slice_Rect)))
+
     pg.display.flip()
 
     
@@ -686,13 +749,45 @@ while True:
                 sys.exit()
                 quit()
             elif event.__dict__["unicode"] == "\x08":
-                sent = sent[0:-1]    
+                if phase == 1:
+                    sent = sent[0:-1]
+                elif phase == 2:
+                    if delete:
+                        slicetext = ""
+                        delete = False
+                    else:
+                        slicetext = slicetext[0:-1]
             elif event.__dict__["unicode"] == '\r':
-                fh = open(command_path, "w")
-                fh.write(sent)
-                fh.close()
+                if phase == 1:
+                    fh = open(command_path, "w")
+                    fh.write(sent)
+                    fh.close()
+                elif phase == 2:
+                    if slicetext == "":
+                        continue
+                    if not ";" in slicetext:
+                        slicetext = slicetext + ";"
+                    slicetext = slicetext.split(";")
+                    try:
+                        if slicetext[0] == "":
+                            slicetext[0] = dataInv[0][0]
+                        else:
+                            slicetext[0] = int(slicetext[0])
+                    except:
+                        slicetext = "Not a number"
+                        delete = True
+                        continue
+                    try:
+                        slicetext[1] = int(slicetext[1])
+                    except:
+                        slicetext[1] = dataInv[0][-1]
+                    Plots.sliceData(slicetext[0], slicetext[1], dataInv, header, fig)
+                    slicetext = ""
             else:
-                sent = sent + event.__dict__["unicode"]
+                if phase == 1:
+                    sent = sent + event.__dict__["unicode"]
+                elif phase == 2:
+                    slicetext = slicetext + event.__dict__["unicode"]
 
         if event.type == pg.MOUSEBUTTONDOWN and phase == 2:
             if (event.__dict__["pos"][0] > o2_center[0]-(plotsize[0]/2)) and (event.__dict__["pos"][0] < o2_center[0]+(plotsize[0]/2)) and (
@@ -718,9 +813,12 @@ while True:
             elif (event.__dict__["pos"][0] > temperature_center[0]-(plotsize[0]/2)) and (event.__dict__["pos"][0] < temperature_center[0]+(plotsize[0]/2)) and (
                 event.__dict__["pos"][1] > temperature_center[1]-(plotsize[1]/2)) and (event.__dict__["pos"][1] < temperature_center[1]+(plotsize[1]/2)):
                 fig = Plots.makePlot(header, "temperature", dataInv, fig)
+
+            elif (event.__dict__["pos"][0] > 507) and (event.__dict__["pos"][0] < 525) and (
+                event.__dict__["pos"][1] > 71) and (event.__dict__["pos"][1] < 90):
+                ToPhaseII()
             
     if (phase == 1):
         phase1()
     elif phase == 2:
         phase2()
-
