@@ -1,36 +1,152 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CanSat 2023</title>
-    <link rel="icon" type="image/x-icon" href="src/favicon.ico">
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <header>
-      <a href="index.htm" class="logolink">
-        <img src="src/favicon.ico" alt="logo" class="logo">
-      </a>
-      <h1>
-        The Project<br>
-        <span>SkyFall</span>
-      </h1>
-    </header>
-    <main>
-      <p></p>
-      <a href="sensor-mode.htm">
-        <div class="navbox">
-          <img src="src/favicon.ico">
-          <p>Pre-flight settings</p>
-        </div>
-      </a>
-    </main>
-    <footer>
-      <p>Project SkyFall<br>
-        2021-2023
-      </p>
-    </footer>
-  </body>
-  <script src="script.js"></script>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ESP Server</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<style>
+			.sensor-name {
+				user-select: none;
+			}
+		</style>
+	</head>
+	<body class="h-screen w-screen flex flex-col bg-slate-950">
+		<!-- Create navigation in header -->
+		<header class="flex flex-row justify-between items-center bg-slate-900 text-white p-4">
+			<h1 class="text-2xl font-bold">ESP Server</h1>
+			<nav class="flex flex-row">
+				<a href="/" class="text-xl font-bold mx-2">Home</a>
+				<a href="about.html" class="text-xl font-bold mx-2">About</a>
+			</nav>
+		</header>
+		<main class="flex flex-col justify-center items-center p-2 gap-2 flex-1">
+			<div class="max-w-lg w-full flex justify-between p-2 bg-slate-500">
+				<span class="sensor-name text-lg font-bold">BH1730</span>
+				<div class="flex items-center gap-2">
+					<label class="font-semibold cursor-pointer" for="BH1730-on">On</label>
+					<input class="sensor-on h-5 w-5 cursor-pointer" type="radio" data-sensor="BH1730" name="BH1730" id="BH1730-on" />
+					<span>/</span>
+					<label class="font-semibold cursor-pointer" for="BH1730-off">Off</label>
+					<input class="sensor-off h-5 w-5 cursor-pointer" type="radio" data-sensor="BH1730" name="BH1730" id="BH1730-off" />
+				</div>
+			</div>
+			<div class="max-w-lg w-full flex justify-between p-2 bg-slate-500">
+				<span class="sensor-name text-lg font-bold">AS7265X</span>
+				<div class="flex items-center gap-2">
+					<label class="font-semibold cursor-pointer" for="AS7265X-on">On</label>
+					<input class="sensor-on h-5 w-5 cursor-pointer" type="radio" data-sensor="AS7265X" name="AS7265X" id="AS7265X-on" />
+					<span>/</span>
+					<label class="font-semibold cursor-pointer" for="AS7265X-off">Off</label>
+					<input class="sensor-off h-5 w-5 cursor-pointer" type="radio" data-sensor="AS7265X" name="AS7265X" id="AS7265X-off" />
+				</div>
+			</div>
+			<div class="max-w-lg w-full flex justify-between p-2 bg-slate-500">
+				<span class="sensor-name text-lg font-bold">BME280</span>
+				<div class="flex items-center gap-2">
+					<label class="font-semibold cursor-pointer" for="BME280-on">On</label>
+					<input class="sensor-on h-5 w-5 cursor-pointer" type="radio" data-sensor="BME280" name="BME280" id="BME280-on" />
+					<span>/</span>
+					<label class="font-semibold cursor-pointer" for="BME280-off">Off</label>
+					<input class="sensor-off h-5 w-5 cursor-pointer" type="radio" data-sensor="BME280" name="BME280" id="BME280-off" />
+				</div>
+			</div>
+			<div class="max-w-lg w-full flex justify-between p-2 bg-slate-500">
+				<span class="sensor-name text-lg font-bold">BNO055</span>
+				<div class="flex items-center gap-2">
+					<label class="font-semibold cursor-pointer" for="BNO055-on">On</label>
+					<input class="sensor-on h-5 w-5 cursor-pointer" type="radio" data-sensor="BNO055" name="BNO055" id="BNO055-on" />
+					<span>/</span>
+					<label class="font-semibold cursor-pointer" for="BNO055-off">Off</label>
+					<input class="sensor-off h-5 w-5 cursor-pointer" type="radio" data-sensor="BNO055" name="BNO055" id="BNO055-off" />
+				</div>
+			</div>
+			<div class="max-w-lg w-full flex justify-between p-2 bg-slate-500">
+				<span class="sensor-name text-lg font-bold">SCD41</span>
+				<div class="flex items-center gap-2">
+					<label class="font-semibold cursor-pointer" for="SCD41-on">On</label>
+					<input class="sensor-on h-5 w-5 cursor-pointer" type="radio" data-sensor="SCD41" name="SCD41" id="SCD41-on" />
+					<span>/</span>
+					<label class="font-semibold cursor-pointer" for="SCD41-off">Off</label>
+					<input class="sensor-off h-5 w-5 cursor-pointer" type="radio" data-sensor="SCD41" name="SCD41" id="SCD41-off" />
+				</div>
+			</div>
+			<div class="max-w-lg w-full flex justify-between p-2 bg-slate-500">
+				<span class="sensor-name text-lg font-bold">INA219</span>
+				<div class="flex items-center gap-2">
+					<label class="font-semibold cursor-pointer" for="INA219-on">On</label>
+					<input class="sensor-on h-5 w-5 cursor-pointer" type="radio" data-sensor="INA219" name="INA219" id="INA219-on" />
+					<span>/</span>
+					<label class="font-semibold cursor-pointer" for="INA219-off">Off</label>
+					<input class="sensor-off h-5 w-5 cursor-pointer" type="radio" data-sensor="INA219" name="INA219" id="INA219-off" />
+				</div>
+			</div>
+		</main>
+		<script defer>
+			const sensors_on = Array.from(document.getElementsByClassName("sensor-on"))
+			const sensors_off = Array.from(document.getElementsByClassName("sensor-off"))
+
+			sensors_on.forEach((sensor) => {
+				sensor.addEventListener("change", async () => {
+					const sensor_name = sensor.dataset.sensor
+					const { ok } = await fetch("/", {
+						method: "post",
+						body: JSON.stringify({ sensor: sensor_name, value: "on" }),
+						headers: { "Content-Type": "application/json" }
+					})
+
+					if (!ok) alert("Something went wrong")
+				})
+			})
+
+			sensors_off.forEach((sensor) => {
+				sensor.addEventListener("change", async () => {
+					const sensor_name = sensor.dataset.sensor
+					const { ok } = await fetch("/", {
+						method: "post",
+						body: JSON.stringify({ sensor: sensor_name, value: "off" }),
+						headers: { "Content-Type": "application/json" }
+					})
+
+					if (!ok) alert("Something went wrong")
+				})
+			})
+
+			get_sensors_status().then((sensors_status) => {
+				sensors_status.forEach((status) => {
+					const sensor_inp_on = sensors_on.find((sensor) => sensor.dataset.sensor === status.sensor)
+					const sensor_inp_off = sensors_off.find((sensor) => sensor.dataset.sensor === status.sensor)
+
+					if (!sensor_inp_on || !sensor_inp_off) return
+
+					sensor_inp_on.checked = status.value === "on"
+					sensor_inp_off.checked = status.value === "off"
+				})
+			})
+
+			async function get_sensors_status() {
+				const response = await fetch("/sensors_status")
+				const sensors_status = await response.json()
+				return sensors_status
+			}
+
+			function handle_sensor_form_submit(e) {
+				e.preventDefault()
+				const data = new FormData(e.target)
+				console.log([...data.keys()])
+				console.log([...data.values()])
+			}
+		</script>
+	</body>
 </html>
+
+<!--
+	On / Off senzory
+	BH1730
+	AS7265X
+	BME280
+	BNO055
+	SCD41
+	INA219
+-->
