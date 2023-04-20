@@ -14,6 +14,9 @@
 #include "myINA.h"
 #include "myCO2.h"
 #include "myBNO.h"
+#include "RTOS_tasks.h"
+
+bool fileOpened;
 
 MySD::MySD(uint8_t cs):
     _cs(cs){
@@ -47,7 +50,7 @@ bool MySD::setup(bool verbose){
         }
     }
     verbose ? Serial.print("Creating data file: "): 0;
-    myFile = SD.open(path, FILE_WRITE, true);
+    myFile = SD.open(path, FILE_APPEND, true);
     if(!myFile){
         verbose ? Serial.println("FAIL") : 0;
         isWorking = IsWorking::isWorking_FALSE;
@@ -57,15 +60,15 @@ bool MySD::setup(bool verbose){
     myPrint("Temperature"); myPrint("Pressure"); myPrintln("Humidity");
 
     myFile.close();
+
+    
     verbose ? Serial.println(path) : 0;
     
     isWorking = IsWorking::isWorking_TRUE;
     return true;
 }
 
-bool MySD::save(){
-
-    status = Status::status_NACK;
+bool MySD::openFile(){
 
     if(isWorking == IsWorking::isWorking_FALSE){
         if(!setup()){
@@ -74,21 +77,40 @@ bool MySD::save(){
         }
     }
 
-    myFile = SD.open(path, FILE_WRITE);
+    myFile = SD.open(path, FILE_APPEND);
     if(!myFile){
         isWorking = IsWorking::isWorking_FALSE;
         status = Status::status_FAIL;
         return false;
     }
-
-    myPrint(rtc.dateTime_string);
-    myPrint(bme.temperature); myPrint(bme.pressure); myPrintln(bme.humidity);
-
-    myFile.close();
-
-    status = Status::status_OK;
     return true;
 }
+
+bool MySD::save(){
+
+    if(isWorking == IsWorking::isWorking_FALSE){
+        status = Status::status_FAIL;
+        return false;
+    }
+
+    /*Saving data*/
+    if(fileOpened){
+        xSemaphoreTake(spiSemaphore_hadle, portMAX_DELAY);
+
+        myPrint(rtc.dateTime_string);
+        myPrint(bme.temperature); myPrint(bme.pressure); myPrintln(bme.humidity);
+        myFile.close();
+        fileOpened = false;
+
+        xSemaphoreGive(spiSemaphore_hadle);
+        xSemaphoreGive(saveData_semaphore);
+        
+        status = Status::status_OK;
+        return true;
+    }
+
+}
+
 
 void MySD::printStatus(){
     Serial.print("Saving data: ");

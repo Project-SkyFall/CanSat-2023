@@ -16,6 +16,7 @@ class MySD{
     MySD(uint8_t cs);;
     bool setup(bool verbose = false);
     bool save();
+    bool openFile();
     void printStatus();
 
     uint16_t postfix;
@@ -40,7 +41,6 @@ template <typename T> void myPrintln(T input);
 
 extern MySD sd;
 extern File myFile;
-
-//extern SdFat SDfat;
+extern bool fileOpened;
 
 #endif

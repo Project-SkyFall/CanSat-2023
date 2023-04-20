@@ -3,30 +3,19 @@
 #include "myINA.h"
 
 MyINA::MyINA(byte address):
-    _address(address){
+    _address(address),
+    Adafruit_INA219(address){
 }
 
 bool MyINA::setup(bool verbose){
     verbose ? Serial.println("---INA219 setup-----------------------------------") : 0;
     
-    if(!begin(_address)){
+    if(!begin()){
         isWorking = IsWorking::isWorking_FALSE;
         return false;
     }
     isWorking = IsWorking::isWorking_TRUE;
     return true;
-}
-
-bool MyINA::begin(uint8_t address, TwoWire *theWire) {
-  if (!i2c_dev) {
-    i2c_dev = new Adafruit_I2CDevice(address, theWire);
-  }
-
-  if (!i2c_dev->begin()) {
-    return false;
-  }
-  setCalibration_32V_2A();
-  return true;
 }
 
 void MyINA::getData(){
@@ -54,6 +43,10 @@ void MyINA::getData(){
     current = getCurrent_mA();
     power = getPower_mW();
     voltage = getBusVoltage_V();
+
+    /*current = inaTest.getCurrent_mA();
+    voltage = inaTest.getBusVoltage_V();
+    power = inaTest.getPower_mW();*/
 
     status = Status::status_OK;
 }

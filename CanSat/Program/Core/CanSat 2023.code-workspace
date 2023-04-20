@@ -26,7 +26,9 @@
 			"streambuf": "cpp",
 			"exception": "cpp",
 			"iosfwd": "cpp",
-			"new": "cpp"
+			"new": "cpp",
+			"cmath": "cpp",
+			"ctime": "cpp"
 		},
 		"liveServer.settings.multiRootWorkspaceName": "Server"
 	}

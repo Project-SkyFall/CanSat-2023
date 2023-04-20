@@ -19,12 +19,11 @@ class MyINA : public Adafruit_INA219{
     float voltage;
 
     private:
-    bool begin(uint8_t address, TwoWire *theWire = &Wire);
-    Adafruit_I2CDevice *i2c_dev = NULL;
+    //bool begin(uint8_t address, TwoWire *theWire = &Wire);
+    //Adafruit_I2CDevice *i2c_dev = NULL;
     byte _address;
 };
 
-//extern Adafruit_INA219 ina219;
 extern MyINA ina;
 
 #endif

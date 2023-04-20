@@ -5,7 +5,7 @@
 
 class MyIMU : public Adafruit_BNO055{
     public:
-    MyIMU(uint8_t address, uint8_t reset);
+    MyIMU(int id, uint8_t address, uint8_t reset);
     bool setup(bool verbose=false);
     void getData();
     void printData();

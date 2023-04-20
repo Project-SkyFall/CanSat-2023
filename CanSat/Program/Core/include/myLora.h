@@ -18,43 +18,28 @@ class MyLora : public LoRa_CanSat{
     void sendData();
     void printStatus();
 
-    int endPacket(bool async=false);
-
-    void onReceive(void(*callback)(int));
-    void onTxDone(void(*callback)());
     static void onDio0Rise();
     void handleDio0Rise();
-
-    bool checkTxDone();
-    
-    //template <typename T> void myPrint(T input);
-    void dumpRegisters(Stream& out);
 
     Status status = Status::status_NACK;
     Mode mode = Mode::mode_RUN;
     IsWorking isWorking = IsWorking::isWorking_FALSE;
 
 
-    bool isTxDone;
+    uint8_t ackStatus;
+    uint8_t lastAckStatus;
     bool stopCheckTxDone;
 
     const uint8_t& cs = _cs;
 
     private:
-    SPISettings _spiSettings;
-    SPIClass* _spi;
     double _frequency;
     uint8_t _cs;
     uint8_t _reset;
     uint8_t _dio0;
     uint8_t _id;
     uint8_t _txPower;
-    
-    void (*_onReceive)(int);
-    void (*_onTxDone)();
 
-    uint8_t readRegister(uint8_t address);
-    void writeRegister(uint8_t address, uint8_t value);
     uint8_t singleTransfer(uint8_t address, uint8_t value);
 };
 

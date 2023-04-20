@@ -12,10 +12,17 @@
 #include "myLora.h"
 #include "myNeo.h"
 #include "gps.h"
+#include "myBNO.h"
+#include "myBH1730.h"
+#include "mySpectro.h"
+
+uint32_t cycle;
 
 void controlTask(void *pvParameters){
     while(true){
         !digitalRead(RUN_SEVER_PIN) ? server.mode(true) : server.mode(false);
+        digitalRead(neo.enablePin) ? vTaskResume(runNeo_handle) : vTaskSuspend(runNeo_handle);
+
         vTaskDelay(1);
     }
 }
@@ -24,26 +31,46 @@ void getData(void *pvParameters){
     while(true){
         rtc.status = Status::status_NACK;
         bme.status = Status::status_NACK;
-        gps.status = Status::status_NACK;
         oxygen.status = Status::status_NACK;
         ina.status = Status::status_NACK;
         scd.status = Status::status_NACK;
+        bh.status = Status::status_NACK;
+        
+        lora.status = Status::status_NACK;
+        sd.status = Status::status_NACK;
+        gps.status = Status::status_NACK;
+        ds18.status = Status::status_NACK;
+        neo.status = Status::status_NACK;
 
-        vTaskResume(ds18getData_handle);
         vTaskResume(gpsGetData_handle);
+        vTaskResume(ds18getData_handle);
         rtc.getData();
         bme.getData();
         oxygen.getData();
         ina.getData();
         scd.getData();
+        bno.getData();
+        bh.getData();
+        asx.getData();
 
-        ulTaskGenericNotifyTake(0, pdTRUE, pollingDelay); // gps
-        //ulTaskGenericNotifyTake(1, pdTRUE, pollingDelay); // ds18 //TODO fix ulTaskFenerciNotifyTake - index 1
+        // Wait until other getData from diferent tasks are done or skiped
+        if(!xSemaphoreTake(gpsGetDataDone_semaphore, pollingDelay)) //Serial.println("GPS timeout");
+        if(!xSemaphoreTake(ds18GetDataDone_semaphore, pollingDelay)) //Serial.println("DS18 timeout");
+        // Task are done or skiped after pollingDelay
 
-        vTaskResume(loraSend_handle);
-        vTaskResume(saveData_handle);
+        lora.sendData();
+        sd.save();
+
+        //vTaskResume(saveData_handle);
+
+        if(!xSemaphoreTake(saveData_semaphore, dataPrintDelay)) Serial.println("SD save timeout");
+
+        neo.updateStatuses();
         vTaskResume(printData_hadle);
-        xTaskDelayUntil(&getData_lastTime, refreshRate/portTICK_PERIOD_MS);
+
+        vTaskResume(openFile_handle);
+        if(!xTaskDelayUntil(&getData_lastTime, refreshRate/portTICK_PERIOD_MS)) //Serial.println("Loop to slow!");
+        cycle++;
     }
 }
 
@@ -60,7 +87,9 @@ void printData(void *pvParameters){
         ina.printData();
         ds18.printData();
         scd.printData();
-        Serial.print(analogRead(37)); Serial.println(" V");
+        bno.printData();
+        bh.printData();
+        asx.printData();
 
         Serial.println();
 
@@ -70,24 +99,23 @@ void printData(void *pvParameters){
         Serial.println();
 
         server.printStatus();
+        neo.printStatus();
     }
 }
 
 void gpsGetData(void *pvParameters){
     while(true){
         vTaskSuspend(NULL);
-        gps.status = Status::status_NACK;
         gps.getData();
-        xTaskGenericNotify(getData_handle, 0, 1, eSetBits, 0);
+        xSemaphoreGive(gpsGetDataDone_semaphore);
     }
 }
 
 void ds18getData(void *pvParameters){
     while(true){
         vTaskSuspend(NULL);
-        ds18.status = Status::status_NACK;
         ds18.getData();
-        //xTaskGenericNotify(getData_handle, 1, 1, eSetBits, 0); //TODO fix xTaskGenericNotify - index 1
+        xSemaphoreGive(ds18GetDataDone_semaphore);
     }
 }
 
@@ -99,22 +127,27 @@ void runServer(void *pvParameters){
     }
 }
 
-void saveData(void *pvParameters){
+/*void saveData(void *pvParameters){
     while(true){
         vTaskSuspend(NULL);
-        sd.status = Status::status_NACK;
-        if(xSemaphoreTake(spiSemaphore_hadle, refreshRate/portTICK_PERIOD_MS)){
+        if(xSemaphoreTake(openFile_semaphore, dataPrintDelay)){
+            xSemaphoreTake(spiSemaphore_hadle, portMAX_DELAY);
             sd.save();
             xSemaphoreGive(spiSemaphore_hadle);
+            xSemaphoreGive(saveData_semaphore);
         }
     }
-}
+}*/
 
-void loraSend(void *pvParameters){
+void openFile(void *pvParameters){
     while(true){
         vTaskSuspend(NULL);
-        lora.status = Status::status_NACK;
-        lora.sendData();
+        if(!fileOpened){
+            Serial.println("Opening file");
+            xSemaphoreTake(spiSemaphore_hadle, portMAX_DELAY);
+            fileOpened = sd.openFile();
+            xSemaphoreGive(spiSemaphore_hadle);
+        }
     }
 }
 
@@ -123,6 +156,20 @@ void runNeo(void *pvParameters){
         neo.animation();
     }
 }
+
+/*void measureBattery(void *pvParameters){
+    while(true){
+        analogRead(37);
+        vTaskDelay(25/portTICK_PERIOD_MS);
+    }
+}*/
+
+/*void isrHandleDioRise_TX(void *pvParameters){
+    while(true){
+        vTaskSuspend(NULL);
+        lora.handleDio0Rise_TX();
+    }
+}*/
 
 void isrHandleDioRise(void *pvParameters){
     while(true){
