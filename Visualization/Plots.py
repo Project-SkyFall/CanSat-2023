@@ -2,11 +2,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # make 1 plot and either save it as .png or plot it out
-def makePlot(header, label, dataInv, fig, show=True):
+def makePlot(header, label, dataInv, fig, offeredTime, show=True):
     ax = plt.subplot(111)
     if label == "specter":
-        ax.set_xlabel("wavelenght")
-        ax.set_ylabel("average intensity")
+        ax.set_xlabel("wavelenght [nm]")
+        ax.set_ylabel("average intensity [jednotka]")
         specter = []
         for i in range(18):
             suma = 0
@@ -19,14 +19,25 @@ def makePlot(header, label, dataInv, fig, show=True):
                        730, 760, 810, 860, 900, 940]
         ax.plot(frequencies, specter)
     elif label == "oxygen":
-        ax.set_ylabel("oxygen (blue), humidity (magenta)")
-        ax.set_xlabel("time")
+        ax.set_ylabel("oxygen (blue), humidity (magenta) [%]")
+        ax.set_xlabel("time [s]")
         ax.plot(dataInv[0], dataInv[header.index(label)], '-b')
         ax.plot(dataInv[0], dataInv[header.index("humidity")], '-m')
+        ax.plot((offeredTime,offeredTime),(min(dataInv[header.index("oxygen")]+dataInv[header.index("humidity")]),
+                                            max(dataInv[header.index("oxygen")]+dataInv[header.index("humidity")])), '-r')
     else:
-        ax.set_ylabel(label)
-        ax.set_xlabel("time")
+        if label == "pressure":
+            ax.set_ylabel(label + " [kPa]")
+        elif label == "co2":
+            ax.set_ylabel(label + " [ppm]")
+        elif label == "temperature":
+            ax.set_ylabel(label + " [°C]")
+        else:
+            ax.set_ylabel(label + " [jednotka]")
+        ax.set_xlabel("time [s]")
         ax.plot(dataInv[0], dataInv[header.index(label)], '-b')
+    if label != "specter" and label != "oxygen":
+        ax.plot((offeredTime,offeredTime), (min(dataInv[header.index(label)]), max(dataInv[header.index(label)])), '-r')
     if show:
         plt.show()
         fig = plt.figure(figsize=(6,3.7))
@@ -35,7 +46,7 @@ def makePlot(header, label, dataInv, fig, show=True):
     fig.clear()
     return fig
 
-def sliceData(start, end, dataInv, header, fig):
+def sliceData(start, end, dataInv, header, fig, offeredTime):
     isStart = False
     isEnd = False
     for i in range(len(dataInv[0])):
@@ -56,11 +67,11 @@ def sliceData(start, end, dataInv, header, fig):
         else:
             dataInv[i] = dataInv[i][:startIndex]+dataInv[i][endIndex:]
 
-    plots(dataInv, header, fig)
+    plots(dataInv, header, fig, offeredTime)
 
-def plots(dataInv, header, fig):
+def plots(dataInv, header, fig, offeredTime):
     plotList = ["oxygen", "co2", "temperature", "pressure", "lightIntensity",
                 "specter"]
 
     for label in plotList:
-        fig = makePlot(header, label, dataInv, fig, False)
+        fig = makePlot(header, label, dataInv, fig, offeredTime, False)

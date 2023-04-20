@@ -6,6 +6,7 @@ from Model import Valec
 import time
 import Plots
 import pygame.camera as pgCam
+from OfferSlice import offerSlice
 
 # INIT PYPLOT FIG
 fig = plt.figure(figsize=(6,3.7))
@@ -588,7 +589,7 @@ def ToPhaseII():
         for i in range(40):
             data.append([])
             for j in range(29):
-                data[i].append(j*j-i*j+i+i*i)
+                data[i].append(i+i*i*j)
     else:
         try:
             fh = open(data_path, "r")
@@ -620,11 +621,16 @@ def ToPhaseII():
             data[i][j] = float(data[i][j])
             dataInv[j].append(data[i][j])
 
+    if test:
+        press = [0,1,0,-1,0,3,4,6,8,9,19,29,39,40,50,66,67,54,43,32,
+                 23,21,12,10,9,8,3,2,3,1,0,0,0,0,0,0,0,0,0,0]
+        dataInv[header.index("pressure")] = press
 #    print(data)
  #   print(dataInv)
   #  print(recieved)
+    offeredTime = offerSlice(dataInv, header)
 
-    Plots.plots(dataInv, header, fig)
+    Plots.plots(dataInv, header, fig, offeredTime)
 
 
 def phase2():
@@ -633,7 +639,7 @@ def phase2():
     screen.blit(background2, background_Rect2)
 
     # TIMESTAMP
-    time2 = dataInv[0][0]
+    time2 = dataInv[header.index("time")][0]
     if test:
         time2 = 311299235959.0
     time2 = str(int(time2))
