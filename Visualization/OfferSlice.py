@@ -2,16 +2,12 @@ def offerSlice(dataInv, header):
     lightintensity = dataInv[header.index("lightIntensity")]
     pressure = dataInv[header.index("pressure")]
 
-    presspre = None
-    slope = False
-    for i in range(len(dataInv[0])):
-        if presspre is None or presspre <= pressure[i]:
-            if slope == True:
-                if abs(pressure[i] - presspre) > 10:
-                    return dataInv[header.index("time")][i]
-            presspre = pressure[i]
-        else:
-            slope = True
+    presspre = pressure[0]
+    for i in range(len(dataInv[0])-1):
+        if pressure[i] > pressure[i+1]:
+            if abs(pressure[i+1] - presspre) > 10:
+                return dataInv[header.index("time")][i]
+            presspre = pressure[i+1]
 
     print("peek not found, adjust by yourself")
     return dataInv[header.index("time")][0]

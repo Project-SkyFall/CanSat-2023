@@ -91,7 +91,6 @@ def kroky2smer2(var, Yhra0, Yhra1, XHod0, XHod1, XHod2, XHod3, XHod4, XHod5, XHo
     x = list()
     y = list()
 
-    var = averages[header.index('varerature')]
     while var < 80:
         if (var >= XHodnoty[-1]) and (var <= XHodnoty[0]):
             odecti = 0

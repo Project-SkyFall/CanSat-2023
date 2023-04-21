@@ -175,6 +175,7 @@ temperature_center = (400, 205)
 # SETUP SLICE TEXT
 slicetext = ""
 delete = False
+show = False
 
 # TEST
 test = True
@@ -628,9 +629,14 @@ def ToPhaseII():
 #    print(data)
  #   print(dataInv)
   #  print(recieved)
-    offeredTime = offerSlice(dataInv, header)
+    global offeredTimes
+    offeredTimes = [offerSlice(dataInv, header)]
+    global slicetext
+    slicetext = ";" + str(offeredTimes[0])
+    global delete
+    delete = True
 
-    Plots.plots(dataInv, header, fig, offeredTime)
+    Plots.plots(dataInv, header, fig, offeredTimes)
 
 
 def phase2():
@@ -749,7 +755,7 @@ while True:
             elif event.__dict__["scancode"] == 80:
                 phase = 1
             
-            if event.__dict__["unicode"] == "\x1b":
+            elif event.__dict__["unicode"] == "\x1b":
                 cam.stop()
                 pg.quit()
                 sys.exit()
@@ -763,62 +769,83 @@ while True:
                         delete = False
                     else:
                         slicetext = slicetext[0:-1]
+                    show = True
             elif event.__dict__["unicode"] == '\r':
                 if phase == 1:
-                    fh = open(command_path, "w")
-                    fh.write(sent)
-                    fh.close()
+                    try:
+                        fh = open(command_path, "w")
+                        fh.write(sent)
+                        fh.close()
+                    except:
+                        sent = "error: cannot send"
                 elif phase == 2:
-                    if slicetext == "":
+                    if slicetext == "" or slicetext == ";":
                         continue
                     if not ";" in slicetext:
                         slicetext = slicetext + ";"
-                    slicetext = slicetext.split(";")
+                    slicetextList = slicetext.split(";")
                     try:
-                        if slicetext[0] == "":
-                            slicetext[0] = dataInv[0][0]
+                        if slicetextList[0] == "":
+                            slicetextList[0] = dataInv[header.index("time")][0]
                         else:
-                            slicetext[0] = int(slicetext[0])
+                            slicetextList[0] = float(slicetextList[0])
                     except:
                         slicetext = "Not a number"
                         delete = True
+                        show = True
                         continue
                     try:
-                        slicetext[1] = int(slicetext[1])
+                        if slicetextList[1] == "":
+                            slicetextList[1] = dataInv[header.index("time")][-1]
+                        else:
+                            slicetextList[1] = float(slicetextList[1])
                     except:
-                        slicetext[1] = dataInv[0][-1]
-                    Plots.sliceData(slicetext[0], slicetext[1], dataInv, header, fig)
-                    slicetext = ""
+                        slicetext = "Not a number"
+                        delete = True
+                        show = True
+                        continue
+                    if not show:
+                        dataInv = Plots.sliceData(slicetextList[0], slicetextList[1], dataInv, header, fig)
+                        slicetext = ""
+                        show = True
+                    else:
+                        offeredTimes = slicetextList
+                        Plots.plots(dataInv, header, fig, offeredTimes)
+                        show = False
             else:
                 if phase == 1:
                     sent = sent + event.__dict__["unicode"]
                 elif phase == 2:
+                    if delete:
+                        slicetext = ""
+                        delete = False
                     slicetext = slicetext + event.__dict__["unicode"]
+                    show = True
 
         if event.type == pg.MOUSEBUTTONDOWN and phase == 2:
             if (event.__dict__["pos"][0] > o2_center[0]-(plotsize[0]/2)) and (event.__dict__["pos"][0] < o2_center[0]+(plotsize[0]/2)) and (
                 event.__dict__["pos"][1] > o2_center[1]-(plotsize[1]/2)) and (event.__dict__["pos"][1] < o2_center[1]+(plotsize[1]/2)):
-                fig = Plots.makePlot(header, "oxygen", dataInv, fig)
+                fig = Plots.makePlot(header, "oxygen", dataInv, fig, offeredTimes)
                 
             elif (event.__dict__["pos"][0] > co2_center[0]-(plotsize[0]/2)) and (event.__dict__["pos"][0] < co2_center[0]+(plotsize[0]/2)) and (
                 event.__dict__["pos"][1] > co2_center[1]-(plotsize[1]/2)) and (event.__dict__["pos"][1] < co2_center[1]+(plotsize[1]/2)):
-                fig = Plots.makePlot(header, "co2", dataInv, fig)
+                fig = Plots.makePlot(header, "co2", dataInv, fig, offeredTimes)
                 
             elif (event.__dict__["pos"][0] > lightIntensity_center[0]-(plotsize[0]/2)) and (event.__dict__["pos"][0] < lightIntensity_center[0]+(plotsize[0]/2)) and (
                 event.__dict__["pos"][1] > lightIntensity_center[1]-(plotsize[1]/2)) and (event.__dict__["pos"][1] < lightIntensity_center[1]+(plotsize[1]/2)):
-                fig = Plots.makePlot(header, "lightIntensity", dataInv, fig)
+                fig = Plots.makePlot(header, "lightIntensity", dataInv, fig, offeredTimes)
                 
             elif (event.__dict__["pos"][0] > pressure_center[0]-(plotsize[0]/2)) and (event.__dict__["pos"][0] < pressure_center[0]+(plotsize[0]/2)) and (
                 event.__dict__["pos"][1] > pressure_center[1]-(plotsize[1]/2)) and (event.__dict__["pos"][1] < pressure_center[1]+(plotsize[1]/2)):
-                fig = Plots.makePlot(header, "pressure", dataInv, fig)
+                fig = Plots.makePlot(header, "pressure", dataInv, fig, offeredTimes)
                 
             elif (event.__dict__["pos"][0] > specter_center[0]-(plotsize[0]/2)) and (event.__dict__["pos"][0] < specter_center[0]+(plotsize[0]/2)) and (
                 event.__dict__["pos"][1] > specter_center[1]-(plotsize[1]/2)) and (event.__dict__["pos"][1] < specter_center[1]+(plotsize[1]/2)):
-                fig = Plots.makePlot(header, "specter", dataInv, fig)
+                fig = Plots.makePlot(header, "specter", dataInv, fig, offeredTimes)
                 
             elif (event.__dict__["pos"][0] > temperature_center[0]-(plotsize[0]/2)) and (event.__dict__["pos"][0] < temperature_center[0]+(plotsize[0]/2)) and (
                 event.__dict__["pos"][1] > temperature_center[1]-(plotsize[1]/2)) and (event.__dict__["pos"][1] < temperature_center[1]+(plotsize[1]/2)):
-                fig = Plots.makePlot(header, "temperature", dataInv, fig)
+                fig = Plots.makePlot(header, "temperature", dataInv, fig, offeredTimes)
 
             elif (event.__dict__["pos"][0] > 507) and (event.__dict__["pos"][0] < 525) and (
                 event.__dict__["pos"][1] > 71) and (event.__dict__["pos"][1] < 90):
