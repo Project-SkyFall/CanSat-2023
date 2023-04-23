@@ -161,7 +161,7 @@ background2 = pg.image.load(r"GUI_grafika2/GG_background2.png")
 background_Rect2 = background2.get_rect()
 
 # DATA PATH
-data_path = "/home/pi/Desktop/Backup-data"
+data_path = "/home/pi/Desktop/Backup-data.txt"
 
 # SET SCALE FOR CHARTS
 scale = 2/5
