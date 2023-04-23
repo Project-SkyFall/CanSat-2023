@@ -187,7 +187,7 @@ background3 = pg.image.load(r"GUI_grafika3/GG_background2.png")
 background3_Rect = background3.get_rect()
 
 # TEST
-test = True
+test = False
 if test:
     j = 0
     dolu0 = False
