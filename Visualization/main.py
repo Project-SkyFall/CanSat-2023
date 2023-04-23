@@ -7,6 +7,7 @@ import time
 import Plots
 import pygame.camera as pgCam
 from OfferSlice import offerSlice
+import Index
 
 # INIT PYPLOT FIG
 fig = plt.figure(figsize=(6,3.7))
@@ -46,6 +47,8 @@ black = (0,0,0)
 pg.font.init()
 Font = pg.font.Font(r"font/myriad-pro/MyriadPro-Light.otf", 14)
 Font_RT = pg.font.Font(r"font/myriad-pro/MyriadPro-Light.otf", 11)
+Font_Index = pg.font.Font(r"font/myriad-pro/MyriadPro-Light.otf", 30)
+Font_Var = pg.font.Font(r"font/myriad-pro/MyriadPro-Light.otf", 20)
 
 # SETUP PHASE I
 # COORDINATES FOR "dead or alive" AND "up and down"
@@ -140,7 +143,7 @@ VectorPress = pg.math.Vector2(0, -28)
 VectorCO2O2 = pg.math.Vector2(0, -20)
 
 # SETUP CANSAT MODEL
-Cansat = Valec(30, 90, 120, 160, 8)
+Cansat = Valec(30, 90, 129, 160, 8)
 
 # SETUP SENT AND RECIEVE TEXT
 sent = ""
@@ -176,6 +179,12 @@ temperature_center = (400, 205)
 slicetext = ""
 delete = False
 show = False
+
+
+# SETUP PHASE III
+# LOAD IMAGES
+background3 = pg.image.load(r"GUI_grafika3/GG_background2.png")
+background3_Rect = background3.get_rect()
 
 # TEST
 test = True
@@ -739,6 +748,50 @@ def phase2():
 
     pg.display.flip()
 
+# PHASE III
+def ToPhaseIII():
+    global Results
+    Results = Index.MakeIndex(dataInv, header)
+
+
+def phase3():
+    screen.fill(black)
+    screen.blit(background3, background3_Rect)
+
+    index, o2, co2, lightintenzity, humidity, temperature, pressure = Results
+
+    # TEXTS
+    Text_Index = Font_Index.render(str(round(index, 1)), True, black)
+    Text_Index_Rect = Text_Index.get_rect(center=(400, 200))
+
+    Text_o2 = Font_Var.render(str(round(o2, 1)), True, black)
+    Text_o2_Rect = Text_o2.get_rect(center=(200, 300))
+
+    Text_co2 = Font_Var.render(str(round(co2, 1)), True, black)
+    Text_co2_Rect = Text_co2.get_rect(center=(400, 300))
+
+    Text_lightintenzity = Font_Var.render(str(round(lightintenzity, 1)), True, black)
+    Text_lightintenzity_Rect = Text_lightintenzity.get_rect(center=(600, 300))
+
+    Text_humidity = Font_Var.render(str(round(humidity, 1)), True, black)
+    Text_humidity_Rect = Text_humidity.get_rect(center=(200, 400))
+    
+    Text_temperature = Font_Var.render(str(round(temperature, 1)), True, black)
+    Text_temperature_Rect = Text_temperature.get_rect(center=(400, 400))
+
+    Text_pressure = Font_Var.render(str(round(pressure, 1)), True, black)
+    Text_pressure_Rect = Text_pressure.get_rect(center=(600, 400))
+
+    screen.blits(blit_sequence=((Text_Index, Text_Index_Rect),
+                                (Text_o2, Text_o2_Rect),
+                                (Text_co2, Text_co2_Rect),
+                                (Text_lightintenzity, Text_lightintenzity_Rect),
+                                (Text_humidity, Text_humidity_Rect),
+                                (Text_temperature, Text_temperature_Rect),
+                                (Text_pressure, Text_pressure_Rect)))
+
+    pg.display.flip()
+
     
 # MAIN
 while True:
@@ -850,8 +903,15 @@ while True:
             elif (event.__dict__["pos"][0] > 507) and (event.__dict__["pos"][0] < 525) and (
                 event.__dict__["pos"][1] > 71) and (event.__dict__["pos"][1] < 90):
                 ToPhaseII()
+
+            elif (event.__dict__["pos"][0] > 765) and (
+                event.__dict__["pos"][1] < 34):
+                phase = 3
+                ToPhaseIII()
             
     if (phase == 1):
         phase1()
     elif phase == 2:
         phase2()
+    elif phase == 3:
+        phase3()

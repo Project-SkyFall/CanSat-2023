@@ -6,7 +6,7 @@ def makePlot(header, label, dataInv, fig, offeredTimes, show=True):
     ax = plt.subplot(111)
     if label == "specter":
         ax.set_xlabel("wavelenght [nm]")
-        ax.set_ylabel("average irradiance [W*m^-2]")
+        ax.set_ylabel("average irradiance [\u03BCW*cm^-2]")
         specter = []
         for i in range(18):
             suma = 0

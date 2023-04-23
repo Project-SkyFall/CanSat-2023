@@ -91,44 +91,43 @@ def kroky2smer2(var, Yhra0, Yhra1, XHod0, XHod1, XHod2, XHod3, XHod4, XHod5, XHo
     x = list()
     y = list()
 
-    while var < 80:
-        if (var >= XHodnoty[-1]) and (var <= XHodnoty[0]):
-            odecti = 0
+    if (var >= XHodnoty[-1]) and (var <= XHodnoty[0]):
+        odecti = 0
             
-        elif (var >= XHodnoty[-2]) and (var < XHodnoty[-1]):
-            odecti = aMinus1*var**2 + bMinus1*var + cMinus1
+    elif (var >= XHodnoty[-2]) and (var < XHodnoty[-1]):
+        odecti = aMinus1*var**2 + bMinus1*var + cMinus1
             
-        elif (var < XHodnoty[-2]) and (var > XHodnoty[-3]):
-            odecti = kMinus1*var + qMinus1
+    elif (var < XHodnoty[-2]) and (var > XHodnoty[-3]):
+        odecti = kMinus1*var + qMinus1
             
-        elif var == XHodnoty[-3]:
-            odecti = YHranice[0]
+    elif var == XHodnoty[-3]:
+        odecti = YHranice[0]
             
-        elif (var < XHodnoty[-3]) and (var > XHodnoty[-4]):
-            odecti = aMinus2*var**2 + bMinus2*var + cMinus2
+    elif (var < XHodnoty[-3]) and (var > XHodnoty[-4]):
+        odecti = aMinus2*var**2 + bMinus2*var + cMinus2
 
-        elif var == XHodnoty[-4]:
-            odecti = YHranice[1]
+    elif var == XHodnoty[-4]:
+        odecti = YHranice[1]
 
-        elif var < XHodnoty[-4]:
-            odecti = kMinus2*var + qMinus2
+    elif var < XHodnoty[-4]:
+        odecti = kMinus2*var + qMinus2
 
-        elif (var > XHodnoty[0]) and (var <= XHodnoty[1]):
-            odecti = a1*var**2 + b1*var + c1
+    elif (var > XHodnoty[0]) and (var <= XHodnoty[1]):
+        odecti = a1*var**2 + b1*var + c1
             
-        elif (var > XHodnoty[1]) and (var < XHodnoty[2]):
-            odecti = k1*var + q1
+    elif (var > XHodnoty[1]) and (var < XHodnoty[2]):
+        odecti = k1*var + q1
 
-        elif var == XHodnoty[2]:
-            odecti = YHranice[0]
+    elif var == XHodnoty[2]:
+        odecti = YHranice[0]
 
-        elif (var > XHodnoty[2]) and (var < XHodnoty[3]):
-            odecti = a2*var**2 + b2*var + c2
+    elif (var > XHodnoty[2]) and (var < XHodnoty[3]):
+        odecti = a2*var**2 + b2*var + c2
 
-        elif var == XHodnoty[3]:
-            odecti = YHranice[1]
+    elif var == XHodnoty[3]:
+        odecti = YHranice[1]
 
-        else:
-            odecti = k2*var + q2
+    else:
+        odecti = k2*var + q2
 
     return odecti
