@@ -231,7 +231,7 @@ def phase1():
 
         if (line_pre != None) and (line == line_pre):
             print("data shodna s predchozimi")
-            return
+            
 
         if line != "" :
             data_str = line.strip().split(";")
@@ -606,14 +606,20 @@ def ToPhaseII():
         except:
             print("chyba cteni souboru 2")
             return
-        line = fh.readline()
-        header = line.strip().split(';')
-        while ((line == fh.readline()) != None):
+        text = fh.read()
+        text = text.strip().split("\n")
+        header = text[0].strip().split(';')
+        text = text[1:]
+        for line in text:
             strline = line.strip().split(';')
             intline = []
             for string in strline:
-                intline.append(float(string))
+                if string == "":
+                    intline.append(0.0)
+                else:
+                    intline.append(float(string))
             data.append(intline)
+            
         fh.close()
 
     global dataInv
