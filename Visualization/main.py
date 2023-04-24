@@ -787,22 +787,22 @@ def phase3():
     Text_Index = Font_Index.render(str(round(index, 1)), True, black)
     Text_Index_Rect = Text_Index.get_rect(center=(400, 214))
 
-    Text_o2 = Font_Var.render(str(round(o2, 1)), True, black)
+    Text_o2 = Font_Var.render(str(round(o2)), True, black)
     Text_o2_Rect = Text_o2.get_rect(center=(49, 248))
 
-    Text_co2 = Font_Var.render(str(round(co2, 1)), True, black)
+    Text_co2 = Font_Var.render(str(round(co2)), True, black)
     Text_co2_Rect = Text_co2.get_rect(center=(663, 248))
 
-    Text_lightintenzity = Font_Var.render(str(round(lightintenzity, 1)), True, black)
+    Text_lightintenzity = Font_Var.render(str(round(lightintenzity)), True, black)
     Text_lightintenzity_Rect = Text_lightintenzity.get_rect(center=(580, 248))
 
-    Text_humidity = Font_Var.render(str(round(humidity, 1)), True, black)
+    Text_humidity = Font_Var.render(str(round(humidity)), True, black)
     Text_humidity_Rect = Text_humidity.get_rect(center=(133, 248))
     
-    Text_temperature = Font_Var.render(str(round(temperature, 1)), True, black)
+    Text_temperature = Font_Var.render(str(round(temperature)), True, black)
     Text_temperature_Rect = Text_temperature.get_rect(center=(215, 248))
 
-    Text_pressure = Font_Var.render(str(round(pressure, 1)), True, black)
+    Text_pressure = Font_Var.render(str(round(pressure)), True, black)
     Text_pressure_Rect = Text_pressure.get_rect(center=(746, 248))
 
     screen.blits(blit_sequence=((Text_Index, Text_Index_Rect),
