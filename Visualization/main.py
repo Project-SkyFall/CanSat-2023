@@ -47,8 +47,8 @@ black = (0,0,0)
 pg.font.init()
 Font = pg.font.Font(r"font/myriad-pro/MyriadPro-Light.otf", 14)
 Font_RT = pg.font.Font(r"font/myriad-pro/MyriadPro-Light.otf", 11)
-Font_Index = pg.font.Font(r"font/myriad-pro/MyriadPro-Light.otf", 30)
-Font_Var = pg.font.Font(r"font/myriad-pro/MyriadPro-Light.otf", 20)
+Font_Index = pg.font.Font(r"font/myriad-pro/MyriadPro-Light.otf", 100)
+Font_Var = pg.font.Font(r"font/myriad-pro/MyriadPro-Light.otf", 45)
 
 # SETUP PHASE I
 # COORDINATES FOR "dead or alive" AND "up and down"
@@ -184,7 +184,23 @@ show = False
 # SETUP PHASE III
 # LOAD IMAGES
 background3 = pg.image.load(r"GUI_grafika3/GG_background2.png")
+Up3 = pg.image.load(r"GUI_grafika3/Up.png")
+Down3 = pg.image.load(r"GUI_grafika3/Down.png")
+
+# RECTS
 background3_Rect = background3.get_rect()
+Up3_O2_Rect = Up3.get_rect(center = (49, 201))
+Up3_Hum_Rect = Up3.get_rect(center = (133, 201))
+Up3_Temp_Rect = Up3.get_rect(center = (215, 201))
+Up3_Int_Rect = Up3.get_rect(center = (580, 201))
+Up3_CO2_Rect = Up3.get_rect(center = (663, 201))
+Up3_Press_Rect = Up3.get_rect(center = (746, 201))
+Down3_O2_Rect = Down3.get_rect(center = (49, 295))
+Down3_Hum_Rect = Down3.get_rect(center = (133, 295))
+Down3_Temp_Rect = Down3.get_rect(center = (215, 295))
+Down3_Int_Rect = Down3.get_rect(center = (579, 294))
+Down3_CO2_Rect = Down3.get_rect(center = (663, 294))
+Down3_Press_Rect = Down3.get_rect(center = (746, 295))
 
 # TEST
 test = False
@@ -205,10 +221,10 @@ camList = pgCam.list_cameras()
 print("Cams:", camList)
 numOfCam = 0
 
-camsize = (201,139)
+camsize = (204,142)
 cam = pgCam.Camera(camList[int(numOfCam)], camsize)
 cam.start()
-Cam_Rect = pg.Rect((593,66), camsize, border_radius=10)
+Cam_Rect = pg.Rect((592,65), camsize, border_radius=10)
 
 
 # PHASE I
@@ -757,7 +773,8 @@ def phase2():
 # PHASE III
 def ToPhaseIII():
     global Results
-    Results = Index.MakeIndex(dataInv, header)
+    global UpDown
+    Results, UpDown = Index.MakeIndex(dataInv, header)
 
 
 def phase3():
@@ -768,25 +785,25 @@ def phase3():
 
     # TEXTS
     Text_Index = Font_Index.render(str(round(index, 1)), True, black)
-    Text_Index_Rect = Text_Index.get_rect(center=(400, 200))
+    Text_Index_Rect = Text_Index.get_rect(center=(400, 214))
 
     Text_o2 = Font_Var.render(str(round(o2, 1)), True, black)
-    Text_o2_Rect = Text_o2.get_rect(center=(200, 300))
+    Text_o2_Rect = Text_o2.get_rect(center=(49, 248))
 
     Text_co2 = Font_Var.render(str(round(co2, 1)), True, black)
-    Text_co2_Rect = Text_co2.get_rect(center=(400, 300))
+    Text_co2_Rect = Text_co2.get_rect(center=(663, 248))
 
     Text_lightintenzity = Font_Var.render(str(round(lightintenzity, 1)), True, black)
-    Text_lightintenzity_Rect = Text_lightintenzity.get_rect(center=(600, 300))
+    Text_lightintenzity_Rect = Text_lightintenzity.get_rect(center=(580, 248))
 
     Text_humidity = Font_Var.render(str(round(humidity, 1)), True, black)
-    Text_humidity_Rect = Text_humidity.get_rect(center=(200, 400))
+    Text_humidity_Rect = Text_humidity.get_rect(center=(133, 248))
     
     Text_temperature = Font_Var.render(str(round(temperature, 1)), True, black)
-    Text_temperature_Rect = Text_temperature.get_rect(center=(400, 400))
+    Text_temperature_Rect = Text_temperature.get_rect(center=(215, 248))
 
     Text_pressure = Font_Var.render(str(round(pressure, 1)), True, black)
-    Text_pressure_Rect = Text_pressure.get_rect(center=(600, 400))
+    Text_pressure_Rect = Text_pressure.get_rect(center=(746, 248))
 
     screen.blits(blit_sequence=((Text_Index, Text_Index_Rect),
                                 (Text_o2, Text_o2_Rect),
@@ -795,6 +812,36 @@ def phase3():
                                 (Text_humidity, Text_humidity_Rect),
                                 (Text_temperature, Text_temperature_Rect),
                                 (Text_pressure, Text_pressure_Rect)))
+
+    if UpDown[0] == 1:
+        screen.blit(Up3, Up3_O2_Rect)
+    elif UpDown[0] == -1:
+        screen.blit(Down3, Down3_O2_Rect)
+
+    if UpDown[1] == 1:
+        screen.blit(Up3, Up3_CO2_Rect)
+    elif UpDown[1] == -1:
+        screen.blit(Down3, Down3_CO2_Rect)
+
+    if UpDown[2] == 1:
+        screen.blit(Up3, Up3_Int_Rect)
+    elif UpDown[2] == -1:
+        screen.blit(Down3, Down3_Int_Rect)
+
+    if UpDown[3] == 1:
+        screen.blit(Up3, Up3_Hum_Rect)
+    elif UpDown[3] == -1:
+        screen.blit(Down3, Down3_Hum_Rect)
+
+    if UpDown[4] == 1:
+        screen.blit(Up3, Up3_Temp_Rect)
+    elif UpDown[4] == -1:
+        screen.blit(Down3, Down3_Temp_Rect)
+
+    if UpDown[5] == 1:
+        screen.blit(Up3, Up3_Press_Rect)
+    elif UpDown[5] == -1:
+        screen.blit(Down3, Down3_Press_Rect)
 
     pg.display.flip()
 
