@@ -113,6 +113,7 @@ RucickaHeight = pg.image.load(r"GUI_grafika/RucickaHeight3.png")
 RucickaCO2O2 = pg.image.load(r"GUI_grafika/RucickaO2CO22.png")
 RucickaPress = pg.image.load(r"GUI_grafika/RucickaPress2.png")
 Up = pg.image.load(r"GUI_grafika/Up3.png")
+Bluective = pg.image.load(r"GUI_grafika/Bluective3.png")
 
 # GET RECTS
 background_Rect = background.get_rect()
@@ -203,7 +204,7 @@ Down3_CO2_Rect = Down3.get_rect(center = (663, 294))
 Down3_Press_Rect = Down3.get_rect(center = (746, 295))
 
 # TEST
-test = False
+test = True
 if test:
     j = 0
     dolu0 = False
@@ -434,45 +435,61 @@ def phase1():
     temp_pre = temp
 
     # SHOW DEAD OR ALIVE
-    if dORa0:
+    if dORa0 == 1:
         screen.blit(Alive, Alive_Rect0)
-    else:
+    elif dORa0 == 0:
         screen.blit(Dead, Alive_Rect0)
+    else:
+        screen.blit(Bluective, Alive_Rect0)
 
-    if dORa1:
+    if dORa1 == 1:
         screen.blit(Alive, Alive_Rect1)
-    else:
+    elif dORa1 == 0:
         screen.blit(Dead, Alive_Rect1)
+    else:
+        screen.blit(Bluective, Alive_Rect1)
 
-    if dORa2:
+    if dORa2 == 1:
         screen.blit(Alive, Alive_Rect2)
-    else:
+    elif dORa2 == 0:
         screen.blit(Dead, Alive_Rect2)
+    else:
+        screen.blit(Bluective, Alive_Rect2)
 
-    if dORa3:
+    if dORa3 == 1:
         screen.blit(Alive, Alive_Rect3)
-    else:
+    elif dORa3 == 0:
         screen.blit(Dead, Alive_Rect3)
+    else:
+        screen.blit(Bluective, Alive_Rect3)
 
-    if dORa4:
+    if dORa4 == 1:
         screen.blit(Alive, Alive_Rect4)
-    else:
+    elif dORa4 == 0:
         screen.blit(Dead, Alive_Rect4)
+    else:
+        screen.blit(Bluective, Alive_Rect4)
 
-    if dORa5:
+    if dORa5 == 1:
         screen.blit(Alive, Alive_Rect5)
-    else:
+    elif dORa5 == 0:
         screen.blit(Dead, Alive_Rect5)
+    else:
+        screen.blit(Bluective, Alive_Rect5)
 
-    if dORa6:
+    if dORa6 == 1:
         screen.blit(Alive, Alive_Rect6)
-    else:
+    elif dORa6 == 0:
         screen.blit(Dead, Alive_Rect6)
-
-    if dORa7:
-        screen.blit(Alive, Alive_Rect7)
     else:
+        screen.blit(Bluective, Alive_Rect6)
+
+    if dORa7 == 1:
+        screen.blit(Alive, Alive_Rect7)
+    elif dORa7 == 0:
         screen.blit(Dead, Alive_Rect7)
+    else:
+        screen.blit(Bluective, Alive_Rect7)
 
     # SHOW CANSAT MODEL
     rects_to_show = Cansat.project(roll, pitch, yaw)
