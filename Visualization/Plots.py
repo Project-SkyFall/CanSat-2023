@@ -33,11 +33,13 @@ def makePlot(header, label, dataInv, fig, offeredTimes, show=True):
             ax.set_ylabel(label + " [ppm]")
         elif label == "temperature":
             ax.set_ylabel(label + " [°C]")
+        elif label == "current":
+            ax.set_ylabel(label + " [mA]")
         else:
             ax.set_ylabel("illumination" + " [lux]")
         ax.set_xlabel("time [s]")
         ax.plot(dataInv[0], dataInv[header.index(label)], '-b')
-    if label != "specter" and label != "oxygen":
+    if label != "specter" and label != "oxygen" and label != "current":
         for offeredTime in offeredTimes:
             ax.plot((offeredTime,offeredTime), (min(dataInv[header.index(label)]), max(dataInv[header.index(label)])), '-r')
     if show:
