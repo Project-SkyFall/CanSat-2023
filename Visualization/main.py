@@ -100,7 +100,7 @@ pressureMax = 105
 temperatureMin = 5
 temperatureMax = 55
 co2Min = 400
-co2Max = 1000
+co2Max = 5000
 o2Min = 19
 o2Max = 21
 heightMin = 0
@@ -363,13 +363,13 @@ def phase1():
 
     lat = data[29]
     long = data[30]
-    height = data[31]
-    height_Pr = data[32]
+    height_GPS = data[31]
+    height = data[32]
     sattelitesNum = data[33]
 
-    roll = data[34]
-    pitch = data[35]
-    yaw = data[36]
+    roll = data[34]*math.pi/180
+    pitch = data[35]*math.pi/180
+    yaw = data[36]*math.pi/180
 
     o2 = data[37]
 
@@ -559,10 +559,10 @@ def phase1():
           "        " + time[0:2] + "." + time[2:4] + ".20" + time[4:6])
 
     # TEXTS
-    Text_Name = Font.render(r"X-Sat", True, black)
+    Text_Name = Font.render(r"CanSat", True, black)
     Text_Name_Rect = Text_Name.get_rect(center=(129,77))
 
-    Text_BatteryGS = Font.render(str(round(batteryGS)), True, black)
+    Text_BatteryGS = Font.render(str(round(batteryGS, 2)), True, black)
     Text_BatteryGS_Rect = Text_BatteryGS.get_rect(center=(400,32))
 
     Text_Press = Font.render(str(round(press, 1)), True, black)
@@ -586,7 +586,7 @@ def phase1():
     Text_Speed = Font.render(str(round(speed)), True, black)
     Text_Speed_Rect = Text_Speed.get_rect(center=(654,410))
 
-    Text_LandIn = Font.render(str(round(landIn, 1)), True, black)
+    Text_LandIn = Font.render(str(round(landIn)), True, black)
     Text_LandIn_Rect = Text_LandIn.get_rect(center=(657,430))
 
     Text_RT = Font_RT.render(RT, True, black)
@@ -595,10 +595,10 @@ def phase1():
     Text_Humidity = Font.render(str(round(humidity, 1)), True, black)
     Text_Humidity_Rect = Text_Humidity.get_rect(center=(399,200))
     
-    Text_Transfer = Font.render(str(round(transfer)), True, black)
+    Text_Transfer = Font.render(str(round(transfer, 1)), True, black)
     Text_Transfer_Rect = Text_Transfer.get_rect(center=(150,293))
     
-    Text_Battery = Font.render(str(round(battery, 1)), True, black)
+    Text_Battery = Font.render(str(round(battery, 2)), True, black)
     Text_Battery_Rect = Text_Battery.get_rect(center=(152,312))
 
     Text_Sent = Font.render(sent, True, black)
