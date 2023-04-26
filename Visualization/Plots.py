@@ -21,8 +21,8 @@ def makePlot(header, label, dataInv, fig, offeredTimes, show=True):
     elif label == "oxygen":
         ax.set_ylabel("oxygen (blue), humidity (magenta) [%]")
         ax.set_xlabel("time [s]")
-        ax.plot(dataInv[0], dataInv[header.index(label)], '-b')
-        ax.plot(dataInv[0], dataInv[header.index("humidity")], '-m')
+        ax.plot(dataInv[header.index("time2")], dataInv[header.index(label)], '-b')
+        ax.plot(dataInv[header.index("time2")], dataInv[header.index("humidity")], '-m')
         for offeredTime in offeredTimes:
             ax.plot((offeredTime,offeredTime),(min(dataInv[header.index("oxygen")]+dataInv[header.index("humidity")]),
                                             max(dataInv[header.index("oxygen")]+dataInv[header.index("humidity")])), '-r')
