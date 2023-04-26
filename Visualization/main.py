@@ -400,6 +400,8 @@ def phase1():
     transfer = data[56]
     
     dORa11 = data[57]
+    
+    time2 = data[58]
 
     # CALCULATE SPEED
     if time_pre == None:
