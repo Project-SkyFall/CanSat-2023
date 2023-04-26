@@ -48,11 +48,11 @@ class Valec:
 
         for i in range(int(len(self.points_up)/2)):
             point = self.points_up[i]
-            x, z = self.move_point2D(point[0], point[2], roll)
+            x, y = self.move_point2D(point[0], point[1], roll)
             new_point = [x, point[1], z]
             y, z = self.move_point2D(new_point[1], new_point[2], pitch)
             new_point = [new_point[0], y, z]
-            x, y = self.move_point2D(new_point[0], new_point[1], yaw)
+            x, z = self.move_point2D(new_point[0], new_point[2], yaw)
             new_point = [x, y, new_point[2]]
             movedpoints_up[i] = (new_point[0] + self.center[0], new_point[1] + self.center[1], new_point[2])
             j = int(i + self.num_of_points/2)
