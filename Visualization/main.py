@@ -64,6 +64,7 @@ dORa_y7 = 427
 dORa_y8 = 442
 dORa_y9 = 457
 dORa_y10 = 471
+dORa_y11 = 304
 up1_x = 316
 up1_y = 126
 down1_x = 316
@@ -75,11 +76,11 @@ down2_y = 154
 
 # COORDINATES FOR DIALS
 co2_x = 320
-co2_y = 255
-co2_min = -74
+co2_y = 244
+co2_min = -75
 co2_max = 74
 o2_x = 482
-o2_y = 255
+o2_y = 244
 o2_min = -50
 o2_max = 50
 height_x = 725
@@ -132,6 +133,7 @@ Alive_Rect7 = Alive.get_rect(center=(dORa_x, dORa_y7))
 Alive_Rect8 = Alive.get_rect(center=(dORa_x, dORa_y8))
 Alive_Rect9 = Alive.get_rect(center=(dORa_x, dORa_y9))
 Alive_Rect10 = Alive.get_rect(center=(dORa_x, dORa_y10))
+Alive_Rect11 = Alive.get_rect(center=(dORa_x, dORa_y11))
 
 RucickaHeight_Rect = RucickaHeight.get_rect(center=(height_x, height_y_min))
 RucickaO2_Rect = RucickaCO2O2.get_rect(center=(o2_x, o2_y))
@@ -396,6 +398,8 @@ def phase1():
     asx17 = data[55]
 
     transfer = data[56]
+    
+    dORa11 = data[57]
 
     # CALCULATE SPEED
     if time_pre == None:
@@ -547,6 +551,13 @@ def phase1():
         screen.blit(Dead, Alive_Rect10)
     else:
         screen.blit(Bluective, Alive_Rect10)
+        
+    if dORa11 == 1:
+        screen.blit(Alive, Alive_Rect11)
+    elif dORa11 == 0:
+        screen.blit(Dead, Alive_Rect11)
+    else:
+        screen.blit(Bluective, Alive_Rect11)
 
     # SHOW CANSAT MODEL
     rects_to_show = Cansat.project(yaw*math.pi/180, -pitch*math.pi/180, -roll*math.pi/180)
