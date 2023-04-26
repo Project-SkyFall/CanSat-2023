@@ -739,6 +739,7 @@ def ToPhaseII():
     delete = True
 
     Plots.plots(dataInv, header, fig, offeredTimes)
+    fig = Plots.makePlot(header, "current", dataInv, fig, offeredTimes, False)
 
 
 def phase2():
