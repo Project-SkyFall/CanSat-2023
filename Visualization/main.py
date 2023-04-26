@@ -62,8 +62,8 @@ dORa_y5 = 395
 dORa_y6 = 412
 dORa_y7 = 427
 dORa_y8 = 442
-dORa_y9 = 458
-dORa_y10 = 473
+dORa_y9 = 457
+dORa_y10 = 471
 up1_x = 316
 up1_y = 126
 down1_x = 316
@@ -212,7 +212,7 @@ Down3_CO2_Rect = Down3.get_rect(center = (663, 294))
 Down3_Press_Rect = Down3.get_rect(center = (746, 295))
 
 # TEST
-test = False
+test = True
 if test:
     j = 0
     dolu0 = False
