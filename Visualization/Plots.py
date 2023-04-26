@@ -38,7 +38,7 @@ def makePlot(header, label, dataInv, fig, offeredTimes, show=True):
         else:
             ax.set_ylabel("illumination" + " [lux]")
         ax.set_xlabel("time [s]")
-        ax.plot(dataInv[0], dataInv[header.index(label)], '-b')
+        ax.plot(dataInv[header.index("time2")], dataInv[header.index(label)], '-b')
     if label != "specter" and label != "oxygen" and label != "current":
         for offeredTime in offeredTimes:
             ax.plot((offeredTime,offeredTime), (min(dataInv[header.index(label)]), max(dataInv[header.index(label)])), '-r')
