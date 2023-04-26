@@ -546,7 +546,7 @@ def phase1():
         screen.blit(Bluective, Alive_Rect10)
 
     # SHOW CANSAT MODEL
-    rects_to_show = Cansat.project(roll*math.pi/180, pitch*math.pi/180, yaw*math.pi/180)
+    rects_to_show = Cansat.project(yaw*math.pi/180, pitch*math.pi/180, roll*math.pi/180)
     for rect_to_show in rects_to_show:
         rect = pg.draw.polygon(screen, (220,220,220), rect_to_show)
         line = pg.draw.polygon(screen, black, rect_to_show, 1)
