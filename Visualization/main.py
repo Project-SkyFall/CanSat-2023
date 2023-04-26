@@ -226,14 +226,17 @@ line_pre = None
 
 # SETUP CAM
 pgCam.init()
-camList = pgCam.list_cameras()
-print("Cams:", camList)
-numOfCam = 0
+try:
+    camList = pgCam.list_cameras()
+    print("Cams:", camList)
+    numOfCam = 0
 
-camsize = (204,142)
-cam = pgCam.Camera(camList[int(numOfCam)], camsize)
-cam.start()
-Cam_Rect = pg.Rect((592,65), camsize, border_radius=10)
+    camsize = (204,142)
+    cam = pgCam.Camera(camList[int(numOfCam)], camsize)
+    cam.start()
+    Cam_Rect = pg.Rect((592,65), camsize, border_radius=10)
+except:
+    pass
 
 
 # PHASE I
@@ -635,7 +638,11 @@ def phase1():
     Text_vteE_Rect = Text_vteE.get_rect(center=(744, 255))
 
     # GET CAM IMAGE
-    Cam_Image = pg.transform.smoothscale(cam.get_image(), camsize)
+    try:
+        Cam_Image = pg.transform.smoothscale(cam.get_image(), camsize)
+        screen.blit(Cam_Image, Cam_Rect)
+    except:
+        pass
     
     # SHOW TEXTS AND DIALS
     screen.blits(blit_sequence=((Text_Name, Text_Name_Rect),
@@ -668,8 +675,7 @@ def phase1():
                                 (RucickaPress2, RucickaPress_Rect2),
                                 (RucickaCO22, RucickaCO2_Rect2),
                                 (RucickaO22, RucickaO2_Rect2),
-                                (RucickaHeight, RucickaHeight_Rect2),
-                                (Cam_Image, Cam_Rect)))
+                                (RucickaHeight, RucickaHeight_Rect2)))
     pg.display.flip()
 
 def ToPhaseII():
