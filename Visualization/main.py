@@ -359,7 +359,7 @@ def phase1():
     current = data[26]
     power = data[27]
     
-    co2 = data[28]
+    co2 = data[28] / 1000
 
     lat = data[29]
     long = data[30]
@@ -574,7 +574,7 @@ def phase1():
     Text_O2 = Font.render(str(round(o2, 1)), True, black)
     Text_O2_Rect = Text_O2.get_rect(center=(482,274))
 
-    Text_CO2 = Font.render(str(round(co2)), True, black)
+    Text_CO2 = Font.render(str(round(co2, 3)), True, black)
     Text_CO2_Rect = Text_CO2.get_rect(center=(306,274))
 
     Text_Range = Font.render(str(round(rangeCan)), True, black)
@@ -737,6 +737,7 @@ def ToPhaseII():
     slicetext = ";" + str(offeredTimes[0])
     global delete
     delete = True
+    global fig
 
     Plots.plots(dataInv, header, fig, offeredTimes)
     fig = Plots.makePlot(header, "current", dataInv, fig, offeredTimes, False)
