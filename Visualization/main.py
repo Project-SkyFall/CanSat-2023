@@ -586,10 +586,10 @@ def phase1():
     Text_Temp_Rect = Text_Temp.get_rect(center=(479,142))
 
     Text_O2 = Font.render(str(round(o2, 1)), True, black)
-    Text_O2_Rect = Text_O2.get_rect(center=(482,274))
+    Text_O2_Rect = Text_O2.get_rect(center=(482,263))
 
     Text_CO2 = Font.render(str(round(co2, 3)), True, black)
-    Text_CO2_Rect = Text_CO2.get_rect(center=(306,274))
+    Text_CO2_Rect = Text_CO2.get_rect(center=(306,263))
 
     Text_Range = Font.render(str(round(rangeCan)), True, black)
     Text_Range_Rect = Text_Range.get_rect(center=(658,346))
