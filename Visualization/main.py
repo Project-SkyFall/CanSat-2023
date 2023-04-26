@@ -52,15 +52,18 @@ Font_Var = pg.font.Font(r"font/myriad-pro/MyriadPro-Light.otf", 45)
 
 # SETUP PHASE I
 # COORDINATES FOR "dead or alive" AND "up and down"
-dORa_x = 462
-dORa_y0 = 342
-dORa_y1 = 357
-dORa_y2 = 373
-dORa_y3 = 388
-dORa_y4 = 403
-dORa_y5 = 418
-dORa_y6 = 434
-dORa_y7 = 449
+dORa_x = 458
+dORa_y0 = 319
+dORa_y1 = 334
+dORa_y2 = 350
+dORa_y3 = 365
+dORa_y4 = 380
+dORa_y5 = 395
+dORa_y6 = 412
+dORa_y7 = 427
+dORa_y8 = 442
+dORa_y9 = 458
+dORa_y10 = 473
 up1_x = 316
 up1_y = 126
 down1_x = 316
@@ -126,6 +129,9 @@ Alive_Rect4 = Alive.get_rect(center=(dORa_x, dORa_y4))
 Alive_Rect5 = Alive.get_rect(center=(dORa_x, dORa_y5))
 Alive_Rect6 = Alive.get_rect(center=(dORa_x, dORa_y6))
 Alive_Rect7 = Alive.get_rect(center=(dORa_x, dORa_y7))
+Alive_Rect8 = Alive.get_rect(center=(dORa_x, dORa_y8))
+Alive_Rect9 = Alive.get_rect(center=(dORa_x, dORa_y9))
+Alive_Rect10 = Alive.get_rect(center=(dORa_x, dORa_y10))
 
 RucickaHeight_Rect = RucickaHeight.get_rect(center=(height_x, height_y_min))
 RucickaO2_Rect = RucickaCO2O2.get_rect(center=(o2_x, o2_y))
@@ -153,7 +159,9 @@ recieve = ""
 # SET PRE VALUES FOR UP OR DOWN
 press_pre = None
 temp_pre = None
-
+time_pre = None
+height_pre = None
+speed_pre = None
 
 
 # SETUP PHASE II
@@ -204,13 +212,13 @@ Down3_CO2_Rect = Down3.get_rect(center = (663, 294))
 Down3_Press_Rect = Down3.get_rect(center = (746, 295))
 
 # TEST
-test = False
+test = True
 if test:
     j = 0
     dolu0 = False
     dolu1 = False
     data = []
-    for i in range(53):
+    for i in range(57):
         data.append(0)
 
 # SET PRE TEXT VALUE
@@ -270,6 +278,9 @@ def phase1():
     
     global press_pre
     global temp_pre
+    global time_pre
+    global height_pre
+    global speed_pre
     
     # TEST
     if test:
@@ -312,6 +323,7 @@ def phase1():
                 data[6+i] = 0
         data[22] -= 0.099
         data[23] -= 0.099
+        data[31] *= 1.001
 
     # ASING DATA
     batteryGS = data[0]    
@@ -324,56 +336,77 @@ def phase1():
     longGS = data[7]
     rangeCan = data[8]
 
-    dORa0 = data[9]
-    dORa1 = data[10]
-    dORa2 = data[11]
-    dORa3 = data[12]
-    dORa4 = data[13]
-    dORa5 = data[14]
-    dORa7 = data[15]
+    dORa4 = data[9] #BH
+    dORa0 = data[10] #BME
+    dORa3 = data[11] #SCD
+    dORa1 = data[12] #BNO
+    dORa2 = data[13] #OXY
+    dORa5 = data[14] #ASX
+    dORa7 = data[15] #SD
+    dORa10 = data[16] #GPS
+    dORa8 = data[17] #INA
+    dORa6 = data[18] #NEO
+    dORa9 = data[19] #DS18
 
-    lightintensity = data[16]
-    temp = data[17]
-    press = data[18]
-    humidity = data[19]
-    battery = data[20]
-    co2 = data[21]
+    time = data[20]
 
-    dORa6 = data[22]
-    lat = data[23]
-    long = data[24]
-    height = data[25]
-    speed = data[26]
-    time = data[27]
-    sattelitesNum = data[28]
+    lightintensity = data[21]
+    temp = data[22]
+    press = data[23]
+    humidity = data[24]
 
-    roll = data[29]
-    pitch = data[30]
-    yaw = data[31]
+    battery = data[25]
+    current = data[26]
+    power = data[27]
+    
+    co2 = data[28]
 
-    o2 = data[32]
+    lat = data[29]
+    long = data[30]
+    height = data[31]
+    height_Pr = data[32]
+    sattelitesNum = data[33]
 
-    asx0 = data[33]
-    asx1 = data[34]
-    asx2 = data[35]
-    asx3 = data[36]
-    asx4 = data[37]
-    asx5 = data[38]
-    asx6 = data[39]
-    asx7 = data[40]
-    asx8 = data[41]
-    asx9 = data[42]
-    asx10 = data[43]
-    asx11 = data[44]
-    asx12 = data[45]
-    asx13 = data[46]
-    asx14 = data[47]
-    asx15 = data[48]
-    asx16 = data[49]
-    asx17 = data[50]
+    roll = data[34]
+    pitch = data[35]
+    yaw = data[36]
 
-    transfer = data[51]
-    currentAntena = data[52]
+    o2 = data[37]
+
+    asx0 = data[38]
+    asx1 = data[39]
+    asx2 = data[40]
+    asx3 = data[41]
+    asx4 = data[42]
+    asx5 = data[43]
+    asx6 = data[44]
+    asx7 = data[45]
+    asx8 = data[46]
+    asx9 = data[47]
+    asx10 = data[48]
+    asx11 = data[49]
+    asx12 = data[50]
+    asx13 = data[51]
+    asx14 = data[52]
+    asx15 = data[53]
+    asx16 = data[54]
+    asx17 = data[55]
+
+    transfer = data[56]
+
+    # CALCULATE SPEED
+    if time_pre == None:
+        speed = 0
+        time_pre = time
+        height_pre = height
+    elif abs(time - time_pre) >= 2:
+        speed = abs(height - height_pre)/(time - time_pre)
+        height_pre = height
+        time_pre = time
+    else:
+        speed = speed_pre
+
+    speed_pre = speed
 
     # CALCULATE LAND IN
     if speed != 0:
@@ -490,6 +523,27 @@ def phase1():
         screen.blit(Dead, Alive_Rect7)
     else:
         screen.blit(Bluective, Alive_Rect7)
+
+    if dORa8 == 1:
+        screen.blit(Alive, Alive_Rect8)
+    elif dORa8 == 0:
+        screen.blit(Dead, Alive_Rect8)
+    else:
+        screen.blit(Bluective, Alive_Rect8)
+
+    if dORa9 == 1:
+        screen.blit(Alive, Alive_Rect9)
+    elif dORa9 == 0:
+        screen.blit(Dead, Alive_Rect9)
+    else:
+        screen.blit(Bluective, Alive_Rect9)
+
+    if dORa10 == 1:
+        screen.blit(Alive, Alive_Rect10)
+    elif dORa10 == 0:
+        screen.blit(Dead, Alive_Rect10)
+    else:
+        screen.blit(Bluective, Alive_Rect10)
 
     # SHOW CANSAT MODEL
     rects_to_show = Cansat.project(roll, pitch, yaw)
