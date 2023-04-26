@@ -212,7 +212,7 @@ Down3_CO2_Rect = Down3.get_rect(center = (663, 294))
 Down3_Press_Rect = Down3.get_rect(center = (746, 295))
 
 # TEST
-test = True
+test = False
 if test:
     j = 0
     dolu0 = False
