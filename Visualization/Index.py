@@ -46,9 +46,9 @@ def MakeIndex(dataInv, header):
     if averages[header.index("co2")] > 500:
         UpDown[1] = 1
 
-    lightintenzity = zav.kroky2smer2(averages[header.index("lightIntensity")],
-                                     5, 100, 30000, 35000, 50000, 100000,
-                                     0, 200, 800, 1000)
+    lightintenzity = 0 #zav.kroky2smer2(averages[header.index("lightIntensity")],
+                                   #  5, 100, 30000, 35000, 50000, 100000,
+                                    # 0, 200, 800, 1000)
 
     if lightintenzity > 50:
         lightintenzity = 50
@@ -57,6 +57,8 @@ def MakeIndex(dataInv, header):
         UpDown[2] = 1
     elif averages[header.index("lightIntensity")] < 1000:
         UpDown[2] = -1
+        
+    UpDown[2] = 0
         
     humidity = zav.kroky2smer2(averages[header.index("humidity")], 5, 50,
                                60, 62, 70, 100, 0, 25, 29, 30)
