@@ -14,6 +14,9 @@ class MyNeo : public Adafruit_NeoPixel{
 
     Status status;
     Status *statusArray;
+    //enum class Mode{mode_OFF = 0, mode_RUN = 2, mode_FULL = 1};
+    //Mode mode;
+    uint8_t mode = 2;
     const uint8_t &enablePin = _enablePin;
 
     private:

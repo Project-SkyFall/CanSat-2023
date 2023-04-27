@@ -20,9 +20,10 @@ void MyOxygen::getData(){
     if(val < 500){
         status = Status::status_FAIL;
         return;
-    }
+    } 
+    //concentration = map(val, 0, 4095, 0, 25); //2416 = 21%
+    concentration = val* (21.0/2416);
     status = Status::status_OK;
-    concentration = map(val, 0, 4095, 0, 25);
 }
 
 void MyOxygen::printData(){

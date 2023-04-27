@@ -32,11 +32,11 @@ void MyIMU::getData(){
         return;
     }
 
-    if(!wireCheck(_address)){
+    /*if(!wireCheck(_address)){
         isWorking = IsWorking::isWorking_FALSE;
         status = Status::status_FAIL;
         return;
-    }
+    }*/
 
     if(isWorking == IsWorking::isWorking_FALSE){
         if(!setup()){
@@ -46,12 +46,21 @@ void MyIMU::getData(){
     }
     
     sensors_event_t orientationData, accelData;
+    //bno2.getEvent(&orientationData);
     getEvent(&orientationData, Adafruit_BNO055::VECTOR_EULER);
     getEvent(&accelData, Adafruit_BNO055::VECTOR_LINEARACCEL);
 
-    roll = orientationData.orientation.x;
+    roll = orientationData.orientation.z;
     pitch = orientationData.orientation.y;
-    yaw = orientationData.orientation.z;
+    yaw = orientationData.orientation.x;
+
+    accel.x = accelData.acceleration.x;
+    accel.y = accelData.acceleration.y;
+    accel.z = accelData.acceleration.z;
+
+    /* Also send calibration data for each sensor. */
+    uint8_t sys, gyro, accel, mag = 0;
+    getCalibration(&sys, &gyro, &accel, &mag);
 
     /*imu::Vector<3> orientation = getVector(Adafruit_BNO055::VECTOR_EULER);
     roll = orientation.z();
@@ -59,7 +68,6 @@ void MyIMU::getData(){
     yaw = orientation.x();*/
 
     status = Status::status_OK;
-
 }
 
 void MyIMU::printData(){

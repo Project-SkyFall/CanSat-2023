@@ -19,16 +19,13 @@ class MyLora : public LoRa_CanSat{
     void printStatus();
 
     static void onDio0Rise();
-    void handleDio0Rise();
 
-    Status status = Status::status_NACK;
+    Status status = Status::status_FAIL;
     Mode mode = Mode::mode_RUN;
     IsWorking isWorking = IsWorking::isWorking_FALSE;
 
-
-    uint8_t ackStatus;
-    uint8_t lastAckStatus;
-    bool stopCheckTxDone;
+    uint8_t packetLength = 0;
+    uint8_t ackStatus = 0;
 
     const uint8_t& cs = _cs;
 
@@ -40,7 +37,7 @@ class MyLora : public LoRa_CanSat{
     uint8_t _id;
     uint8_t _txPower;
 
-    uint8_t singleTransfer(uint8_t address, uint8_t value);
+    uint8_t singleTransfer(uint8_t address, uint8_t value) override;
 };
 
 void onReceive_callback(int packetSize);

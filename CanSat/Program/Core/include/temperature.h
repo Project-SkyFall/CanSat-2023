@@ -19,6 +19,8 @@ class MyBme : public Adafruit_BME280{
     float pressure;
     float humidity;
 
+    float startingPressure;
+
     private:
     byte _address;
 };

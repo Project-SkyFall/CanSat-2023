@@ -1,5 +1,7 @@
 #include "globalVars.h"
 
+#include <esp_task_wdt.h>
+
 #include "RTOS_tasks.h"
 
 #include "myTime.h"
@@ -15,6 +17,7 @@
 #include "myBNO.h"
 #include "myBH1730.h"
 #include "mySpectro.h"
+#include "camera.h"
 
 uint32_t cycle;
 
@@ -36,7 +39,7 @@ void getData(void *pvParameters){
         scd.status = Status::status_NACK;
         bh.status = Status::status_NACK;
         
-        lora.status = Status::status_NACK;
+        lora.status = Status::status_FAIL;
         sd.status = Status::status_NACK;
         gps.status = Status::status_NACK;
         ds18.status = Status::status_NACK;
@@ -54,22 +57,23 @@ void getData(void *pvParameters){
         asx.getData();
 
         // Wait until other getData from diferent tasks are done or skiped
-        if(!xSemaphoreTake(gpsGetDataDone_semaphore, pollingDelay)) //Serial.println("GPS timeout");
-        if(!xSemaphoreTake(ds18GetDataDone_semaphore, pollingDelay)) //Serial.println("DS18 timeout");
-        // Task are done or skiped after pollingDelay
+        if(!xSemaphoreTake(gpsGetDataDone_semaphore, pollingDelay)) Serial.println("GPS timeout");
+        if(!xSemaphoreTake(ds18GetDataDone_semaphore, pollingDelay)) Serial.println("DS18 timeout");
+        // Task are done or skiped when pollingDelay passes
 
         lora.sendData();
-        sd.save();
+        if(sd.mode != Mode::mode_SLEEP){
+            sd.save();
 
-        //vTaskResume(saveData_handle);
-
-        if(!xSemaphoreTake(saveData_semaphore, dataPrintDelay)) Serial.println("SD save timeout");
+            if(!xSemaphoreTake(saveData_semaphore, dataPrintDelay)) Serial.println("SD save timeout");
+        }
 
         neo.updateStatuses();
         vTaskResume(printData_hadle);
 
-        vTaskResume(openFile_handle);
-        if(!xTaskDelayUntil(&getData_lastTime, refreshRate/portTICK_PERIOD_MS)) //Serial.println("Loop to slow!");
+        if(sd.mode != Mode::mode_SLEEP) vTaskResume(openFile_handle);
+        
+        if(!xTaskDelayUntil(&getData_lastTime, refreshRate/portTICK_PERIOD_MS)) Serial.println("Loop to slow!");
         cycle++;
     }
 }
@@ -100,6 +104,7 @@ void printData(void *pvParameters){
 
         server.printStatus();
         neo.printStatus();
+        cam.printStatus();
     }
 }
 
@@ -141,13 +146,16 @@ void runServer(void *pvParameters){
 
 void openFile(void *pvParameters){
     while(true){
+        
         vTaskSuspend(NULL);
+        esp_task_wdt_init(5, true); //enable panic so ESP32 restarts
+        esp_task_wdt_add(NULL); //add current thread to WDT watch
         if(!fileOpened){
-            Serial.println("Opening file");
             xSemaphoreTake(spiSemaphore_hadle, portMAX_DELAY);
             fileOpened = sd.openFile();
             xSemaphoreGive(spiSemaphore_hadle);
         }
+        esp_task_wdt_deinit();
     }
 }
 

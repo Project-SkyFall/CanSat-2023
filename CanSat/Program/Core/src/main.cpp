@@ -1,7 +1,16 @@
+//TODO camPower IRQ časovač
+//TODO animace LED
+//TODO findMe svit
+//fTODO po každém uložení ukončit SD kartu (zkusit)
+//dTODO zkalibrovat kyslík - done
+
+//17:56 - 7.74V
+
 #include "globalVars.h"
 
 #include "RTOS_tasks.h"
 #include "esp32/rom/rtc.h"
+#include <esp_task_wdt.h>
 
 #include "myTime.h"
 #include "temperature.h"
@@ -19,9 +28,12 @@
 #include "mySpectro.h"
 #include "pot.h"
 #include "gpioExtender.h"
+#include "camera.h"
 
 bool doDebug;
 String serialBuffer;
+bool softwareReset;
+bool launched;
 
 MyBme bme(0x77);
 MyGPS gps(0x42);
@@ -42,6 +54,7 @@ MyBH1730 bh(BH1730_GAIN::GAIN_X1);
 MySpectro asx;
 Pot pot(0x2E);
 PCA8574 pca(0x20);
+Camera cam;
 
 TaskHandle_t runServer_handle;
 TaskHandle_t printData_hadle;
@@ -68,7 +81,6 @@ OneWire oneWire;
 
 void setup(void) {
   Serial.begin(115200);
-  //Serial1.begin(4800, SERIAL_8N2, 9, 9);
   Wire.begin(21, 22, 400000ul);
   Wire1.begin(19, 18, 100000ul);
   oneWire.begin(4);
@@ -84,15 +96,21 @@ void setup(void) {
   Serial.println("Core 0 restart reason: " + verbose_print_reset_reason(rtc_get_reset_reason(0)));
   Serial.println("Core 1 restart reason: " + verbose_print_reset_reason(rtc_get_reset_reason(1)));
 
+  if(rtc_get_reset_reason(0) == 12){
+    Serial.println("Watchdog reset");
+    sd.mode = Mode::mode_SLEEP;
+  }
+
   spiSemaphore_hadle = xSemaphoreCreateBinary();
   gpsGetDataDone_semaphore = xSemaphoreCreateBinary();
   ds18GetDataDone_semaphore = xSemaphoreCreateBinary();
-  saveData_semaphore = xSemaphoreCreateCounting(3, 0);
-  //openFile_semaphore = xSemaphoreCreateBinary();
+  saveData_semaphore = xSemaphoreCreateBinary();
 
-  xSemaphoreGive(spiSemaphore_hadle)/* ? Serial.println("SPI semaphore released") : Serial.println("SPI semaphore not released")*/;
+  xSemaphoreGive(spiSemaphore_hadle);
 
   Serial.println('\n');
+  printResult(pca.setup(true));
+  printResult(cam.setup(true));
   printResult(rtc.setup(true));
   printResult(sd.setup(true));
   printResult(gps.setup(true));
@@ -107,15 +125,11 @@ void setup(void) {
   printResult(bh.setup(true));
   printResult(asx.setup(true));
   printResult(pot.setup(true));
-  printResult(pca.setup(true));
-
-  digitalWrite(neo.enablePin, HIGH);
 
   xTaskCreate(runServer, "Run Server", 4096, NULL, 3, &runServer_handle);
   xTaskCreate(runNeo, "Run Neo Pixels", 2048, NULL, 3, &runNeo_handle);
 
   xTaskCreate(printData, "Print Data", 4096, NULL, 5, &printData_hadle);
-  //xTaskCreate(saveData, "Save Data Task", 4096, NULL, 5, &saveData_handle);
   xTaskCreate(openFile, "Open SD file", 4096, NULL, 6, &openFile_handle);
 
   xTaskCreate(isrHandleDioRise, "ISR DIO Rise", 2048, NULL, 15, &isrHandleDioRise_handle);

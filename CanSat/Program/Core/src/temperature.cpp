@@ -32,7 +32,6 @@ MyDS18B20::MyDS18B20(OneWire* bus, uint8_t pin):
 bool MyDS18B20::setup(bool verbose){
     verbose ? Serial.println("---DS18B20 setup----------------------------------") : 0;
     setOneWire(_bus);
-    setPullupPin(_pin);
     begin();
 
     /*if(!isConnected(&4)){
@@ -68,6 +67,12 @@ void MyBme::getData(){
     temperature = readTemperature();
     pressure = readPressure() / 100.0F;
     humidity = readHumidity();
+
+    static bool oneTime = false;
+    if(!softwareReset && !oneTime){
+        startingPressure = pressure;
+        oneTime = true;
+    }
 
     status = Status::status_OK;
 }

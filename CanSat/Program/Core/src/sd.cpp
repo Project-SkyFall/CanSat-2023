@@ -23,12 +23,12 @@ MySD::MySD(uint8_t cs):
 }
 
 bool MySD::setup(bool verbose){
+    if(mode == Mode::mode_SLEEP){
+        status = Status::status_SLEEP;
+        return false;
+    }
     static bool firstTime = true;
     verbose ? Serial.println("---SDc setup-------------------------------------") : 0;
-
-    if(!firstTime){
-        SD.end();
-    }
 
     if(!SD.begin(_cs)){
         isWorking = IsWorking::isWorking_FALSE;
@@ -70,15 +70,24 @@ bool MySD::setup(bool verbose){
 
 bool MySD::openFile(){
 
-    if(isWorking == IsWorking::isWorking_FALSE){
+    static uint8_t tryNumber;
+
+    if(mode == Mode::mode_SLEEP){
+        status = Status::status_SLEEP;
+        return false;
+    }
+
+    //if(isWorking == IsWorking::isWorking_FALSE){
         if(!setup()){
+            tryNumber = 1;
             status = Status::status_FAIL;
             return false;
         }
-    }
+    //}
 
     myFile = SD.open(path, FILE_APPEND);
     if(!myFile){
+        SD.end();
         isWorking = IsWorking::isWorking_FALSE;
         status = Status::status_FAIL;
         return false;
@@ -87,6 +96,11 @@ bool MySD::openFile(){
 }
 
 bool MySD::save(){
+
+    if(mode == Mode::mode_SLEEP){
+        status = Status::status_SLEEP;
+        return false;
+    }
 
     if(isWorking == IsWorking::isWorking_FALSE){
         status = Status::status_FAIL;
@@ -100,6 +114,7 @@ bool MySD::save(){
         myPrint(rtc.dateTime_string);
         myPrint(bme.temperature); myPrint(bme.pressure); myPrintln(bme.humidity);
         myFile.close();
+        SD.end();
         fileOpened = false;
 
         xSemaphoreGive(spiSemaphore_hadle);
@@ -108,6 +123,8 @@ bool MySD::save(){
         status = Status::status_OK;
         return true;
     }
+
+    return false;
 
 }
 

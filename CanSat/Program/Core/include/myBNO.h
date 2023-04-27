@@ -2,6 +2,9 @@
 #define MY_IMU_H
 
 #include <Adafruit_BNO055.h>
+#include <Adafruit_Sensor.h>
+#include <Adafruit_BNO055.h>
+#include <utility/imumaths.h>
 
 class MyIMU : public Adafruit_BNO055{
     public:
@@ -29,6 +32,10 @@ class MyIMU : public Adafruit_BNO055{
     uint8_t _reset;
 };
 
+bool bnoSetup(bool verbose=false);
+void bnoGetData();
+
 extern MyIMU bno;
+//extern Adafruit_BNO055 bno2;
 
 #endif

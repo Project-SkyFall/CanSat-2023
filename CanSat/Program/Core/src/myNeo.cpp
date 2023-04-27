@@ -42,6 +42,8 @@ bool MyNeo::setup(bool verbose){
 
     clear();
 
+    //mode == 2 ? digitalWrite(enablePin, HIGH) : digitalWrite(enablePin, LOW);
+
     return true;
 }
 
@@ -68,50 +70,28 @@ void MyNeo::updateStatuses(){
 }
 
 void MyNeo::animation(){
-  /*static uint16_t ledStep;
-
-  clear();
-  if(ledStep >= 2*_numPixels - 1){
-    ledStep = 0;
-  }
-  for(int l = 0; l<_numPixels; l++){
-    int c = 255 - 255/_numPixels*(ledStep-l);
-    if(c > 255 || c < 0){ c = 0;}
-    setPixelColor(l, Color(0, c, c, 0));
-  }
-  show();
-  ledStep++;
-  vTaskDelay(40/portTICK_PERIOD_MS);*/
-
-
-  //uint8_t *statusArray = new byte(_numPixels);
-  //static uint8_t statusArray[_numPixels];
   static uint8_t step;
+  uint8_t brightness = 1;
+  status = Status::status_SLEEP;
 
-  /*if(step == 0){
-    statusArray[0] = bme.status;
-    statusArray[1] = lora.status;
-    statusArray[2] = ds18.status;
-    statusArray[3] = gps.status;
-    statusArray[4] = sd.status;
-    statusArray[5] = oxygen.status;
-    statusArray[6] = rtc.status;
-    statusArray[7] = bno.status;
+  if(mode == 0){
+    status = Status::status_NACK;
+    digitalWrite(enablePin, LOW);
+    return;
+  }
 
-    statusArray[8] = Status::status_SLEEP;
-    statusArray[9] = Status::status_SLEEP;
-    statusArray[10] = Status::status_SLEEP;
-    statusArray[11] = Status::status_SLEEP;
-    statusArray[12] = Status::status_SLEEP;
-    statusArray[13] = Status::status_SLEEP;
-    statusArray[14] = Status::status_SLEEP;
-    statusArray[15] = Status::status_SLEEP;
-  }*/
-
+  digitalWrite(enablePin, HIGH);
+  
   clear();
+
+  if(mode == 1){
+    brightness = 100;
+    status = Status::status_OK;
+  }
+
   for(int i = 0; i < _numPixels/2; i++){
-    setPixelColor(i, translateColor(statusArray[i], 5));
-    setPixelColor(i+_numPixels/2, translateColor(statusArray[i+_numPixels/2], 5));
+    setPixelColor(i, translateColor(statusArray[i], brightness));
+    setPixelColor(i+_numPixels/2, translateColor(statusArray[i+_numPixels/2], brightness));
   }
   show();
   step++;
@@ -119,7 +99,6 @@ void MyNeo::animation(){
     step = 0;
     //vTaskSuspend(NULL);
   }
-  status = Status::status_OK;
   vTaskDelay(20/portTICK_PERIOD_MS);
 }
 
@@ -142,8 +121,12 @@ uint32_t MyNeo::translateColor(Status status, byte brightness){
 void MyNeo::printStatus(){
   Serial.print("NEOPIXELS: ");
   if(status == Status::status_OK){
-    Serial.println("RUNNING");
+    Serial.println("FULL");
     return;
   }
-  Serial.println("SUSPENDED");
+  else if(status == Status::status_NACK){
+    Serial.println("SUSPENDED");
+    return;
+  }
+  Serial.println("RUNNING");
 }
