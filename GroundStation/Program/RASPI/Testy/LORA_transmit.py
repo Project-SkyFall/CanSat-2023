@@ -21,11 +21,9 @@ vycet = 1
 ck = ""
 ckedit = 0
 
-uartpacket = ""
+sendpacket = "1"
 
 rfm9x._write_u8(0xB9, 0xFF)
-
-#filecommfile = open('/home/pi/Desktop/filecomm.txt', 'r')
 
 def commfromfile():
     global packet_text
@@ -48,7 +46,6 @@ def commfromfile():
     
 
 def Dataword():
-    global uartpacket
     global checked_packet
     global final
     #print(checked_packet)
@@ -60,9 +57,6 @@ def Dataword():
             lorafile.write("%s" % final)
         final = ""
         checked_packet = ""
-
-def doNothing():
-    nothing = True
 
 def ControlK():
     global soucet
@@ -112,43 +106,100 @@ def LoraReceive():                              #Basic lora function
     global checked_packet
     global prev_packet                          #Definition of variables
     global filecomm
+    global sendpacket
     packet = None                               #Variable for storing packets (set to NONE every loop)
-
     packet = rfm9x.receive(with_header=True)    #Listening for packets, Header - first 4 letters of message
+    if packet == None:
+        return
+    LoraSend()
+    prev_packet = packet
+    #print(prev_packet)
+    with open("/home/pi/Desktop/LoRaCharsReceived.txt", "a") as errorfile:
+        errorfile.write("\n%s" % prev_packet)
 
-    if packet != None:
-        prev_packet = packet
-        #print(prev_packet)
+    try:
+        packet_text = str(prev_packet, "utf-8") #Decoding packet to an UTF-8 symbol package
+    except:
+        print("error during decoding")
+
         with open("/home/pi/Desktop/LoRaCharsReceived.txt", "a") as errorfile:
-            errorfile.write("\n%s" % prev_packet)
-
-        try:
-            packet_text = str(prev_packet, "utf-8") #Decoding packet to an UTF-8 symbol package
-        except:
-            print("error during decoding")
-
-            with open("/home/pi/Desktop/LoRaCharsReceived.txt", "a") as errorfile:
-                errorfile.write("\nerror during decoding")
+            errorfile.write("\nerror during decoding")
                 
-        finally:
-            vysledek = False
-            ControlK()
-            if vysledek == True:
-                checked_packet = packet_text
-                #print(checked_packet)
-            else:
-                print("bad ck")
+    finally:
+        vysledek = False
+        ControlK()
+        if vysledek == True:
+            checked_packet = packet_text
+            print(checked_packet)
+        else:
+            print("bad ck")
+        CommandREAD()
+        Dataword()
             
-def LoraSEND():
-    counter = 0
-    text = "cw_editRef;2000;"
+def CommandREAD():
+    global sendpacket
+            
+    with open("/home/pi/Desktop/Command.txt", "r") as commandfile:
+        if commandfile.readable():
+            commandread = commandfile.read()
+    if commandread == "":
+        Command = "Salty Manager nevyžaduje žádný příkaz"
+    elif commandread == "Restart":
+        restart()
+        return
+    else:
+        Command = commandread
+        
+    with open("/home/pi/Desktop/Command.txt", "w") as file1:
+        file1.write("")
+        
+    soucet = 0
+    for char in Command:
+        soucet += int(ord(char))
 
-    rfm9x.send(bytes("message number {}".format(text), "UTF-8"))
+    strsoucet = str(soucet)
+
+    CK = ""
+    for i in range(8 - (len(strsoucet))):
+        CK += "0"
+    CK += strsoucet
+
+
+    sendpacket = Command
+    sendpacket += ";"
+    sendpacket += CK
+    
+    #print(sendpacket)
+def restart():
+    Command = "Debílku restartuj se"
+
+    soucet = 0
+    for char in Command:
+        soucet += int(ord(char))
+
+    strsoucet = str(soucet)
+
+    CK = ""
+    for i in range(8 - (len(strsoucet))):
+        CK += "0"
+    CK += strsoucet
+
+
+    sendpacket = Command
+    sendpacket += ";"
+    sendpacket += CK
+
+    rfm9x.send(bytes(sendpacket, "UTF-8"))
+    print("sended")
+
+    with open("/home/pi/Desktop/Command.txt", "w") as file1:
+        file1.write("")
+def LoraSend():
+    global sendpacket
+    print(sendpacket)
+    rfm9x.send(bytes(sendpacket, "UTF-8"), keep_listening=True)
+    print("sended")
+    
 while True:
-    #commfromfile()
     LoraReceive()
-    Dataword()
-
-    #time.sleep(0.0001)
-#filecommfile.close()
 
