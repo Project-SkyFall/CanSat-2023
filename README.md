@@ -1,2 +1,2 @@
 # CanSat-2023
-This is repository for Czech CanSat team Project SkyFall
+This is a repository of the Czech CanSat team Project SkyFall
