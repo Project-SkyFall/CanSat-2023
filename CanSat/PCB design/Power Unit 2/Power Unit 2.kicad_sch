@@ -647,7 +647,7 @@
       (reference "J104") (unit 1) (value "Conn_02x02_Female") (footprint "CanSat_2023:PinSocket_2x02_P2.54mm_Vertical")
     )
     (path "/72587501-acf4-4072-82fc-2bb637554228/7cc4734e-5a13-4bec-8565-2a9260ec0237"
-      (reference "J201") (unit 1) (value "Conn_01x03") (footprint "CanSat_2023:JST_PH_B3B-PH-SM4-TB_1x03-1MP_P2.00mm_Vertical")
+      (reference "J201") (unit 1) (value "Conn_01x03") (footprint "Connector_JST:JST_PH_S3B-PH-SM4-TB_1x03-1MP_P2.00mm_Horizontal")
     )
     (path "/72587501-acf4-4072-82fc-2bb637554228/a8e28c13-d7b0-4483-83f7-76c6eeb45f00/5115d1d1-7f1d-49a5-8a5f-c01d4f27af77"
       (reference "J901") (unit 1) (value "Conn_01x02") (footprint "CanSat_2023:Molex_PicoBlade_53261-0271_1x02-1MP_P1.25mm_Horizontal")
@@ -703,8 +703,8 @@
     (path "/72587501-acf4-4072-82fc-2bb637554228/a7d1e1df-e348-4a05-9bfc-71a0bce1303d/a454efbc-5b37-43e8-ae2b-b04435657620"
       (reference "Q601") (unit 1) (value "BC847") (footprint "CanSat_2023:SOT-23")
     )
-    (path "/72587501-acf4-4072-82fc-2bb637554228/a8e28c13-d7b0-4483-83f7-76c6eeb45f00/6e24531b-3e12-4b61-89bb-b49e5e58d584"
-      (reference "Q901") (unit 1) (value "BC847") (footprint "CanSat_2023:SOT-23")
+    (path "/72587501-acf4-4072-82fc-2bb637554228/a8e28c13-d7b0-4483-83f7-76c6eeb45f00/117c5268-c9cc-43a8-85a5-a7d220f07718"
+      (reference "Q901") (unit 1) (value "BC857") (footprint "Package_TO_SOT_SMD:SOT-23")
     )
     (path "/72587501-acf4-4072-82fc-2bb637554228/befa0446-b956-4ed8-b44a-2fc8457424cd"
       (reference "R201") (unit 1) (value "10k") (footprint "CanSat_2023:R_0805_2012Metric")

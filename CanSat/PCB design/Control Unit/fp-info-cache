@@ -1,4 +1,4 @@
-20349736347968756
+20475816295205489
 1Knihovna
 2989
 
@@ -21,7 +21,7 @@ capacitor
 2
 2
 1Knihovna
-Cu_Conn
+Cu_Conn-R_0805_2012Metric
 
 
 0
@@ -42,12 +42,26 @@ ECX-31B
 2
 2
 1Knihovna
+ESP32-DevKitM-1
+
+
+0
+34
+34
+1Knihovna
 Hard_Jumper
 
 
 0
 2
 2
+1Knihovna
+JS5208
+
+
+0
+6
+6
 1Knihovna
 JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical
 JST PH series connector, B2B-PH-K (http://www.jst-mfg.com/product/pdf/eng/ePH.pdf), generated with kicad-footprint-generator
@@ -73,6 +87,13 @@ LGA 28 5.2x3.8mm Pitch 0.5mm
 L_0805_2012Metric
 Inductor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 80, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
 inductor
+0
+2
+2
+1Knihovna
+L_Bourns_SRP7050AA
+Shielded Power Inductors (https://www.bourns.com/docs/product-datasheets/srp7028a.pdf)
+Shielded Inductors Bourns SMD SRP7028A
 0
 2
 2
@@ -119,6 +140,13 @@ mounting hole 3.2mm no annular m3
 0
 0
 1Knihovna
+OLED-SPI
+
+
+0
+7
+7
+1Knihovna
 PCM12SMTR
 
 
@@ -139,6 +167,20 @@ Through hole socket strip THT 2x04 2.54mm double row
 0
 8
 8
+1Knihovna
+RFM96W-breakout-board
+
+
+0
+14
+14
+1Knihovna
+R_0207
+
+
+0
+2
+2
 1Knihovna
 R_0805_2012Metric
 Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
@@ -237,6 +279,13 @@ Connector
 0
 20
 17
+1Knihovna
+WS2811_SMD
+
+
+0
+4
+4
 1Knihovna
 XDCR_SCD41-D-R2
 
@@ -2820,6 +2869,461 @@ Hirose U.FL Coaxial
 0
 3
 2
+CanSat_2023
+009155004541006
+009150091550045410065004541006-1
+Connector
+0
+6
+6
+CanSat_2023
+2989
+
+
+0
+3
+2
+CanSat_2023
+Bosch_LGA-8_2.5x2.5mm_P0.65mm_ClockwisePinNumbering
+LGA-8
+lga land grid array
+0
+8
+8
+CanSat_2023
+CDRH125101MC
+CDRH125-101MC
+Inductor
+0
+2
+2
+CanSat_2023
+CP_EIA-3528-21_Kemet-B
+Tantalum Capacitor SMD Kemet-B (3528-21 Metric), IPC_7351 nominal, (Body size from: http://www.kemet.com/Lists/ProductCatalog/Attachments/253/KEM_TC101_STD.pdf), generated with kicad-footprint-generator
+capacitor tantalum
+0
+2
+2
+CanSat_2023
+CP_EIA-7343-31_Kemet-D
+Tantalum Capacitor SMD Kemet-D (7343-31 Metric), IPC_7351 nominal, (Body size from: http://www.kemet.com/Lists/ProductCatalog/Attachments/253/KEM_TC101_STD.pdf), generated with kicad-footprint-generator
+capacitor tantalum
+0
+2
+2
+CanSat_2023
+CP_Elec_6.3x7.7
+SMD capacitor, aluminum electrolytic, Nichicon, 6.3x7.7mm
+capacitor electrolytic
+0
+2
+2
+CanSat_2023
+C_0805_2012Metric
+Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator
+capacitor
+0
+2
+2
+CanSat_2023
+DS1139-05
+
+
+0
+12
+9
+CanSat_2023
+D_SMA
+Diode SMA (DO-214AC)
+Diode SMA (DO-214AC)
+0
+2
+2
+CanSat_2023
+D_SOD-123F
+D_SOD-123F
+D_SOD-123F
+0
+2
+2
+CanSat_2023
+D_SOD-323
+SOD-323
+SOD-323
+0
+2
+2
+CanSat_2023
+ECX-31B
+
+
+0
+2
+2
+CanSat_2023
+ESP32-MINI-1
+
+
+0
+63
+55
+CanSat_2023
+Fiducial_0.75mm_Mask1.5mm
+Circular Fiducial, 0.75mm bare copper, 1.5mm soldermask opening (Level B)
+fiducial
+0
+1
+0
+CanSat_2023
+HOPERF_RFM9XW_SMD
+Low Power Long Range Transceiver Module SMD-16 (https://www.hoperf.com/data/upload/portal/20181127/5bfcbea20e9ef.pdf)
+LoRa Low Power Long Range Transceiver Module
+0
+16
+16
+CanSat_2023
+JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical
+JST PH series connector, B2B-PH-K (http://www.jst-mfg.com/product/pdf/eng/ePH.pdf), generated with kicad-footprint-generator
+connector JST PH side entry
+0
+2
+2
+CanSat_2023
+JST_PH_B3B-PH-SM4-TB_1x03-1MP_P2.00mm_Vertical
+JST PH series connector, B3B-PH-SM4-TB (http://www.jst-mfg.com/product/pdf/eng/ePH.pdf), generated with kicad-footprint-generator
+connector JST PH side entry
+0
+5
+4
+CanSat_2023
+LED_0805_2012Metric
+LED SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator
+LED
+0
+2
+2
+CanSat_2023
+LGA-28_5.2x3.8mm_P0.5mm
+LGA 28 5.2x3.8mm Pitch 0.5mm
+LGA 28 5.2x3.8mm Pitch 0.5mm
+0
+28
+28
+CanSat_2023
+L_0805_2012Metric
+Inductor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 80, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
+inductor
+0
+2
+2
+CanSat_2023
+L_Bourns_SRP7050AA
+Shielded Power Inductors (https://www.bourns.com/docs/product-datasheets/srp7028a.pdf)
+Shielded Inductors Bourns SMD SRP7028A
+0
+2
+2
+CanSat_2023
+ME2-O2
+
+
+0
+3
+3
+CanSat_2023
+MP2639AGRZ
+QFN-26 (4mmx4mm)
+Integrated Circuit
+0
+26
+26
+CanSat_2023
+Molex_PicoBlade_53047-0210_1x02_P1.25mm_Vertical
+Molex PicoBlade Connector System, 53047-0210, 2 Pins per row (http://www.molex.com/pdm_docs/sd/530470610_sd.pdf), generated with kicad-footprint-generator
+connector Molex PicoBlade side entry
+0
+2
+2
+CanSat_2023
+Molex_PicoBlade_53047-0310_1x03_P1.25mm_Vertical
+Molex PicoBlade Connector System, 53047-0310, 3 Pins per row (http://www.molex.com/pdm_docs/sd/530470610_sd.pdf), generated with kicad-footprint-generator
+connector Molex PicoBlade side entry
+0
+3
+3
+CanSat_2023
+Molex_PicoBlade_53261-0271_1x02-1MP_P1.25mm_Horizontal
+Molex PicoBlade series connector, 53261-0271 (http://www.molex.com/pdm_docs/sd/532610271_sd.pdf), generated with kicad-footprint-generator
+connector Molex PicoBlade top entry
+0
+4
+3
+CanSat_2023
+MountingHole_3.2mm_M3
+Mounting Hole 3.2mm, no annular, M3
+mounting hole 3.2mm no annular m3
+0
+0
+0
+CanSat_2023
+PCM12SMTR
+
+
+0
+7
+4
+CanSat_2023
+PinHeader_2x02_P2.54mm_Vertical
+Through hole straight pin header, 2x02, 2.54mm pitch, double rows
+Through hole pin header THT 2x02 2.54mm double row
+0
+4
+4
+CanSat_2023
+PinHeader_2x04_P2.54mm_Vertical
+Through hole straight pin header, 2x04, 2.54mm pitch, double rows
+Through hole pin header THT 2x04 2.54mm double row
+0
+8
+8
+CanSat_2023
+PinSocket_2x02_P2.54mm_Vertical
+Through hole straight socket strip, 2x02, 2.54mm pitch, double cols (from Kicad 4.0.7), script generated
+Through hole socket strip THT 2x02 2.54mm double row
+0
+4
+4
+CanSat_2023
+PinSocket_2x04_P2.54mm_Vertical
+Through hole straight socket strip, 2x04, 2.54mm pitch, double cols (from Kicad 4.0.7), script generated
+Through hole socket strip THT 2x04 2.54mm double row
+0
+8
+8
+CanSat_2023
+QFN-24-1EP_4x4mm_P0.5mm_EP2.6x2.6mm
+QFN, 24 Pin (http://ww1.microchip.com/downloads/en/PackagingSpec/00000049BQ.pdf#page=278), generated with kicad-footprint-generator ipc_noLead_generator.py
+QFN NoLead
+0
+29
+25
+CanSat_2023
+R_0805_2012Metric
+Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
+resistor
+0
+2
+2
+CanSat_2023
+R_1206_3216Metric
+Resistor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
+resistor
+0
+2
+2
+CanSat_2023
+R_1206_Current
+Resistor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
+resistor
+0
+2
+2
+CanSat_2023
+SOIC-8-1EP_3.9x4.9mm_P1.27mm_EP2.29x3mm
+SOIC, 8 Pin (https://www.analog.com/media/en/technical-documentation/data-sheets/ada4898-1_4898-2.pdf#page=29), generated with kicad-footprint-generator ipc_gullwing_generator.py
+SOIC SO
+0
+8
+8
+CanSat_2023
+SOIC-8_3.9x4.9mm_P1.27mm
+SOIC, 8 Pin (JEDEC MS-012AA, https://www.analog.com/media/en/package-pcb-resources/package/pkg_pdf/soic_narrow-r/r_8.pdf), generated with kicad-footprint-generator ipc_gullwing_generator.py
+SOIC SO
+0
+8
+8
+CanSat_2023
+SOIC127P600X175-8N
+S8+4
+Integrated Circuit
+0
+8
+8
+CanSat_2023
+SOP65P640X110-16N
+SOT403-1 (TSSOP16)
+Integrated Circuit
+0
+16
+16
+CanSat_2023
+SOT-23
+SOT, 3 Pin (https://www.jedec.org/system/files/docs/to-236h.pdf variant AB), generated with kicad-footprint-generator ipc_gullwing_generator.py
+SOT TO_SOT_SMD
+0
+3
+3
+CanSat_2023
+SOT-23-5
+SOT, 5 Pin (https://www.jedec.org/sites/default/files/docs/Mo-178c.PDF variant AA), generated with kicad-footprint-generator ipc_gullwing_generator.py
+SOT TO_SOT_SMD
+0
+5
+5
+CanSat_2023
+SOT-23-6
+SOT, 6 Pin (https://www.jedec.org/sites/default/files/docs/Mo-178c.PDF variant AB), generated with kicad-footprint-generator ipc_gullwing_generator.py
+SOT TO_SOT_SMD
+0
+6
+6
+CanSat_2023
+SOT-143
+SOT-143 https://www.nxp.com/docs/en/package-information/SOT143B.pdf
+SOT-143
+0
+4
+4
+CanSat_2023
+SOT65P210X110-6N
+6-Lead Thin Shrink Small sc 70
+Integrated Circuit
+0
+6
+6
+CanSat_2023
+SW_DIP_SPSTx03_Slide_Omron_A6S-310x_W8.9mm_P2.54mm
+SMD 3x-dip-switch SPST Omron_A6S-310x, Slide, row spacing 8.9 mm (350 mils), body size  (see http://omronfs.omron.com/en_US/ecb/products/pdf/en-a6s.pdf)
+SMD DIP Switch SPST Slide 8.9mm 350mil
+0
+6
+6
+CanSat_2023
+SW_DIP_SPSTx04_Slide_Omron_A6S-410x_W8.9mm_P2.54mm
+SMD 4x-dip-switch SPST Omron_A6S-410x, Slide, row spacing 8.9 mm (350 mils), body size  (see http://omronfs.omron.com/en_US/ecb/products/pdf/en-a6s.pdf)
+SMD DIP Switch SPST Slide 8.9mm 350mil
+0
+8
+8
+CanSat_2023
+SolderJumper-3_P1.3mm_Bridged12_Pad1.0x1.5mm
+SMD Solder 3-pad Jumper, 1x1.5mm Pads, 0.3mm gap, pads 1-2 bridged with 1 copper strip
+net tie solder jumper bridged
+0
+3
+3
+CanSat_2023
+TBS UNIFY PRO32 5G8 nano
+
+
+0
+6
+6
+CanSat_2023
+TO-92_Inline
+TO-92 leads in-line, narrow, oval pads, drill 0.75mm (see NXP sot054_po.pdf)
+to-92 sc-43 sc-43a sot54 PA33 transistor
+0
+3
+3
+CanSat_2023
+Tlačítko SMD LaskaKit
+
+
+0
+2
+2
+CanSat_2023
+U.FL_Hirose_U.FL-R-SMT-1_Vertical
+Hirose U.FL Coaxial https://www.hirose.com/product/en/products/U.FL/U.FL-R-SMT-1%2810%29/
+Hirose U.FL Coaxial
+0
+3
+2
+CanSat_2023
+USB4110GFA
+USB4110-GF-A-1
+Connector
+0
+20
+17
+CanSat_2023
+XDCR_SCD41-D-R2
+
+
+0
+21
+21
+CanSat_2023
+kibuzzard-63BEB0CF
+Generated with KiBuzzard
+kb_params=eyJBbGlnbm1lbnRDaG9pY2UiOiAiQ2VudGVyIiwgIkNhcExlZnRDaG9pY2UiOiAiLyIsICJDYXBSaWdodENob2ljZSI6ICJdIiwgIkZvbnRDb21ib0JveCI6ICJtcGx1cy0xbW4tbWVkaXVtIiwgIkhlaWdodEN0cmwiOiAiMSIsICJMYXllckNvbWJvQm94IjogIkYuU2lsa1MiLCAiTXVsdGlMaW5lVGV4dCI6ICJDb250cm9sIFVuaXQiLCAiUGFkZGluZ0JvdHRvbUN0cmwiOiAiMyIsICJQYWRkaW5nTGVmdEN0cmwiOiAiMyIsICJQYWRkaW5nUmlnaHRDdHJsIjogIjMiLCAiUGFkZGluZ1RvcEN0cmwiOiAiMyIsICJXaWR0aEN0cmwiOiAiMSJ9
+0
+0
+0
+CanSat_2023
+kibuzzard-63BEB9E1
+Generated with KiBuzzard
+kb_params=eyJBbGlnbm1lbnRDaG9pY2UiOiAiQ2VudGVyIiwgIkNhcExlZnRDaG9pY2UiOiAiLyIsICJDYXBSaWdodENob2ljZSI6ICJcXCIsICJGb250Q29tYm9Cb3giOiAibXBsdXMtMW1uLW1lZGl1bSIsICJIZWlnaHRDdHJsIjogIjIuMiIsICJMYXllckNvbWJvQm94IjogIkYuU2lsa1MiLCAiTXVsdGlMaW5lVGV4dCI6ICJQSU4gTEVHRU5EIiwgIlBhZGRpbmdCb3R0b21DdHJsIjogIjMiLCAiUGFkZGluZ0xlZnRDdHJsIjogIjMiLCAiUGFkZGluZ1JpZ2h0Q3RybCI6ICIzIiwgIlBhZGRpbmdUb3BDdHJsIjogIjMiLCAiV2lkdGhDdHJsIjogIjIuMiJ9
+0
+0
+0
+CanSat_2023
+kibuzzard-63BEDE70
+Generated with KiBuzzard
+kb_params=eyJBbGlnbm1lbnRDaG9pY2UiOiAiQ2VudGVyIiwgIkNhcExlZnRDaG9pY2UiOiAiLyIsICJDYXBSaWdodENob2ljZSI6ICJdIiwgIkZvbnRDb21ib0JveCI6ICJtcGx1cy0xbW4tbWVkaXVtIiwgIkhlaWdodEN0cmwiOiAiMSIsICJMYXllckNvbWJvQm94IjogIkYuU2lsa1MiLCAiTXVsdGlMaW5lVGV4dCI6ICJQb3dlciBVbml0IiwgIlBhZGRpbmdCb3R0b21DdHJsIjogIjMiLCAiUGFkZGluZ0xlZnRDdHJsIjogIjMiLCAiUGFkZGluZ1JpZ2h0Q3RybCI6ICIzIiwgIlBhZGRpbmdUb3BDdHJsIjogIjMiLCAiV2lkdGhDdHJsIjogIjEifQ==
+0
+0
+0
+CanSat_2023
+kibuzzard-63BF2B87
+Generated with KiBuzzard
+kb_params=eyJBbGlnbm1lbnRDaG9pY2UiOiAiQ2VudGVyIiwgIkNhcExlZnRDaG9pY2UiOiAiWyIsICJDYXBSaWdodENob2ljZSI6ICJcXCIsICJGb250Q29tYm9Cb3giOiAibXBsdXMtMW1uLW1lZGl1bSIsICJIZWlnaHRDdHJsIjogIjEiLCAiTGF5ZXJDb21ib0JveCI6ICJGLlNpbGtTIiwgIk11bHRpTGluZVRleHQiOiAidjIuMCIsICJQYWRkaW5nQm90dG9tQ3RybCI6ICIzIiwgIlBhZGRpbmdMZWZ0Q3RybCI6ICIzIiwgIlBhZGRpbmdSaWdodEN0cmwiOiAiMyIsICJQYWRkaW5nVG9wQ3RybCI6ICIzIiwgIldpZHRoQ3RybCI6ICIxIn0=
+0
+0
+0
+CanSat_2023
+kibuzzard-63BF2B92
+Generated with KiBuzzard
+kb_params=eyJBbGlnbm1lbnRDaG9pY2UiOiAiQ2VudGVyIiwgIkNhcExlZnRDaG9pY2UiOiAiWyIsICJDYXBSaWdodENob2ljZSI6ICJcXCIsICJGb250Q29tYm9Cb3giOiAibXBsdXMtMW1uLW1lZGl1bSIsICJIZWlnaHRDdHJsIjogIjEiLCAiTGF5ZXJDb21ib0JveCI6ICJGLlNpbGtTIiwgIk11bHRpTGluZVRleHQiOiAidjIuMCIsICJQYWRkaW5nQm90dG9tQ3RybCI6ICIzIiwgIlBhZGRpbmdMZWZ0Q3RybCI6ICIzIiwgIlBhZGRpbmdSaWdodEN0cmwiOiAiMyIsICJQYWRkaW5nVG9wQ3RybCI6ICIzIiwgIldpZHRoQ3RybCI6ICIxIn0=
+0
+0
+0
+CanSat_2023
+kibuzzard-63BF2E93
+Generated with KiBuzzard
+kb_params=eyJBbGlnbm1lbnRDaG9pY2UiOiAiQ2VudGVyIiwgIkNhcExlZnRDaG9pY2UiOiAiWyIsICJDYXBSaWdodENob2ljZSI6ICJcXCIsICJGb250Q29tYm9Cb3giOiAibXBsdXMtMW1uLW1lZGl1bSIsICJIZWlnaHRDdHJsIjogIjEiLCAiTGF5ZXJDb21ib0JveCI6ICJGLlNpbGtTIiwgIk11bHRpTGluZVRleHQiOiAidjIuMCIsICJQYWRkaW5nQm90dG9tQ3RybCI6ICIzIiwgIlBhZGRpbmdMZWZ0Q3RybCI6ICIzIiwgIlBhZGRpbmdSaWdodEN0cmwiOiAiMyIsICJQYWRkaW5nVG9wQ3RybCI6ICIzIiwgIldpZHRoQ3RybCI6ICIxIn0=
+0
+0
+0
+CanSat_2023
+kibuzzard-63BF2EA1
+Generated with KiBuzzard
+kb_params=eyJBbGlnbm1lbnRDaG9pY2UiOiAiQ2VudGVyIiwgIkNhcExlZnRDaG9pY2UiOiAiWyIsICJDYXBSaWdodENob2ljZSI6ICJcXCIsICJGb250Q29tYm9Cb3giOiAibXBsdXMtMW1uLW1lZGl1bSIsICJIZWlnaHRDdHJsIjogIjEiLCAiTGF5ZXJDb21ib0JveCI6ICJGLlNpbGtTIiwgIk11bHRpTGluZVRleHQiOiAidjIuMCIsICJQYWRkaW5nQm90dG9tQ3RybCI6ICIzIiwgIlBhZGRpbmdMZWZ0Q3RybCI6ICIzIiwgIlBhZGRpbmdSaWdodEN0cmwiOiAiMyIsICJQYWRkaW5nVG9wQ3RybCI6ICIzIiwgIldpZHRoQ3RybCI6ICIxIn0=
+0
+0
+0
+CanSat_2023
+kibuzzard-63BF2EAE
+Generated with KiBuzzard
+kb_params=eyJBbGlnbm1lbnRDaG9pY2UiOiAiQ2VudGVyIiwgIkNhcExlZnRDaG9pY2UiOiAiWyIsICJDYXBSaWdodENob2ljZSI6ICJcXCIsICJGb250Q29tYm9Cb3giOiAibXBsdXMtMW1uLW1lZGl1bSIsICJIZWlnaHRDdHJsIjogIjEiLCAiTGF5ZXJDb21ib0JveCI6ICJGLlNpbGtTIiwgIk11bHRpTGluZVRleHQiOiAidjIuMCIsICJQYWRkaW5nQm90dG9tQ3RybCI6ICIzIiwgIlBhZGRpbmdMZWZ0Q3RybCI6ICIzIiwgIlBhZGRpbmdSaWdodEN0cmwiOiAiMyIsICJQYWRkaW5nVG9wQ3RybCI6ICIzIiwgIldpZHRoQ3RybCI6ICIxIn0=
+0
+0
+0
+CanSat_2023
+kibuzzard-63BF2EB7
+Generated with KiBuzzard
+kb_params=eyJBbGlnbm1lbnRDaG9pY2UiOiAiQ2VudGVyIiwgIkNhcExlZnRDaG9pY2UiOiAiWyIsICJDYXBSaWdodENob2ljZSI6ICJcXCIsICJGb250Q29tYm9Cb3giOiAibXBsdXMtMW1uLW1lZGl1bSIsICJIZWlnaHRDdHJsIjogIjEiLCAiTGF5ZXJDb21ib0JveCI6ICJGLlNpbGtTIiwgIk11bHRpTGluZVRleHQiOiAidjIuMCIsICJQYWRkaW5nQm90dG9tQ3RybCI6ICIzIiwgIlBhZGRpbmdMZWZ0Q3RybCI6ICIzIiwgIlBhZGRpbmdSaWdodEN0cmwiOiAiMyIsICJQYWRkaW5nVG9wQ3RybCI6ICIzIiwgIldpZHRoQ3RybCI6ICIxIn0=
+0
+0
+0
+CanSat_2023
+ublox_NEO
+ublox NEO 6/7/8, (https://www.u-blox.com/sites/default/files/NEO-8Q-NEO-M8-FW3_HardwareIntegrationManual_%28UBX-15029985%29_0.pdf)
+GPS ublox NEO 6/7/8
+0
+24
+24
 Capacitor_SMD
 CP_Elec_3x5.3
 SMT capacitor, aluminium electrolytic, 3x5.3, Cornell Dubilier Electronics 
@@ -79086,6 +79590,13 @@ Connector
 6
 6
 SamacSys_Parts2
+1222312GR
+122-2312-GR-4
+Undefined or Miscellaneous
+0
+5
+5
+SamacSys_Parts2
 CAPPM3528X210N
 TPSB686K010R0600
 Capacitor Polarised
@@ -79142,12 +79653,26 @@ Integrated Circuit
 9
 9
 SamacSys_Parts2
+SOP65P640X110-16N
+SOT403-1 (TSSOP16)
+Integrated Circuit
+0
+16
+16
+SamacSys_Parts2
 SOT65P210X110-6N
 6-Lead Thin Shrink Small sc 70
 Integrated Circuit
 0
 6
 6
+SamacSys_Parts2
+SOT95P270X145-5N
+24AA02E64T-E/OT
+Integrated Circuit
+0
+5
+5
 SamacSys_Parts2
 USB4110GFA
 USB4110-GF-A-1
