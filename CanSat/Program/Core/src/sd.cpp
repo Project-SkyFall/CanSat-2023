@@ -15,6 +15,8 @@
 #include "myCO2.h"
 #include "myBNO.h"
 #include "RTOS_tasks.h"
+#include "mySpectro.h"
+#include "myBH1730.h"
 
 bool fileOpened;
 
@@ -111,8 +113,19 @@ bool MySD::save(){
     if(fileOpened){
         xSemaphoreTake(spiSemaphore_hadle, portMAX_DELAY);
 
-        myPrint(rtc.dateTime_string);
-        myPrint(bme.temperature); myPrint(bme.pressure); myPrintln(bme.humidity);
+        myPrint(cycle);
+        myPrint(sensorStatuses());
+        myPrint(rtc.dateTime_short_string);
+        myPrint(bh.lightIntensity);
+        myPrint(bme.temperature); myPrint(bme.pressure); myPrint(bme.humidity);
+        myPrint(ina.voltage); myPrint(ina.current); myPrint(ina.power);
+        myPrint(scd.co2);
+        myPrint(gps.latitude); myPrint(gps.longitude); myPrint(gps.altitude); myPrint(gps.siv);
+        myPrint(bno.roll); myPrint(bno.pitch); myPrint(bno.yaw); // + posílat přetížení? 
+        myPrint(oxygen.concentration);
+        for(int i = 0; i < 18; i++) myPrint(asx.data[i]);
+        myPrintln(refreshRate);
+
         myFile.close();
         SD.end();
         fileOpened = false;

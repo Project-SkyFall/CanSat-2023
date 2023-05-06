@@ -31,6 +31,8 @@ void controlTask(void *pvParameters){
 }
 void getData(void *pvParameters){
     getData_lastTime = xTaskGetTickCount();
+    esp_task_wdt_init(5, true); //enable panic so ESP32 restarts
+    esp_task_wdt_add(NULL); //add current thread to WDT watch
     while(true){
         rtc.status = Status::status_NACK;
         bme.status = Status::status_NACK;
@@ -72,9 +74,10 @@ void getData(void *pvParameters){
         vTaskResume(printData_hadle);
 
         if(sd.mode != Mode::mode_SLEEP) vTaskResume(openFile_handle);
-        
+
         if(!xTaskDelayUntil(&getData_lastTime, refreshRate/portTICK_PERIOD_MS)) Serial.println("Loop to slow!");
         cycle++;
+        esp_task_wdt_reset();
     }
 }
 

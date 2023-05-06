@@ -37,7 +37,7 @@ bool launched;
 
 MyBme bme(0x77);
 MyGPS gps(0x42);
-MyLora lora(&SPI, 433E6, 32, 13, 39, 0xFF, 10);
+MyLora lora(&SPI, 433E6, 32, 13, 39, 0xFF, 17);
 MyINA ina(0x45);
 MySD sd(26);
 File myFile;
@@ -99,6 +99,7 @@ void setup(void) {
   if(rtc_get_reset_reason(0) == 12){
     Serial.println("Watchdog reset");
     sd.mode = Mode::mode_SLEEP;
+    softwareReset = true;
   }
 
   spiSemaphore_hadle = xSemaphoreCreateBinary();

@@ -7,6 +7,7 @@ class Camera{
     void toggleOnOff(bool mode);
     void toggleRec();
     void seekLaunch();
+    void smartAudio(uint8_t command, uint8_t data);
 
     void printStatus();
 
