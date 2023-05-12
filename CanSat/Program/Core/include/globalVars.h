@@ -7,31 +7,27 @@
 #include <Wire.h>
 #include <OneWire.h>
 
-#include "myServer.h"
-#include "gps.h"
-#include "temperature.h"
-#include "myLora.h"
-#include "gps_temp.h"
-#include "myINA.h"
-#include "mySD.h"
-#include "myTime.h"
-#include "RTOS_tasks.h"
-#include "myOxygen.h"
-#include "myNeo.h"
-#include "myBNO.h"
+#include "esp32/rom/rtc.h"
 
-#define FAIL 0
-#define OK 1
-#define SLEEP 2
+enum class Status : uint8_t {status_NACK = 3, status_FAIL = 0, status_OK = 1, status_SLEEP = 2};
+enum class Mode {mode_RUN = 0, mode_SLEEP = 1};
+enum class IsWorking {isWorking_FALSE = 0, isWorking_TRUE = 1};
 
 #define RUN_SEVER_PIN 35
 
-bool wireCheck(byte address);
+bool wireCheck(byte address, TwoWire& theWire = Wire);
 
 void printResult(bool input);
 
-//extern int refreshRate;
+String verbose_print_reset_reason(RESET_REASON reason);
+
+String sensorStatuses();
+
 extern bool doDebug;
+extern String serialBuffer;
+extern bool softwareReset;
+
+extern bool launched;
 
 extern OneWire oneWire;
 

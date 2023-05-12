@@ -1,4 +1,5 @@
 #include "globalVars.h"
+
 #include "temperature.h"
 
 MyBme::MyBme(byte address){
@@ -7,8 +8,11 @@ MyBme::MyBme(byte address){
 
 bool MyBme::setup(bool debug){
     debug ? Serial.println("---BME setup--------------------------------------") : 0;
-    status = FAIL;
-    if(!begin(_address)) return false;
+
+    if(!begin(_address)){
+        isWorking = IsWorking::isWorking_FALSE;
+        return false;
+    }
 
     setSampling(Adafruit_BME280::MODE_FORCED,
                 Adafruit_BME280::SAMPLING_X1,
@@ -16,38 +20,47 @@ bool MyBme::setup(bool debug){
                 Adafruit_BME280::SAMPLING_X1,
                 Adafruit_BME280::FILTER_OFF);
 
-    status = OK;
+    isWorking = IsWorking::isWorking_TRUE;
     return true;
 }
 
-MyDS18B20::MyDS18B20(OneWire* bus, uint8_t pin){
-    _bus = bus;
-    _pin = pin;
-}
+MyDS18B20::MyDS18B20(OneWire* bus, uint8_t pin):
+    _bus(bus),
+    _pin(pin)
+    {}
 
 bool MyDS18B20::setup(bool verbose){
     verbose ? Serial.println("---DS18B20 setup----------------------------------") : 0;
     setOneWire(_bus);
-    setPullupPin(_pin);
     begin();
 
     /*if(!isConnected(&4)){
         status = FAIL;
         return false;
     }*/
-    status = OK;
+    isWorking = IsWorking::isWorking_TRUE;
     return true;
 }
 
 void MyBme::getData(){
-    if(status == SLEEP) return;
+    status = Status::status_NACK;
 
-    if(!wireCheck(_address)){
-        status = FAIL;
+    if(mode == Mode::mode_SLEEP){
+        status = Status::status_SLEEP;
         return;
     }
-    else if(status == FAIL){
-        if(!setup()) return;
+
+    if(!wireCheck(_address)){
+        isWorking = IsWorking::isWorking_FALSE;
+        status = Status::status_FAIL;
+        return;
+    }
+
+    if(isWorking == IsWorking::isWorking_FALSE){
+        if(!setup()){
+        status = Status::status_FAIL;
+        return;
+        }
     }
 
     takeForcedMeasurement();
@@ -55,35 +68,50 @@ void MyBme::getData(){
     pressure = readPressure() / 100.0F;
     humidity = readHumidity();
 
-    status = OK;
+    static bool oneTime = false;
+    if(!softwareReset && !oneTime){
+        startingPressure = pressure;
+        oneTime = true;
+    }
+
+    status = Status::status_OK;
 }
 
 void MyDS18B20::getData(){
-    if(status == SLEEP) return;
-    status = FAIL;
-    return;
-    /*if(!isConnected(&_pin)){
+    if(mode == Mode::mode_SLEEP){
+        status = Status::status_SLEEP;
+        return;
+    }
+
+    if(isWorking == IsWorking::isWorking_FALSE){
         if(!setup()){
-            status = FAIL;
+            status = Status::status_FAIL;
             return;
         }
-    }*/
+    }
+    /*status = Status::status_FAIL;
+    return;*/
     requestTemperatures();
-
     temperature = getTempCByIndex(0);
 
+    status = Status::status_OK;
 }
 
 void MyBme::printData(){
     Serial.print("BME280: ");
-    if(status == SLEEP){
+    if(status == Status::status_SLEEP){
         Serial.println("SLEEPING");
         return;
     }
-    else if(status == FAIL){
+    else if(status == Status::status_FAIL){
         Serial.println("FAILED");
         return;
     }
+    else if(status == Status::status_NACK){
+        Serial.println("NACK");
+        return;
+    }
+    
     Serial.print(temperature); Serial.print(" °C - ");
     Serial.print(pressure); Serial.print(" hPa - ");
     Serial.print(humidity); Serial.println(" %");
@@ -91,13 +119,18 @@ void MyBme::printData(){
 
 void MyDS18B20::printData(){
     Serial.print("DS18B20: ");
-    if(status == SLEEP){
+    if(status == Status::status_SLEEP){
         Serial.println("SLEEPING");
         return;
     }
-    else if(status == FAIL){
+    else if(status == Status::status_FAIL){
         Serial.println("FAILED");
         return;
     }
+    else if(status == Status::status_NACK){
+        Serial.println("NACK");
+        return;
+    }
+
     Serial.print(temperature); Serial.println(" °C");
 }

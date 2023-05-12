@@ -2,9 +2,6 @@
 	"folders": [
 		{
 			"path": "."
-		},
-		{
-			"path": "../Server"
 		}
 	],
 	"settings": {
@@ -26,7 +23,12 @@
 			"atomic": "cpp",
 			"fstream": "cpp",
 			"sstream": "cpp",
-			"streambuf": "cpp"
+			"streambuf": "cpp",
+			"exception": "cpp",
+			"iosfwd": "cpp",
+			"new": "cpp",
+			"cmath": "cpp",
+			"ctime": "cpp"
 		},
 		"liveServer.settings.multiRootWorkspaceName": "Server"
 	}

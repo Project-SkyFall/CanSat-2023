@@ -10,7 +10,7 @@ class MyOxygen{
     void getData();
     void printData();
 
-    byte status;
+    Status status;
     float concentration;
 
     private:

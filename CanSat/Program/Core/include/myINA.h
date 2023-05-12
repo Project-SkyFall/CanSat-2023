@@ -10,15 +10,20 @@ class MyINA : public Adafruit_INA219{
     void getData();
     void printData();
 
-    byte status;
+    Status status;
+    Mode mode = Mode::mode_RUN;
+    IsWorking isWorking = IsWorking::isWorking_FALSE;
+    
     float current;
     float power;
+    float voltage;
 
     private:
+    //bool begin(uint8_t address, TwoWire *theWire = &Wire);
+    //Adafruit_I2CDevice *i2c_dev = NULL;
     byte _address;
 };
 
-//extern Adafruit_INA219 ina219;
 extern MyINA ina;
 
 #endif

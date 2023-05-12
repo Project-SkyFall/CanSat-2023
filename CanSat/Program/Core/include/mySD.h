@@ -16,12 +16,16 @@ class MySD{
     MySD(uint8_t cs);;
     bool setup(bool verbose = false);
     bool save();
+    bool openFile();
     void printStatus();
 
     uint16_t postfix;
     //String postfix;
     String path;
-    byte status;
+
+    Status status = Status::status_NACK;
+    Mode mode = Mode::mode_RUN;
+    IsWorking isWorking = IsWorking::isWorking_FALSE;
 
     const uint8_t& cs = _cs;
 };
@@ -37,7 +41,6 @@ template <typename T> void myPrintln(T input);
 
 extern MySD sd;
 extern File myFile;
-
-//extern SdFat SDfat;
+extern bool fileOpened;
 
 #endif

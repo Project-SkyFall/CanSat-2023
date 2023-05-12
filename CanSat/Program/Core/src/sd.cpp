@@ -1,78 +1,154 @@
 #include "globalVars.h"
 
-MySD::MySD(uint8_t cs){
-    _cs = cs;
+#include "mySD.h"
+
+#include "myTime.h"
+#include "temperature.h"
+#include "gps.h"
+#include "myLora.h"
+#include "myINA.h"
+#include "mySD.h"
+#include "myServer.h"
+#include "myOxygen.h"
+#include "myNeo.h"
+#include "myINA.h"
+#include "myCO2.h"
+#include "myBNO.h"
+#include "RTOS_tasks.h"
+#include "mySpectro.h"
+#include "myBH1730.h"
+
+bool fileOpened;
+
+MySD::MySD(uint8_t cs):
+    _cs(cs){
 }
 
 bool MySD::setup(bool verbose){
+    if(mode == Mode::mode_SLEEP){
+        status = Status::status_SLEEP;
+        return false;
+    }
+    static bool firstTime = true;
     verbose ? Serial.println("---SDc setup-------------------------------------") : 0;
 
-    static bool firstTime = true;
-
-    if(!firstTime){
-        SD.end();
-    }
-
     if(!SD.begin(_cs)){
-        status = FAIL;
+        isWorking = IsWorking::isWorking_FALSE;
         return false;
     }
 
     if(!firstTime){
-        status = OK;
+        isWorking = IsWorking::isWorking_TRUE;
         return true;
     }
 
+    firstTime = false;
+    
     while(true){
-        firstTime = false;
         postfix++;
         path = ("/datasaves/" + rtc.date_string + "/Project SkyFall-CanSat 2023 - " + rtc.date_string + " - " + postfix + ".csv");
         if(!SD.exists(path)){
             break;
         }
     }
-    Serial.print("Creating data file: ");
-    myFile = SD.open(path, FILE_WRITE, true);
+    verbose ? Serial.print("Creating data file: "): 0;
+    myFile = SD.open(path, FILE_APPEND, true);
     if(!myFile){
-        Serial.println("FAIL");
+        verbose ? Serial.println("FAIL") : 0;
+        isWorking = IsWorking::isWorking_FALSE;
         return false;
     }
     myPrint("Timestamp");
     myPrint("Temperature"); myPrint("Pressure"); myPrintln("Humidity");
 
     myFile.close();
-    Serial.println(path);
+
     
-    status = OK;
+    verbose ? Serial.println(path) : 0;
+    
+    isWorking = IsWorking::isWorking_TRUE;
+    return true;
+}
+
+bool MySD::openFile(){
+
+    static uint8_t tryNumber;
+
+    if(mode == Mode::mode_SLEEP){
+        status = Status::status_SLEEP;
+        return false;
+    }
+
+    //if(isWorking == IsWorking::isWorking_FALSE){
+        if(!setup()){
+            tryNumber = 1;
+            status = Status::status_FAIL;
+            return false;
+        }
+    //}
+
+    myFile = SD.open(path, FILE_APPEND);
+    if(!myFile){
+        SD.end();
+        isWorking = IsWorking::isWorking_FALSE;
+        status = Status::status_FAIL;
+        return false;
+    }
     return true;
 }
 
 bool MySD::save(){
-    if(status == FAIL && !setup()){
-        //Serial.println("SD card disconnected");
-        return false;
-    }
-    //Serial.print("Saving data: ");
-    myFile = SD.open(path, FILE_WRITE);
-    if(!myFile){
-        status = FAIL;
-        //Serial.println("FAIL");
+
+    if(mode == Mode::mode_SLEEP){
+        status = Status::status_SLEEP;
         return false;
     }
 
-    myPrint(rtc.dateTime_string);
-    myPrint(bme.temperature); myPrint(bme.pressure); myPrintln(bme.humidity);
+    if(isWorking == IsWorking::isWorking_FALSE){
+        status = Status::status_FAIL;
+        return false;
+    }
 
-    myFile.close();
-    //Serial.println("OK");
+    /*Saving data*/
+    if(fileOpened){
+        xSemaphoreTake(spiSemaphore_hadle, portMAX_DELAY);
 
-    status = OK;
-    return true;
+        myPrint(cycle);
+        myPrint(sensorStatuses());
+        myPrint(rtc.dateTime_short_string);
+        myPrint(bh.lightIntensity);
+        myPrint(bme.temperature); myPrint(bme.pressure); myPrint(bme.humidity);
+        myPrint(ina.voltage); myPrint(ina.current); myPrint(ina.power);
+        myPrint(scd.co2);
+        myPrint(gps.latitude); myPrint(gps.longitude); myPrint(gps.altitude); myPrint(gps.siv);
+        myPrint(bno.roll); myPrint(bno.pitch); myPrint(bno.yaw); // + posílat přetížení? 
+        myPrint(oxygen.concentration);
+        for(int i = 0; i < 18; i++) myPrint(asx.data[i]);
+        myPrintln(refreshRate);
+
+        myFile.close();
+        SD.end();
+        fileOpened = false;
+
+        xSemaphoreGive(spiSemaphore_hadle);
+        xSemaphoreGive(saveData_semaphore);
+        
+        status = Status::status_OK;
+        return true;
+    }
+
+    return false;
+
 }
+
 
 void MySD::printStatus(){
     Serial.print("Saving data: ");
-    status == OK ? Serial.println("OK") : Serial.println("FAIL");
+    if(status == Status::status_NACK){
+        Serial.println("NACK");
+        return;
+    }
+    status == Status::status_OK ? Serial.println("OK") : Serial.println("FAIL");
 }
 
 template <typename T> void /*MyFile::*/myPrint(T input){
