@@ -12,21 +12,21 @@ extern char password[];*/
 
 class MyWiFi : public WiFiClass{
     public:
-    MyWiFi(char *ssid, char *password);
+    MyWiFi(const char *ssid, const char *password);
     bool setup(bool verbose = false);
 
     Status status;
 
     private:
-    char *_ssid;
-    char *_password;
+    const char *_ssid;
+    const char *_password;
 };
 
 extern MyWiFi wifi;
 
 class MyServer : public WebServer{//AsyncWebServer{
     public:
-    MyServer(int port){};
+    MyServer(int port);
     bool setup(bool verbose=false);
     void mode(bool run);
     void printStatus();

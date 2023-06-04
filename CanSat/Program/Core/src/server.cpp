@@ -8,7 +8,7 @@
 const char password[] = "1234abcd";*/
 const char defaultRoute[] = "/server/";
 
-MyWiFi::MyWiFi(char *ssid, char *password):
+MyWiFi::MyWiFi(const char *ssid, const char *password):
     _ssid(ssid),
     _password(password)
     {}
@@ -27,6 +27,9 @@ bool MyWiFi::setup(bool verbose){
     return true;
 }
 
+MyServer::MyServer(int port):
+    WebServer(port){
+}
 
 bool MyServer::setup(bool verbose){
     verbose ? Serial.println("---Server setup-----------------------------------") : 0;
