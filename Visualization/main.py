@@ -214,7 +214,7 @@ Down3_CO2_Rect = Down3.get_rect(center = (663, 294))
 Down3_Press_Rect = Down3.get_rect(center = (746, 295))
 
 # TEST
-test = True
+test = False
 if test:
     j = 0
     dolu0 = False
@@ -709,7 +709,7 @@ def ToPhaseII():
     global header
     global recieved
     data = []
-    if not test:
+    if test:
         header = ["time","time2","lat","long","random","random","oxygen",
                   "co2", "temperature", "pressure", "lightIntensity",
                   "humidity","asx0","asx1","asx2","asx3","asx4","asx5",
@@ -767,7 +767,7 @@ def ToPhaseII():
             data[i][j] = float(data[i][j])
             dataInv[j].append(data[i][j])
 
-    if not test:
+    if test:
         press = [0,1,0,-1,0,3,4,6,8,9,19,29,39,40,50,66,67,54,43,32,
                  23,21,12,10,9,8,3,2,3,1,0,0,0,0,0,0,0,0,0,0]
         dataInv[header.index("pressure")] = press
