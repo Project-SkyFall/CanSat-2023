@@ -41,7 +41,7 @@ def makePlot(header, label, dataInv, fig, offeredTimes, show=True):
         ax.plot(dataInv[header.index("time2")], dataInv[header.index(label)], '-b')
     if label != "specter" and label != "oxygen" and label != "current":
         for offeredTime in offeredTimes:
-            ax.plot((offeredTime,offeredTime), (min(dataInv[header.index(label)]), max(dataInv[header.index(label)])), '-r')
+            ax.plot((offeredTime,offeredTime), (min(dataInv[header.index(label)])-0.2, max(dataInv[header.index(label)])+0.2), '-r')
     if show:
         plt.show()
         fig = plt.figure(figsize=(6,3.7))
@@ -57,11 +57,11 @@ def sliceData(start, end, dataInv, header, fig):
         if isEnd:
             break
         if not isStart:
-            if dataInv[0][i] >= start:
+            if dataInv[header.index("time2")][i] >= start:
                 startIndex = i
                 isStart = True
         else:
-            if dataInv[0][i] > end:
+            if dataInv[header.index("time2")][i] > end:
                 endIndex = i
                 isEnd = True       
 

@@ -27,31 +27,31 @@ def MakeIndex(dataInv, header):
             count += 1
         averages.append(summ/count)
     
-    o2 = zav.kroky2smer2(averages[header.index("oxygen")], 5, 40, 23.5, 25, 35, 60,
+    o2 = zav.kroky2smer2(averages[header.index("oxygen")], 5, 38, 23.5, 25, 35, 60,
                          10, 16, 18, 19.5)
 
-    if o2 > 80:
-        o2 = 80
+    if o2 > 70:
+        o2 = 70
 
     if averages[header.index("oxygen")] > 23.5:
         UpDown[0] = 1
     elif averages[header.index("oxygen")] < 19.5:
         UpDown[0] = -1
 
-    co2 = zav.kroky2smer1(averages[header.index("co2")], 5, 45, 500, 600, 1000, 2500)
+    co2 = zav.kroky2smer1(averages[header.index("co2")], 5, 38, 500, 600, 1000, 2500)
 
-    if co2 > 80:
-        co2 = 80
+    if co2 > 40:
+        co2 = 40
 
     if averages[header.index("co2")] > 500:
         UpDown[1] = 1
 
-    lightintenzity = 0 #zav.kroky2smer2(averages[header.index("lightIntensity")],
-                                   #  5, 100, 30000, 35000, 50000, 100000,
-                                    # 0, 200, 800, 1000)
+    lightintenzity = 0#zav.kroky2smer2(averages[header.index("lightIntensity")],
+                       #              5, 70, 30000, 35000, 50000, 100000,
+                        #             0, 200, 800, 1000)
 
-    if lightintenzity > 50:
-        lightintenzity = 50
+    if lightintenzity > 40:
+        lightintenzity = 40
 
     if averages[header.index("lightIntensity")] > 30000:
         UpDown[2] = 1
@@ -60,33 +60,33 @@ def MakeIndex(dataInv, header):
         
     UpDown[2] = 0
         
-    humidity = zav.kroky2smer2(averages[header.index("humidity")], 5, 50,
+    humidity = zav.kroky2smer2(averages[header.index("humidity")], 5, 40,
                                60, 62, 70, 100, 0, 25, 29, 30)
 
-    if humidity > 50:
-        humidity = 50
+    if humidity > 40:
+        humidity = 40
 
     if averages[header.index("humidity")] > 60:
         UpDown[3] = 1
     elif averages[header.index("humidity")] < 30:
         UpDown[3] = -1
         
-    temperature = zav.kroky2smer2(averages[header.index("temperature")], 5, 50,
+    temperature = zav.kroky2smer2(averages[header.index("temperature")], 5, 40,
                                   30, 32, 50, 80, -40, -15, -8, -5)
 
-    if temperature > 50:
-        temperature = 50
+    if temperature > 40:
+        temperature = 40
 
     if averages[header.index("temperature")] > 30:
         UpDown[4] = 1
     elif averages[header.index("temperature")] < -5:
         UpDown[4] = -1
         
-    pressure = zav.kroky2smer2(averages[header.index("pressure")], 5, 50,
-                               300, 350, 500, 700, 20, 40, 48, 50)
+    pressure = zav.kroky2smer2(averages[header.index("pressure")], 5, 40,
+                               300, 350, 500, 700, 20, 40, 48, 50) # TEST /10
 
-    if pressure > 80:
-        pressure = 80
+    if pressure > 70:
+        pressure = 70
 
     if averages[header.index("pressure")] > 300:
         UpDown[5] = 1

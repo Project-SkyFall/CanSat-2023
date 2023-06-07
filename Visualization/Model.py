@@ -41,7 +41,8 @@ class Valec:
         rects = []
         movedpoints_down = []
         movedpoints_up = []
-        moved_center_up = [self.up_center[1] * math.cos(pitch)*math.sin(yaw),self.up_center[1] * math.cos(pitch)*math.cos(yaw), -self.up_center[1] * math.sin(pitch)] 
+        moved_center_up = [self.up_center[1] * math.cos(pitch)*math.sin(yaw),self.up_center[1] * math.cos(pitch)*math.cos(yaw), -self.up_center[1] * math.sin(pitch)]
+
         for i in range(len(self.points_up)):
             movedpoints_up.append([])
             movedpoints_down.append([])
@@ -53,7 +54,7 @@ class Valec:
             y, z = self.move_point2D(new_point[1], new_point[2], pitch)
             new_point = [new_point[0], y, z]
             x, y = self.move_point2D(new_point[0], new_point[1], yaw)
-            new_point = [x, y, point[2]]
+            new_point = [x, y, new_point[2]]
             movedpoints_up[i] = (new_point[0] + self.center[0], new_point[1] + self.center[1], new_point[2])
             j = int(i + self.num_of_points/2)
             movedpoints_down[j] = (self.center[0] - new_point[0], -new_point[1] + self.center[1], -new_point[2])
@@ -61,14 +62,6 @@ class Valec:
             new_point = [2*moved_center_up[0] - new_point[0], 2*moved_center_up[1] - new_point[1], 2*moved_center_up[2] - new_point[2]]
             movedpoints_up[j] = (new_point[0] + self.center[0], new_point[1] + self.center[1], new_point[2])
             movedpoints_down[i] = (self.center[0] - new_point[0], -new_point[1] + self.center[1], -new_point[2])
-#            point = self.points_down[i]
- #           x, z = self.move_point2D(point[0], point[2], roll)
-  #          new_point = [x, point[1], z]
-   #         y, z = self.move_point2D(new_point[1], new_point[2], pitch)
-    #        new_point = [new_point[0], y, z]
-     #       x, y = self.move_point2D(new_point[0], new_point[1], yaw)
-      #      new_point = [x, y, new_point[2]]
-       #     movedpoints_down.append((new_point[0] + self.center[0], new_point[1] + self.center[1], new_point[2]))
             
         show_up = False
         show_down = False

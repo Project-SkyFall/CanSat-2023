@@ -172,7 +172,7 @@ background2 = pg.image.load(r"GUI_grafika2/GG_background2.png")
 background_Rect2 = background2.get_rect()
 
 # DATA PATH
-data_path = "/home/pi/Desktop/Backup-data.txt"
+data_path = "Backup-data.txt"#"/home/pi/Desktop/Backup-data.txt"
 
 # SET SCALE FOR CHARTS
 scale = 2/5
@@ -214,13 +214,13 @@ Down3_CO2_Rect = Down3.get_rect(center = (663, 294))
 Down3_Press_Rect = Down3.get_rect(center = (746, 295))
 
 # TEST
-test = False
+test = True
 if test:
     j = 0
     dolu0 = False
     dolu1 = False
     data = []
-    for i in range(57):
+    for i in range(59):
         data.append(0)
 
 # SET PRE TEXT VALUE
@@ -427,10 +427,23 @@ def phase1():
     degN = int(lat)
     minN = int((lat-degN)*60)
     vteN = round(((lat-degN)*60-minN)*60, 1)
+    if vteN >= 60.0:
+        vteN -= 60
+        minN += 1
+    if minN >= 60:
+        minN -= 60
+        degN += 1
+        
 
     degE = int(long)
     minE = int((long-degE)*60)
     vteE = round(((long-degE)*60-minE)*60, 1)
+    if vteE >= 60.0:
+        vteE -= 60
+        minE += 1
+    if minE >= 60:
+        minE -= 60
+        degE += 1
 
     # SETUP NEW FRAME
     screen.fill(black)
@@ -696,15 +709,15 @@ def ToPhaseII():
     global header
     global recieved
     data = []
-    if test:
-        header = ["time","lat","long","random","random","oxygen",
+    if not test:
+        header = ["time","time2","lat","long","random","random","oxygen",
                   "co2", "temperature", "pressure", "lightIntensity",
                   "humidity","asx0","asx1","asx2","asx3","asx4","asx5",
                   "asx6","asx7","asx8","asx9","asx10","asx11","asx12","asx13",
-                  "asx14","asx15","asx16","asx17"]
+                  "asx14","asx15","asx16","asx17","current"]
         for i in range(40):
             data.append([])
-            for j in range(29):
+            for j in range(31):
                 data[i].append(i+i*i*j)
     else:
         try:
@@ -717,13 +730,24 @@ def ToPhaseII():
         header = text[0].strip().split(';')
         text = text[1:]
         for line in text:
+            nan = False
             strline = line.strip().split(';')
             intline = []
             for string in strline:
                 if string == "":
                     intline.append(0.0)
                 else:
-                    intline.append(float(string))
+                    try:
+                        num = float(string)
+                    except:
+                        nan = True
+                        break
+                    if num != num:
+                        nan = True
+                        break
+                    intline.append(num)
+            if nan:
+                continue
             data.append(intline)
             
         fh.close()
@@ -743,7 +767,7 @@ def ToPhaseII():
             data[i][j] = float(data[i][j])
             dataInv[j].append(data[i][j])
 
-    if test:
+    if not test:
         press = [0,1,0,-1,0,3,4,6,8,9,19,29,39,40,50,66,67,54,43,32,
                  23,21,12,10,9,8,3,2,3,1,0,0,0,0,0,0,0,0,0,0]
         dataInv[header.index("pressure")] = press
@@ -984,7 +1008,7 @@ while True:
                     slicetextList = slicetext.split(";")
                     try:
                         if slicetextList[0] == "":
-                            slicetextList[0] = dataInv[header.index("time")][0]
+                            slicetextList[0] = dataInv[header.index("time2")][0]
                         else:
                             slicetextList[0] = float(slicetextList[0])
                     except:
@@ -994,7 +1018,7 @@ while True:
                         continue
                     try:
                         if slicetextList[1] == "":
-                            slicetextList[1] = dataInv[header.index("time")][-1]
+                            slicetextList[1] = dataInv[header.index("time2")][-1]
                         else:
                             slicetextList[1] = float(slicetextList[1])
                     except:
