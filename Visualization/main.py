@@ -30,14 +30,19 @@ def rotate_dial(image, rect, mini, maxi, miniPos, maxiPos, value, offset):
     rot_rect = rot_image.get_rect(center=(rect.center[0] - rot_vector[0], rect.center[1] + rot_vector[1]))
     return rot_image,rot_rect
 
+# SCREEN RESIZE
+def ResizeScreen(screen1, screen):
+    pg.transform.scale(screen1, (1920,1080), screen)
+
 # TODO COMUNICATION
 path = "/home/pi/Desktop/Data.txt"
 command_path = "/home/pi/Desktop/Command.txt"
 
 # SETUP
 flags = pg.FULLSCREEN | pg.SHOWN
-size = (800, 480)
+size = (1920, 1080)
 screen = pg.display.set_mode(size, flags)
+screen1 = pg.Surface((800, 480))
 
 
 phase = 1
@@ -214,7 +219,7 @@ Down3_CO2_Rect = Down3.get_rect(center = (663, 294))
 Down3_Press_Rect = Down3.get_rect(center = (746, 295))
 
 # TEST
-test = False
+test = True
 if test:
     j = 0
     dolu0 = False
@@ -240,6 +245,9 @@ try:
 except:
     pass
 
+# SETUP WINDOW RESIZE
+x_ratio = 1920/800
+y_ratio = 1080/480
 
 # PHASE I
 def phase1():
@@ -446,8 +454,8 @@ def phase1():
         degE += 1
 
     # SETUP NEW FRAME
-    screen.fill(black)
-    screen.blit(background, background_Rect)
+    screen1.fill(black)
+    screen1.blit(background, background_Rect)
     
     # ROTATE
     RucickaTemp2, RucickaTemp_Rect2 = rotate_dial(RucickaTemp, RucickaTemp_Rect, temperatureMin,
@@ -475,110 +483,110 @@ def phase1():
     if press_pre == None:
         pass
     elif press_pre < press:
-        screen.blit(Up, Up_Rect1)
+        screen1.blit(Up, Up_Rect1)
     elif press_pre > press:
-        screen.blit(Down, Down_Rect1)
+        screen1.blit(Down, Down_Rect1)
 
     if temp_pre == None:
         pass
     elif temp_pre < temp:
-        screen.blit(Up, Up_Rect2)
+        screen1.blit(Up, Up_Rect2)
     elif temp_pre > temp:
-        screen.blit(Down, Down_Rect2)
+        screen1.blit(Down, Down_Rect2)
 
     press_pre = press
     temp_pre = temp
 
     # SHOW DEAD OR ALIVE
     if dORa0 == 1:
-        screen.blit(Alive, Alive_Rect0)
+        screen1.blit(Alive, Alive_Rect0)
     elif dORa0 == 0:
-        screen.blit(Dead, Alive_Rect0)
+        screen1.blit(Dead, Alive_Rect0)
     else:
-        screen.blit(Bluective, Alive_Rect0)
+        screen1.blit(Bluective, Alive_Rect0)
 
     if dORa1 == 1:
-        screen.blit(Alive, Alive_Rect1)
+        screen1.blit(Alive, Alive_Rect1)
     elif dORa1 == 0:
-        screen.blit(Dead, Alive_Rect1)
+        screen1.blit(Dead, Alive_Rect1)
     else:
-        screen.blit(Bluective, Alive_Rect1)
+        screen1.blit(Bluective, Alive_Rect1)
 
     if dORa2 == 1:
-        screen.blit(Alive, Alive_Rect2)
+        screen1.blit(Alive, Alive_Rect2)
     elif dORa2 == 0:
-        screen.blit(Dead, Alive_Rect2)
+        screen1.blit(Dead, Alive_Rect2)
     else:
-        screen.blit(Bluective, Alive_Rect2)
+        screen1.blit(Bluective, Alive_Rect2)
 
     if dORa3 == 1:
-        screen.blit(Alive, Alive_Rect3)
+        screen1.blit(Alive, Alive_Rect3)
     elif dORa3 == 0:
-        screen.blit(Dead, Alive_Rect3)
+        screen1.blit(Dead, Alive_Rect3)
     else:
-        screen.blit(Bluective, Alive_Rect3)
+        screen1.blit(Bluective, Alive_Rect3)
 
     if dORa4 == 1:
-        screen.blit(Alive, Alive_Rect4)
+        screen1.blit(Alive, Alive_Rect4)
     elif dORa4 == 0:
-        screen.blit(Dead, Alive_Rect4)
+        screen1.blit(Dead, Alive_Rect4)
     else:
-        screen.blit(Bluective, Alive_Rect4)
+        screen1.blit(Bluective, Alive_Rect4)
 
     if dORa5 == 1:
-        screen.blit(Alive, Alive_Rect5)
+        screen1.blit(Alive, Alive_Rect5)
     elif dORa5 == 0:
-        screen.blit(Dead, Alive_Rect5)
+        screen1.blit(Dead, Alive_Rect5)
     else:
-        screen.blit(Bluective, Alive_Rect5)
+        screen1.blit(Bluective, Alive_Rect5)
 
     if dORa6 == 1:
-        screen.blit(Alive, Alive_Rect6)
+        screen1.blit(Alive, Alive_Rect6)
     elif dORa6 == 0:
-        screen.blit(Dead, Alive_Rect6)
+        screen1.blit(Dead, Alive_Rect6)
     else:
-        screen.blit(Bluective, Alive_Rect6)
+        screen1.blit(Bluective, Alive_Rect6)
 
     if dORa7 == 1:
-        screen.blit(Alive, Alive_Rect7)
+        screen1.blit(Alive, Alive_Rect7)
     elif dORa7 == 0:
-        screen.blit(Dead, Alive_Rect7)
+        screen1.blit(Dead, Alive_Rect7)
     else:
-        screen.blit(Bluective, Alive_Rect7)
+        screen1.blit(Bluective, Alive_Rect7)
 
     if dORa8 == 1:
-        screen.blit(Alive, Alive_Rect8)
+        screen1.blit(Alive, Alive_Rect8)
     elif dORa8 == 0:
-        screen.blit(Dead, Alive_Rect8)
+        screen1.blit(Dead, Alive_Rect8)
     else:
-        screen.blit(Bluective, Alive_Rect8)
+        screen1.blit(Bluective, Alive_Rect8)
 
     if dORa9 == 1:
-        screen.blit(Alive, Alive_Rect9)
+        screen1.blit(Alive, Alive_Rect9)
     elif dORa9 == 0:
-        screen.blit(Dead, Alive_Rect9)
+        screen1.blit(Dead, Alive_Rect9)
     else:
-        screen.blit(Bluective, Alive_Rect9)
+        screen1.blit(Bluective, Alive_Rect9)
 
     if dORa10 == 1:
-        screen.blit(Alive, Alive_Rect10)
+        screen1.blit(Alive, Alive_Rect10)
     elif dORa10 == 0:
-        screen.blit(Dead, Alive_Rect10)
+        screen1.blit(Dead, Alive_Rect10)
     else:
-        screen.blit(Bluective, Alive_Rect10)
+        screen1.blit(Bluective, Alive_Rect10)
         
     if dORa11 == 1:
-        screen.blit(Alive, Alive_Rect11)
+        screen1.blit(Alive, Alive_Rect11)
     elif dORa11 == 0:
-        screen.blit(Dead, Alive_Rect11)
+        screen1.blit(Dead, Alive_Rect11)
     else:
-        screen.blit(Bluective, Alive_Rect11)
+        screen1.blit(Bluective, Alive_Rect11)
 
     # SHOW CANSAT MODEL
     rects_to_show = Cansat.project(yaw*math.pi/180, -pitch*math.pi/180, -roll*math.pi/180)
     for rect_to_show in rects_to_show:
-        rect = pg.draw.polygon(screen, (220,220,220), rect_to_show)
-        line = pg.draw.polygon(screen, black, rect_to_show, 1)
+        rect = pg.draw.polygon(screen1, (220,220,220), rect_to_show)
+        line = pg.draw.polygon(screen1, black, rect_to_show, 1)
 
     # TIME RECREATION
     if test:
@@ -666,12 +674,12 @@ def phase1():
     # GET CAM IMAGE
     try:
         Cam_Image = pg.transform.smoothscale(cam.get_image(), camsize)
-        screen.blit(Cam_Image, Cam_Rect)
+        screen1.blit(Cam_Image, Cam_Rect)
     except:
         pass
     
     # SHOW TEXTS AND DIALS
-    screen.blits(blit_sequence=((Text_Name, Text_Name_Rect),
+    screen1.blits(blit_sequence=((Text_Name, Text_Name_Rect),
                                 (Text_BatteryGS, Text_BatteryGS_Rect),
                                 (Text_Press, Text_Press_Rect),
                                 (Text_Temp, Text_Temp_Rect),
@@ -697,11 +705,14 @@ def phase1():
                                 (Text_minE, Text_minE_Rect),
                                 (Text_vteE, Text_vteE_Rect)))
 
-    screen.blits(blit_sequence=((RucickaTemp2, RucickaTemp_Rect2),
+    screen1.blits(blit_sequence=((RucickaTemp2, RucickaTemp_Rect2),
                                 (RucickaPress2, RucickaPress_Rect2),
                                 (RucickaCO22, RucickaCO2_Rect2),
                                 (RucickaO22, RucickaO2_Rect2),
                                 (RucickaHeight, RucickaHeight_Rect2)))
+
+    ResizeScreen(screen1, screen)
+    
     pg.display.flip()
 
 def ToPhaseII():
@@ -709,7 +720,7 @@ def ToPhaseII():
     global header
     global recieved
     data = []
-    if test:
+    if not test:
         header = ["time","time2","lat","long","random","random","oxygen",
                   "co2", "temperature", "pressure", "lightIntensity",
                   "humidity","asx0","asx1","asx2","asx3","asx4","asx5",
@@ -767,7 +778,7 @@ def ToPhaseII():
             data[i][j] = float(data[i][j])
             dataInv[j].append(data[i][j])
 
-    if test:
+    if not test:
         press = [0,1,0,-1,0,3,4,6,8,9,19,29,39,40,50,66,67,54,43,32,
                  23,21,12,10,9,8,3,2,3,1,0,0,0,0,0,0,0,0,0,0]
         dataInv[header.index("pressure")] = press
@@ -788,8 +799,8 @@ def ToPhaseII():
 
 def phase2():
     # SETUP SCREEN
-    screen.fill(black)
-    screen.blit(background2, background_Rect2)
+    screen1.fill(black)
+    screen1.blit(background2, background_Rect2)
 
     # TIMESTAMP
     time2 = dataInv[header.index("time")][0]
@@ -866,14 +877,14 @@ def phase2():
     Plot_Temperature_Rect = Plot_Temperature.get_rect(center=temperature_center)
 
 
-    screen.blits(blit_sequence=((Plot_Oxygen, Plot_Oxygen_Rect),
+    screen1.blits(blit_sequence=((Plot_Oxygen, Plot_Oxygen_Rect),
                                 (Plot_CO2, Plot_CO2_Rect),
                                 (Plot_LightIntensity, Plot_LightIntensity_Rect),
                                 (Plot_Pressure, Plot_Pressure_Rect),
                                 (Plot_Specter, Plot_Specter_Rect),
                                 (Plot_Temperature, Plot_Temperature_Rect)))
 
-    screen.blits(blit_sequence=((Text_day2, Text_day2_Rect),
+    screen1.blits(blit_sequence=((Text_day2, Text_day2_Rect),
                                 (Text_hour2, Text_hour2_Rect),
                                 (Text_sec2, Text_sec2_Rect),
                                 (Text_degN, Text_degN_Rect),
@@ -883,6 +894,8 @@ def phase2():
                                 (Text_minE, Text_minE_Rect),
                                 (Text_vteE, Text_vteE_Rect),
                                 (Text_slice, Text_slice_Rect)))
+
+    ResizeScreen(screen1, screen)
 
     pg.display.flip()
 
@@ -894,8 +907,8 @@ def ToPhaseIII():
 
 
 def phase3():
-    screen.fill(black)
-    screen.blit(background3, background3_Rect)
+    screen1.fill(black)
+    screen1.blit(background3, background3_Rect)
 
     index, o2, co2, lightintenzity, humidity, temperature, pressure = Results
 
@@ -921,7 +934,7 @@ def phase3():
     Text_pressure = Font_Var.render(str(round(pressure)), True, black)
     Text_pressure_Rect = Text_pressure.get_rect(center=(746, 248))
 
-    screen.blits(blit_sequence=((Text_Index, Text_Index_Rect),
+    screen1.blits(blit_sequence=((Text_Index, Text_Index_Rect),
                                 (Text_o2, Text_o2_Rect),
                                 (Text_co2, Text_co2_Rect),
                                 (Text_lightintenzity, Text_lightintenzity_Rect),
@@ -930,34 +943,36 @@ def phase3():
                                 (Text_pressure, Text_pressure_Rect)))
 
     if UpDown[0] == 1:
-        screen.blit(Up3, Up3_O2_Rect)
+        screen1.blit(Up3, Up3_O2_Rect)
     elif UpDown[0] == -1:
-        screen.blit(Down3, Down3_O2_Rect)
+        screen1.blit(Down3, Down3_O2_Rect)
 
     if UpDown[1] == 1:
-        screen.blit(Up3, Up3_CO2_Rect)
+        screen1.blit(Up3, Up3_CO2_Rect)
     elif UpDown[1] == -1:
-        screen.blit(Down3, Down3_CO2_Rect)
+        screen1.blit(Down3, Down3_CO2_Rect)
 
     if UpDown[2] == 1:
-        screen.blit(Up3, Up3_Int_Rect)
+        screen1.blit(Up3, Up3_Int_Rect)
     elif UpDown[2] == -1:
-        screen.blit(Down3, Down3_Int_Rect)
+        screen1.blit(Down3, Down3_Int_Rect)
 
     if UpDown[3] == 1:
-        screen.blit(Up3, Up3_Hum_Rect)
+        screen1.blit(Up3, Up3_Hum_Rect)
     elif UpDown[3] == -1:
-        screen.blit(Down3, Down3_Hum_Rect)
+        screen1.blit(Down3, Down3_Hum_Rect)
 
     if UpDown[4] == 1:
-        screen.blit(Up3, Up3_Temp_Rect)
+        screen1.blit(Up3, Up3_Temp_Rect)
     elif UpDown[4] == -1:
-        screen.blit(Down3, Down3_Temp_Rect)
+        screen1.blit(Down3, Down3_Temp_Rect)
 
     if UpDown[5] == 1:
-        screen.blit(Up3, Up3_Press_Rect)
+        screen1.blit(Up3, Up3_Press_Rect)
     elif UpDown[5] == -1:
-        screen.blit(Down3, Down3_Press_Rect)
+        screen1.blit(Down3, Down3_Press_Rect)
+
+    ResizeScreen(screen1, screen)
 
     pg.display.flip()
 
@@ -1045,36 +1060,36 @@ while True:
                     show = True
 
         if event.type == pg.MOUSEBUTTONDOWN and phase == 2:
-            if (event.__dict__["pos"][0] > o2_center[0]-(plotsize[0]/2)) and (event.__dict__["pos"][0] < o2_center[0]+(plotsize[0]/2)) and (
-                event.__dict__["pos"][1] > o2_center[1]-(plotsize[1]/2)) and (event.__dict__["pos"][1] < o2_center[1]+(plotsize[1]/2)):
+            if (event.__dict__["pos"][0] > (o2_center[0]-(plotsize[0]/2))*x_ratio) and (event.__dict__["pos"][0] < (o2_center[0]+(plotsize[0]/2))*x_ratio) and (
+                event.__dict__["pos"][1] > (o2_center[1]-(plotsize[1]/2))*y_ratio) and (event.__dict__["pos"][1] < (o2_center[1]+(plotsize[1]/2))*y_ratio):
                 fig = Plots.makePlot(header, "oxygen", dataInv, fig, offeredTimes)
                 
-            elif (event.__dict__["pos"][0] > co2_center[0]-(plotsize[0]/2)) and (event.__dict__["pos"][0] < co2_center[0]+(plotsize[0]/2)) and (
-                event.__dict__["pos"][1] > co2_center[1]-(plotsize[1]/2)) and (event.__dict__["pos"][1] < co2_center[1]+(plotsize[1]/2)):
+            elif (event.__dict__["pos"][0] > (co2_center[0]-(plotsize[0]/2))*x_ratio) and (event.__dict__["pos"][0] < (co2_center[0]+(plotsize[0]/2))*x_ratio) and (
+                event.__dict__["pos"][1] > (co2_center[1]-(plotsize[1]/2))*y_ratio) and (event.__dict__["pos"][1] < (co2_center[1]+(plotsize[1]/2))*y_ratio):
                 fig = Plots.makePlot(header, "co2", dataInv, fig, offeredTimes)
                 
-            elif (event.__dict__["pos"][0] > lightIntensity_center[0]-(plotsize[0]/2)) and (event.__dict__["pos"][0] < lightIntensity_center[0]+(plotsize[0]/2)) and (
-                event.__dict__["pos"][1] > lightIntensity_center[1]-(plotsize[1]/2)) and (event.__dict__["pos"][1] < lightIntensity_center[1]+(plotsize[1]/2)):
+            elif (event.__dict__["pos"][0] > (lightIntensity_center[0]-(plotsize[0]/2))*x_ratio) and (event.__dict__["pos"][0] < (lightIntensity_center[0]+(plotsize[0]/2))*x_ratio) and (
+                event.__dict__["pos"][1] > (lightIntensity_center[1]-(plotsize[1]/2))*y_ratio) and (event.__dict__["pos"][1] < (lightIntensity_center[1]+(plotsize[1]/2))*y_ratio):
                 fig = Plots.makePlot(header, "lightIntensity", dataInv, fig, offeredTimes)
                 
-            elif (event.__dict__["pos"][0] > pressure_center[0]-(plotsize[0]/2)) and (event.__dict__["pos"][0] < pressure_center[0]+(plotsize[0]/2)) and (
-                event.__dict__["pos"][1] > pressure_center[1]-(plotsize[1]/2)) and (event.__dict__["pos"][1] < pressure_center[1]+(plotsize[1]/2)):
+            elif (event.__dict__["pos"][0] > (pressure_center[0]-(plotsize[0]/2))*x_ratio) and (event.__dict__["pos"][0] < (pressure_center[0]+(plotsize[0]/2))*x_ratio) and (
+                event.__dict__["pos"][1] > (pressure_center[1]-(plotsize[1]/2))*y_ratio) and (event.__dict__["pos"][1] < (pressure_center[1]+(plotsize[1]/2))*y_ratio):
                 fig = Plots.makePlot(header, "pressure", dataInv, fig, offeredTimes)
                 
-            elif (event.__dict__["pos"][0] > specter_center[0]-(plotsize[0]/2)) and (event.__dict__["pos"][0] < specter_center[0]+(plotsize[0]/2)) and (
-                event.__dict__["pos"][1] > specter_center[1]-(plotsize[1]/2)) and (event.__dict__["pos"][1] < specter_center[1]+(plotsize[1]/2)):
+            elif (event.__dict__["pos"][0] > (specter_center[0]-(plotsize[0]/2))*x_ratio) and (event.__dict__["pos"][0] < (specter_center[0]+(plotsize[0]/2))*x_ratio) and (
+                event.__dict__["pos"][1] > (specter_center[1]-(plotsize[1]/2))*y_ratio) and (event.__dict__["pos"][1] < (specter_center[1]+(plotsize[1]/2))*y_ratio):
                 fig = Plots.makePlot(header, "specter", dataInv, fig, offeredTimes)
                 
-            elif (event.__dict__["pos"][0] > temperature_center[0]-(plotsize[0]/2)) and (event.__dict__["pos"][0] < temperature_center[0]+(plotsize[0]/2)) and (
-                event.__dict__["pos"][1] > temperature_center[1]-(plotsize[1]/2)) and (event.__dict__["pos"][1] < temperature_center[1]+(plotsize[1]/2)):
+            elif (event.__dict__["pos"][0] > (temperature_center[0]-(plotsize[0]/2))*x_ratio) and (event.__dict__["pos"][0] < (temperature_center[0]+(plotsize[0]/2))*x_ratio) and (
+                event.__dict__["pos"][1] > (temperature_center[1]-(plotsize[1]/2))*y_ratio) and (event.__dict__["pos"][1] < (temperature_center[1]+(plotsize[1]/2))*y_ratio):
                 fig = Plots.makePlot(header, "temperature", dataInv, fig, offeredTimes)
 
-            elif (event.__dict__["pos"][0] > 507) and (event.__dict__["pos"][0] < 525) and (
-                event.__dict__["pos"][1] > 71) and (event.__dict__["pos"][1] < 90):
+            elif (event.__dict__["pos"][0] > 507*x_ratio) and (event.__dict__["pos"][0] < 525*x_ratio) and (
+                event.__dict__["pos"][1] > 71*y_ratio) and (event.__dict__["pos"][1] < 90*y_ratio):
                 ToPhaseII()
 
-            elif (event.__dict__["pos"][0] > 765) and (
-                event.__dict__["pos"][1] < 34):
+            elif (event.__dict__["pos"][0] > 765*x_ratio) and (
+                event.__dict__["pos"][1] < 34*y_ratio):
                 phase = 3
                 ToPhaseIII()
             
