@@ -83,7 +83,7 @@ long = long[start:end+1]
 height = height[start:end+1]
 
 # TEST
-test = True
+test = False
 if test:
     import random as rd
     for i in range(len(height)):
