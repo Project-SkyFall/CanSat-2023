@@ -104,9 +104,7 @@ void setup(void) {
   }
 
   spiSemaphore_hadle = xSemaphoreCreateBinary();
-  gpsGetDataDone_semaphore = xSemaphoreCreateBinary();
   ds18GetDataDone_semaphore = xSemaphoreCreateBinary();
-  saveData_semaphore = xSemaphoreCreateBinary();
 
   xSemaphoreGive(spiSemaphore_hadle);
 

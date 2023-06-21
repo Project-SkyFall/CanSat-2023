@@ -14,9 +14,6 @@ void getData(void *pvParameters);
 
 void runServer(void *pvParameters);
 
-void saveData(void *pvParameters);
-void openFile(void *pvParamaters);
-
 void runNeo(void *pvParameters);
 
 void loraCheckTxDone(void *pvParameters);
@@ -33,8 +30,6 @@ extern uint32_t cycle;
 
 extern TaskHandle_t runServer_handle;
 extern TaskHandle_t printData_hadle;
-extern TaskHandle_t saveData_handle;
-extern TaskHandle_t openFile_handle;
 extern TaskHandle_t getData_handle;
 extern TaskHandle_t runNeo_handle;
 extern TaskHandle_t isrHandleDioRise_handle;
