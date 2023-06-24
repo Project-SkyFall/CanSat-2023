@@ -4,13 +4,13 @@ import math
 
 # SETUP
 # LOAD IMAGES
-Ruzice3 = pg.image.load("images\Ruzice2.jpg")
+Ruzice3 = pg.image.load("images/Ruzice2.jpg")
 Ruzice3_Rect = Ruzice3.get_rect(center=(1820, 100))
 
-Ruzice1 = pg.image.load("images\LongXHeight.png")
+Ruzice1 = pg.image.load("images/LongXHeight.png")
 Ruzice1_Rect = Ruzice1.get_rect(center=(700, 80))
 
-Ruzice2 = pg.image.load("images\LatXHeight.png")
+Ruzice2 = pg.image.load("images/LatXHeight.png")
 Ruzice2_Rect = Ruzice2.get_rect(center=(700, 620))
 
 # LOAD DATA
@@ -26,6 +26,11 @@ text = fh.read()
 text = text.strip().split("\n")
 header = text[0].strip().split(';')
 text = text[1:]
+
+# PRE VALUES
+latPre = 0
+longPre = 0
+
 for line in text:
     nan = False
     strline = line.strip().split(';')
@@ -45,6 +50,12 @@ for line in text:
             intline.append(num)
     if nan:
         continue
+    elif (intline[header.index("lat")] == 0) or (intline[header.index("long")] == 0):
+        continue
+    elif (intline[header.index("lat")] == latPre) or (intline[header.index("long")] == longPre):
+        continue
+    latPre = intline[header.index("lat")]
+    longPre = intline[header.index("long")]
     data.append(intline)
 
 fh.close()
@@ -79,7 +90,7 @@ for i in range(len(height)-10):
             end = i
 
 # TEST ALL DATA
-test2 = False
+test2 = True
 if not test2:
     lat = lat[start:end+1]
     long = long[start:end+1]
@@ -115,7 +126,7 @@ heightUP = (820, 40)
 heightDOWN = (1800, 1020)
 
 # COMPUTE SCREEN VIZUALISATION RATIOS
-H_ratio = (latDOWN[1]-latUP[1])/(max(height)-min(height))
+H_ratio = (latDOWN[1]-latUP[1])/(max(height))
 L1_ratio = (latDOWN[0]-latUP[0])/(max(lat+long)-min(lat+long))
 L2_ratio = (heightDOWN[0]-heightUP[0])/(max(lat+long)-min(lat+long))
 
@@ -252,8 +263,8 @@ while True:
                     time = 100
             elif event.__dict__["scancode"] == 80:
                 time += 100
-                if time > 1000:
-                    time = 1000
+                if time > 5000:
+                    time = 5000
             elif event.__dict__["unicode"] == " ":
                 stop = not stop
 
