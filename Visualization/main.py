@@ -12,6 +12,11 @@ import Index
 # INIT PYPLOT FIG
 fig = plt.figure(figsize=(6,3.7))
 
+# INIT SOCKETIO CLIENT
+import socketio
+
+sio = socketio.Client()
+
 #ROTATE
 def new_pos(mini, maxi, miniPos, maxiPos, value, rotation=False):
     if value > maxi:
@@ -219,7 +224,7 @@ Down3_CO2_Rect = Down3.get_rect(center = (663, 294))
 Down3_Press_Rect = Down3.get_rect(center = (746, 295))
 
 # TEST
-test = False
+test = True
 if test:
     j = 0
     dolu0 = False
@@ -244,6 +249,12 @@ try:
     Cam_Rect = pg.Rect((592,65), camsize, border_radius=10)
 except:
     pass
+
+# CAM SAVE PATH
+if test:
+    frame_path = "frame.png"
+else:
+    frame_path = "/home/pi/Desktop/frame.png"
 
 # SETUP WINDOW RESIZE
 x_ratio = 1920/800
@@ -674,6 +685,7 @@ def phase1():
     # GET CAM IMAGE
     try:
         Cam_Image = pg.transform.smoothscale(cam.get_image(), camsize)
+        pg.image.save(Cam_Image, frame_path)
         screen1.blit(Cam_Image, Cam_Rect)
     except:
         pass
@@ -720,7 +732,7 @@ def ToPhaseII():
     global header
     global recieved
     data = []
-    if test:
+    if not test:
         header = ["time","time2","lat","long","random","random","oxygen",
                   "co2", "temperature", "pressure", "lightIntensity",
                   "humidity","asx0","asx1","asx2","asx3","asx4","asx5",
@@ -778,7 +790,7 @@ def ToPhaseII():
             data[i][j] = float(data[i][j])
             dataInv[j].append(data[i][j])
 
-    if test:
+    if not test:
         press = [0,1,0,-1,0,3,4,6,8,9,19,29,39,40,50,66,67,54,43,32,
                  23,21,12,10,9,8,3,2,3,1,0,0,0,0,0,0,0,0,0,0]
         dataInv[header.index("pressure")] = press
