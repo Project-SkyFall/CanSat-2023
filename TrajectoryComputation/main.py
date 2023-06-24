@@ -78,9 +78,12 @@ for i in range(len(height)-10):
         if (abs(height[i] - height[i+10]) < 1) and (abs(height[i] - height[i+5]) < 1):
             end = i
 
-lat = lat[start:end+1]
-long = long[start:end+1]
-height = height[start:end+1]
+# TEST ALL DATA
+test2 = False
+if not test2:
+    lat = lat[start:end+1]
+    long = long[start:end+1]
+    height = height[start:end+1]
 
 # TEST
 test = False
