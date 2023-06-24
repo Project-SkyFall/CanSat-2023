@@ -14,7 +14,7 @@ Ruzice2 = pg.image.load("images\LatXHeight.png")
 Ruzice2_Rect = Ruzice2.get_rect(center=(700, 620))
 
 # LOAD DATA
-data_path = "Backup-data.txt"#"/home/pi/Desktop/Backup-data.txt"
+data_path = "/home/pi/Desktop/Backup-data.txt"#"Backup-data.txt"
 
 data = []
 try:
