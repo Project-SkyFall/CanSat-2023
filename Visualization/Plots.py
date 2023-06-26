@@ -44,7 +44,7 @@ def makePlot(header, label, dataInv, fig, offeredTimes, show=True):
             ax.plot((offeredTime,offeredTime), (min(dataInv[header.index(label)])-0.2, max(dataInv[header.index(label)])+0.2), '-r')
     if show:
         plt.show()
-        fig = plt.figure(figsize=(6,3.7))
+        fig = plt.figure(figsize=(12,7.4))
     else:
         fig.savefig("GUI_grafika2/Plot"+label+".png")
     fig.clear()

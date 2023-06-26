@@ -9,6 +9,10 @@ import pygame.camera as pgCam
 from OfferSlice import offerSlice
 import Index
 
+# SETUP WINDOW RESIZE
+x_ratio = 2.4
+y_ratio = 1080/(480*x_ratio)
+
 # INIT PYPLOT FIG
 fig = plt.figure(figsize=(6,3.7))
 
@@ -47,7 +51,7 @@ command_path = "/home/pi/Desktop/Command.txt"
 flags = pg.FULLSCREEN | pg.SHOWN
 size = (1920, 1080)
 screen = pg.display.set_mode(size, flags)
-screen1 = pg.Surface((800, 480))
+screen1 = pg.Surface((800*x_ratio, 480*x_ratio))
 
 
 phase = 1
@@ -55,53 +59,53 @@ black = (0,0,0)
 
 # LOAD FONT
 pg.font.init()
-Font = pg.font.Font(r"font/myriad-pro/MyriadPro-Light.otf", 14)
-Font_RT = pg.font.Font(r"font/myriad-pro/MyriadPro-Light.otf", 11)
-Font_Index = pg.font.Font(r"font/myriad-pro/MyriadPro-Light.otf", 100)
-Font_Var = pg.font.Font(r"font/myriad-pro/MyriadPro-Light.otf", 45)
+Font = pg.font.Font(r"font/myriad-pro/MyriadPro-Light.otf", 35)
+Font_RT = pg.font.Font(r"font/myriad-pro/MyriadPro-Light.otf", 25)
+Font_Index = pg.font.Font(r"font/myriad-pro/MyriadPro-Light.otf", 238)
+Font_Var = pg.font.Font(r"font/myriad-pro/MyriadPro-Light.otf", 106)
 
 # SETUP PHASE I
 # COORDINATES FOR "dead or alive" AND "up and down"
-dORa_x = 458
-dORa_y0 = 319
-dORa_y1 = 334
-dORa_y2 = 350
-dORa_y3 = 365
-dORa_y4 = 380
-dORa_y5 = 395
-dORa_y6 = 412
-dORa_y7 = 427
-dORa_y8 = 442
-dORa_y9 = 457
-dORa_y10 = 471
-dORa_y11 = 304
-up1_x = 316
-up1_y = 126
-down1_x = 316
-down1_y = 155
-up2_x = 485
-up2_y = 126
-down2_x = 485
-down2_y = 154
+dORa_x = 1055
+dORa_y0 = 711
+dORa_y1 = 747
+dORa_y2 = 781
+dORa_y3 = 819
+dORa_y4 = 854
+dORa_y5 = 889
+dORa_y6 = 924
+dORa_y7 = 962
+dORa_y8 = 995
+dORa_y9 = 1031
+dORa_y10 = 1067
+dORa_y11 = 1101
+up1_x = 721
+up1_y = 285
+down1_x = 721
+down1_y = 349
+up2_x = 1116
+up2_y = 285
+down2_x = 1116
+down2_y = 349
 
 # COORDINATES FOR DIALS
-co2_x = 320
-co2_y = 244
+co2_x = 731
+co2_y = 557
 co2_min = -75
 co2_max = 74
-o2_x = 482
-o2_y = 244
+o2_x = 1109
+o2_y = 557
 o2_min = -50
 o2_max = 50
-height_x = 725
-height_y_min = 436
-height_y_max = 304
-pressure_x = 316
-pressure_y = 104
+height_x = 1676
+height_y_min = 1005
+height_y_max = 698
+pressure_x = 721
+pressure_y = 231
 pressure_min = -88
 pressure_max = 88
-temperature_x = 485
-temperature_y = 104
+temperature_x = 1116
+temperature_y = 231
 temperature_min = -125
 temperature_max = 125
 
@@ -157,12 +161,12 @@ Down_Rect1 = Down.get_rect(center=(down1_x, down1_y))
 Down_Rect2 = Down.get_rect(center=(down2_x, down2_y))
 
 # OFFSET VECTORS
-VectorTemp = pg.math.Vector2(0, -20)
-VectorPress = pg.math.Vector2(0, -28)
-VectorCO2O2 = pg.math.Vector2(0, -20)
+VectorTemp = pg.math.Vector2(0, -20*x_ratio)
+VectorPress = pg.math.Vector2(0, -28*x_ratio)
+VectorCO2O2 = pg.math.Vector2(0, -20*x_ratio)
 
 # SETUP CANSAT MODEL
-Cansat = Valec(30, 90, 129, 160, 8)
+Cansat = Valec(30*x_ratio, 90*x_ratio, 285, 377, 8)
 
 # SETUP SENT AND RECIEVE TEXT
 sent = ""
@@ -185,16 +189,16 @@ background_Rect2 = background2.get_rect()
 data_path = "Backup-data.txt"#"/home/pi/Desktop/Backup-data.txt"
 
 # SET SCALE FOR CHARTS
-scale = 2/5
-plotsize = (600*scale, 370*scale)
+scale = 4/5
+plotsize = (600*scale*x_ratio, 370*scale*x_ratio)
 
 # SET CENTER POINTS FOR CHARTS
-o2_center = (155, 205)
-co2_center = (155, 380)
-lightIntensity_center = (645, 205)
-pressure_center = (400, 380)
-specter_center = (645, 380)
-temperature_center = (400, 205)
+o2_center = (155*x_ratio, 205*x_ratio)
+co2_center = (155*x_ratio, 380*x_ratio)
+lightIntensity_center = (645*x_ratio, 205*x_ratio)
+pressure_center = (400*x_ratio, 380*x_ratio)
+specter_center = (645*x_ratio, 380*x_ratio)
+temperature_center = (400*x_ratio, 205*x_ratio)
 
 # SETUP SLICE TEXT
 slicetext = ""
@@ -208,20 +212,24 @@ background3 = pg.image.load(r"GUI_grafika3/GG_background2.png")
 Up3 = pg.image.load(r"GUI_grafika3/Up.png")
 Down3 = pg.image.load(r"GUI_grafika3/Down.png")
 
+background3 = pg.transform.smoothscale_by(background3, x_ratio)
+Up3 = pg.transform.smoothscale_by(Up3, x_ratio)
+Down3 = pg.transform.smoothscale_by(Down3, x_ratio)
+
 # RECTS
 background3_Rect = background3.get_rect()
-Up3_O2_Rect = Up3.get_rect(center = (49, 201))
-Up3_Hum_Rect = Up3.get_rect(center = (133, 201))
-Up3_Temp_Rect = Up3.get_rect(center = (215, 201))
-Up3_Int_Rect = Up3.get_rect(center = (580, 201))
-Up3_CO2_Rect = Up3.get_rect(center = (663, 201))
-Up3_Press_Rect = Up3.get_rect(center = (746, 201))
-Down3_O2_Rect = Down3.get_rect(center = (49, 295))
-Down3_Hum_Rect = Down3.get_rect(center = (133, 295))
-Down3_Temp_Rect = Down3.get_rect(center = (215, 295))
-Down3_Int_Rect = Down3.get_rect(center = (579, 294))
-Down3_CO2_Rect = Down3.get_rect(center = (663, 294))
-Down3_Press_Rect = Down3.get_rect(center = (746, 295))
+Up3_O2_Rect = Up3.get_rect(center = (49*x_ratio, 201*x_ratio))
+Up3_Hum_Rect = Up3.get_rect(center = (133*x_ratio, 201*x_ratio))
+Up3_Temp_Rect = Up3.get_rect(center = (215*x_ratio, 201*x_ratio))
+Up3_Int_Rect = Up3.get_rect(center = (580*x_ratio, 201*x_ratio))
+Up3_CO2_Rect = Up3.get_rect(center = (663*x_ratio, 201*x_ratio))
+Up3_Press_Rect = Up3.get_rect(center = (746*x_ratio, 201*x_ratio))
+Down3_O2_Rect = Down3.get_rect(center = (49*x_ratio, 295*x_ratio))
+Down3_Hum_Rect = Down3.get_rect(center = (133*x_ratio, 295*x_ratio))
+Down3_Temp_Rect = Down3.get_rect(center = (215*x_ratio, 295*x_ratio))
+Down3_Int_Rect = Down3.get_rect(center = (579*x_ratio, 294*x_ratio))
+Down3_CO2_Rect = Down3.get_rect(center = (663*x_ratio, 294*x_ratio))
+Down3_Press_Rect = Down3.get_rect(center = (746*x_ratio, 295*x_ratio))
 
 # TEST
 test = True
@@ -246,7 +254,7 @@ try:
     camsize = (204,142)
     cam = pgCam.Camera(camList[int(numOfCam)], camsize)
     cam.start()
-    Cam_Rect = pg.Rect((592,65), camsize, border_radius=10)
+    Cam_Rect = pg.Rect((1363, 139), camsize, border_radius=10*x_ratio)
 except:
     pass
 
@@ -255,10 +263,6 @@ if test:
     frame_path = "frame.png"
 else:
     frame_path = "/home/pi/Desktop/frame.png"
-
-# SETUP WINDOW RESIZE
-x_ratio = 1920/800
-y_ratio = 1080/480
 
 # PHASE I
 def phase1():
@@ -608,83 +612,83 @@ def phase1():
 
     # TEXTS
     Text_Name = Font.render(r"CanSat", True, black)
-    Text_Name_Rect = Text_Name.get_rect(center=(129,77))
+    Text_Name_Rect = Text_Name.get_rect(center=(285,167))
 
     Text_BatteryGS = Font.render(str(round(batteryGS, 2)), True, black)
-    Text_BatteryGS_Rect = Text_BatteryGS.get_rect(center=(400,32))
+    Text_BatteryGS_Rect = Text_BatteryGS.get_rect(center=(918,62))
 
     Text_Press = Font.render(str(round(press, 1)), True, black)
-    Text_Press_Rect = Text_Press.get_rect(center=(306,142))
+    Text_Press_Rect = Text_Press.get_rect(center=(699,318))
 
     Text_Temp = Font.render(str(round(temp, 1)), True, black)
-    Text_Temp_Rect = Text_Temp.get_rect(center=(479,142))
+    Text_Temp_Rect = Text_Temp.get_rect(center=(1102,318))
 
     Text_O2 = Font.render(str(round(o2, 1)), True, black)
-    Text_O2_Rect = Text_O2.get_rect(center=(482,263))
+    Text_O2_Rect = Text_O2.get_rect(center=(1108,599))
 
     Text_CO2 = Font.render(str(round(co2, 3)), True, black)
-    Text_CO2_Rect = Text_CO2.get_rect(center=(306,263))
+    Text_CO2_Rect = Text_CO2.get_rect(center=(698,599))
 
     Text_Range = Font.render(str(round(rangeCan)), True, black)
-    Text_Range_Rect = Text_Range.get_rect(center=(658,346))
+    Text_Range_Rect = Text_Range.get_rect(center=(1519,793))
 
     Text_Height = Font.render(str(round(height)), True, black)
-    Text_Height_Rect = Text_Height.get_rect(center=(658,371))
+    Text_Height_Rect = Text_Height.get_rect(center=(1519,851))
 
     Text_Speed = Font.render(str(round(speed)), True, black)
-    Text_Speed_Rect = Text_Speed.get_rect(center=(654,410))
+    Text_Speed_Rect = Text_Speed.get_rect(center=(1510,942))
 
     Text_LandIn = Font.render(str(round(landIn)), True, black)
-    Text_LandIn_Rect = Text_LandIn.get_rect(center=(657,430))
+    Text_LandIn_Rect = Text_LandIn.get_rect(center=(1519,988))
 
     Text_RT = Font_RT.render(RT, True, black)
-    Text_RT_Rect = Text_RT.get_rect(center=(650, 451))
+    Text_RT_Rect = Text_RT.get_rect(center=(1500, 1040))
 
     Text_Humidity = Font.render(str(round(humidity, 1)), True, black)
-    Text_Humidity_Rect = Text_Humidity.get_rect(center=(399,200))
+    Text_Humidity_Rect = Text_Humidity.get_rect(center=(916,448))
     
     Text_Transfer = Font.render(str(round(transfer, 1)), True, black)
-    Text_Transfer_Rect = Text_Transfer.get_rect(center=(150,293))
+    Text_Transfer_Rect = Text_Transfer.get_rect(center=(335,669))
     
     Text_Battery = Font.render(str(round(battery, 2)), True, black)
-    Text_Battery_Rect = Text_Battery.get_rect(center=(152,312))
+    Text_Battery_Rect = Text_Battery.get_rect(center=(340,713))
 
     Text_Sent = Font.render(sent, True, black)
-    Text_Sent_Rect = Text_Sent.get_rect(center=(128,374))
+    Text_Sent_Rect = Text_Sent.get_rect(center=(282,866))
 
     Text_Recieve = Font.render(recieve, True, black)
-    Text_Recieve_Rect = Text_Recieve.get_rect(center=(128,438))
+    Text_Recieve_Rect = Text_Recieve.get_rect(center=(282,1007))
 
     Text_Roll = Font_RT.render(str(round(roll)), True, black)
-    Text_Roll_Rect = Text_Roll.get_rect(center=(117, 255))
+    Text_Roll_Rect = Text_Roll.get_rect(center=(261, 583))
 
     Text_Pitch = Font_RT.render(str(round(pitch)), True, black)
-    Text_Pitch_Rect = Text_Pitch.get_rect(center=(149, 255))
+    Text_Pitch_Rect = Text_Pitch.get_rect(center=(334, 583))
 
     Text_Yaw = Font_RT.render(str(round(yaw)), True, black)
-    Text_Yaw_Rect = Text_Yaw.get_rect(center=(181, 255))
+    Text_Yaw_Rect = Text_Yaw.get_rect(center=(411, 583))
 
     Text_degN = Font_RT.render(str(round(degN)), True, black)
-    Text_degN_Rect = Text_degN.get_rect(center=(641, 255))
+    Text_degN_Rect = Text_degN.get_rect(center=(1479, 584))
 
     Text_minN = Font_RT.render(str(round(minN)), True, black)
-    Text_minN_Rect = Text_minN.get_rect(center=(658, 255))
+    Text_minN_Rect = Text_minN.get_rect(center=(1517, 584))
 
     Text_vteN = Font_RT.render(str(round(vteN, 1)), True, black)
-    Text_vteN_Rect = Text_vteN.get_rect(center=(677, 255))
+    Text_vteN_Rect = Text_vteN.get_rect(center=(1562, 584))
 
     Text_degE = Font_RT.render(str(round(degE)), True, black)
-    Text_degE_Rect = Text_degE.get_rect(center=(708, 255))
+    Text_degE_Rect = Text_degE.get_rect(center=(1634, 584))
 
     Text_minE = Font_RT.render(str(round(minE)), True, black)
-    Text_minE_Rect = Text_minE.get_rect(center=(725, 255))
+    Text_minE_Rect = Text_minE.get_rect(center=(1673, 584))
 
     Text_vteE = Font_RT.render(str(round(vteE, 1)), True, black)
-    Text_vteE_Rect = Text_vteE.get_rect(center=(744, 255))
+    Text_vteE_Rect = Text_vteE.get_rect(center=(1719, 584))
 
     # GET CAM IMAGE
     try:
-        Cam_Image = pg.transform.smoothscale(cam.get_image(), camsize)
+        Cam_Image = pg.transform.smoothscale(cam.get_image(), (481,333))
         pg.image.save(Cam_Image, frame_path)
         screen1.blit(Cam_Image, Cam_Rect)
     except:
@@ -824,13 +828,13 @@ def phase2():
     sec2 = time2[10:12]
 
     Text_day2 = Font_RT.render(day2, True, black)
-    Text_day2_Rect = Text_day2.get_rect(center=(515, 42))
+    Text_day2_Rect = Text_day2.get_rect(center=(515*x_ratio, 42*x_ratio))
     
     Text_hour2 = Font_RT.render(hour2, True, black)
-    Text_hour2_Rect = Text_hour2.get_rect(center=(440, 42))
+    Text_hour2_Rect = Text_hour2.get_rect(center=(440*x_ratio, 42*x_ratio))
 
     Text_sec2 = Font_RT.render(sec2, True, black)
-    Text_sec2_Rect = Text_sec2.get_rect(center=(470, 42))
+    Text_sec2_Rect = Text_sec2.get_rect(center=(470*x_ratio, 42*x_ratio))
 
     # GPS STAMP
     try:
@@ -849,25 +853,25 @@ def phase2():
     vteE = round(((long-degE)*60-minE)*60, 1)
 
     Text_degN = Font_RT.render(str(round(degN)), True, black)
-    Text_degN_Rect = Text_degN.get_rect(center=(437, 55))
+    Text_degN_Rect = Text_degN.get_rect(center=(437*x_ratio, 55*x_ratio))
 
     Text_minN = Font_RT.render(str(round(minN)), True, black)
-    Text_minN_Rect = Text_minN.get_rect(center=(453, 55))
+    Text_minN_Rect = Text_minN.get_rect(center=(453*x_ratio, 55*x_ratio))
 
     Text_vteN = Font_RT.render(str(round(vteN, 1)), True, black)
-    Text_vteN_Rect = Text_vteN.get_rect(center=(471, 55))
+    Text_vteN_Rect = Text_vteN.get_rect(center=(471*x_ratio, 55*x_ratio))
 
     Text_degE = Font_RT.render(str(round(degE)), True, black)
-    Text_degE_Rect = Text_degE.get_rect(center=(501, 55))
+    Text_degE_Rect = Text_degE.get_rect(center=(501*x_ratio, 55*x_ratio))
 
     Text_minE = Font_RT.render(str(round(minE)), True, black)
-    Text_minE_Rect = Text_minE.get_rect(center=(517, 55))
+    Text_minE_Rect = Text_minE.get_rect(center=(517*x_ratio, 55*x_ratio))
 
     Text_vteE = Font_RT.render(str(round(vteE, 1)), True, black)
-    Text_vteE_Rect = Text_vteE.get_rect(center=(535, 55))
+    Text_vteE_Rect = Text_vteE.get_rect(center=(535*x_ratio, 55*x_ratio))
 
     Text_slice = Font.render(slicetext, True, black)
-    Text_slice_Rect = Text_slice.get_rect(center=(434, 82))
+    Text_slice_Rect = Text_slice.get_rect(center=(434*x_ratio, 82*x_ratio))
     
     # LOAD CHARTS AND CREATE RECTS
     Plot_Oxygen = pg.transform.smoothscale_by(pg.image.load(r"GUI_grafika2/Plotoxygen.png"),scale)
@@ -926,25 +930,25 @@ def phase3():
 
     # TEXTS
     Text_Index = Font_Index.render(str(round(index, 1)), True, black)
-    Text_Index_Rect = Text_Index.get_rect(center=(400, 214))
+    Text_Index_Rect = Text_Index.get_rect(center=(400*x_ratio, 214*x_ratio))
 
     Text_o2 = Font_Var.render(str(round(o2)), True, black)
-    Text_o2_Rect = Text_o2.get_rect(center=(49, 248))
+    Text_o2_Rect = Text_o2.get_rect(center=(49*x_ratio, 248*x_ratio))
 
     Text_co2 = Font_Var.render(str(round(co2)), True, black)
-    Text_co2_Rect = Text_co2.get_rect(center=(663, 248))
+    Text_co2_Rect = Text_co2.get_rect(center=(663*x_ratio, 248*x_ratio))
 
     Text_lightintenzity = Font_Var.render(str(round(lightintenzity)), True, black)
-    Text_lightintenzity_Rect = Text_lightintenzity.get_rect(center=(580, 248))
+    Text_lightintenzity_Rect = Text_lightintenzity.get_rect(center=(580*x_ratio, 248*x_ratio))
 
     Text_humidity = Font_Var.render(str(round(humidity)), True, black)
-    Text_humidity_Rect = Text_humidity.get_rect(center=(133, 248))
+    Text_humidity_Rect = Text_humidity.get_rect(center=(133*x_ratio, 248*x_ratio))
     
     Text_temperature = Font_Var.render(str(round(temperature)), True, black)
-    Text_temperature_Rect = Text_temperature.get_rect(center=(215, 248))
+    Text_temperature_Rect = Text_temperature.get_rect(center=(215*x_ratio, 248*x_ratio))
 
     Text_pressure = Font_Var.render(str(round(pressure)), True, black)
-    Text_pressure_Rect = Text_pressure.get_rect(center=(746, 248))
+    Text_pressure_Rect = Text_pressure.get_rect(center=(746*x_ratio, 248*x_ratio))
 
     screen1.blits(blit_sequence=((Text_Index, Text_Index_Rect),
                                 (Text_o2, Text_o2_Rect),
@@ -993,7 +997,10 @@ def phase3():
 while True:
     for event in pg.event.get():
         if event.type == pg.QUIT:
-            cam.stop()
+            try:
+                cam.stop()
+            except:
+                pass
             pg.quit()
             sys.exit()
             quit()
@@ -1005,7 +1012,10 @@ while True:
                 phase = 1
             
             elif event.__dict__["unicode"] == "\x1b":
-                cam.stop()
+                try:
+                    cam.stop()
+                except:
+                    pass
                 pg.quit()
                 sys.exit()
                 quit()
@@ -1072,27 +1082,27 @@ while True:
                     show = True
 
         if event.type == pg.MOUSEBUTTONDOWN and phase == 2:
-            if (event.__dict__["pos"][0] > (o2_center[0]-(plotsize[0]/2))*x_ratio) and (event.__dict__["pos"][0] < (o2_center[0]+(plotsize[0]/2))*x_ratio) and (
+            if (event.__dict__["pos"][0] > (o2_center[0]-(plotsize[0]/2))) and (event.__dict__["pos"][0] < (o2_center[0]+(plotsize[0]/2))) and (
                 event.__dict__["pos"][1] > (o2_center[1]-(plotsize[1]/2))*y_ratio) and (event.__dict__["pos"][1] < (o2_center[1]+(plotsize[1]/2))*y_ratio):
                 fig = Plots.makePlot(header, "oxygen", dataInv, fig, offeredTimes)
                 
-            elif (event.__dict__["pos"][0] > (co2_center[0]-(plotsize[0]/2))*x_ratio) and (event.__dict__["pos"][0] < (co2_center[0]+(plotsize[0]/2))*x_ratio) and (
+            elif (event.__dict__["pos"][0] > (co2_center[0]-(plotsize[0]/2))) and (event.__dict__["pos"][0] < (co2_center[0]+(plotsize[0]/2))) and (
                 event.__dict__["pos"][1] > (co2_center[1]-(plotsize[1]/2))*y_ratio) and (event.__dict__["pos"][1] < (co2_center[1]+(plotsize[1]/2))*y_ratio):
                 fig = Plots.makePlot(header, "co2", dataInv, fig, offeredTimes)
                 
-            elif (event.__dict__["pos"][0] > (lightIntensity_center[0]-(plotsize[0]/2))*x_ratio) and (event.__dict__["pos"][0] < (lightIntensity_center[0]+(plotsize[0]/2))*x_ratio) and (
+            elif (event.__dict__["pos"][0] > (lightIntensity_center[0]-(plotsize[0]/2))) and (event.__dict__["pos"][0] < (lightIntensity_center[0]+(plotsize[0]/2))) and (
                 event.__dict__["pos"][1] > (lightIntensity_center[1]-(plotsize[1]/2))*y_ratio) and (event.__dict__["pos"][1] < (lightIntensity_center[1]+(plotsize[1]/2))*y_ratio):
                 fig = Plots.makePlot(header, "lightIntensity", dataInv, fig, offeredTimes)
                 
-            elif (event.__dict__["pos"][0] > (pressure_center[0]-(plotsize[0]/2))*x_ratio) and (event.__dict__["pos"][0] < (pressure_center[0]+(plotsize[0]/2))*x_ratio) and (
+            elif (event.__dict__["pos"][0] > (pressure_center[0]-(plotsize[0]/2))) and (event.__dict__["pos"][0] < (pressure_center[0]+(plotsize[0]/2))) and (
                 event.__dict__["pos"][1] > (pressure_center[1]-(plotsize[1]/2))*y_ratio) and (event.__dict__["pos"][1] < (pressure_center[1]+(plotsize[1]/2))*y_ratio):
                 fig = Plots.makePlot(header, "pressure", dataInv, fig, offeredTimes)
                 
-            elif (event.__dict__["pos"][0] > (specter_center[0]-(plotsize[0]/2))*x_ratio) and (event.__dict__["pos"][0] < (specter_center[0]+(plotsize[0]/2))*x_ratio) and (
+            elif (event.__dict__["pos"][0] > (specter_center[0]-(plotsize[0]/2))) and (event.__dict__["pos"][0] < (specter_center[0]+(plotsize[0]/2))) and (
                 event.__dict__["pos"][1] > (specter_center[1]-(plotsize[1]/2))*y_ratio) and (event.__dict__["pos"][1] < (specter_center[1]+(plotsize[1]/2))*y_ratio):
                 fig = Plots.makePlot(header, "specter", dataInv, fig, offeredTimes)
                 
-            elif (event.__dict__["pos"][0] > (temperature_center[0]-(plotsize[0]/2))*x_ratio) and (event.__dict__["pos"][0] < (temperature_center[0]+(plotsize[0]/2))*x_ratio) and (
+            elif (event.__dict__["pos"][0] > (temperature_center[0]-(plotsize[0]/2))) and (event.__dict__["pos"][0] < (temperature_center[0]+(plotsize[0]/2))) and (
                 event.__dict__["pos"][1] > (temperature_center[1]-(plotsize[1]/2))*y_ratio) and (event.__dict__["pos"][1] < (temperature_center[1]+(plotsize[1]/2))*y_ratio):
                 fig = Plots.makePlot(header, "temperature", dataInv, fig, offeredTimes)
 
@@ -1100,8 +1110,8 @@ while True:
                 event.__dict__["pos"][1] > 71*y_ratio) and (event.__dict__["pos"][1] < 90*y_ratio):
                 ToPhaseII()
 
-            elif (event.__dict__["pos"][0] > 765*x_ratio) and (
-                event.__dict__["pos"][1] < 34*y_ratio):
+            elif (event.__dict__["pos"][0] > 1863) and (
+                event.__dict__["pos"][1] < 56):
                 phase = 3
                 ToPhaseIII()
             
