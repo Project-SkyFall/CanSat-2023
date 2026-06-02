@@ -5,8 +5,6 @@
 #include "myBNO.h"
 #include "temperature.h"
 
-#define SM_A_PIN 9
-
 bool Camera::setup(bool verbose){
     if(verbose) Serial.println("---Camera setup-----------------------------------");
 
@@ -88,17 +86,33 @@ void Camera::toggleRec(){
     }
 }*/
 
-/*void Camera::smartAudio(uint8_t command, uint8_t data){
-    Serial1.begin(4800, SERIAL_8N2, 15, SM_A_PIN);
+void Camera::smartAudioWrite(uint8_t command, uint8_t data){
 
-    Serial1.write(0xAA);
-    Serial1.write(0x55);
-    Serial1.write(0x01);
-    Serial.write(command << 1);
+    Serial1.setPins(DUMMY_PIN, SM_A_PIN); // set to TX
 
+    uint8_t frame[6];
+
+    frame[0] = 0x00; // dummy frame to put line to low
+    frame[1] += 0xAA; // start code: sync
+    frame[2] += 0x55; // start code: header
+    frame[3] += (command << 1) | 0b1; // actual command
+    frame[4] = 1; //datalength
+    frame[5] += data; //data
+    frame[6] += crc8(frame, 6);
+
+    for(int i=0; i<7; i++){
+        Serial1.write(frame[i]);
+    }
+
+    Serial1.setPins(SM_A_PIN, DUMMY_PIN); // set to RX
 }
 
-uint8_t getCRC(){
+/*void Camera::smartAudioRead(){
+
+}*/
+
+uint8_t crc8(uint8_t ptr[], uint8_t len){
+
     unsigned char crc8tab[256] = {
     0x00, 0xD5, 0x7F, 0xAA, 0xFE, 0x2B, 0x81, 0x54, 0x29, 0xFC, 0x56, 0x83, 0xD7, 0x02, 0xA8, 0x7D,
     0x52, 0x87, 0x2D, 0xF8, 0xAC, 0x79, 0xD3, 0x06, 0x7B, 0xAE, 0x04, 0xD1, 0x85, 0x50, 0xFA, 0x2F,
@@ -117,11 +131,9 @@ uint8_t getCRC(){
     0xD6, 0x03, 0xA9, 0x7C, 0x28, 0xFD, 0x57, 0x82, 0xFF, 0x2A, 0x80, 0x55, 0x01, 0xD4, 0x7E, 0xAB,
     0x84, 0x51, 0xFB, 0x2E, 0x7A, 0xAF, 0x05, 0xD0, 0xAD, 0x78, 0xD2, 0x07, 0x53, 0x86, 0x2C, 0xF9};
 
-    uint8_t crc8(const uint8_t * ptr, uint8_t len){
-        uint8_t crc = 0;
-        for (uint8_t i=0; i<len; i++) {
-        crc = crc8tab[crc ^ *ptr++];
-        }
-        return crc;
+    uint8_t crc = 0;
+    for (uint8_t i=0; i<len; i++) {
+        crc = crc8tab[crc ^ ptr[i]];
     }
-}*/
+    return crc;
+}

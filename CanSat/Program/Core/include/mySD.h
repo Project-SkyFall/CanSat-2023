@@ -11,11 +11,14 @@
 class MySD{
 
     uint8_t _cs;
+    SPIClass* _spi = &SPI;
+    SPISettings _spiSettings;
 
     public:
     MySD(uint8_t cs);;
     bool setup(bool verbose = false);
     bool save();
+    bool checkConnection();
     bool openFile();
     void printStatus();
 
