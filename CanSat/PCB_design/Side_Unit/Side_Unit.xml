@@ -1,0 +1,1213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>C:\Projekty\CanSat 2023\PCB design\CanSat\PCB design\Side Unit\Side Unit.kicad_sch</source>
+    <date>08/02/2023 13:02:00</date>
+    <tool>Eeschema (6.0.5)</tool>
+    <textvar name="version">v3.0</textvar>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>Side Unit - CanSat 2023</title>
+        <company>Project SkyFall</company>
+        <rev/>
+        <date>2023-01-19</date>
+        <source>Side Unit.kicad_sch</source>
+        <comment number="1" value="David Haisman"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="2" name="/Panel 1/" tstamps="/b3b80814-549c-40cc-bb26-0991449b9227/">
+      <title_block>
+        <title>Side Unit - CanSat 2023</title>
+        <company>Project SkyFall</company>
+        <rev>2022</rev>
+        <date>2023-01-19</date>
+        <source>panel_1.kicad_sch</source>
+        <comment number="1" value="David Haisman"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="3" name="/Panel 1/Spectroscope Unit/" tstamps="/b3b80814-549c-40cc-bb26-0991449b9227/3b4d1544-d2af-4424-a842-a311023f479d/">
+      <title_block>
+        <title>Side Unit - CanSat 2023</title>
+        <company>Project SkyFall</company>
+        <rev>2022</rev>
+        <date>2023-01-19</date>
+        <source>spectroscopeUnit.kicad_sch</source>
+        <comment number="1" value="David Haisman"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="4" name="/Panel 1/Light Intensity Unit/" tstamps="/b3b80814-549c-40cc-bb26-0991449b9227/95fda9cf-5818-4cf9-ae1d-4ebbf6beffeb/">
+      <title_block>
+        <title>Side Unit - CanSat 2023</title>
+        <company>Project SkyFall</company>
+        <rev>2022</rev>
+        <date>2023-01-19</date>
+        <source>lightIntensityUnit.kicad_sch</source>
+        <comment number="1" value="David Haisman"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="5" name="/Panel 2/" tstamps="/1a650689-6afb-47ee-915d-96042f4274d0/">
+      <title_block>
+        <title>Side Unit - CanSat 2023</title>
+        <company>Project SkyFall</company>
+        <rev>2022</rev>
+        <date>2023-01-19</date>
+        <source>panel_4.kicad_sch</source>
+        <comment number="1" value="David Haisman"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="6" name="/Panel 3/" tstamps="/a7e8cc3e-7f02-4588-a9f8-5e7c6074ce88/">
+      <title_block>
+        <title>Side Unit - CanSat 2023</title>
+        <company>Project SkyFall</company>
+        <rev>2022</rev>
+        <date>2023-01-19</date>
+        <source>panel_4.kicad_sch</source>
+        <comment number="1" value="David Haisman"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="R201">
+      <value>10k</value>
+      <footprint>1Knihovna:R_0805_2012Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Panel 1"/>
+      <property name="Sheetfile" value="../Hiearchical sheets/panel_1.kicad_sch"/>
+      <sheetpath names="/Panel 1/" tstamps="/b3b80814-549c-40cc-bb26-0991449b9227/"/>
+      <tstamps>d51c77eb-0458-47e0-b37a-b7dade0daf9b</tstamps>
+    </comp>
+    <comp ref="R202">
+      <value>10k</value>
+      <footprint>1Knihovna:R_0805_2012Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Panel 1"/>
+      <property name="Sheetfile" value="../Hiearchical sheets/panel_1.kicad_sch"/>
+      <sheetpath names="/Panel 1/" tstamps="/b3b80814-549c-40cc-bb26-0991449b9227/"/>
+      <tstamps>1095f96c-3aac-45c5-a397-d3f1d6e36e2f</tstamps>
+    </comp>
+    <comp ref="C301">
+      <value>100nF</value>
+      <footprint>1Knihovna:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Spectroscope Unit"/>
+      <property name="Sheetfile" value="spectroscopeUnit.kicad_sch"/>
+      <sheetpath names="/Panel 1/Spectroscope Unit/" tstamps="/b3b80814-549c-40cc-bb26-0991449b9227/3b4d1544-d2af-4424-a842-a311023f479d/"/>
+      <tstamps>4cad0482-0b5f-4473-88fb-8a42865c2681</tstamps>
+    </comp>
+    <comp ref="C302">
+      <value>1uF</value>
+      <footprint>1Knihovna:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Spectroscope Unit"/>
+      <property name="Sheetfile" value="spectroscopeUnit.kicad_sch"/>
+      <sheetpath names="/Panel 1/Spectroscope Unit/" tstamps="/b3b80814-549c-40cc-bb26-0991449b9227/3b4d1544-d2af-4424-a842-a311023f479d/"/>
+      <tstamps>b368b9e2-9438-478c-8029-39b6a0ed9e45</tstamps>
+    </comp>
+    <comp ref="C303">
+      <value>100nF</value>
+      <footprint>1Knihovna:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Spectroscope Unit"/>
+      <property name="Sheetfile" value="spectroscopeUnit.kicad_sch"/>
+      <sheetpath names="/Panel 1/Spectroscope Unit/" tstamps="/b3b80814-549c-40cc-bb26-0991449b9227/3b4d1544-d2af-4424-a842-a311023f479d/"/>
+      <tstamps>55bf1a54-989a-4be2-8080-ed5b0bd9678e</tstamps>
+    </comp>
+    <comp ref="C304">
+      <value>1uF</value>
+      <footprint>1Knihovna:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Spectroscope Unit"/>
+      <property name="Sheetfile" value="spectroscopeUnit.kicad_sch"/>
+      <sheetpath names="/Panel 1/Spectroscope Unit/" tstamps="/b3b80814-549c-40cc-bb26-0991449b9227/3b4d1544-d2af-4424-a842-a311023f479d/"/>
+      <tstamps>8d553981-550f-43a4-b77a-68819d6f89e3</tstamps>
+    </comp>
+    <comp ref="C305">
+      <value>100nF</value>
+      <footprint>1Knihovna:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Spectroscope Unit"/>
+      <property name="Sheetfile" value="spectroscopeUnit.kicad_sch"/>
+      <sheetpath names="/Panel 1/Spectroscope Unit/" tstamps="/b3b80814-549c-40cc-bb26-0991449b9227/3b4d1544-d2af-4424-a842-a311023f479d/"/>
+      <tstamps>77bd055c-b2cf-4864-a9be-7444a20ce4c3</tstamps>
+    </comp>
+    <comp ref="C306">
+      <value>1uF</value>
+      <footprint>1Knihovna:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Spectroscope Unit"/>
+      <property name="Sheetfile" value="spectroscopeUnit.kicad_sch"/>
+      <sheetpath names="/Panel 1/Spectroscope Unit/" tstamps="/b3b80814-549c-40cc-bb26-0991449b9227/3b4d1544-d2af-4424-a842-a311023f479d/"/>
+      <tstamps>ff629e3a-a024-47c1-b2d5-7d3269f435f4</tstamps>
+    </comp>
+    <comp ref="C307">
+      <value>1uF</value>
+      <footprint>1Knihovna:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Spectroscope Unit"/>
+      <property name="Sheetfile" value="spectroscopeUnit.kicad_sch"/>
+      <sheetpath names="/Panel 1/Spectroscope Unit/" tstamps="/b3b80814-549c-40cc-bb26-0991449b9227/3b4d1544-d2af-4424-a842-a311023f479d/"/>
+      <tstamps>d510c9cb-d11b-4cce-a91a-c654d47e9ef1</tstamps>
+    </comp>
+    <comp ref="R301">
+      <value>10k</value>
+      <footprint>1Knihovna:R_0805_2012Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Spectroscope Unit"/>
+      <property name="Sheetfile" value="spectroscopeUnit.kicad_sch"/>
+      <sheetpath names="/Panel 1/Spectroscope Unit/" tstamps="/b3b80814-549c-40cc-bb26-0991449b9227/3b4d1544-d2af-4424-a842-a311023f479d/"/>
+      <tstamps>c40a8f90-6c5d-4874-86f9-6d3d9892a39c</tstamps>
+    </comp>
+    <comp ref="R302">
+      <value>10k</value>
+      <footprint>1Knihovna:R_0805_2012Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Spectroscope Unit"/>
+      <property name="Sheetfile" value="spectroscopeUnit.kicad_sch"/>
+      <sheetpath names="/Panel 1/Spectroscope Unit/" tstamps="/b3b80814-549c-40cc-bb26-0991449b9227/3b4d1544-d2af-4424-a842-a311023f479d/"/>
+      <tstamps>bebdeece-0a35-4d6d-a289-d02c1c47ec70</tstamps>
+    </comp>
+    <comp ref="R303">
+      <value>10k</value>
+      <footprint>1Knihovna:R_0805_2012Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Spectroscope Unit"/>
+      <property name="Sheetfile" value="spectroscopeUnit.kicad_sch"/>
+      <sheetpath names="/Panel 1/Spectroscope Unit/" tstamps="/b3b80814-549c-40cc-bb26-0991449b9227/3b4d1544-d2af-4424-a842-a311023f479d/"/>
+      <tstamps>bc805827-b513-403f-9cef-2e8c1e935c6a</tstamps>
+    </comp>
+    <comp ref="R304">
+      <value>10k</value>
+      <footprint>1Knihovna:R_0805_2012Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Spectroscope Unit"/>
+      <property name="Sheetfile" value="spectroscopeUnit.kicad_sch"/>
+      <sheetpath names="/Panel 1/Spectroscope Unit/" tstamps="/b3b80814-549c-40cc-bb26-0991449b9227/3b4d1544-d2af-4424-a842-a311023f479d/"/>
+      <tstamps>09f12b2d-3421-4576-abd1-d868656648ad</tstamps>
+    </comp>
+    <comp ref="R305">
+      <value>10k</value>
+      <footprint>1Knihovna:R_0805_2012Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Spectroscope Unit"/>
+      <property name="Sheetfile" value="spectroscopeUnit.kicad_sch"/>
+      <sheetpath names="/Panel 1/Spectroscope Unit/" tstamps="/b3b80814-549c-40cc-bb26-0991449b9227/3b4d1544-d2af-4424-a842-a311023f479d/"/>
+      <tstamps>aefd366f-418c-45b3-bfb8-ec8de4fdfcf6</tstamps>
+    </comp>
+    <comp ref="R306">
+      <value>10k</value>
+      <footprint>1Knihovna:R_0805_2012Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Spectroscope Unit"/>
+      <property name="Sheetfile" value="spectroscopeUnit.kicad_sch"/>
+      <sheetpath names="/Panel 1/Spectroscope Unit/" tstamps="/b3b80814-549c-40cc-bb26-0991449b9227/3b4d1544-d2af-4424-a842-a311023f479d/"/>
+      <tstamps>9986f155-df77-4615-b174-c3e95fdc415c</tstamps>
+    </comp>
+    <comp ref="U301">
+      <value>AS72651</value>
+      <footprint>Package_LGA:AMS_LGA-20_4.7x4.5mm_P0.65mm</footprint>
+      <datasheet>https://ams.com/documents/20143/36005/AS7265x_DS000612_1-00.pdf/08051c8a-a7f6-6231-7993-2d3fe0bf38b8</datasheet>
+      <libsource lib="Sensor_Optical" part="AS72651" description="Smart 18-Channel VIS+NIR Spectral_ID Sensor with Electronic Shutter, LGA-20"/>
+      <property name="Sheetname" value="Spectroscope Unit"/>
+      <property name="Sheetfile" value="spectroscopeUnit.kicad_sch"/>
+      <sheetpath names="/Panel 1/Spectroscope Unit/" tstamps="/b3b80814-549c-40cc-bb26-0991449b9227/3b4d1544-d2af-4424-a842-a311023f479d/"/>
+      <tstamps>349bf96c-c739-41b6-8d93-7ec5f59a13bd</tstamps>
+    </comp>
+    <comp ref="U302">
+      <value>AS72652</value>
+      <footprint>Package_LGA:AMS_LGA-20_4.7x4.5mm_P0.65mm</footprint>
+      <datasheet>https://ams.com/documents/20143/36005/AS7265x_DS000612_1-00.pdf/08051c8a-a7f6-6231-7993-2d3fe0bf38b8</datasheet>
+      <libsource lib="1Knihovna" part="AS72652" description="Smart 18-Channel VIS+NIR Spectral_ID Sensor with Electronic Shutter, LGA-20"/>
+      <property name="Sheetname" value="Spectroscope Unit"/>
+      <property name="Sheetfile" value="spectroscopeUnit.kicad_sch"/>
+      <sheetpath names="/Panel 1/Spectroscope Unit/" tstamps="/b3b80814-549c-40cc-bb26-0991449b9227/3b4d1544-d2af-4424-a842-a311023f479d/"/>
+      <tstamps>fa03d570-b727-4a3f-b6cd-846073fcd477</tstamps>
+    </comp>
+    <comp ref="U303">
+      <value>AS72653</value>
+      <footprint>Package_LGA:AMS_LGA-20_4.7x4.5mm_P0.65mm</footprint>
+      <datasheet>https://ams.com/documents/20143/36005/AS7265x_DS000612_1-00.pdf/08051c8a-a7f6-6231-7993-2d3fe0bf38b8</datasheet>
+      <libsource lib="1Knihovna" part="AS72653" description="Smart 18-Channel VIS+NIR Spectral_ID Sensor with Electronic Shutter, LGA-20"/>
+      <property name="Sheetname" value="Spectroscope Unit"/>
+      <property name="Sheetfile" value="spectroscopeUnit.kicad_sch"/>
+      <sheetpath names="/Panel 1/Spectroscope Unit/" tstamps="/b3b80814-549c-40cc-bb26-0991449b9227/3b4d1544-d2af-4424-a842-a311023f479d/"/>
+      <tstamps>f70dc764-4b4b-4f42-b281-cf0f562d11dc</tstamps>
+    </comp>
+    <comp ref="U304">
+      <value>AT25SF041B-SSHD-B</value>
+      <footprint>1Knihovna:SOIC-8_3.9x4.9mm_P1.27mm</footprint>
+      <fields>
+        <field name="Description">NOR Flash 4 Mbit, 3.0V (2.7V to 3.6V), -40C to 85C, SOIC-W 208mil (Tape &amp; Reel), Single, Dual, Quad SPI NOR flash</field>
+        <field name="Height">2.16</field>
+        <field name="Manufacturer_Name">Dialog Semiconductor</field>
+        <field name="Manufacturer_Part_Number">AT25SF041B-SHB-T</field>
+      </fields>
+      <libsource lib="CanSat_2023" part="AT25SF041B-SHB-T" description="NOR Flash 4 Mbit, 3.0V (2.7V to 3.6V), -40C to 85C, SOIC-W 208mil (Tape &amp; Reel), Single, Dual, Quad SPI NOR flash"/>
+      <property name="Description" value="NOR Flash 4 Mbit, 3.0V (2.7V to 3.6V), -40C to 85C, SOIC-W 208mil (Tape &amp; Reel), Single, Dual, Quad SPI NOR flash"/>
+      <property name="Height" value="2.16"/>
+      <property name="Mouser Part Number" value=""/>
+      <property name="Mouser Price/Stock" value=""/>
+      <property name="Manufacturer_Name" value="Dialog Semiconductor"/>
+      <property name="Manufacturer_Part_Number" value="AT25SF041B-SHB-T"/>
+      <property name="Sheetname" value="Spectroscope Unit"/>
+      <property name="Sheetfile" value="spectroscopeUnit.kicad_sch"/>
+      <sheetpath names="/Panel 1/Spectroscope Unit/" tstamps="/b3b80814-549c-40cc-bb26-0991449b9227/3b4d1544-d2af-4424-a842-a311023f479d/"/>
+      <tstamps>b9266f0e-04d7-483a-a5de-03ce27b73e33</tstamps>
+    </comp>
+    <comp ref="C401">
+      <value>100nF</value>
+      <footprint>1Knihovna:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Light Intensity Unit"/>
+      <property name="Sheetfile" value="lightIntensityUnit.kicad_sch"/>
+      <sheetpath names="/Panel 1/Light Intensity Unit/" tstamps="/b3b80814-549c-40cc-bb26-0991449b9227/95fda9cf-5818-4cf9-ae1d-4ebbf6beffeb/"/>
+      <tstamps>6e8b359a-40f6-4698-bef3-9f220e0529b6</tstamps>
+    </comp>
+    <comp ref="C402">
+      <value>100nF</value>
+      <footprint>1Knihovna:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Light Intensity Unit"/>
+      <property name="Sheetfile" value="lightIntensityUnit.kicad_sch"/>
+      <sheetpath names="/Panel 1/Light Intensity Unit/" tstamps="/b3b80814-549c-40cc-bb26-0991449b9227/95fda9cf-5818-4cf9-ae1d-4ebbf6beffeb/"/>
+      <tstamps>33a79064-ca6e-427c-ac09-010fc631df57</tstamps>
+    </comp>
+    <comp ref="U401">
+      <value>BH1730</value>
+      <footprint>Package_WSOF:WSOF6</footprint>
+      <datasheet>https://cz.mouser.com/datasheet/2/348/bh1730fvc-e-1874430.pdf</datasheet>
+      <libsource lib="CanSat_2023" part="BH1730" description=""/>
+      <property name="Sheetname" value="Light Intensity Unit"/>
+      <property name="Sheetfile" value="lightIntensityUnit.kicad_sch"/>
+      <sheetpath names="/Panel 1/Light Intensity Unit/" tstamps="/b3b80814-549c-40cc-bb26-0991449b9227/95fda9cf-5818-4cf9-ae1d-4ebbf6beffeb/"/>
+      <tstamps>367c5db5-a6f4-435b-984a-f14d2b0de1fd</tstamps>
+    </comp>
+    <comp ref="C501">
+      <value>100nF</value>
+      <footprint>1Knihovna:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Panel 2"/>
+      <property name="Sheetfile" value="../Hiearchical sheets/panel_4.kicad_sch"/>
+      <sheetpath names="/Panel 2/" tstamps="/1a650689-6afb-47ee-915d-96042f4274d0/"/>
+      <tstamps>ac24ac26-592f-40ea-9dbe-51abf794ac89</tstamps>
+    </comp>
+    <comp ref="C502">
+      <value>100nF</value>
+      <footprint>1Knihovna:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Panel 2"/>
+      <property name="Sheetfile" value="../Hiearchical sheets/panel_4.kicad_sch"/>
+      <sheetpath names="/Panel 2/" tstamps="/1a650689-6afb-47ee-915d-96042f4274d0/"/>
+      <tstamps>76b59710-1e01-4fcc-91c8-c97855cba2e6</tstamps>
+    </comp>
+    <comp ref="C503">
+      <value>100nF</value>
+      <footprint>1Knihovna:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Panel 2"/>
+      <property name="Sheetfile" value="../Hiearchical sheets/panel_4.kicad_sch"/>
+      <sheetpath names="/Panel 2/" tstamps="/1a650689-6afb-47ee-915d-96042f4274d0/"/>
+      <tstamps>eec775e0-a5e2-41e9-8e6e-9df2a9e40b74</tstamps>
+    </comp>
+    <comp ref="C504">
+      <value>100nF</value>
+      <footprint>1Knihovna:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Panel 2"/>
+      <property name="Sheetfile" value="../Hiearchical sheets/panel_4.kicad_sch"/>
+      <sheetpath names="/Panel 2/" tstamps="/1a650689-6afb-47ee-915d-96042f4274d0/"/>
+      <tstamps>9860da67-79ad-45ee-af5b-22e2737a7569</tstamps>
+    </comp>
+    <comp ref="C505">
+      <value>100nF</value>
+      <footprint>1Knihovna:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Panel 2"/>
+      <property name="Sheetfile" value="../Hiearchical sheets/panel_4.kicad_sch"/>
+      <sheetpath names="/Panel 2/" tstamps="/1a650689-6afb-47ee-915d-96042f4274d0/"/>
+      <tstamps>a20fa9bd-8f5f-4842-bac3-3311a3f37543</tstamps>
+    </comp>
+    <comp ref="C506">
+      <value>100nF</value>
+      <footprint>1Knihovna:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Panel 2"/>
+      <property name="Sheetfile" value="../Hiearchical sheets/panel_4.kicad_sch"/>
+      <sheetpath names="/Panel 2/" tstamps="/1a650689-6afb-47ee-915d-96042f4274d0/"/>
+      <tstamps>b047ea79-b6b4-40bb-8daa-00b8eda58f09</tstamps>
+    </comp>
+    <comp ref="C507">
+      <value>100nF</value>
+      <footprint>1Knihovna:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Panel 2"/>
+      <property name="Sheetfile" value="../Hiearchical sheets/panel_4.kicad_sch"/>
+      <sheetpath names="/Panel 2/" tstamps="/1a650689-6afb-47ee-915d-96042f4274d0/"/>
+      <tstamps>e733e463-21ca-42b7-a075-f605510d0736</tstamps>
+    </comp>
+    <comp ref="C508">
+      <value>100nF</value>
+      <footprint>1Knihovna:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Panel 2"/>
+      <property name="Sheetfile" value="../Hiearchical sheets/panel_4.kicad_sch"/>
+      <sheetpath names="/Panel 2/" tstamps="/1a650689-6afb-47ee-915d-96042f4274d0/"/>
+      <tstamps>234bfbd1-87bc-4f35-81e3-8104c73c071c</tstamps>
+    </comp>
+    <comp ref="D501">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="Sheetname" value="Panel 2"/>
+      <property name="Sheetfile" value="../Hiearchical sheets/panel_4.kicad_sch"/>
+      <sheetpath names="/Panel 2/" tstamps="/1a650689-6afb-47ee-915d-96042f4274d0/"/>
+      <tstamps>d8caabea-94ec-4687-9aa0-000e2317e4b5</tstamps>
+    </comp>
+    <comp ref="D502">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="Sheetname" value="Panel 2"/>
+      <property name="Sheetfile" value="../Hiearchical sheets/panel_4.kicad_sch"/>
+      <sheetpath names="/Panel 2/" tstamps="/1a650689-6afb-47ee-915d-96042f4274d0/"/>
+      <tstamps>68fd0c44-bf9d-4164-b32d-cb055e95c421</tstamps>
+    </comp>
+    <comp ref="D503">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="Sheetname" value="Panel 2"/>
+      <property name="Sheetfile" value="../Hiearchical sheets/panel_4.kicad_sch"/>
+      <sheetpath names="/Panel 2/" tstamps="/1a650689-6afb-47ee-915d-96042f4274d0/"/>
+      <tstamps>9bebd340-d66f-4f6a-a88f-5b5246007f7e</tstamps>
+    </comp>
+    <comp ref="D504">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="Sheetname" value="Panel 2"/>
+      <property name="Sheetfile" value="../Hiearchical sheets/panel_4.kicad_sch"/>
+      <sheetpath names="/Panel 2/" tstamps="/1a650689-6afb-47ee-915d-96042f4274d0/"/>
+      <tstamps>97652379-dfc1-4fb0-a277-73468fad85b7</tstamps>
+    </comp>
+    <comp ref="D505">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="Sheetname" value="Panel 2"/>
+      <property name="Sheetfile" value="../Hiearchical sheets/panel_4.kicad_sch"/>
+      <sheetpath names="/Panel 2/" tstamps="/1a650689-6afb-47ee-915d-96042f4274d0/"/>
+      <tstamps>da462353-6588-4f2e-9a8c-4d822d7506d7</tstamps>
+    </comp>
+    <comp ref="D506">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="Sheetname" value="Panel 2"/>
+      <property name="Sheetfile" value="../Hiearchical sheets/panel_4.kicad_sch"/>
+      <sheetpath names="/Panel 2/" tstamps="/1a650689-6afb-47ee-915d-96042f4274d0/"/>
+      <tstamps>0fb049b3-01d6-4663-8d72-5049ed32d2c1</tstamps>
+    </comp>
+    <comp ref="D507">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="Sheetname" value="Panel 2"/>
+      <property name="Sheetfile" value="../Hiearchical sheets/panel_4.kicad_sch"/>
+      <sheetpath names="/Panel 2/" tstamps="/1a650689-6afb-47ee-915d-96042f4274d0/"/>
+      <tstamps>8b549d6f-9c40-463c-9e6f-a0c8d4d74894</tstamps>
+    </comp>
+    <comp ref="D508">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="Sheetname" value="Panel 2"/>
+      <property name="Sheetfile" value="../Hiearchical sheets/panel_4.kicad_sch"/>
+      <sheetpath names="/Panel 2/" tstamps="/1a650689-6afb-47ee-915d-96042f4274d0/"/>
+      <tstamps>abab4588-89a6-4a2f-aa5d-c8e9f119f08b</tstamps>
+    </comp>
+    <comp ref="C601">
+      <value>100nF</value>
+      <footprint>1Knihovna:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Panel 3"/>
+      <property name="Sheetfile" value="../Hiearchical sheets/panel_4.kicad_sch"/>
+      <sheetpath names="/Panel 3/" tstamps="/a7e8cc3e-7f02-4588-a9f8-5e7c6074ce88/"/>
+      <tstamps>ac24ac26-592f-40ea-9dbe-51abf794ac89</tstamps>
+    </comp>
+    <comp ref="C602">
+      <value>100nF</value>
+      <footprint>1Knihovna:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Panel 3"/>
+      <property name="Sheetfile" value="../Hiearchical sheets/panel_4.kicad_sch"/>
+      <sheetpath names="/Panel 3/" tstamps="/a7e8cc3e-7f02-4588-a9f8-5e7c6074ce88/"/>
+      <tstamps>76b59710-1e01-4fcc-91c8-c97855cba2e6</tstamps>
+    </comp>
+    <comp ref="C603">
+      <value>100nF</value>
+      <footprint>1Knihovna:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Panel 3"/>
+      <property name="Sheetfile" value="../Hiearchical sheets/panel_4.kicad_sch"/>
+      <sheetpath names="/Panel 3/" tstamps="/a7e8cc3e-7f02-4588-a9f8-5e7c6074ce88/"/>
+      <tstamps>eec775e0-a5e2-41e9-8e6e-9df2a9e40b74</tstamps>
+    </comp>
+    <comp ref="C604">
+      <value>100nF</value>
+      <footprint>1Knihovna:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Panel 3"/>
+      <property name="Sheetfile" value="../Hiearchical sheets/panel_4.kicad_sch"/>
+      <sheetpath names="/Panel 3/" tstamps="/a7e8cc3e-7f02-4588-a9f8-5e7c6074ce88/"/>
+      <tstamps>9860da67-79ad-45ee-af5b-22e2737a7569</tstamps>
+    </comp>
+    <comp ref="C605">
+      <value>100nF</value>
+      <footprint>1Knihovna:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Panel 3"/>
+      <property name="Sheetfile" value="../Hiearchical sheets/panel_4.kicad_sch"/>
+      <sheetpath names="/Panel 3/" tstamps="/a7e8cc3e-7f02-4588-a9f8-5e7c6074ce88/"/>
+      <tstamps>a20fa9bd-8f5f-4842-bac3-3311a3f37543</tstamps>
+    </comp>
+    <comp ref="C606">
+      <value>100nF</value>
+      <footprint>1Knihovna:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Panel 3"/>
+      <property name="Sheetfile" value="../Hiearchical sheets/panel_4.kicad_sch"/>
+      <sheetpath names="/Panel 3/" tstamps="/a7e8cc3e-7f02-4588-a9f8-5e7c6074ce88/"/>
+      <tstamps>b047ea79-b6b4-40bb-8daa-00b8eda58f09</tstamps>
+    </comp>
+    <comp ref="C607">
+      <value>100nF</value>
+      <footprint>1Knihovna:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Panel 3"/>
+      <property name="Sheetfile" value="../Hiearchical sheets/panel_4.kicad_sch"/>
+      <sheetpath names="/Panel 3/" tstamps="/a7e8cc3e-7f02-4588-a9f8-5e7c6074ce88/"/>
+      <tstamps>e733e463-21ca-42b7-a075-f605510d0736</tstamps>
+    </comp>
+    <comp ref="C608">
+      <value>100nF</value>
+      <footprint>1Knihovna:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Panel 3"/>
+      <property name="Sheetfile" value="../Hiearchical sheets/panel_4.kicad_sch"/>
+      <sheetpath names="/Panel 3/" tstamps="/a7e8cc3e-7f02-4588-a9f8-5e7c6074ce88/"/>
+      <tstamps>234bfbd1-87bc-4f35-81e3-8104c73c071c</tstamps>
+    </comp>
+    <comp ref="D601">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="Sheetname" value="Panel 3"/>
+      <property name="Sheetfile" value="../Hiearchical sheets/panel_4.kicad_sch"/>
+      <sheetpath names="/Panel 3/" tstamps="/a7e8cc3e-7f02-4588-a9f8-5e7c6074ce88/"/>
+      <tstamps>d8caabea-94ec-4687-9aa0-000e2317e4b5</tstamps>
+    </comp>
+    <comp ref="D602">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="Sheetname" value="Panel 3"/>
+      <property name="Sheetfile" value="../Hiearchical sheets/panel_4.kicad_sch"/>
+      <sheetpath names="/Panel 3/" tstamps="/a7e8cc3e-7f02-4588-a9f8-5e7c6074ce88/"/>
+      <tstamps>68fd0c44-bf9d-4164-b32d-cb055e95c421</tstamps>
+    </comp>
+    <comp ref="D603">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="Sheetname" value="Panel 3"/>
+      <property name="Sheetfile" value="../Hiearchical sheets/panel_4.kicad_sch"/>
+      <sheetpath names="/Panel 3/" tstamps="/a7e8cc3e-7f02-4588-a9f8-5e7c6074ce88/"/>
+      <tstamps>9bebd340-d66f-4f6a-a88f-5b5246007f7e</tstamps>
+    </comp>
+    <comp ref="D604">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="Sheetname" value="Panel 3"/>
+      <property name="Sheetfile" value="../Hiearchical sheets/panel_4.kicad_sch"/>
+      <sheetpath names="/Panel 3/" tstamps="/a7e8cc3e-7f02-4588-a9f8-5e7c6074ce88/"/>
+      <tstamps>97652379-dfc1-4fb0-a277-73468fad85b7</tstamps>
+    </comp>
+    <comp ref="D605">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="Sheetname" value="Panel 3"/>
+      <property name="Sheetfile" value="../Hiearchical sheets/panel_4.kicad_sch"/>
+      <sheetpath names="/Panel 3/" tstamps="/a7e8cc3e-7f02-4588-a9f8-5e7c6074ce88/"/>
+      <tstamps>da462353-6588-4f2e-9a8c-4d822d7506d7</tstamps>
+    </comp>
+    <comp ref="D606">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="Sheetname" value="Panel 3"/>
+      <property name="Sheetfile" value="../Hiearchical sheets/panel_4.kicad_sch"/>
+      <sheetpath names="/Panel 3/" tstamps="/a7e8cc3e-7f02-4588-a9f8-5e7c6074ce88/"/>
+      <tstamps>0fb049b3-01d6-4663-8d72-5049ed32d2c1</tstamps>
+    </comp>
+    <comp ref="D607">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="Sheetname" value="Panel 3"/>
+      <property name="Sheetfile" value="../Hiearchical sheets/panel_4.kicad_sch"/>
+      <sheetpath names="/Panel 3/" tstamps="/a7e8cc3e-7f02-4588-a9f8-5e7c6074ce88/"/>
+      <tstamps>8b549d6f-9c40-463c-9e6f-a0c8d4d74894</tstamps>
+    </comp>
+    <comp ref="D608">
+      <value>WS2812B</value>
+      <footprint>LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</datasheet>
+      <libsource lib="LED" part="WS2812B" description="RGB LED with integrated controller"/>
+      <property name="Sheetname" value="Panel 3"/>
+      <property name="Sheetfile" value="../Hiearchical sheets/panel_4.kicad_sch"/>
+      <sheetpath names="/Panel 3/" tstamps="/a7e8cc3e-7f02-4588-a9f8-5e7c6074ce88/"/>
+      <tstamps>abab4588-89a6-4a2f-aa5d-c8e9f119f08b</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="1Knihovna" part="AS72652">
+      <description>Smart 18-Channel VIS+NIR Spectral_ID Sensor with Electronic Shutter, LGA-20</description>
+      <docs>https://ams.com/documents/20143/36005/AS7265x_DS000612_1-00.pdf/08051c8a-a7f6-6231-7993-2d3fe0bf38b8</docs>
+      <footprints>
+        <fp>AMS?LGA*4.7x4.5mm*P0.65mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">AS72652</field>
+        <field name="Footprint">Package_LGA:AMS_LGA-20_4.7x4.5mm_P0.65mm</field>
+        <field name="Datasheet">https://ams.com/documents/20143/36005/AS7265x_DS000612_1-00.pdf/08051c8a-a7f6-6231-7993-2d3fe0bf38b8</field>
+      </fields>
+      <pins>
+        <pin num="1" name="NC" type="no_connect"/>
+        <pin num="2" name="~{RES}" type="input"/>
+        <pin num="3" name="NC" type="no_connect"/>
+        <pin num="4" name="NC" type="no_connect"/>
+        <pin num="5" name="NC" type="no_connect"/>
+        <pin num="6" name="NC" type="no_connect"/>
+        <pin num="7" name="NC" type="no_connect"/>
+        <pin num="8" name="NC" type="no_connect"/>
+        <pin num="9" name="SCL_S" type="output"/>
+        <pin num="10" name="SDA_S" type="bidirectional"/>
+        <pin num="11" name="NC" type="no_connect"/>
+        <pin num="12" name="NC" type="no_connect"/>
+        <pin num="13" name="INT" type="output"/>
+        <pin num="14" name="VDD2" type="power_in"/>
+        <pin num="15" name="LED_DRV" type="output"/>
+        <pin num="16" name="GND" type="power_in"/>
+        <pin num="17" name="VDD1" type="power_in"/>
+        <pin num="18" name="LED_IND" type="output"/>
+        <pin num="19" name="NC" type="no_connect"/>
+        <pin num="20" name="NC" type="no_connect"/>
+      </pins>
+    </libpart>
+    <libpart lib="1Knihovna" part="AS72653">
+      <description>Smart 18-Channel VIS+NIR Spectral_ID Sensor with Electronic Shutter, LGA-20</description>
+      <docs>https://ams.com/documents/20143/36005/AS7265x_DS000612_1-00.pdf/08051c8a-a7f6-6231-7993-2d3fe0bf38b8</docs>
+      <footprints>
+        <fp>AMS?LGA*4.7x4.5mm*P0.65mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">AS72653</field>
+        <field name="Footprint">Package_LGA:AMS_LGA-20_4.7x4.5mm_P0.65mm</field>
+        <field name="Datasheet">https://ams.com/documents/20143/36005/AS7265x_DS000612_1-00.pdf/08051c8a-a7f6-6231-7993-2d3fe0bf38b8</field>
+      </fields>
+      <pins>
+        <pin num="1" name="NC" type="no_connect"/>
+        <pin num="2" name="~{RES}" type="input"/>
+        <pin num="3" name="NC" type="no_connect"/>
+        <pin num="4" name="NC" type="no_connect"/>
+        <pin num="5" name="NC" type="no_connect"/>
+        <pin num="6" name="NC" type="no_connect"/>
+        <pin num="7" name="NC" type="no_connect"/>
+        <pin num="8" name="NC" type="no_connect"/>
+        <pin num="9" name="SCL_S" type="output"/>
+        <pin num="10" name="SDA_S" type="bidirectional"/>
+        <pin num="11" name="NC" type="no_connect"/>
+        <pin num="12" name="NC" type="no_connect"/>
+        <pin num="13" name="INT" type="output"/>
+        <pin num="14" name="VDD2" type="power_in"/>
+        <pin num="15" name="LED_DRV" type="output"/>
+        <pin num="16" name="GND" type="power_in"/>
+        <pin num="17" name="VDD1" type="power_in"/>
+        <pin num="18" name="LED_IND" type="output"/>
+        <pin num="19" name="NC" type="no_connect"/>
+        <pin num="20" name="NC" type="no_connect"/>
+      </pins>
+    </libpart>
+    <libpart lib="CanSat_2023" part="AT25SF041B-SHB-T">
+      <description>NOR Flash 4 Mbit, 3.0V (2.7V to 3.6V), -40C to 85C, SOIC-W 208mil (Tape &amp; Reel), Single, Dual, Quad SPI NOR flash</description>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">AT25SF041B-SHB-T</field>
+        <field name="Footprint">1Knihovna:SOIC-8_3.9x4.9mm_P1.27mm</field>
+        <field name="Description">NOR Flash 4 Mbit, 3.0V (2.7V to 3.6V), -40C to 85C, SOIC-W 208mil (Tape &amp; Reel), Single, Dual, Quad SPI NOR flash</field>
+        <field name="Height">2.16</field>
+        <field name="Manufacturer_Name">Dialog Semiconductor</field>
+        <field name="Manufacturer_Part_Number">AT25SF041B-SHB-T</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~{CS}" type="passive"/>
+        <pin num="2" name="SO_(IO1_)" type="passive"/>
+        <pin num="3" name="~{WP_(IO2_})" type="passive"/>
+        <pin num="4" name="GND" type="passive"/>
+        <pin num="5" name="SI_(IO0_)" type="passive"/>
+        <pin num="6" name="SCK" type="passive"/>
+        <pin num="7" name="~{HOLD_(IO3_})" type="passive"/>
+        <pin num="8" name="VCC" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="CanSat_2023" part="BH1730">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">BH1730</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VCC" type="power_in"/>
+        <pin num="2" name="INT" type="output"/>
+        <pin num="3" name="GND" type="passive"/>
+        <pin num="4" name="SDA" type="bidirectional"/>
+        <pin num="5" name="DVI" type="power_in"/>
+        <pin num="6" name="SCL" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector" part="Conn_01x04_Female">
+      <description>Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x04_Female</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C">
+      <description>Unpolarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R">
+      <description>Resistor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="LED" part="WS2812B">
+      <description>RGB LED with integrated controller</description>
+      <docs>https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</docs>
+      <footprints>
+        <fp>LED*WS2812*PLCC*5.0x5.0mm*P3.2mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">WS2812B</field>
+        <field name="Footprint">LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm</field>
+        <field name="Datasheet">https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VDD" type="power_in"/>
+        <pin num="2" name="DOUT" type="output"/>
+        <pin num="3" name="VSS" type="power_in"/>
+        <pin num="4" name="DIN" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="Sensor_Optical" part="AS72651">
+      <description>Smart 18-Channel VIS+NIR Spectral_ID Sensor with Electronic Shutter, LGA-20</description>
+      <docs>https://ams.com/documents/20143/36005/AS7265x_DS000612_1-00.pdf/08051c8a-a7f6-6231-7993-2d3fe0bf38b8</docs>
+      <footprints>
+        <fp>AMS?LGA*4.7x4.5mm*P0.65mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">AS72651</field>
+        <field name="Footprint">Package_LGA:AMS_LGA-20_4.7x4.5mm_P0.65mm</field>
+        <field name="Datasheet">https://ams.com/documents/20143/36005/AS7265x_DS000612_1-00.pdf/08051c8a-a7f6-6231-7993-2d3fe0bf38b8</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~{SLV1_RES}" type="output"/>
+        <pin num="2" name="~{RES}" type="input"/>
+        <pin num="3" name="SCK" type="output"/>
+        <pin num="4" name="MOSI" type="output"/>
+        <pin num="5" name="MISO" type="input"/>
+        <pin num="6" name="~{CS}" type="output"/>
+        <pin num="7" name="NC" type="no_connect"/>
+        <pin num="8" name="I2C_ENB" type="input"/>
+        <pin num="9" name="SCL_M" type="output"/>
+        <pin num="10" name="SDA_M" type="bidirectional"/>
+        <pin num="11" name="RX/SCL_S" type="input"/>
+        <pin num="12" name="TX/SDA_S" type="bidirectional"/>
+        <pin num="13" name="INT" type="output"/>
+        <pin num="14" name="VDD2" type="power_in"/>
+        <pin num="15" name="LED_DRV" type="output"/>
+        <pin num="16" name="GND" type="power_in"/>
+        <pin num="17" name="VDD1" type="power_in"/>
+        <pin num="18" name="LED_IND" type="output"/>
+        <pin num="19" name="NC" type="no_connect"/>
+        <pin num="20" name="~{SLV2_RES}" type="output"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="1Knihovna">
+      <uri>C:/Projekty/CanSat 2023/PCB design/CanSat/PCB design/Other/Library/1Knihovna.kicad_sym</uri>
+    </library>
+    <library logical="CanSat_2023">
+      <uri>C:/Projekty/CanSat 2023/PCB design/CanSat/PCB design/Other/Library/CanSat_2023.kicad_sym</uri>
+    </library>
+    <library logical="Connector">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Connector.kicad_sym</uri>
+    </library>
+    <library logical="Device">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Device.kicad_sym</uri>
+    </library>
+    <library logical="LED">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/LED.kicad_sym</uri>
+    </library>
+    <library logical="Sensor_Optical">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Sensor_Optical.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="/Panel 1/GND">
+      <node ref="C301" pin="2" pintype="passive"/>
+      <node ref="C302" pin="2" pintype="passive"/>
+      <node ref="C303" pin="2" pintype="passive"/>
+      <node ref="C304" pin="2" pintype="passive"/>
+      <node ref="C305" pin="2" pintype="passive"/>
+      <node ref="C306" pin="2" pintype="passive"/>
+      <node ref="C307" pin="2" pintype="passive"/>
+      <node ref="C401" pin="1" pintype="passive"/>
+      <node ref="C402" pin="2" pintype="passive"/>
+      <node ref="U301" pin="16" pinfunction="GND" pintype="power_in"/>
+      <node ref="U302" pin="16" pinfunction="GND" pintype="power_in"/>
+      <node ref="U303" pin="16" pinfunction="GND" pintype="power_in"/>
+      <node ref="U304" pin="4" pinfunction="GND" pintype="passive"/>
+      <node ref="U401" pin="2" pinfunction="INT" pintype="output"/>
+      <node ref="U401" pin="3" pinfunction="GND" pintype="passive"/>
+    </net>
+    <net code="2" name="/Panel 1/SCL">
+      <node ref="R202" pin="2" pintype="passive"/>
+      <node ref="U301" pin="11" pinfunction="RX/SCL_S" pintype="input"/>
+      <node ref="U401" pin="6" pinfunction="SCL" pintype="input"/>
+    </net>
+    <net code="3" name="/Panel 1/SDA">
+      <node ref="R201" pin="2" pintype="passive"/>
+      <node ref="U301" pin="12" pinfunction="TX/SDA_S" pintype="bidirectional"/>
+      <node ref="U401" pin="4" pinfunction="SDA" pintype="bidirectional"/>
+    </net>
+    <net code="4" name="/Panel 1/Spectroscope Unit/MISO">
+      <node ref="U301" pin="5" pinfunction="MISO" pintype="input"/>
+      <node ref="U304" pin="2" pinfunction="SO_(IO1_)" pintype="passive"/>
+    </net>
+    <net code="5" name="/Panel 1/Spectroscope Unit/MOSI">
+      <node ref="U301" pin="4" pinfunction="MOSI" pintype="output"/>
+      <node ref="U304" pin="5" pinfunction="SI_(IO0_)" pintype="passive"/>
+    </net>
+    <net code="6" name="/Panel 1/Spectroscope Unit/SCK">
+      <node ref="U301" pin="3" pinfunction="SCK" pintype="output"/>
+      <node ref="U304" pin="6" pinfunction="SCK" pintype="passive"/>
+    </net>
+    <net code="7" name="/Panel 1/Spectroscope Unit/SCL_S">
+      <node ref="R304" pin="2" pintype="passive"/>
+      <node ref="U301" pin="9" pinfunction="SCL_M" pintype="output"/>
+      <node ref="U302" pin="9" pinfunction="SCL_S" pintype="output"/>
+      <node ref="U303" pin="9" pinfunction="SCL_S" pintype="output"/>
+    </net>
+    <net code="8" name="/Panel 1/Spectroscope Unit/SDA_S">
+      <node ref="R303" pin="2" pintype="passive"/>
+      <node ref="U301" pin="10" pinfunction="SDA_M" pintype="bidirectional"/>
+      <node ref="U302" pin="10" pinfunction="SDA_S" pintype="bidirectional"/>
+      <node ref="U303" pin="10" pinfunction="SDA_S" pintype="bidirectional"/>
+    </net>
+    <net code="9" name="/Panel 1/Spectroscope Unit/~{CS}">
+      <node ref="U301" pin="6" pinfunction="~{CS}" pintype="output"/>
+      <node ref="U304" pin="1" pinfunction="~{CS}" pintype="passive"/>
+    </net>
+    <net code="10" name="/Panel 1/Spectroscope Unit/~{RES}">
+      <node ref="R306" pin="2" pintype="passive"/>
+      <node ref="U301" pin="2" pinfunction="~{RES}" pintype="input"/>
+    </net>
+    <net code="11" name="/Panel 1/Spectroscope Unit/~{SLV1_RES}">
+      <node ref="R302" pin="2" pintype="passive"/>
+      <node ref="U301" pin="1" pinfunction="~{SLV1_RES}" pintype="output"/>
+      <node ref="U302" pin="2" pinfunction="~{RES}" pintype="input"/>
+    </net>
+    <net code="12" name="/Panel 1/Spectroscope Unit/~{SLV2_RES}">
+      <node ref="R301" pin="2" pintype="passive"/>
+      <node ref="U301" pin="20" pinfunction="~{SLV2_RES}" pintype="output"/>
+      <node ref="U303" pin="2" pinfunction="~{RES}" pintype="input"/>
+    </net>
+    <net code="13" name="/Panel 1/VCC">
+      <node ref="C301" pin="1" pintype="passive"/>
+      <node ref="C302" pin="1" pintype="passive"/>
+      <node ref="C303" pin="1" pintype="passive"/>
+      <node ref="C304" pin="1" pintype="passive"/>
+      <node ref="C305" pin="1" pintype="passive"/>
+      <node ref="C306" pin="1" pintype="passive"/>
+      <node ref="C307" pin="1" pintype="passive"/>
+      <node ref="C401" pin="2" pintype="passive"/>
+      <node ref="C402" pin="1" pintype="passive"/>
+      <node ref="R201" pin="1" pintype="passive"/>
+      <node ref="R202" pin="1" pintype="passive"/>
+      <node ref="R301" pin="1" pintype="passive"/>
+      <node ref="R302" pin="1" pintype="passive"/>
+      <node ref="R303" pin="1" pintype="passive"/>
+      <node ref="R304" pin="1" pintype="passive"/>
+      <node ref="R305" pin="1" pintype="passive"/>
+      <node ref="R306" pin="1" pintype="passive"/>
+      <node ref="U301" pin="14" pinfunction="VDD2" pintype="power_in"/>
+      <node ref="U301" pin="17" pinfunction="VDD1" pintype="power_in"/>
+      <node ref="U302" pin="14" pinfunction="VDD2" pintype="power_in"/>
+      <node ref="U302" pin="17" pinfunction="VDD1" pintype="power_in"/>
+      <node ref="U303" pin="14" pinfunction="VDD2" pintype="power_in"/>
+      <node ref="U303" pin="17" pinfunction="VDD1" pintype="power_in"/>
+      <node ref="U304" pin="3" pinfunction="~{WP_(IO2_})" pintype="passive"/>
+      <node ref="U304" pin="7" pinfunction="~{HOLD_(IO3_})" pintype="passive"/>
+      <node ref="U304" pin="8" pinfunction="VCC" pintype="passive"/>
+      <node ref="U401" pin="1" pinfunction="VCC" pintype="power_in"/>
+      <node ref="U401" pin="5" pinfunction="DVI" pintype="power_in"/>
+    </net>
+    <net code="14" name="/Panel 2/DIN">
+      <node ref="D501" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="15" name="/Panel 2/DOUT">
+      <node ref="D508" pin="2" pinfunction="DOUT" pintype="output"/>
+    </net>
+    <net code="16" name="/Panel 2/GND">
+      <node ref="C501" pin="1" pintype="passive"/>
+      <node ref="C502" pin="1" pintype="passive"/>
+      <node ref="C503" pin="1" pintype="passive"/>
+      <node ref="C504" pin="1" pintype="passive"/>
+      <node ref="C505" pin="1" pintype="passive"/>
+      <node ref="C506" pin="1" pintype="passive"/>
+      <node ref="C507" pin="1" pintype="passive"/>
+      <node ref="C508" pin="1" pintype="passive"/>
+      <node ref="D501" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D502" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D503" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D504" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D505" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D506" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D507" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D508" pin="3" pinfunction="VSS" pintype="power_in"/>
+    </net>
+    <net code="17" name="/Panel 2/VCC_5V">
+      <node ref="C501" pin="2" pintype="passive"/>
+      <node ref="C502" pin="2" pintype="passive"/>
+      <node ref="C503" pin="2" pintype="passive"/>
+      <node ref="C504" pin="2" pintype="passive"/>
+      <node ref="C505" pin="2" pintype="passive"/>
+      <node ref="C506" pin="2" pintype="passive"/>
+      <node ref="C507" pin="2" pintype="passive"/>
+      <node ref="C508" pin="2" pintype="passive"/>
+      <node ref="D501" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D502" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D503" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D504" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D505" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D506" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D507" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D508" pin="1" pinfunction="VDD" pintype="power_in"/>
+    </net>
+    <net code="18" name="/Panel 3/DIN">
+      <node ref="D601" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="19" name="/Panel 3/DOUT">
+      <node ref="D608" pin="2" pinfunction="DOUT" pintype="output"/>
+    </net>
+    <net code="20" name="/Panel 3/GND">
+      <node ref="C601" pin="1" pintype="passive"/>
+      <node ref="C602" pin="1" pintype="passive"/>
+      <node ref="C603" pin="1" pintype="passive"/>
+      <node ref="C604" pin="1" pintype="passive"/>
+      <node ref="C605" pin="1" pintype="passive"/>
+      <node ref="C606" pin="1" pintype="passive"/>
+      <node ref="C607" pin="1" pintype="passive"/>
+      <node ref="C608" pin="1" pintype="passive"/>
+      <node ref="D601" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D602" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D603" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D604" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D605" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D606" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D607" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="D608" pin="3" pinfunction="VSS" pintype="power_in"/>
+    </net>
+    <net code="21" name="/Panel 3/VCC_5V">
+      <node ref="C601" pin="2" pintype="passive"/>
+      <node ref="C602" pin="2" pintype="passive"/>
+      <node ref="C603" pin="2" pintype="passive"/>
+      <node ref="C604" pin="2" pintype="passive"/>
+      <node ref="C605" pin="2" pintype="passive"/>
+      <node ref="C606" pin="2" pintype="passive"/>
+      <node ref="C607" pin="2" pintype="passive"/>
+      <node ref="C608" pin="2" pintype="passive"/>
+      <node ref="D601" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D602" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D603" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D604" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D605" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D606" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D607" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="D608" pin="1" pinfunction="VDD" pintype="power_in"/>
+    </net>
+    <net code="22" name="Net-(D501-Pad2)">
+      <node ref="D501" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D502" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="23" name="Net-(D502-Pad2)">
+      <node ref="D502" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D503" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="24" name="Net-(D503-Pad2)">
+      <node ref="D503" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D504" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="25" name="Net-(D504-Pad2)">
+      <node ref="D504" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D505" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="26" name="Net-(D505-Pad2)">
+      <node ref="D505" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D506" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="27" name="Net-(D506-Pad2)">
+      <node ref="D506" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D507" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="28" name="Net-(D507-Pad2)">
+      <node ref="D507" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D508" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="29" name="Net-(D601-Pad2)">
+      <node ref="D601" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D602" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="30" name="Net-(D602-Pad2)">
+      <node ref="D602" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D603" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="31" name="Net-(D603-Pad2)">
+      <node ref="D603" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D604" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="32" name="Net-(D604-Pad2)">
+      <node ref="D604" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D605" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="33" name="Net-(D605-Pad2)">
+      <node ref="D605" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D606" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="34" name="Net-(D606-Pad2)">
+      <node ref="D606" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D607" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="35" name="Net-(D607-Pad2)">
+      <node ref="D607" pin="2" pinfunction="DOUT" pintype="output"/>
+      <node ref="D608" pin="4" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="36" name="Net-(R305-Pad2)">
+      <node ref="R305" pin="2" pintype="passive"/>
+      <node ref="U301" pin="8" pinfunction="I2C_ENB" pintype="input"/>
+    </net>
+    <net code="37" name="unconnected-(U301-Pad7)">
+      <node ref="U301" pin="7" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="38" name="unconnected-(U301-Pad13)">
+      <node ref="U301" pin="13" pinfunction="INT" pintype="output+no_connect"/>
+    </net>
+    <net code="39" name="unconnected-(U301-Pad15)">
+      <node ref="U301" pin="15" pinfunction="LED_DRV" pintype="output+no_connect"/>
+    </net>
+    <net code="40" name="unconnected-(U301-Pad18)">
+      <node ref="U301" pin="18" pinfunction="LED_IND" pintype="output"/>
+    </net>
+    <net code="41" name="unconnected-(U301-Pad19)">
+      <node ref="U301" pin="19" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="42" name="unconnected-(U302-Pad1)">
+      <node ref="U302" pin="1" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="43" name="unconnected-(U302-Pad3)">
+      <node ref="U302" pin="3" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="44" name="unconnected-(U302-Pad4)">
+      <node ref="U302" pin="4" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="45" name="unconnected-(U302-Pad5)">
+      <node ref="U302" pin="5" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="46" name="unconnected-(U302-Pad6)">
+      <node ref="U302" pin="6" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="47" name="unconnected-(U302-Pad7)">
+      <node ref="U302" pin="7" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="48" name="unconnected-(U302-Pad8)">
+      <node ref="U302" pin="8" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="49" name="unconnected-(U302-Pad11)">
+      <node ref="U302" pin="11" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="50" name="unconnected-(U302-Pad12)">
+      <node ref="U302" pin="12" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="51" name="unconnected-(U302-Pad13)">
+      <node ref="U302" pin="13" pinfunction="INT" pintype="output+no_connect"/>
+    </net>
+    <net code="52" name="unconnected-(U302-Pad15)">
+      <node ref="U302" pin="15" pinfunction="LED_DRV" pintype="output+no_connect"/>
+    </net>
+    <net code="53" name="unconnected-(U302-Pad18)">
+      <node ref="U302" pin="18" pinfunction="LED_IND" pintype="output+no_connect"/>
+    </net>
+    <net code="54" name="unconnected-(U302-Pad19)">
+      <node ref="U302" pin="19" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="55" name="unconnected-(U302-Pad20)">
+      <node ref="U302" pin="20" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="56" name="unconnected-(U303-Pad1)">
+      <node ref="U303" pin="1" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="57" name="unconnected-(U303-Pad3)">
+      <node ref="U303" pin="3" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="58" name="unconnected-(U303-Pad4)">
+      <node ref="U303" pin="4" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="59" name="unconnected-(U303-Pad5)">
+      <node ref="U303" pin="5" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="60" name="unconnected-(U303-Pad6)">
+      <node ref="U303" pin="6" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="61" name="unconnected-(U303-Pad7)">
+      <node ref="U303" pin="7" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="62" name="unconnected-(U303-Pad8)">
+      <node ref="U303" pin="8" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="63" name="unconnected-(U303-Pad11)">
+      <node ref="U303" pin="11" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="64" name="unconnected-(U303-Pad12)">
+      <node ref="U303" pin="12" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="65" name="unconnected-(U303-Pad13)">
+      <node ref="U303" pin="13" pinfunction="INT" pintype="output+no_connect"/>
+    </net>
+    <net code="66" name="unconnected-(U303-Pad15)">
+      <node ref="U303" pin="15" pinfunction="LED_DRV" pintype="output+no_connect"/>
+    </net>
+    <net code="67" name="unconnected-(U303-Pad18)">
+      <node ref="U303" pin="18" pinfunction="LED_IND" pintype="output+no_connect"/>
+    </net>
+    <net code="68" name="unconnected-(U303-Pad19)">
+      <node ref="U303" pin="19" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="69" name="unconnected-(U303-Pad20)">
+      <node ref="U303" pin="20" pinfunction="NC" pintype="no_connect"/>
+    </net>
+  </nets>
+</export>

@@ -1,0 +1,2374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>C:\Projekty\CanSat 2023\PCB design\CanSat\PCB design\Power Unit 2\Power Unit 2.kicad_sch</source>
+    <date>30/03/2023 13:32:29</date>
+    <tool>Eeschema (6.0.5)</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>Power Unit 2.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="2" name="/Power Unit/Step-down/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/1eea8b8a-caf5-4014-b0f0-f64da89bbf4e/">
+      <title_block>
+        <title>CanSat 2023</title>
+        <company>The Project SkyFall</company>
+        <rev>2023</rev>
+        <date/>
+        <source>power_5v.kicad_sch</source>
+        <comment number="1" value="David Haisman"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="3" name="/Power Unit/Current Sensor/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/6a54869f-3f1c-446d-8753-5fd101474b26/">
+      <title_block>
+        <title>Power Unit - CanSat 2023</title>
+        <company>Project SkyFall</company>
+        <rev>2023</rev>
+        <date>2023-01-19</date>
+        <source>currentSensor.kicad_sch</source>
+        <comment number="1" value="David Haisman"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="4" name="/Power Unit/IMU unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/9ddb0ed8-312a-428c-b731-fe719deeb63b/">
+      <title_block>
+        <title>Power Unit - CanSat 2023</title>
+        <company>Project SkyFall</company>
+        <rev>2022</rev>
+        <date>2023-01-19</date>
+        <source>imuUnit.kicad_sch</source>
+        <comment number="1" value="David Haisman"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="5" name="/Power Unit/GPS Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/a7d1e1df-e348-4a05-9bfc-71a0bce1303d/">
+      <title_block>
+        <title>Power Unit - CanSat 2023</title>
+        <company>Project SkyFall</company>
+        <rev>2022</rev>
+        <date>2023-01-19</date>
+        <source>gpsUnit.kicad_sch</source>
+        <comment number="1" value="David Haisman"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="6" name="/Power Unit/SCD41/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/8cdde238-0910-4ee9-a19f-4da8aa6478f1/">
+      <title_block>
+        <title>Power Unit - CanSat 2023</title>
+        <company>Project SkyFall</company>
+        <rev>2022</rev>
+        <date>2023-01-19</date>
+        <source>scd41.kicad_sch</source>
+        <comment number="1" value="David Haisman"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="7" name="/Power Unit/Oxygen/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/c2d9ffc6-7b5a-491c-b075-9ce59608711c/">
+      <title_block>
+        <title>Power Unit - CanSat 2023</title>
+        <company>Project SkyFall</company>
+        <rev>2023</rev>
+        <date>2023-01-19</date>
+        <source>oxygen.kicad_sch</source>
+        <comment number="1" value="David Haisman"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="8" name="/Power Unit/Camera/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/a8e28c13-d7b0-4483-83f7-76c6eeb45f00/">
+      <title_block>
+        <title>Power Unit - CanSat 2023</title>
+        <company>Project SkyFall</company>
+        <rev>2022</rev>
+        <date>2023-01-19</date>
+        <source>camera.kicad_sch</source>
+        <comment number="1" value="David Haisman"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="9" name="/Power Unit/Camera transmit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/620aa272-9da3-4608-95ad-5a5153379f66/">
+      <title_block>
+        <title>Power Unit - CanSat 2023</title>
+        <company>Project SkyFall</company>
+        <rev>2022</rev>
+        <date>2023-01-19</date>
+        <source>camTransmit.kicad_sch</source>
+        <comment number="1" value="David Haisman"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="10" name="/Power Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>powerUnit4.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="J101">
+      <value>Conn_02x04_Female</value>
+      <footprint>CanSat_2023:PinSocket_2x04_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x08_Female" description="Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Power Unit 2.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b92d8789-4a55-4cdd-b82b-f70700da3675</tstamps>
+    </comp>
+    <comp ref="J102">
+      <value>Conn_02x02_Female</value>
+      <footprint>CanSat_2023:PinSocket_2x02_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x04_Female" description="Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Power Unit 2.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d2f18c96-0ca6-48fa-bc43-c3421cd77efd</tstamps>
+    </comp>
+    <comp ref="J103">
+      <value>Conn_02x02_Female</value>
+      <footprint>CanSat_2023:PinSocket_2x02_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x04_Female" description="Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Power Unit 2.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c5a5a88f-6e48-4090-9f67-6d00d49e0f9f</tstamps>
+    </comp>
+    <comp ref="J104">
+      <value>Conn_02x02_Female</value>
+      <footprint>CanSat_2023:PinSocket_2x02_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x04_Female" description="Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Power Unit 2.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6cde59c5-32fb-4040-8e37-a61a51e96ffd</tstamps>
+    </comp>
+    <comp ref="C201">
+      <value>0.1uF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Step-down"/>
+      <property name="Sheetfile" value="Hiearchical sheets/power_5v.kicad_sch"/>
+      <sheetpath names="/Power Unit/Step-down/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/1eea8b8a-caf5-4014-b0f0-f64da89bbf4e/"/>
+      <tstamps>b91336d6-bd18-4a58-89c8-19ccb48681cf</tstamps>
+    </comp>
+    <comp ref="C202">
+      <value>TPSB686K010R0600</value>
+      <footprint>CAPPM3528X210N</footprint>
+      <datasheet>https://componentsearchengine.com/Datasheets/1/TPSB686K010R0600.pdf</datasheet>
+      <fields>
+        <field name="Description">AVX Electrolytic Capacitor 68F 10V dc Electrolytic Solid +/-10% Tolerance TPS Series</field>
+        <field name="Height">2.1</field>
+        <field name="Manufacturer_Name">AVX</field>
+        <field name="Manufacturer_Part_Number">TPSB686K010R0600</field>
+        <field name="Mouser Part Number">581-TPSB686K010R0600</field>
+        <field name="Mouser Price/Stock">https://www.mouser.com/Search/Refine.aspx?Keyword=581-TPSB686K010R0600</field>
+      </fields>
+      <libsource lib="SamacSys_Parts2" part="TPSB686K010R0600" description="AVX Electrolytic Capacitor 68F 10V dc Electrolytic Solid +/-10% Tolerance TPS Series"/>
+      <property name="Description" value="AVX Electrolytic Capacitor 68F 10V dc Electrolytic Solid +/-10% Tolerance TPS Series"/>
+      <property name="Height" value="2.1"/>
+      <property name="Mouser Part Number" value="581-TPSB686K010R0600"/>
+      <property name="Mouser Price/Stock" value="https://www.mouser.com/Search/Refine.aspx?Keyword=581-TPSB686K010R0600"/>
+      <property name="Manufacturer_Name" value="AVX"/>
+      <property name="Manufacturer_Part_Number" value="TPSB686K010R0600"/>
+      <property name="Sheetname" value="Step-down"/>
+      <property name="Sheetfile" value="Hiearchical sheets/power_5v.kicad_sch"/>
+      <sheetpath names="/Power Unit/Step-down/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/1eea8b8a-caf5-4014-b0f0-f64da89bbf4e/"/>
+      <tstamps>14bcaa4d-6320-49cf-af87-9d19b9f76543</tstamps>
+    </comp>
+    <comp ref="C203">
+      <value>TPSB686K010R0600</value>
+      <footprint>CAPPM3528X210N</footprint>
+      <datasheet>https://componentsearchengine.com/Datasheets/1/TPSB686K010R0600.pdf</datasheet>
+      <fields>
+        <field name="Description">AVX Electrolytic Capacitor 68F 10V dc Electrolytic Solid +/-10% Tolerance TPS Series</field>
+        <field name="Height">2.1</field>
+        <field name="Manufacturer_Name">AVX</field>
+        <field name="Manufacturer_Part_Number">TPSB686K010R0600</field>
+        <field name="Mouser Part Number">581-TPSB686K010R0600</field>
+        <field name="Mouser Price/Stock">https://www.mouser.com/Search/Refine.aspx?Keyword=581-TPSB686K010R0600</field>
+      </fields>
+      <libsource lib="SamacSys_Parts2" part="TPSB686K010R0600" description="AVX Electrolytic Capacitor 68F 10V dc Electrolytic Solid +/-10% Tolerance TPS Series"/>
+      <property name="Description" value="AVX Electrolytic Capacitor 68F 10V dc Electrolytic Solid +/-10% Tolerance TPS Series"/>
+      <property name="Height" value="2.1"/>
+      <property name="Mouser Part Number" value="581-TPSB686K010R0600"/>
+      <property name="Mouser Price/Stock" value="https://www.mouser.com/Search/Refine.aspx?Keyword=581-TPSB686K010R0600"/>
+      <property name="Manufacturer_Name" value="AVX"/>
+      <property name="Manufacturer_Part_Number" value="TPSB686K010R0600"/>
+      <property name="Sheetname" value="Step-down"/>
+      <property name="Sheetfile" value="Hiearchical sheets/power_5v.kicad_sch"/>
+      <sheetpath names="/Power Unit/Step-down/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/1eea8b8a-caf5-4014-b0f0-f64da89bbf4e/"/>
+      <tstamps>f406a2c6-8ad5-46b3-829f-925092a8580c</tstamps>
+    </comp>
+    <comp ref="C204">
+      <value>0.47uF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Step-down"/>
+      <property name="Sheetfile" value="Hiearchical sheets/power_5v.kicad_sch"/>
+      <sheetpath names="/Power Unit/Step-down/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/1eea8b8a-caf5-4014-b0f0-f64da89bbf4e/"/>
+      <tstamps>6e44c551-5573-4e09-ac6e-e3e4510b68ae</tstamps>
+    </comp>
+    <comp ref="C205">
+      <value>293D227X9010D2TE3</value>
+      <footprint>CAPPM7343X310N</footprint>
+      <datasheet>http://www.vishay.com/doc?40002</datasheet>
+      <fields>
+        <field name="Description">Solid Tantalum Surface Mount Chip Capacitors TANTAMOUNT(TM), Molded Case, Standard Industrial Grade</field>
+        <field name="Height">3.1</field>
+        <field name="Manufacturer_Name">Vishay</field>
+        <field name="Manufacturer_Part_Number">293D227X9010D2TE3</field>
+        <field name="Mouser Part Number">74-293D227X9010D2TE3</field>
+        <field name="Mouser Price/Stock">https://www.mouser.co.uk/ProductDetail/Vishay-Sprague/293D227X9010D2TE3?qs=CH3Q5FKf4qDv8K%252BjTwpIww%3D%3D</field>
+      </fields>
+      <libsource lib="SamacSys_Parts2" part="293D227X9010D2TE3" description="Solid Tantalum Surface Mount Chip Capacitors TANTAMOUNT(TM), Molded Case, Standard Industrial Grade"/>
+      <property name="Description" value="Solid Tantalum Surface Mount Chip Capacitors TANTAMOUNT(TM), Molded Case, Standard Industrial Grade"/>
+      <property name="Height" value="3.1"/>
+      <property name="Mouser Part Number" value="74-293D227X9010D2TE3"/>
+      <property name="Mouser Price/Stock" value="https://www.mouser.co.uk/ProductDetail/Vishay-Sprague/293D227X9010D2TE3?qs=CH3Q5FKf4qDv8K%252BjTwpIww%3D%3D"/>
+      <property name="Manufacturer_Name" value="Vishay"/>
+      <property name="Manufacturer_Part_Number" value="293D227X9010D2TE3"/>
+      <property name="Sheetname" value="Step-down"/>
+      <property name="Sheetfile" value="Hiearchical sheets/power_5v.kicad_sch"/>
+      <sheetpath names="/Power Unit/Step-down/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/1eea8b8a-caf5-4014-b0f0-f64da89bbf4e/"/>
+      <tstamps>e3d968be-5659-43bb-8479-5ce00e797817</tstamps>
+    </comp>
+    <comp ref="D201">
+      <value>B330A</value>
+      <footprint>Diode_SMD:D_SMA</footprint>
+      <datasheet>https://www.diodes.com/assets/Datasheets/ds30891.pdf</datasheet>
+      <libsource lib="Diode" part="B330" description="30V 3A Schottky Barrier Rectifier Diode, SMC"/>
+      <property name="Sheetname" value="Step-down"/>
+      <property name="Sheetfile" value="Hiearchical sheets/power_5v.kicad_sch"/>
+      <sheetpath names="/Power Unit/Step-down/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/1eea8b8a-caf5-4014-b0f0-f64da89bbf4e/"/>
+      <tstamps>c279fa7c-cddd-4cb5-a803-f74b57710be8</tstamps>
+    </comp>
+    <comp ref="IC201">
+      <value>MAX1626ESA+T</value>
+      <footprint>SamacSys_Parts:SOIC127P600X175-8N</footprint>
+      <datasheet>https://datasheets.maximintegrated.com/en/ds/MAX1626-MAX1627.pdf</datasheet>
+      <fields>
+        <field name="Description">MAXIM INTEGRATED PRODUCTS - MAX1626ESA+T - DC/DC Controller, Buck (Step Down), 3 V to 16.5 V, 1 Output, 300kHz PWM Switching, NSOIC-8</field>
+        <field name="EV_kit">https://datasheets.maximintegrated.com/en/ds/MAX1626EVKIT.pdf</field>
+        <field name="Height">1.75</field>
+        <field name="Manufacturer_Name">Maxim Integrated</field>
+        <field name="Manufacturer_Part_Number">MAX1626ESA+T</field>
+        <field name="Mouser Part Number">700-MAX1626ESAT</field>
+        <field name="Mouser Price/Stock">https://www.mouser.co.uk/ProductDetail/Maxim-Integrated/MAX1626ESA%2bT/?qs=Mqkh4jHMT8ylHTywJFaQhw%3D%3D</field>
+      </fields>
+      <libsource lib="SamacSys_Parts" part="MAX1626ESA+T" description="MAXIM INTEGRATED PRODUCTS - MAX1626ESA+T - DC/DC Controller, Buck (Step Down), 3 V to 16.5 V, 1 Output, 300kHz PWM Switching, NSOIC-8"/>
+      <property name="Description" value="MAXIM INTEGRATED PRODUCTS - MAX1626ESA+T - DC/DC Controller, Buck (Step Down), 3 V to 16.5 V, 1 Output, 300kHz PWM Switching, NSOIC-8"/>
+      <property name="Height" value="1.75"/>
+      <property name="Mouser Part Number" value="700-MAX1626ESAT"/>
+      <property name="Mouser Price/Stock" value="https://www.mouser.co.uk/ProductDetail/Maxim-Integrated/MAX1626ESA%2bT/?qs=Mqkh4jHMT8ylHTywJFaQhw%3D%3D"/>
+      <property name="Manufacturer_Name" value="Maxim Integrated"/>
+      <property name="Manufacturer_Part_Number" value="MAX1626ESA+T"/>
+      <property name="EV_kit" value="https://datasheets.maximintegrated.com/en/ds/MAX1626EVKIT.pdf"/>
+      <property name="Sheetname" value="Step-down"/>
+      <property name="Sheetfile" value="Hiearchical sheets/power_5v.kicad_sch"/>
+      <sheetpath names="/Power Unit/Step-down/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/1eea8b8a-caf5-4014-b0f0-f64da89bbf4e/"/>
+      <tstamps>daf405e1-f078-4ff2-b3d6-fe106cc39b0e</tstamps>
+    </comp>
+    <comp ref="L201">
+      <value>CDRH125NP-220MC</value>
+      <footprint>CDRH125101MC</footprint>
+      <datasheet>http://products.sumida.com/products/pdf/CDRH125,CDRH125LD.pdf</datasheet>
+      <fields>
+        <field name="Description">Fixed Inductors 22uH 2.80A 0.028ohms</field>
+        <field name="Height">6</field>
+        <field name="Manufacturer_Name">Sumida</field>
+        <field name="Manufacturer_Part_Number">CDRH125NP-220MC</field>
+        <field name="Mouser Part Number">851-CDRH125NP-220MC</field>
+        <field name="Mouser Price/Stock">https://www.mouser.co.uk/ProductDetail/Sumida/CDRH125NP-220MC?qs=yEEOfDmvQDX7sNyZ0f3HJA%3D%3D</field>
+      </fields>
+      <libsource lib="SamacSys_Parts2" part="CDRH125NP-220MC" description="Fixed Inductors 22uH 2.80A 0.028ohms"/>
+      <property name="Description" value="Fixed Inductors 22uH 2.80A 0.028ohms"/>
+      <property name="Height" value="6"/>
+      <property name="Mouser Part Number" value="851-CDRH125NP-220MC"/>
+      <property name="Mouser Price/Stock" value="https://www.mouser.co.uk/ProductDetail/Sumida/CDRH125NP-220MC?qs=yEEOfDmvQDX7sNyZ0f3HJA%3D%3D"/>
+      <property name="Manufacturer_Name" value="Sumida"/>
+      <property name="Manufacturer_Part_Number" value="CDRH125NP-220MC"/>
+      <property name="Sheetname" value="Step-down"/>
+      <property name="Sheetfile" value="Hiearchical sheets/power_5v.kicad_sch"/>
+      <sheetpath names="/Power Unit/Step-down/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/1eea8b8a-caf5-4014-b0f0-f64da89bbf4e/"/>
+      <tstamps>a2dcf2c1-f8fc-45d6-9001-893dc0f20ad0</tstamps>
+    </comp>
+    <comp ref="Q201">
+      <value>SI2305CDS-T1-BE3</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
+      <datasheet>https://cz.mouser.com/datasheet/2/427/si2305cd-1764559.pdf</datasheet>
+      <libsource lib="1Knihovna" part="SI2305CDS-T1-BE3" description="P-MOSFET transistor, gate/source/drain"/>
+      <property name="Sheetname" value="Step-down"/>
+      <property name="Sheetfile" value="Hiearchical sheets/power_5v.kicad_sch"/>
+      <sheetpath names="/Power Unit/Step-down/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/1eea8b8a-caf5-4014-b0f0-f64da89bbf4e/"/>
+      <tstamps>145e4d98-d2dd-497c-aafc-104704ca9f6d</tstamps>
+    </comp>
+    <comp ref="R201">
+      <value>PE1206FRE470R04L</value>
+      <footprint>Resistor_SMD:R_1206_3216Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Step-down"/>
+      <property name="Sheetfile" value="Hiearchical sheets/power_5v.kicad_sch"/>
+      <sheetpath names="/Power Unit/Step-down/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/1eea8b8a-caf5-4014-b0f0-f64da89bbf4e/"/>
+      <tstamps>fffbc057-0077-43a5-bc3d-7b0bc111afda</tstamps>
+    </comp>
+    <comp ref="C301">
+      <value>10uF</value>
+      <footprint>CanSat_2023:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Current Sensor"/>
+      <property name="Sheetfile" value="currentSensor.kicad_sch"/>
+      <sheetpath names="/Power Unit/Current Sensor/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/6a54869f-3f1c-446d-8753-5fd101474b26/"/>
+      <tstamps>ece1422e-2625-4905-8cea-5e493d5ced9b</tstamps>
+    </comp>
+    <comp ref="R301">
+      <value>PE1206FRE470R04L</value>
+      <footprint>CanSat_2023:R_1206_Current</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Current Sensor"/>
+      <property name="Sheetfile" value="currentSensor.kicad_sch"/>
+      <sheetpath names="/Power Unit/Current Sensor/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/6a54869f-3f1c-446d-8753-5fd101474b26/"/>
+      <tstamps>e3f006b8-2c51-4b84-b91f-239a7a0efb87</tstamps>
+    </comp>
+    <comp ref="U301">
+      <value>INA219AxD</value>
+      <footprint>CanSat_2023:SOIC-8_3.9x4.9mm_P1.27mm</footprint>
+      <datasheet>http://www.ti.com/lit/ds/symlink/ina219.pdf</datasheet>
+      <libsource lib="Analog_ADC" part="INA219AxD" description="Zero-Drift, Bidirectional Current/Power Monitor (0-26V) With I2C Interface, SOIC-8"/>
+      <property name="Sheetname" value="Current Sensor"/>
+      <property name="Sheetfile" value="currentSensor.kicad_sch"/>
+      <sheetpath names="/Power Unit/Current Sensor/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/6a54869f-3f1c-446d-8753-5fd101474b26/"/>
+      <tstamps>dd840b1f-7c53-48b0-aa5b-520f09fc76e9</tstamps>
+    </comp>
+    <comp ref="C401">
+      <value>120nF</value>
+      <footprint>CanSat_2023:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="IMU unit"/>
+      <property name="Sheetfile" value="imuUnit.kicad_sch"/>
+      <sheetpath names="/Power Unit/IMU unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/9ddb0ed8-312a-428c-b731-fe719deeb63b/"/>
+      <tstamps>9511f394-5d48-4822-94dc-3c8c4cc564a9</tstamps>
+    </comp>
+    <comp ref="C402">
+      <value>6.8nF</value>
+      <footprint>CanSat_2023:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="IMU unit"/>
+      <property name="Sheetfile" value="imuUnit.kicad_sch"/>
+      <sheetpath names="/Power Unit/IMU unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/9ddb0ed8-312a-428c-b731-fe719deeb63b/"/>
+      <tstamps>5a2c7175-2237-4bb7-83bb-3cc6369676fe</tstamps>
+    </comp>
+    <comp ref="C403">
+      <value>0.1uF</value>
+      <footprint>CanSat_2023:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="IMU unit"/>
+      <property name="Sheetfile" value="imuUnit.kicad_sch"/>
+      <sheetpath names="/Power Unit/IMU unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/9ddb0ed8-312a-428c-b731-fe719deeb63b/"/>
+      <tstamps>d4a1848b-8c15-4339-bee2-a8901faa644c</tstamps>
+    </comp>
+    <comp ref="C404">
+      <value>0.1uF</value>
+      <footprint>CanSat_2023:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="IMU unit"/>
+      <property name="Sheetfile" value="imuUnit.kicad_sch"/>
+      <sheetpath names="/Power Unit/IMU unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/9ddb0ed8-312a-428c-b731-fe719deeb63b/"/>
+      <tstamps>b4b0e7b6-6e24-423c-a680-1ef30d034061</tstamps>
+    </comp>
+    <comp ref="R401">
+      <value>10k</value>
+      <footprint>CanSat_2023:R_0805_2012Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="IMU unit"/>
+      <property name="Sheetfile" value="imuUnit.kicad_sch"/>
+      <sheetpath names="/Power Unit/IMU unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/9ddb0ed8-312a-428c-b731-fe719deeb63b/"/>
+      <tstamps>48cf83ca-ce94-43d5-a434-bd6c58d675b6</tstamps>
+    </comp>
+    <comp ref="R402">
+      <value>10k</value>
+      <footprint>CanSat_2023:R_0805_2012Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="IMU unit"/>
+      <property name="Sheetfile" value="imuUnit.kicad_sch"/>
+      <sheetpath names="/Power Unit/IMU unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/9ddb0ed8-312a-428c-b731-fe719deeb63b/"/>
+      <tstamps>5af79521-40b5-4c70-b2f4-d4113674007b</tstamps>
+    </comp>
+    <comp ref="U401">
+      <value>BNO055</value>
+      <footprint>CanSat_2023:LGA-28_5.2x3.8mm_P0.5mm</footprint>
+      <datasheet>https://ae-bst.resource.bosch.com/media/_tech/media/datasheets/BST_BNO055_DS000_14.pdf</datasheet>
+      <libsource lib="Sensor_Motion" part="BNO055" description="Intelligent 9-axis absolute orientation sensor, LGA-28"/>
+      <property name="Sheetname" value="IMU unit"/>
+      <property name="Sheetfile" value="imuUnit.kicad_sch"/>
+      <sheetpath names="/Power Unit/IMU unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/9ddb0ed8-312a-428c-b731-fe719deeb63b/"/>
+      <tstamps>c8cd45f6-3c4c-4126-a337-993dafd17450</tstamps>
+    </comp>
+    <comp ref="AE501">
+      <value>Antenna_Shield</value>
+      <footprint>CanSat_2023:U.FL_Hirose_U.FL-R-SMT-1_Vertical</footprint>
+      <libsource lib="Device" part="Antenna_Shield" description="Antenna with extra pin for shielding"/>
+      <property name="Sheetname" value="GPS Unit"/>
+      <property name="Sheetfile" value="gpsUnit.kicad_sch"/>
+      <sheetpath names="/Power Unit/GPS Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/a7d1e1df-e348-4a05-9bfc-71a0bce1303d/"/>
+      <tstamps>ce9556ee-9cd3-4257-af63-3f37f3ca1c6a</tstamps>
+    </comp>
+    <comp ref="BT501">
+      <value>Backup battery</value>
+      <footprint>CanSat_2023:2989</footprint>
+      <libsource lib="Device" part="Battery_Cell" description="Single-cell battery"/>
+      <property name="Sheetname" value="GPS Unit"/>
+      <property name="Sheetfile" value="gpsUnit.kicad_sch"/>
+      <sheetpath names="/Power Unit/GPS Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/a7d1e1df-e348-4a05-9bfc-71a0bce1303d/"/>
+      <tstamps>451e201c-1b18-4784-ade7-abc6416484d8</tstamps>
+    </comp>
+    <comp ref="C501">
+      <value>1uF</value>
+      <footprint>CanSat_2023:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="GPS Unit"/>
+      <property name="Sheetfile" value="gpsUnit.kicad_sch"/>
+      <sheetpath names="/Power Unit/GPS Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/a7d1e1df-e348-4a05-9bfc-71a0bce1303d/"/>
+      <tstamps>4c3d2d4b-0421-4d35-82ee-8094e3997092</tstamps>
+    </comp>
+    <comp ref="C502">
+      <value>0.1uF</value>
+      <footprint>CanSat_2023:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="GPS Unit"/>
+      <property name="Sheetfile" value="gpsUnit.kicad_sch"/>
+      <sheetpath names="/Power Unit/GPS Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/a7d1e1df-e348-4a05-9bfc-71a0bce1303d/"/>
+      <tstamps>b1dbbee2-b21a-4ce1-8264-b2d5457115a5</tstamps>
+    </comp>
+    <comp ref="D501">
+      <value>APT2012LSECK/J4-PRV</value>
+      <footprint>CanSat_2023:LED_0805_2012Metric</footprint>
+      <libsource lib="Device" part="LED" description="Light emitting diode"/>
+      <property name="Sheetname" value="GPS Unit"/>
+      <property name="Sheetfile" value="gpsUnit.kicad_sch"/>
+      <sheetpath names="/Power Unit/GPS Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/a7d1e1df-e348-4a05-9bfc-71a0bce1303d/"/>
+      <tstamps>afb15421-afdb-49a7-a49c-c3c911f0d54d</tstamps>
+    </comp>
+    <comp ref="D502">
+      <value>ESD7351HT1G</value>
+      <footprint>CanSat_2023:D_SOD-323</footprint>
+      <datasheet>https://cz.mouser.com/datasheet/2/308/ESD7351_D-1805075.pdf</datasheet>
+      <libsource lib="Device" part="D_Zener" description="Zener diode"/>
+      <property name="Sheetname" value="GPS Unit"/>
+      <property name="Sheetfile" value="gpsUnit.kicad_sch"/>
+      <sheetpath names="/Power Unit/GPS Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/a7d1e1df-e348-4a05-9bfc-71a0bce1303d/"/>
+      <tstamps>2f856f3b-6d96-457e-a895-286118923d0c</tstamps>
+    </comp>
+    <comp ref="JP501">
+      <value>SolderJumper_3_Bridged12</value>
+      <footprint>CanSat_2023:SolderJumper-3_P1.3mm_Bridged12_Pad1.0x1.5mm</footprint>
+      <libsource lib="Jumper" part="SolderJumper_3_Bridged12" description="3-pole Solder Jumper, pins 1+2 closed/bridged"/>
+      <property name="Sheetname" value="GPS Unit"/>
+      <property name="Sheetfile" value="gpsUnit.kicad_sch"/>
+      <sheetpath names="/Power Unit/GPS Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/a7d1e1df-e348-4a05-9bfc-71a0bce1303d/"/>
+      <tstamps>a47969ff-c48b-46d4-a468-0b96f4fa2536</tstamps>
+    </comp>
+    <comp ref="JP502">
+      <value>SolderJumper_3_Bridged12</value>
+      <footprint>CanSat_2023:SolderJumper-3_P1.3mm_Bridged12_Pad1.0x1.5mm</footprint>
+      <libsource lib="Jumper" part="SolderJumper_3_Bridged12" description="3-pole Solder Jumper, pins 1+2 closed/bridged"/>
+      <property name="Sheetname" value="GPS Unit"/>
+      <property name="Sheetfile" value="gpsUnit.kicad_sch"/>
+      <sheetpath names="/Power Unit/GPS Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/a7d1e1df-e348-4a05-9bfc-71a0bce1303d/"/>
+      <tstamps>4b528ef9-e92f-4d86-9aff-37406aef1098</tstamps>
+    </comp>
+    <comp ref="L501">
+      <value>27nH</value>
+      <footprint>CanSat_2023:L_0805_2012Metric</footprint>
+      <libsource lib="Device" part="L" description="Inductor"/>
+      <property name="Sheetname" value="GPS Unit"/>
+      <property name="Sheetfile" value="gpsUnit.kicad_sch"/>
+      <sheetpath names="/Power Unit/GPS Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/a7d1e1df-e348-4a05-9bfc-71a0bce1303d/"/>
+      <tstamps>9104a50b-4588-491b-bd84-d459e2fbba47</tstamps>
+    </comp>
+    <comp ref="Q501">
+      <value>BC847</value>
+      <footprint>CanSat_2023:SOT-23</footprint>
+      <datasheet>http://www.infineon.com/dgdl/Infineon-BC847SERIES_BC848SERIES_BC849SERIES_BC850SERIES-DS-v01_01-en.pdf?fileId=db3a304314dca389011541d4630a1657</datasheet>
+      <libsource lib="Transistor_BJT" part="BC847" description="0.1A Ic, 45V Vce, NPN Transistor, SOT-23"/>
+      <property name="Sheetname" value="GPS Unit"/>
+      <property name="Sheetfile" value="gpsUnit.kicad_sch"/>
+      <sheetpath names="/Power Unit/GPS Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/a7d1e1df-e348-4a05-9bfc-71a0bce1303d/"/>
+      <tstamps>a454efbc-5b37-43e8-ae2b-b04435657620</tstamps>
+    </comp>
+    <comp ref="R501">
+      <value>5k</value>
+      <footprint>CanSat_2023:R_0805_2012Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="GPS Unit"/>
+      <property name="Sheetfile" value="gpsUnit.kicad_sch"/>
+      <sheetpath names="/Power Unit/GPS Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/a7d1e1df-e348-4a05-9bfc-71a0bce1303d/"/>
+      <tstamps>91b2243b-5323-4433-ac95-528fd5923078</tstamps>
+    </comp>
+    <comp ref="R502">
+      <value>750R</value>
+      <footprint>CanSat_2023:R_0805_2012Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="GPS Unit"/>
+      <property name="Sheetfile" value="gpsUnit.kicad_sch"/>
+      <sheetpath names="/Power Unit/GPS Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/a7d1e1df-e348-4a05-9bfc-71a0bce1303d/"/>
+      <tstamps>0ebb601f-2172-4126-b6ad-2ad3a43eb6be</tstamps>
+    </comp>
+    <comp ref="R503">
+      <value>10R</value>
+      <footprint>CanSat_2023:R_0805_2012Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="GPS Unit"/>
+      <property name="Sheetfile" value="gpsUnit.kicad_sch"/>
+      <sheetpath names="/Power Unit/GPS Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/a7d1e1df-e348-4a05-9bfc-71a0bce1303d/"/>
+      <tstamps>7c3fb6be-72ea-488c-b882-4a6a58b09947</tstamps>
+    </comp>
+    <comp ref="U501">
+      <value>TS5A3159DBV</value>
+      <footprint>CanSat_2023:SOT-23-6</footprint>
+      <datasheet>http://www.ti.com/lit/ds/symlink/ts5a3159.pdf</datasheet>
+      <libsource lib="Analog_Switch" part="TS5A3159DBV" description="Single SPDT Analog Switch, 1.65-V to 5.5-V Single-Supply Operation, 1Ohm Ron, SOT-23-6"/>
+      <property name="Sheetname" value="GPS Unit"/>
+      <property name="Sheetfile" value="gpsUnit.kicad_sch"/>
+      <sheetpath names="/Power Unit/GPS Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/a7d1e1df-e348-4a05-9bfc-71a0bce1303d/"/>
+      <tstamps>c23ccaa6-3761-4ad9-8526-8a9da0491932 98130894-fc2c-43b7-bb11-b52d71b6b37e</tstamps>
+    </comp>
+    <comp ref="U502">
+      <value>TS5A3159DBV</value>
+      <footprint>CanSat_2023:SOT-23-6</footprint>
+      <datasheet>http://www.ti.com/lit/ds/symlink/ts5a3159.pdf</datasheet>
+      <libsource lib="Analog_Switch" part="TS5A3159DBV" description="Single SPDT Analog Switch, 1.65-V to 5.5-V Single-Supply Operation, 1Ohm Ron, SOT-23-6"/>
+      <property name="Sheetname" value="GPS Unit"/>
+      <property name="Sheetfile" value="gpsUnit.kicad_sch"/>
+      <sheetpath names="/Power Unit/GPS Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/a7d1e1df-e348-4a05-9bfc-71a0bce1303d/"/>
+      <tstamps>b2a9d60a-7ec3-45d9-a2da-165167364e48 57cc7b17-c591-487b-8b74-daeed3d216b5</tstamps>
+    </comp>
+    <comp ref="U503">
+      <value>NEO-M9N</value>
+      <footprint>CanSat_2023:ublox_NEO</footprint>
+      <datasheet>https://content.u-blox.com/sites/default/files/NEO-M9N-00B_DataSheet_UBX-19014285.pdf</datasheet>
+      <libsource lib="Dovolená" part="NEO-M9N" description="GNSS Module NEO M8, VCC 2.7V to 3.6V"/>
+      <property name="Sheetname" value="GPS Unit"/>
+      <property name="Sheetfile" value="gpsUnit.kicad_sch"/>
+      <sheetpath names="/Power Unit/GPS Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/a7d1e1df-e348-4a05-9bfc-71a0bce1303d/"/>
+      <tstamps>86d63895-6edf-4603-b017-e848e23e4977</tstamps>
+    </comp>
+    <comp ref="C601">
+      <value>0.1uF</value>
+      <footprint>CanSat_2023:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="SCD41"/>
+      <property name="Sheetfile" value="scd41.kicad_sch"/>
+      <sheetpath names="/Power Unit/SCD41/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/8cdde238-0910-4ee9-a19f-4da8aa6478f1/"/>
+      <tstamps>f5682c5a-0979-4659-bd10-73ed3e100060</tstamps>
+    </comp>
+    <comp ref="U601">
+      <value>SCD41</value>
+      <footprint>CanSat_2023:XDCR_SCD41-D-R2</footprint>
+      <libsource lib="Sensor_Gas" part="SCD41" description=""/>
+      <property name="Sheetname" value="SCD41"/>
+      <property name="Sheetfile" value="scd41.kicad_sch"/>
+      <sheetpath names="/Power Unit/SCD41/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/8cdde238-0910-4ee9-a19f-4da8aa6478f1/"/>
+      <tstamps>11defe4e-baa6-42eb-9028-c8416bb7ba27</tstamps>
+    </comp>
+    <comp ref="C701">
+      <value>0.1uF</value>
+      <footprint>CanSat_2023:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Oxygen"/>
+      <property name="Sheetfile" value="oxygen.kicad_sch"/>
+      <sheetpath names="/Power Unit/Oxygen/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/c2d9ffc6-7b5a-491c-b075-9ce59608711c/"/>
+      <tstamps>271277a4-8135-470b-a52f-846bd762fa03</tstamps>
+    </comp>
+    <comp ref="C702">
+      <value>10uF</value>
+      <footprint>CanSat_2023:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Oxygen"/>
+      <property name="Sheetfile" value="oxygen.kicad_sch"/>
+      <sheetpath names="/Power Unit/Oxygen/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/c2d9ffc6-7b5a-491c-b075-9ce59608711c/"/>
+      <tstamps>e231cc6e-7cae-4da4-9781-a754a93eee40</tstamps>
+    </comp>
+    <comp ref="C703">
+      <value>10nF</value>
+      <footprint>CanSat_2023:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Oxygen"/>
+      <property name="Sheetfile" value="oxygen.kicad_sch"/>
+      <sheetpath names="/Power Unit/Oxygen/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/c2d9ffc6-7b5a-491c-b075-9ce59608711c/"/>
+      <tstamps>3155e9dd-1a33-4dde-8f37-332854041e90</tstamps>
+    </comp>
+    <comp ref="R701">
+      <value>100R</value>
+      <footprint>CanSat_2023:R_0805_2012Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Oxygen"/>
+      <property name="Sheetfile" value="oxygen.kicad_sch"/>
+      <sheetpath names="/Power Unit/Oxygen/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/c2d9ffc6-7b5a-491c-b075-9ce59608711c/"/>
+      <tstamps>b0522399-0c18-46c5-82b2-3ebf5324bcda</tstamps>
+    </comp>
+    <comp ref="R702">
+      <value>100R</value>
+      <footprint>CanSat_2023:R_0805_2012Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Oxygen"/>
+      <property name="Sheetfile" value="oxygen.kicad_sch"/>
+      <sheetpath names="/Power Unit/Oxygen/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/c2d9ffc6-7b5a-491c-b075-9ce59608711c/"/>
+      <tstamps>ab9d2f86-49d5-42bf-87a1-e1b0e7b29723</tstamps>
+    </comp>
+    <comp ref="R703">
+      <value>20k</value>
+      <footprint>CanSat_2023:R_0805_2012Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Oxygen"/>
+      <property name="Sheetfile" value="oxygen.kicad_sch"/>
+      <sheetpath names="/Power Unit/Oxygen/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/c2d9ffc6-7b5a-491c-b075-9ce59608711c/"/>
+      <tstamps>c2ba0f12-3f4a-4e1b-8545-3f4589b0ea44</tstamps>
+    </comp>
+    <comp ref="U701">
+      <value>ME2-02</value>
+      <footprint>CanSat_2023:ME2-O2</footprint>
+      <libsource lib="1Knihovna" part="ME2-02" description=""/>
+      <property name="Sheetname" value="Oxygen"/>
+      <property name="Sheetfile" value="oxygen.kicad_sch"/>
+      <sheetpath names="/Power Unit/Oxygen/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/c2d9ffc6-7b5a-491c-b075-9ce59608711c/"/>
+      <tstamps>63936b85-5b1a-4b4d-862e-8ff05d245b32</tstamps>
+    </comp>
+    <comp ref="U702">
+      <value>MCP6486UT-E/OT</value>
+      <footprint>CanSat_2023:SOT-23-5</footprint>
+      <libsource lib="1Knihovna" part="MCP6486UT-E{slash}OT" description=""/>
+      <property name="Sheetname" value="Oxygen"/>
+      <property name="Sheetfile" value="oxygen.kicad_sch"/>
+      <sheetpath names="/Power Unit/Oxygen/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/c2d9ffc6-7b5a-491c-b075-9ce59608711c/"/>
+      <tstamps>72fb6ec4-d623-40ec-a6d2-41ffa56aedf3</tstamps>
+    </comp>
+    <comp ref="J801">
+      <value>Conn_01x02</value>
+      <footprint>CanSat_2023:Molex_PicoBlade_53261-0271_1x02-1MP_P1.25mm_Horizontal</footprint>
+      <fields>
+        <field name="Legend">Camera RCA</field>
+      </fields>
+      <libsource lib="Connector_Generic" part="Conn_01x02" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Legend" value="Camera RCA"/>
+      <property name="Sheetname" value="Camera"/>
+      <property name="Sheetfile" value="camera.kicad_sch"/>
+      <sheetpath names="/Power Unit/Camera/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/a8e28c13-d7b0-4483-83f7-76c6eeb45f00/"/>
+      <tstamps>5115d1d1-7f1d-49a5-8a5f-c01d4f27af77</tstamps>
+    </comp>
+    <comp ref="J802">
+      <value>Conn_01x03</value>
+      <footprint>CanSat_2023:Molex_PicoBlade_53047-0310_1x03_P1.25mm_Vertical</footprint>
+      <fields>
+        <field name="Legend">Power+output</field>
+      </fields>
+      <libsource lib="Connector_Generic" part="Conn_01x03" description="Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Legend" value="Power+output"/>
+      <property name="Sheetname" value="Camera"/>
+      <property name="Sheetfile" value="camera.kicad_sch"/>
+      <sheetpath names="/Power Unit/Camera/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/a8e28c13-d7b0-4483-83f7-76c6eeb45f00/"/>
+      <tstamps>d2a3691b-2eba-42c4-86ad-2f5bedfc0b1f</tstamps>
+    </comp>
+    <comp ref="J803">
+      <value>Conn_01x02</value>
+      <footprint>CanSat_2023:Molex_PicoBlade_53047-0210_1x02_P1.25mm_Vertical</footprint>
+      <fields>
+        <field name="Comment">2 prePush, 1GND</field>
+        <field name="Legend">Control</field>
+      </fields>
+      <libsource lib="Connector_Generic" part="Conn_01x02" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Legend" value="Control"/>
+      <property name="Comment" value="2 prePush, 1GND"/>
+      <property name="Sheetname" value="Camera"/>
+      <property name="Sheetfile" value="camera.kicad_sch"/>
+      <sheetpath names="/Power Unit/Camera/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/a8e28c13-d7b0-4483-83f7-76c6eeb45f00/"/>
+      <tstamps>585a44cf-4b60-4f00-ad40-80fa2a7665bf</tstamps>
+    </comp>
+    <comp ref="J804">
+      <value>Conn_01x02</value>
+      <footprint>CanSat_2023:Molex_PicoBlade_53047-0210_1x02_P1.25mm_Vertical</footprint>
+      <fields>
+        <field name="Legend">Control OSD</field>
+      </fields>
+      <libsource lib="Connector_Generic" part="Conn_01x02" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Legend" value="Control OSD"/>
+      <property name="Sheetname" value="Camera"/>
+      <property name="Sheetfile" value="camera.kicad_sch"/>
+      <sheetpath names="/Power Unit/Camera/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/a8e28c13-d7b0-4483-83f7-76c6eeb45f00/"/>
+      <tstamps>df510dc3-6297-4153-889b-b897d7a5f648</tstamps>
+    </comp>
+    <comp ref="Q801">
+      <value>BC847</value>
+      <footprint>CanSat_2023:SOT-23</footprint>
+      <datasheet>http://www.infineon.com/dgdl/Infineon-BC847SERIES_BC848SERIES_BC849SERIES_BC850SERIES-DS-v01_01-en.pdf?fileId=db3a304314dca389011541d4630a1657</datasheet>
+      <libsource lib="Transistor_BJT" part="BC847" description="0.1A Ic, 45V Vce, NPN Transistor, SOT-23"/>
+      <property name="Sheetname" value="Camera"/>
+      <property name="Sheetfile" value="camera.kicad_sch"/>
+      <sheetpath names="/Power Unit/Camera/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/a8e28c13-d7b0-4483-83f7-76c6eeb45f00/"/>
+      <tstamps>6e24531b-3e12-4b61-89bb-b49e5e58d584</tstamps>
+    </comp>
+    <comp ref="R801">
+      <value>5k</value>
+      <footprint>CanSat_2023:R_0805_2012Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Camera"/>
+      <property name="Sheetfile" value="camera.kicad_sch"/>
+      <sheetpath names="/Power Unit/Camera/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/a8e28c13-d7b0-4483-83f7-76c6eeb45f00/"/>
+      <tstamps>dba5c8bc-3df5-4e46-9db1-693a01049596</tstamps>
+    </comp>
+    <comp ref="U801">
+      <value>AD5246BKSZ100</value>
+      <footprint>CanSat_2023:SOT65P210X110-6N</footprint>
+      <libsource lib="1Knihovna" part="AD5246" description=""/>
+      <property name="Sheetname" value="Camera"/>
+      <property name="Sheetfile" value="camera.kicad_sch"/>
+      <sheetpath names="/Power Unit/Camera/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/a8e28c13-d7b0-4483-83f7-76c6eeb45f00/"/>
+      <tstamps>2fd5a89b-3c5d-4f20-a7d8-118996e27fcd</tstamps>
+    </comp>
+    <comp ref="U901">
+      <value>TBS_UNIFY_PRO32_5G8_nano</value>
+      <footprint>CanSat_2023:TBS UNIFY PRO32 5G8 nano</footprint>
+      <libsource lib="1Knihovna" part="TBS_UNIFY_PRO32_5G8_nano" description=""/>
+      <property name="Sheetname" value="Camera transmit"/>
+      <property name="Sheetfile" value="camTransmit.kicad_sch"/>
+      <sheetpath names="/Power Unit/Camera transmit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/620aa272-9da3-4608-95ad-5a5153379f66/"/>
+      <tstamps>a06fb49e-83d2-4881-a02d-8614d728937a</tstamps>
+    </comp>
+    <comp ref="BT1001">
+      <value>Battery_Cell</value>
+      <footprint>CanSat_2023:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical</footprint>
+      <libsource lib="Device" part="Battery_Cell" description="Single-cell battery"/>
+      <property name="Sheetname" value="Power Unit"/>
+      <property name="Sheetfile" value="powerUnit4.kicad_sch"/>
+      <sheetpath names="/Power Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/"/>
+      <tstamps>3ac1e780-b1a7-478e-bc1c-3127c3088c64</tstamps>
+    </comp>
+    <comp ref="BT1002">
+      <value>Battery_Cell</value>
+      <footprint>CanSat_2023:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical</footprint>
+      <libsource lib="Device" part="Battery_Cell" description="Single-cell battery"/>
+      <property name="Sheetname" value="Power Unit"/>
+      <property name="Sheetfile" value="powerUnit4.kicad_sch"/>
+      <sheetpath names="/Power Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/"/>
+      <tstamps>f6a25547-a3d9-4a53-8da4-e728ed3aebed</tstamps>
+    </comp>
+    <comp ref="C1001">
+      <value>10uF</value>
+      <footprint>CanSat_2023:C_0805_2012Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Power Unit"/>
+      <property name="Sheetfile" value="powerUnit4.kicad_sch"/>
+      <sheetpath names="/Power Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/"/>
+      <tstamps>931cc6ff-5e7b-4e1a-998b-0ffd36e5edbd</tstamps>
+    </comp>
+    <comp ref="J1001">
+      <value>Conn_01x03</value>
+      <footprint>Connector_JST:JST_PH_B3B-PH-SM4-TB_1x03-1MP_P2.00mm_Vertical</footprint>
+      <libsource lib="Connector_Generic" part="Conn_01x03" description="Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value="Power Unit"/>
+      <property name="Sheetfile" value="powerUnit4.kicad_sch"/>
+      <sheetpath names="/Power Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/"/>
+      <tstamps>7cc4734e-5a13-4bec-8565-2a9260ec0237</tstamps>
+    </comp>
+    <comp ref="Q1001">
+      <value>SI2305CDS-T1-BE3</value>
+      <footprint>CanSat_2023:SOT-23</footprint>
+      <datasheet>https://cz.mouser.com/datasheet/2/427/si2305cd-1764559.pdf</datasheet>
+      <libsource lib="1Knihovna" part="SI2305CDS-T1-BE3" description="P-MOSFET transistor, gate/source/drain"/>
+      <property name="Sheetname" value="Power Unit"/>
+      <property name="Sheetfile" value="powerUnit4.kicad_sch"/>
+      <sheetpath names="/Power Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/"/>
+      <tstamps>fc9d7876-c8bc-4b25-aa70-abc56d482fed</tstamps>
+    </comp>
+    <comp ref="Q1002">
+      <value>SI2305CDS-T1-BE3</value>
+      <footprint>CanSat_2023:SOT-23</footprint>
+      <datasheet>https://cz.mouser.com/datasheet/2/427/si2305cd-1764559.pdf</datasheet>
+      <libsource lib="1Knihovna" part="SI2305CDS-T1-BE3" description="P-MOSFET transistor, gate/source/drain"/>
+      <property name="Sheetname" value="Power Unit"/>
+      <property name="Sheetfile" value="powerUnit4.kicad_sch"/>
+      <sheetpath names="/Power Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/"/>
+      <tstamps>79d97dd0-1a26-4386-b478-8eb0d1d74295</tstamps>
+    </comp>
+    <comp ref="Q1003">
+      <value>BC847</value>
+      <footprint>CanSat_2023:SOT-23</footprint>
+      <datasheet>http://www.infineon.com/dgdl/Infineon-BC847SERIES_BC848SERIES_BC849SERIES_BC850SERIES-DS-v01_01-en.pdf?fileId=db3a304314dca389011541d4630a1657</datasheet>
+      <libsource lib="Transistor_BJT" part="BC847" description="0.1A Ic, 45V Vce, NPN Transistor, SOT-23"/>
+      <property name="Sheetname" value="Power Unit"/>
+      <property name="Sheetfile" value="powerUnit4.kicad_sch"/>
+      <sheetpath names="/Power Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/"/>
+      <tstamps>42ce27a8-77e1-43bc-b65c-e6afab5fa89e</tstamps>
+    </comp>
+    <comp ref="Q1004">
+      <value>SI2305CDS-T1-BE3</value>
+      <footprint>CanSat_2023:SOT-23</footprint>
+      <datasheet>https://cz.mouser.com/datasheet/2/427/si2305cd-1764559.pdf</datasheet>
+      <libsource lib="1Knihovna" part="SI2305CDS-T1-BE3" description="P-MOSFET transistor, gate/source/drain"/>
+      <property name="Sheetname" value="Power Unit"/>
+      <property name="Sheetfile" value="powerUnit4.kicad_sch"/>
+      <sheetpath names="/Power Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/"/>
+      <tstamps>5c2bc6de-c7ea-4314-8814-b5641e006f57</tstamps>
+    </comp>
+    <comp ref="Q1005">
+      <value>SI2305CDS-T1-BE3</value>
+      <footprint>CanSat_2023:SOT-23</footprint>
+      <datasheet>https://cz.mouser.com/datasheet/2/427/si2305cd-1764559.pdf</datasheet>
+      <libsource lib="1Knihovna" part="SI2305CDS-T1-BE3" description="P-MOSFET transistor, gate/source/drain"/>
+      <property name="Sheetname" value="Power Unit"/>
+      <property name="Sheetfile" value="powerUnit4.kicad_sch"/>
+      <sheetpath names="/Power Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/"/>
+      <tstamps>cd943759-3147-47a7-ba21-dc75ca10c3b7</tstamps>
+    </comp>
+    <comp ref="Q1006">
+      <value>SI2305CDS-T1-BE3</value>
+      <footprint>CanSat_2023:SOT-23</footprint>
+      <datasheet>https://cz.mouser.com/datasheet/2/427/si2305cd-1764559.pdf</datasheet>
+      <libsource lib="1Knihovna" part="SI2305CDS-T1-BE3" description="P-MOSFET transistor, gate/source/drain"/>
+      <property name="Sheetname" value="Power Unit"/>
+      <property name="Sheetfile" value="powerUnit4.kicad_sch"/>
+      <sheetpath names="/Power Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/"/>
+      <tstamps>0fde07d9-3307-4ec7-9572-024488890416</tstamps>
+    </comp>
+    <comp ref="Q1007">
+      <value>BC847</value>
+      <footprint>CanSat_2023:SOT-23</footprint>
+      <datasheet>http://www.infineon.com/dgdl/Infineon-BC847SERIES_BC848SERIES_BC849SERIES_BC850SERIES-DS-v01_01-en.pdf?fileId=db3a304314dca389011541d4630a1657</datasheet>
+      <libsource lib="Transistor_BJT" part="BC847" description="0.1A Ic, 45V Vce, NPN Transistor, SOT-23"/>
+      <property name="Sheetname" value="Power Unit"/>
+      <property name="Sheetfile" value="powerUnit4.kicad_sch"/>
+      <sheetpath names="/Power Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/"/>
+      <tstamps>108fd497-2e89-43d4-9cd2-da554b08f6ae</tstamps>
+    </comp>
+    <comp ref="Q1008">
+      <value>BC847</value>
+      <footprint>CanSat_2023:SOT-23</footprint>
+      <datasheet>http://www.infineon.com/dgdl/Infineon-BC847SERIES_BC848SERIES_BC849SERIES_BC850SERIES-DS-v01_01-en.pdf?fileId=db3a304314dca389011541d4630a1657</datasheet>
+      <libsource lib="Transistor_BJT" part="BC847" description="0.1A Ic, 45V Vce, NPN Transistor, SOT-23"/>
+      <property name="Sheetname" value="Power Unit"/>
+      <property name="Sheetfile" value="powerUnit4.kicad_sch"/>
+      <sheetpath names="/Power Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/"/>
+      <tstamps>728b9de9-d144-468d-a3ff-ad50f6f1457d</tstamps>
+    </comp>
+    <comp ref="R1001">
+      <value>10k</value>
+      <footprint>CanSat_2023:R_0805_2012Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Power Unit"/>
+      <property name="Sheetfile" value="powerUnit4.kicad_sch"/>
+      <sheetpath names="/Power Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/"/>
+      <tstamps>befa0446-b956-4ed8-b44a-2fc8457424cd</tstamps>
+    </comp>
+    <comp ref="R1002">
+      <value>10k</value>
+      <footprint>CanSat_2023:R_0805_2012Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Power Unit"/>
+      <property name="Sheetfile" value="powerUnit4.kicad_sch"/>
+      <sheetpath names="/Power Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/"/>
+      <tstamps>89a2bf03-a435-4c7e-8c06-45193fcdbffe</tstamps>
+    </comp>
+    <comp ref="R1003">
+      <value>100k</value>
+      <footprint>CanSat_2023:R_0805_2012Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Power Unit"/>
+      <property name="Sheetfile" value="powerUnit4.kicad_sch"/>
+      <sheetpath names="/Power Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/"/>
+      <tstamps>bda8e322-b257-43e5-9ff0-02ce6dfc49af</tstamps>
+    </comp>
+    <comp ref="R1004">
+      <value>100k</value>
+      <footprint>CanSat_2023:R_0805_2012Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Power Unit"/>
+      <property name="Sheetfile" value="powerUnit4.kicad_sch"/>
+      <sheetpath names="/Power Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/"/>
+      <tstamps>d7c5b78f-70af-4ad5-8c2e-90f726e2909f</tstamps>
+    </comp>
+    <comp ref="R1005">
+      <value>100k</value>
+      <footprint>CanSat_2023:R_0805_2012Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Power Unit"/>
+      <property name="Sheetfile" value="powerUnit4.kicad_sch"/>
+      <sheetpath names="/Power Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/"/>
+      <tstamps>186f71b1-b5d6-4b82-a39f-63eb3af579c1</tstamps>
+    </comp>
+    <comp ref="R1006">
+      <value>100k</value>
+      <footprint>CanSat_2023:R_0805_2012Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Power Unit"/>
+      <property name="Sheetfile" value="powerUnit4.kicad_sch"/>
+      <sheetpath names="/Power Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/"/>
+      <tstamps>9493db86-f274-44e2-8fdd-363b493a99a6</tstamps>
+    </comp>
+    <comp ref="R1007">
+      <value>10k</value>
+      <footprint>CanSat_2023:R_0805_2012Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Power Unit"/>
+      <property name="Sheetfile" value="powerUnit4.kicad_sch"/>
+      <sheetpath names="/Power Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/"/>
+      <tstamps>8996a23a-22ad-4999-ae99-bfef9b32d606</tstamps>
+    </comp>
+    <comp ref="R1008">
+      <value>10k</value>
+      <footprint>CanSat_2023:R_0805_2012Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Power Unit"/>
+      <property name="Sheetfile" value="powerUnit4.kicad_sch"/>
+      <sheetpath names="/Power Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/"/>
+      <tstamps>d5886c6d-9263-4962-8e4b-c4b24d31ba32</tstamps>
+    </comp>
+    <comp ref="R1009">
+      <value>100k</value>
+      <footprint>CanSat_2023:R_0805_2012Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Power Unit"/>
+      <property name="Sheetfile" value="powerUnit4.kicad_sch"/>
+      <sheetpath names="/Power Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/"/>
+      <tstamps>4b6b9031-e41e-41f8-ae4b-99acdccc4043</tstamps>
+    </comp>
+    <comp ref="R1010">
+      <value>100k</value>
+      <footprint>CanSat_2023:R_0805_2012Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Power Unit"/>
+      <property name="Sheetfile" value="powerUnit4.kicad_sch"/>
+      <sheetpath names="/Power Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/"/>
+      <tstamps>523ddfed-ebdf-4c02-a25d-a94c6d72edf0</tstamps>
+    </comp>
+    <comp ref="R1011">
+      <value>10k</value>
+      <footprint>CanSat_2023:R_0805_2012Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Power Unit"/>
+      <property name="Sheetfile" value="powerUnit4.kicad_sch"/>
+      <sheetpath names="/Power Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/"/>
+      <tstamps>d2da48e2-f127-43f5-8276-1e26f305976a</tstamps>
+    </comp>
+    <comp ref="R1012">
+      <value>0R</value>
+      <footprint>CanSat_2023:R_1206_3216Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Power Unit"/>
+      <property name="Sheetfile" value="powerUnit4.kicad_sch"/>
+      <sheetpath names="/Power Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/"/>
+      <tstamps>5bb2d5d3-6ff7-41cb-aca0-087460755667</tstamps>
+    </comp>
+    <comp ref="R1013">
+      <value>12k</value>
+      <footprint>CanSat_2023:R_0805_2012Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Power Unit"/>
+      <property name="Sheetfile" value="powerUnit4.kicad_sch"/>
+      <sheetpath names="/Power Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/"/>
+      <tstamps>e6e6f747-65a5-4f65-8c12-b73a20d566c7</tstamps>
+    </comp>
+    <comp ref="R1014">
+      <value>5k</value>
+      <footprint>CanSat_2023:R_0805_2012Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Power Unit"/>
+      <property name="Sheetfile" value="powerUnit4.kicad_sch"/>
+      <sheetpath names="/Power Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/"/>
+      <tstamps>9dea4d33-844a-4a8d-b978-b280bee3797c</tstamps>
+    </comp>
+    <comp ref="R1015">
+      <value>5k</value>
+      <footprint>CanSat_2023:R_0805_2012Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Power Unit"/>
+      <property name="Sheetfile" value="powerUnit4.kicad_sch"/>
+      <sheetpath names="/Power Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/"/>
+      <tstamps>fbf09754-9445-4400-bcd7-8cfd2a5e843e</tstamps>
+    </comp>
+    <comp ref="R1016">
+      <value>5k</value>
+      <footprint>CanSat_2023:R_0805_2012Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Power Unit"/>
+      <property name="Sheetfile" value="powerUnit4.kicad_sch"/>
+      <sheetpath names="/Power Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/"/>
+      <tstamps>c8d609d5-461e-47c8-a2d5-f387cb974d44</tstamps>
+    </comp>
+    <comp ref="R1017">
+      <value>10k</value>
+      <footprint>CanSat_2023:R_0805_2012Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Power Unit"/>
+      <property name="Sheetfile" value="powerUnit4.kicad_sch"/>
+      <sheetpath names="/Power Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/"/>
+      <tstamps>57255d67-612f-4e95-874c-c602316d334e</tstamps>
+    </comp>
+    <comp ref="R1018">
+      <value>10k</value>
+      <footprint>CanSat_2023:R_0805_2012Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Power Unit"/>
+      <property name="Sheetfile" value="powerUnit4.kicad_sch"/>
+      <sheetpath names="/Power Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/"/>
+      <tstamps>e47d7960-48b7-4cb5-9bb1-44798dd89675</tstamps>
+    </comp>
+    <comp ref="SW1001">
+      <value>DS04-254-1-04BK-SMT</value>
+      <footprint>CanSat_2023:SW_DIP_SPSTx04_Slide_Omron_A6S-410x_W8.9mm_P2.54mm</footprint>
+      <fields>
+        <field name="Shop">https://cz.mouser.com/ProductDetail/CUI-Devices/DS04-254-1-03BK-SMT?qs=wnTfsH77Xs6AM9RonXx4xg%3D%3D</field>
+      </fields>
+      <libsource lib="Switch" part="SW_DIP_x04" description="4x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol"/>
+      <property name="Shop" value="https://cz.mouser.com/ProductDetail/CUI-Devices/DS04-254-1-03BK-SMT?qs=wnTfsH77Xs6AM9RonXx4xg%3D%3D"/>
+      <property name="Sheetname" value="Power Unit"/>
+      <property name="Sheetfile" value="powerUnit4.kicad_sch"/>
+      <sheetpath names="/Power Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/"/>
+      <tstamps>c59c64d3-9bdd-4ba1-b351-317ed636dd20</tstamps>
+    </comp>
+    <comp ref="SW1002">
+      <value>PCM12SMTR</value>
+      <footprint>CanSat_2023:PCM12SMTR</footprint>
+      <libsource lib="Switch" part="SW_SPDT" description="Switch, single pole double throw"/>
+      <property name="Sheetname" value="Power Unit"/>
+      <property name="Sheetfile" value="powerUnit4.kicad_sch"/>
+      <sheetpath names="/Power Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/"/>
+      <tstamps>7ff8f04e-9ff0-4f29-9558-78e03695a25e</tstamps>
+    </comp>
+    <comp ref="U1001">
+      <value>PCA8574PW</value>
+      <footprint>CanSat_2023:SOP65P640X110-16N</footprint>
+      <datasheet>http://www.nxp.com/documents/data_sheet/PCF8574_PCF8574A.pdf</datasheet>
+      <libsource lib="Interface_Expansion" part="PCF8574" description="8 Bit Port/Expander to I2C Bus, DIP/SOIC-16"/>
+      <property name="Sheetname" value="Power Unit"/>
+      <property name="Sheetfile" value="powerUnit4.kicad_sch"/>
+      <sheetpath names="/Power Unit/" tstamps="/72587501-acf4-4072-82fc-2bb637554228/"/>
+      <tstamps>fed15696-82a2-459a-9af0-e7e68d6d8b62</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="1Knihovna" part="AD5246">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">AD5246</field>
+        <field name="Footprint">SamacSys_Parts2:SOT65P210X110-6N</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VDD" type="power_in"/>
+        <pin num="2" name="VSS" type="power_in"/>
+        <pin num="3" name="SCL" type="input"/>
+        <pin num="4" name="SDA" type="bidirectional"/>
+        <pin num="5" name="B" type="passive"/>
+        <pin num="6" name="W" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="1Knihovna" part="MCP6486UT-E{slash}OT">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">MCP6486UT-E{slash}OT</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+      </fields>
+      <pins>
+        <pin num="1" name="+" type="input"/>
+        <pin num="2" name="V-" type="power_in"/>
+        <pin num="3" name="-" type="input"/>
+        <pin num="4" name="" type="output"/>
+        <pin num="5" name="V+" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="1Knihovna" part="ME2-02">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">ME2-02</field>
+        <field name="Footprint">1Knihovna:ME2-O2</field>
+      </fields>
+      <pins>
+        <pin num="1" name="OUT-" type="passive"/>
+        <pin num="2" name="OUT" type="output"/>
+        <pin num="3" name="3" type="no_connect"/>
+      </pins>
+    </libpart>
+    <libpart lib="1Knihovna" part="SI2305CDS-T1-BE3">
+      <description>P-MOSFET transistor, gate/source/drain</description>
+      <docs>https://cz.mouser.com/datasheet/2/427/si2305cd-1764559.pdf</docs>
+      <fields>
+        <field name="Reference">Q205</field>
+        <field name="Value">SI2305CDS-T1-BE3</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23</field>
+        <field name="Datasheet">https://cz.mouser.com/datasheet/2/427/si2305cd-1764559.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="G" type="input"/>
+        <pin num="2" name="S" type="passive"/>
+        <pin num="3" name="D" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="1Knihovna" part="TBS_UNIFY_PRO32_5G8_nano">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TBS_UNIFY_PRO32_5G8_nano</field>
+        <field name="Footprint">1Knihovna:TBS UNIFY PRO32 5G8 nano</field>
+      </fields>
+      <pins>
+        <pin num="1" name="V_{IN}" type="power_in"/>
+        <pin num="2" name="GND" type="passive"/>
+        <pin num="3" name="V_{IN}_Pass" type="power_out"/>
+        <pin num="4" name="GND" type="passive"/>
+        <pin num="5" name="Video" type="input"/>
+        <pin num="6" name="SA" type="bidirectional"/>
+      </pins>
+    </libpart>
+    <libpart lib="Analog_ADC" part="INA219AxD">
+      <description>Zero-Drift, Bidirectional Current/Power Monitor (0-26V) With I2C Interface, SOIC-8</description>
+      <docs>http://www.ti.com/lit/ds/symlink/ina219.pdf</docs>
+      <footprints>
+        <fp>SOIC*3.9x4.9mm*P1.27mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">INA219AxD</field>
+        <field name="Footprint">Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</field>
+        <field name="Datasheet">http://www.ti.com/lit/ds/symlink/ina219.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A1" type="input"/>
+        <pin num="2" name="A0" type="input"/>
+        <pin num="3" name="SDA" type="bidirectional"/>
+        <pin num="4" name="SCL" type="input"/>
+        <pin num="5" name="VS" type="power_in"/>
+        <pin num="6" name="GND" type="power_in"/>
+        <pin num="7" name="IN-" type="input"/>
+        <pin num="8" name="IN+" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="Analog_Switch" part="TS5A3159DBV">
+      <description>Single SPDT Analog Switch, 1.65-V to 5.5-V Single-Supply Operation, 1Ohm Ron, SOT-23-6</description>
+      <docs>http://www.ti.com/lit/ds/symlink/ts5a3159.pdf</docs>
+      <footprints>
+        <fp>SOT?23*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TS5A3159DBV</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-6</field>
+        <field name="Datasheet">http://www.ti.com/lit/ds/symlink/ts5a3159.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="" type="passive"/>
+        <pin num="4" name="" type="passive"/>
+        <pin num="5" name="V+" type="power_in"/>
+        <pin num="6" name="" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector" part="Conn_01x04_Female">
+      <description>Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x04_Female</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector" part="Conn_01x08_Female">
+      <description>Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x08_Female</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+        <pin num="6" name="Pin_6" type="passive"/>
+        <pin num="7" name="Pin_7" type="passive"/>
+        <pin num="8" name="Pin_8" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector_Generic" part="Conn_01x02">
+      <description>Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x02</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector_Generic" part="Conn_01x03">
+      <description>Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x03</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="Antenna_Shield">
+      <description>Antenna with extra pin for shielding</description>
+      <docs>~</docs>
+      <fields>
+        <field name="Reference">AE</field>
+        <field name="Value">Antenna_Shield</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A" type="input"/>
+        <pin num="2" name="Shield" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="Battery_Cell">
+      <description>Single-cell battery</description>
+      <docs>~</docs>
+      <fields>
+        <field name="Reference">BT</field>
+        <field name="Value">Battery_Cell</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="+" type="passive"/>
+        <pin num="2" name="-" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C">
+      <description>Unpolarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="D_Zener">
+      <description>Zener diode</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>TO-???*</fp>
+        <fp>*_Diode_*</fp>
+        <fp>*SingleDiode*</fp>
+        <fp>D_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">D_Zener</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="L">
+      <description>Inductor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Choke_*</fp>
+        <fp>*Coil*</fp>
+        <fp>Inductor_*</fp>
+        <fp>L_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">L</field>
+        <field name="Value">L</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="LED">
+      <description>Light emitting diode</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>LED*</fp>
+        <fp>LED_SMD:*</fp>
+        <fp>LED_THT:*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">LED</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R">
+      <description>Resistor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Diode" part="B330">
+      <description>30V 3A Schottky Barrier Rectifier Diode, SMC</description>
+      <docs>http://www.jameco.com/Jameco/Products/ProdDS/1538777.pdf</docs>
+      <footprints>
+        <fp>D*SMC*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">B330</field>
+        <field name="Footprint">Diode_SMD:D_SMC</field>
+        <field name="Datasheet">http://www.jameco.com/Jameco/Products/ProdDS/1538777.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Dovolená" part="NEO-M9N">
+      <description>GNSS Module NEO M8, VCC 2.7V to 3.6V</description>
+      <docs>https://content.u-blox.com/sites/default/files/NEO-M9N-00B_DataSheet_UBX-19014285.pdf</docs>
+      <footprints>
+        <fp>ublox*NEO*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">NEO-M9N</field>
+        <field name="Footprint">RF_GPS:ublox_NEO</field>
+        <field name="Datasheet">https://content.u-blox.com/sites/default/files/NEO-M9N-00B_DataSheet_UBX-19014285.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~{SAFEBOOT}" type="input"/>
+        <pin num="2" name="D_SEL" type="input"/>
+        <pin num="3" name="TIMEPULSE" type="output"/>
+        <pin num="4" name="EXTINT" type="input"/>
+        <pin num="5" name="USB_DM" type="bidirectional"/>
+        <pin num="6" name="USB_DP" type="bidirectional"/>
+        <pin num="7" name="VDD_USB" type="power_in"/>
+        <pin num="8" name="~{RESET}" type="input"/>
+        <pin num="9" name="VCC_RF" type="power_out"/>
+        <pin num="10" name="GND" type="power_in"/>
+        <pin num="11" name="RF_IN" type="input"/>
+        <pin num="12" name="GND" type="passive"/>
+        <pin num="13" name="GND" type="passive"/>
+        <pin num="14" name="LNA_EN" type="output"/>
+        <pin num="15" name="RESERVED" type="no_connect"/>
+        <pin num="16" name="RESERVED" type="no_connect"/>
+        <pin num="17" name="RESERVED" type="no_connect"/>
+        <pin num="18" name="SDA/~{SPI_CS}" type="bidirectional"/>
+        <pin num="19" name="SCL/SPI_CLK" type="input"/>
+        <pin num="20" name="TXD/SPI_MISO" type="output"/>
+        <pin num="21" name="RXD/SPI_MOSI" type="input"/>
+        <pin num="22" name="V_BCKP" type="power_in"/>
+        <pin num="23" name="VCC" type="power_in"/>
+        <pin num="24" name="GND" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Interface_Expansion" part="PCF8574">
+      <description>8 Bit Port/Expander to I2C Bus, DIP/SOIC-16</description>
+      <docs>http://www.nxp.com/documents/data_sheet/PCF8574_PCF8574A.pdf</docs>
+      <footprints>
+        <fp>DIP*W7.62mm*</fp>
+        <fp>SOIC*7.5x10.3mm*P1.27mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">PCF8574</field>
+        <field name="Datasheet">http://www.nxp.com/documents/data_sheet/PCF8574_PCF8574A.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A0" type="input"/>
+        <pin num="2" name="A1" type="input"/>
+        <pin num="3" name="A2" type="input"/>
+        <pin num="4" name="P0" type="bidirectional"/>
+        <pin num="5" name="P1" type="bidirectional"/>
+        <pin num="6" name="P2" type="bidirectional"/>
+        <pin num="7" name="P3" type="bidirectional"/>
+        <pin num="8" name="VSS" type="power_in"/>
+        <pin num="9" name="P4" type="bidirectional"/>
+        <pin num="10" name="P5" type="bidirectional"/>
+        <pin num="11" name="P6" type="bidirectional"/>
+        <pin num="12" name="P7" type="bidirectional"/>
+        <pin num="13" name="~{INT}" type="open_collector"/>
+        <pin num="14" name="SCL" type="input"/>
+        <pin num="15" name="SDA" type="bidirectional"/>
+        <pin num="16" name="VDD" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Jumper" part="SolderJumper_3_Bridged12">
+      <description>3-pole Solder Jumper, pins 1+2 closed/bridged</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>SolderJumper*Bridged12*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">JP</field>
+        <field name="Value">SolderJumper_3_Bridged12</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A" type="passive"/>
+        <pin num="2" name="C" type="passive"/>
+        <pin num="3" name="B" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Mechanical" part="MountingHole">
+      <description>Mounting Hole without connection</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>MountingHole*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">H</field>
+        <field name="Value">MountingHole</field>
+        <field name="Datasheet">~</field>
+      </fields>
+    </libpart>
+    <libpart lib="SamacSys_Parts" part="MAX1626ESA+T">
+      <description>MAXIM INTEGRATED PRODUCTS - MAX1626ESA+T - DC/DC Controller, Buck (Step Down), 3 V to 16.5 V, 1 Output, 300kHz PWM Switching, NSOIC-8</description>
+      <docs>https://datasheets.maximintegrated.com/en/ds/MAX1626-MAX1627.pdf</docs>
+      <fields>
+        <field name="Reference">IC</field>
+        <field name="Value">MAX1626ESA+T</field>
+        <field name="Footprint">SOIC127P600X175-8N</field>
+        <field name="Datasheet">https://datasheets.maximintegrated.com/en/ds/MAX1626-MAX1627.pdf</field>
+        <field name="Description">MAXIM INTEGRATED PRODUCTS - MAX1626ESA+T - DC/DC Controller, Buck (Step Down), 3 V to 16.5 V, 1 Output, 300kHz PWM Switching, NSOIC-8</field>
+        <field name="Height">1.75</field>
+        <field name="Mouser Part Number">700-MAX1626ESAT</field>
+        <field name="Mouser Price/Stock">https://www.mouser.co.uk/ProductDetail/Maxim-Integrated/MAX1626ESA%2bT/?qs=Mqkh4jHMT8ylHTywJFaQhw%3D%3D</field>
+        <field name="Manufacturer_Name">Maxim Integrated</field>
+        <field name="Manufacturer_Part_Number">MAX1626ESA+T</field>
+      </fields>
+      <pins>
+        <pin num="1" name="OUT" type="passive"/>
+        <pin num="2" name="~{_3}/5" type="passive"/>
+        <pin num="3" name="SHDN" type="passive"/>
+        <pin num="4" name="REF" type="passive"/>
+        <pin num="5" name="V+" type="passive"/>
+        <pin num="6" name="CS" type="passive"/>
+        <pin num="7" name="EXT" type="passive"/>
+        <pin num="8" name="GND" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="SamacSys_Parts2" part="293D227X9010D2TE3">
+      <description>Solid Tantalum Surface Mount Chip Capacitors TANTAMOUNT(TM), Molded Case, Standard Industrial Grade</description>
+      <docs>http://www.vishay.com/doc?40002</docs>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">293D227X9010D2TE3</field>
+        <field name="Footprint">CAPPM7343X310N</field>
+        <field name="Datasheet">http://www.vishay.com/doc?40002</field>
+        <field name="Description">Solid Tantalum Surface Mount Chip Capacitors TANTAMOUNT(TM), Molded Case, Standard Industrial Grade</field>
+        <field name="Height">3.1</field>
+        <field name="Mouser Part Number">74-293D227X9010D2TE3</field>
+        <field name="Mouser Price/Stock">https://www.mouser.co.uk/ProductDetail/Vishay-Sprague/293D227X9010D2TE3?qs=CH3Q5FKf4qDv8K%252BjTwpIww%3D%3D</field>
+        <field name="Manufacturer_Name">Vishay</field>
+        <field name="Manufacturer_Part_Number">293D227X9010D2TE3</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="SamacSys_Parts2" part="CDRH125NP-220MC">
+      <description>Fixed Inductors 22uH 2.80A 0.028ohms</description>
+      <docs>http://products.sumida.com/products/pdf/CDRH125,CDRH125LD.pdf</docs>
+      <fields>
+        <field name="Reference">L</field>
+        <field name="Value">CDRH125NP-220MC</field>
+        <field name="Footprint">CDRH125101MC</field>
+        <field name="Datasheet">http://products.sumida.com/products/pdf/CDRH125,CDRH125LD.pdf</field>
+        <field name="Description">Fixed Inductors 22uH 2.80A 0.028ohms</field>
+        <field name="Height">6</field>
+        <field name="Mouser Part Number">851-CDRH125NP-220MC</field>
+        <field name="Mouser Price/Stock">https://www.mouser.co.uk/ProductDetail/Sumida/CDRH125NP-220MC?qs=yEEOfDmvQDX7sNyZ0f3HJA%3D%3D</field>
+        <field name="Manufacturer_Name">Sumida</field>
+        <field name="Manufacturer_Part_Number">CDRH125NP-220MC</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="SamacSys_Parts2" part="TPSB686K010R0600">
+      <description>AVX Electrolytic Capacitor 68F 10V dc Electrolytic Solid +/-10% Tolerance TPS Series</description>
+      <docs>https://componentsearchengine.com/Datasheets/1/TPSB686K010R0600.pdf</docs>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">TPSB686K010R0600</field>
+        <field name="Footprint">CAPPM3528X210N</field>
+        <field name="Datasheet">https://componentsearchengine.com/Datasheets/1/TPSB686K010R0600.pdf</field>
+        <field name="Description">AVX Electrolytic Capacitor 68F 10V dc Electrolytic Solid +/-10% Tolerance TPS Series</field>
+        <field name="Height">2.1</field>
+        <field name="Mouser Part Number">581-TPSB686K010R0600</field>
+        <field name="Mouser Price/Stock">https://www.mouser.com/Search/Refine.aspx?Keyword=581-TPSB686K010R0600</field>
+        <field name="Manufacturer_Name">AVX</field>
+        <field name="Manufacturer_Part_Number">TPSB686K010R0600</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Sensor_Gas" part="SCD41">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">SCD41</field>
+      </fields>
+      <pins>
+        <pin num="1" name="DNC" type="no_connect"/>
+        <pin num="2" name="DNC" type="no_connect"/>
+        <pin num="3" name="DNC" type="no_connect"/>
+        <pin num="4" name="DNC" type="no_connect"/>
+        <pin num="5" name="DNC" type="no_connect"/>
+        <pin num="6" name="GND" type="power_out"/>
+        <pin num="7" name="VDD" type="power_in"/>
+        <pin num="8" name="DNC" type="no_connect"/>
+        <pin num="9" name="SCL" type="input"/>
+        <pin num="10" name="SDA" type="bidirectional"/>
+        <pin num="11" name="DNC" type="no_connect"/>
+        <pin num="12" name="DNC" type="no_connect"/>
+        <pin num="13" name="DNC" type="no_connect"/>
+        <pin num="14" name="DNC" type="no_connect"/>
+        <pin num="15" name="DNC" type="no_connect"/>
+        <pin num="16" name="DNC" type="no_connect"/>
+        <pin num="17" name="DNC" type="no_connect"/>
+        <pin num="18" name="DNC" type="no_connect"/>
+        <pin num="19" name="VDDH" type="power_in"/>
+        <pin num="20" name="GND" type="power_out"/>
+        <pin num="21" name="GND" type="power_out"/>
+      </pins>
+    </libpart>
+    <libpart lib="Sensor_Motion" part="BNO055">
+      <description>Intelligent 9-axis absolute orientation sensor, LGA-28</description>
+      <docs>https://ae-bst.resource.bosch.com/media/_tech/media/datasheets/BST_BNO055_DS000_14.pdf</docs>
+      <footprints>
+        <fp>LGA*5.2x3.8mm*P0.5mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">BNO055</field>
+        <field name="Footprint">Package_LGA:LGA-28_5.2x3.8mm_P0.5mm</field>
+        <field name="Datasheet">https://ae-bst.resource.bosch.com/media/_tech/media/datasheets/BST_BNO055_DS000_14.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="PIN1" type="no_connect"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="VDD" type="power_in"/>
+        <pin num="4" name="~{BOOT_LOAD_PIN}" type="input"/>
+        <pin num="5" name="PS1" type="input"/>
+        <pin num="6" name="PS0" type="input"/>
+        <pin num="7" name="PIN7" type="no_connect"/>
+        <pin num="8" name="PIN8" type="no_connect"/>
+        <pin num="9" name="CAP" type="passive"/>
+        <pin num="10" name="BL_IND" type="output"/>
+        <pin num="11" name="~{RESET}" type="input"/>
+        <pin num="12" name="PIN12" type="no_connect"/>
+        <pin num="13" name="PIN13" type="no_connect"/>
+        <pin num="14" name="INT" type="output"/>
+        <pin num="15" name="GNDIO" type="passive"/>
+        <pin num="16" name="GNDIO" type="passive"/>
+        <pin num="17" name="COM3" type="input"/>
+        <pin num="18" name="COM2" type="bidirectional"/>
+        <pin num="19" name="COM1" type="bidirectional"/>
+        <pin num="20" name="COM0" type="bidirectional"/>
+        <pin num="21" name="PIN21" type="no_connect"/>
+        <pin num="22" name="PIN22" type="no_connect"/>
+        <pin num="23" name="PIN23" type="no_connect"/>
+        <pin num="24" name="PIN24" type="no_connect"/>
+        <pin num="25" name="GNDIO" type="power_in"/>
+        <pin num="26" name="XOUT32" type="output"/>
+        <pin num="27" name="XIN32" type="input"/>
+        <pin num="28" name="VDDIO" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Switch" part="SW_DIP_x04">
+      <description>4x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>SW?DIP?x4*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">SW_DIP_x04</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+        <pin num="3" name="" type="passive"/>
+        <pin num="4" name="" type="passive"/>
+        <pin num="5" name="" type="passive"/>
+        <pin num="6" name="" type="passive"/>
+        <pin num="7" name="" type="passive"/>
+        <pin num="8" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Switch" part="SW_SPDT">
+      <description>Switch, single pole double throw</description>
+      <docs>~</docs>
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">SW_SPDT</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A" type="passive"/>
+        <pin num="2" name="B" type="passive"/>
+        <pin num="3" name="C" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Transistor_BJT" part="BC847">
+      <description>0.1A Ic, 45V Vce, NPN Transistor, SOT-23</description>
+      <docs>http://www.infineon.com/dgdl/Infineon-BC847SERIES_BC848SERIES_BC849SERIES_BC850SERIES-DS-v01_01-en.pdf?fileId=db3a304314dca389011541d4630a1657</docs>
+      <footprints>
+        <fp>SOT?23*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">BC847</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23</field>
+        <field name="Datasheet">http://www.infineon.com/dgdl/Infineon-BC847SERIES_BC848SERIES_BC849SERIES_BC850SERIES-DS-v01_01-en.pdf?fileId=db3a304314dca389011541d4630a1657</field>
+      </fields>
+      <pins>
+        <pin num="1" name="B" type="input"/>
+        <pin num="2" name="E" type="passive"/>
+        <pin num="3" name="C" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="1Knihovna">
+      <uri>C:/Projekty/CanSat 2023/PCB design/CanSat/PCB design/Other/Library/1Knihovna.kicad_sym</uri>
+    </library>
+    <library logical="Analog_ADC">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Analog_ADC.kicad_sym</uri>
+    </library>
+    <library logical="Analog_Switch">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Analog_Switch.kicad_sym</uri>
+    </library>
+    <library logical="Connector">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Connector.kicad_sym</uri>
+    </library>
+    <library logical="Connector_Generic">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Connector_Generic.kicad_sym</uri>
+    </library>
+    <library logical="Device">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Device.kicad_sym</uri>
+    </library>
+    <library logical="Diode">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Diode.kicad_sym</uri>
+    </library>
+    <library logical="Interface_Expansion">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Interface_Expansion.kicad_sym</uri>
+    </library>
+    <library logical="Jumper">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Jumper.kicad_sym</uri>
+    </library>
+    <library logical="Mechanical">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Mechanical.kicad_sym</uri>
+    </library>
+    <library logical="SamacSys_Parts">
+      <uri>C:/Library loader/SamacSys_Parts.kicad_sym</uri>
+    </library>
+    <library logical="SamacSys_Parts2">
+      <uri>C:/LibraryLoader2/SamacSys_Parts.lib</uri>
+    </library>
+    <library logical="Sensor_Gas">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Sensor_Gas.kicad_sym</uri>
+    </library>
+    <library logical="Sensor_Motion">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Sensor_Motion.kicad_sym</uri>
+    </library>
+    <library logical="Switch">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Switch.kicad_sym</uri>
+    </library>
+    <library logical="Transistor_BJT">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Transistor_BJT.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="/Power Unit/BATT">
+      <node ref="BT1001" pin="1" pinfunction="+" pintype="passive"/>
+      <node ref="Q1001" pin="3" pinfunction="D" pintype="passive"/>
+      <node ref="Q1004" pin="2" pinfunction="S" pintype="passive"/>
+      <node ref="R1003" pin="2" pintype="passive"/>
+      <node ref="R1006" pin="2" pintype="passive"/>
+      <node ref="SW1002" pin="3" pinfunction="C" pintype="passive"/>
+    </net>
+    <net code="2" name="/Power Unit/BATT_INT">
+      <node ref="J101" pin="4" pinfunction="Pin_4" pintype="passive"/>
+    </net>
+    <net code="3" name="/Power Unit/BAT_SENSE">
+      <node ref="C1001" pin="1" pintype="passive"/>
+      <node ref="J102" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="R1013" pin="2" pintype="passive"/>
+      <node ref="R1014" pin="1" pintype="passive"/>
+    </net>
+    <net code="4" name="/Power Unit/CAMTRANS-FET">
+      <node ref="C202" pin="1" pintype="passive"/>
+      <node ref="C203" pin="1" pintype="passive"/>
+      <node ref="C204" pin="1" pintype="passive"/>
+      <node ref="IC201" pin="2" pinfunction="~{_3}/5" pintype="passive"/>
+      <node ref="IC201" pin="5" pinfunction="V+" pintype="passive"/>
+      <node ref="Q1005" pin="2" pinfunction="S" pintype="passive"/>
+      <node ref="Q1006" pin="2" pinfunction="S" pintype="passive"/>
+      <node ref="R1009" pin="2" pintype="passive"/>
+      <node ref="R1010" pin="1" pintype="passive"/>
+      <node ref="R201" pin="1" pintype="passive"/>
+      <node ref="R301" pin="2" pintype="passive"/>
+      <node ref="U301" pin="7" pinfunction="IN-" pintype="input"/>
+    </net>
+    <net code="5" name="/Power Unit/CAM_CONTROL">
+      <node ref="R801" pin="1" pintype="passive"/>
+      <node ref="U1001" pin="6" pinfunction="P2" pintype="bidirectional"/>
+    </net>
+    <net code="6" name="/Power Unit/CH_SLOW{slash}FAST">
+      <node ref="SW1001" pin="7" pintype="passive"/>
+    </net>
+    <net code="7" name="/Power Unit/Camera transmit/VIDEO">
+      <node ref="J801" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J802" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="U901" pin="5" pinfunction="Video" pintype="input"/>
+    </net>
+    <net code="8" name="/Power Unit/Camera transmit/V_IN">
+      <node ref="Q1006" pin="3" pinfunction="D" pintype="passive"/>
+      <node ref="U901" pin="1" pinfunction="V_{IN}" pintype="power_in"/>
+    </net>
+    <net code="9" name="/Power Unit/Camera/V_IN">
+      <node ref="J802" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="Q1005" pin="3" pinfunction="D" pintype="passive"/>
+    </net>
+    <net code="10" name="/Power Unit/Current Sensor/P_IN">
+      <node ref="Q1004" pin="3" pinfunction="D" pintype="passive"/>
+      <node ref="R301" pin="1" pintype="passive"/>
+      <node ref="U301" pin="8" pinfunction="IN+" pintype="input"/>
+    </net>
+    <net code="11" name="/Power Unit/EXTINT_{GPS}">
+      <node ref="U1001" pin="10" pinfunction="P5" pintype="bidirectional"/>
+      <node ref="U503" pin="4" pinfunction="EXTINT" pintype="input"/>
+    </net>
+    <net code="12" name="/Power Unit/FPV_{SM_A}">
+      <node ref="J101" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="U901" pin="6" pinfunction="SA" pintype="bidirectional"/>
+    </net>
+    <net code="13" name="/Power Unit/GND">
+      <node ref="AE501" pin="2" pinfunction="Shield" pintype="input"/>
+      <node ref="BT1002" pin="2" pinfunction="-" pintype="passive"/>
+      <node ref="BT501" pin="2" pinfunction="-" pintype="passive"/>
+      <node ref="C1001" pin="2" pintype="passive"/>
+      <node ref="C201" pin="2" pintype="passive"/>
+      <node ref="C202" pin="2" pintype="passive"/>
+      <node ref="C203" pin="2" pintype="passive"/>
+      <node ref="C204" pin="2" pintype="passive"/>
+      <node ref="C205" pin="2" pintype="passive"/>
+      <node ref="C301" pin="1" pintype="passive"/>
+      <node ref="C401" pin="2" pintype="passive"/>
+      <node ref="C402" pin="2" pintype="passive"/>
+      <node ref="C403" pin="2" pintype="passive"/>
+      <node ref="C404" pin="2" pintype="passive"/>
+      <node ref="C501" pin="1" pintype="passive"/>
+      <node ref="C502" pin="1" pintype="passive"/>
+      <node ref="C601" pin="2" pintype="passive"/>
+      <node ref="C701" pin="2" pintype="passive"/>
+      <node ref="C702" pin="2" pintype="passive"/>
+      <node ref="C703" pin="2" pintype="passive"/>
+      <node ref="D201" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="D502" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="IC201" pin="3" pinfunction="SHDN" pintype="passive"/>
+      <node ref="IC201" pin="8" pinfunction="GND" pintype="passive"/>
+      <node ref="J1001" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="J101" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="J101" pin="5" pinfunction="Pin_5" pintype="passive"/>
+      <node ref="J101" pin="6" pinfunction="Pin_6" pintype="passive"/>
+      <node ref="J801" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="J802" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="Q1003" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="Q1007" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="Q1008" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="Q501" pin="2" pinfunction="E" pintype="passive"/>
+      <node ref="R1014" pin="2" pintype="passive"/>
+      <node ref="R701" pin="2" pintype="passive"/>
+      <node ref="R702" pin="1" pintype="passive"/>
+      <node ref="SW1001" pin="1" pintype="passive"/>
+      <node ref="SW1001" pin="2" pintype="passive"/>
+      <node ref="SW1002" pin="1" pinfunction="A" pintype="passive"/>
+      <node ref="U1001" pin="1" pinfunction="A0" pintype="input"/>
+      <node ref="U1001" pin="2" pinfunction="A1" pintype="input"/>
+      <node ref="U1001" pin="3" pinfunction="A2" pintype="input"/>
+      <node ref="U1001" pin="8" pinfunction="VSS" pintype="power_in"/>
+      <node ref="U301" pin="6" pinfunction="GND" pintype="power_in"/>
+      <node ref="U401" pin="15" pinfunction="GNDIO" pintype="passive"/>
+      <node ref="U401" pin="16" pinfunction="GNDIO" pintype="passive"/>
+      <node ref="U401" pin="17" pinfunction="COM3" pintype="input"/>
+      <node ref="U401" pin="18" pinfunction="COM2" pintype="bidirectional"/>
+      <node ref="U401" pin="2" pinfunction="GND" pintype="power_in"/>
+      <node ref="U401" pin="25" pinfunction="GNDIO" pintype="power_in"/>
+      <node ref="U401" pin="5" pinfunction="PS1" pintype="input"/>
+      <node ref="U401" pin="6" pinfunction="PS0" pintype="input"/>
+      <node ref="U501" pin="2" pinfunction="GND" pintype="power_in"/>
+      <node ref="U502" pin="2" pinfunction="GND" pintype="power_in"/>
+      <node ref="U503" pin="10" pinfunction="GND" pintype="power_in"/>
+      <node ref="U503" pin="7" pinfunction="VDD_USB" pintype="power_in"/>
+      <node ref="U601" pin="20" pinfunction="GND" pintype="power_out"/>
+      <node ref="U601" pin="21" pinfunction="GND" pintype="power_out"/>
+      <node ref="U601" pin="6" pinfunction="GND" pintype="power_out"/>
+      <node ref="U701" pin="1" pinfunction="OUT-" pintype="passive"/>
+      <node ref="U702" pin="2" pinfunction="V-" pintype="power_in"/>
+      <node ref="U801" pin="2" pinfunction="VSS" pintype="power_in"/>
+      <node ref="U901" pin="2" pinfunction="GND" pintype="passive"/>
+      <node ref="U901" pin="4" pinfunction="GND" pintype="passive"/>
+    </net>
+    <net code="14" name="/Power Unit/IMU_{INT}">
+      <node ref="J102" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="U401" pin="14" pinfunction="INT" pintype="output"/>
+    </net>
+    <net code="15" name="/Power Unit/IS_USB">
+      <node ref="J101" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="16" name="/Power Unit/M_SWITCH">
+      <node ref="J104" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="R1001" pin="1" pintype="passive"/>
+      <node ref="R1002" pin="1" pintype="passive"/>
+      <node ref="R1003" pin="1" pintype="passive"/>
+      <node ref="R1004" pin="1" pintype="passive"/>
+      <node ref="R1005" pin="1" pintype="passive"/>
+      <node ref="SW1002" pin="2" pinfunction="B" pintype="passive"/>
+    </net>
+    <net code="18" name="/Power Unit/OXY_{OUT}">
+      <node ref="C703" pin="1" pintype="passive"/>
+      <node ref="J102" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="R703" pin="2" pintype="passive"/>
+      <node ref="U702" pin="4" pintype="output"/>
+    </net>
+    <net code="19" name="/Power Unit/P_IN">
+      <node ref="R1013" pin="1" pintype="passive"/>
+    </net>
+    <net code="20" name="/Power Unit/RESET_{IMU}">
+      <node ref="R402" pin="2" pintype="passive"/>
+      <node ref="U1001" pin="12" pinfunction="P7" pintype="bidirectional"/>
+      <node ref="U401" pin="11" pinfunction="~{RESET}" pintype="input"/>
+    </net>
+    <net code="21" name="/Power Unit/SCL">
+      <node ref="J103" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="R1017" pin="2" pintype="passive"/>
+      <node ref="U1001" pin="14" pinfunction="SCL" pintype="input"/>
+      <node ref="U301" pin="4" pinfunction="SCL" pintype="input"/>
+      <node ref="U401" pin="19" pinfunction="COM1" pintype="bidirectional"/>
+      <node ref="U601" pin="9" pinfunction="SCL" pintype="input"/>
+      <node ref="U801" pin="3" pinfunction="SCL" pintype="input"/>
+    </net>
+    <net code="22" name="/Power Unit/SCL_{2}{slash}TXD">
+      <node ref="J103" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="U502" pin="1" pintype="passive"/>
+    </net>
+    <net code="23" name="/Power Unit/SDA">
+      <node ref="J103" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="R1018" pin="2" pintype="passive"/>
+      <node ref="U1001" pin="15" pinfunction="SDA" pintype="bidirectional"/>
+      <node ref="U301" pin="3" pinfunction="SDA" pintype="bidirectional"/>
+      <node ref="U401" pin="20" pinfunction="COM0" pintype="bidirectional"/>
+      <node ref="U601" pin="10" pinfunction="SDA" pintype="bidirectional"/>
+      <node ref="U801" pin="4" pinfunction="SDA" pintype="bidirectional"/>
+    </net>
+    <net code="24" name="/Power Unit/SDA_{2}{slash}RXD">
+      <node ref="J103" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="U501" pin="1" pintype="passive"/>
+    </net>
+    <net code="25" name="/Power Unit/SW_CAMERA">
+      <node ref="R1008" pin="2" pintype="passive"/>
+      <node ref="R1010" pin="2" pintype="passive"/>
+      <node ref="SW1001" pin="5" pintype="passive"/>
+    </net>
+    <net code="26" name="/Power Unit/SW_CAMERA_{IO}">
+      <node ref="R1015" pin="2" pintype="passive"/>
+      <node ref="U1001" pin="4" pinfunction="P0" pintype="bidirectional"/>
+    </net>
+    <net code="27" name="/Power Unit/SW_CHARGE">
+      <node ref="SW1001" pin="8" pintype="passive"/>
+    </net>
+    <net code="28" name="/Power Unit/SW_TRANSMIT">
+      <node ref="R1009" pin="1" pintype="passive"/>
+      <node ref="R1011" pin="1" pintype="passive"/>
+      <node ref="SW1001" pin="6" pintype="passive"/>
+    </net>
+    <net code="29" name="/Power Unit/SW_TRANSMIT_{IO}">
+      <node ref="R1016" pin="2" pintype="passive"/>
+      <node ref="U1001" pin="5" pinfunction="P1" pintype="bidirectional"/>
+    </net>
+    <net code="30" name="/Power Unit/Step-down/VCC_5V">
+      <node ref="C205" pin="1" pintype="passive"/>
+      <node ref="IC201" pin="1" pinfunction="OUT" pintype="passive"/>
+      <node ref="L201" pin="2" pintype="passive"/>
+      <node ref="R1012" pin="2" pintype="passive"/>
+    </net>
+    <net code="31" name="/Power Unit/TIMEPULSE_{GPS}">
+      <node ref="R501" pin="1" pintype="passive"/>
+      <node ref="U1001" pin="11" pinfunction="P6" pintype="bidirectional"/>
+      <node ref="U503" pin="3" pinfunction="TIMEPULSE" pintype="output"/>
+    </net>
+    <net code="32" name="/Power Unit/VCC">
+      <node ref="C301" pin="2" pintype="passive"/>
+      <node ref="C401" pin="1" pintype="passive"/>
+      <node ref="C402" pin="1" pintype="passive"/>
+      <node ref="C403" pin="1" pintype="passive"/>
+      <node ref="C501" pin="2" pintype="passive"/>
+      <node ref="C601" pin="1" pintype="passive"/>
+      <node ref="C701" pin="1" pintype="passive"/>
+      <node ref="C702" pin="1" pintype="passive"/>
+      <node ref="D501" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="J101" pin="7" pinfunction="Pin_7" pintype="passive"/>
+      <node ref="J101" pin="8" pinfunction="Pin_8" pintype="passive"/>
+      <node ref="J102" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="R1017" pin="1" pintype="passive"/>
+      <node ref="R1018" pin="1" pintype="passive"/>
+      <node ref="R401" pin="2" pintype="passive"/>
+      <node ref="R402" pin="1" pintype="passive"/>
+      <node ref="U1001" pin="16" pinfunction="VDD" pintype="power_in"/>
+      <node ref="U301" pin="1" pinfunction="A1" pintype="input"/>
+      <node ref="U301" pin="2" pinfunction="A0" pintype="input"/>
+      <node ref="U301" pin="5" pinfunction="VS" pintype="power_in"/>
+      <node ref="U401" pin="28" pinfunction="VDDIO" pintype="power_in"/>
+      <node ref="U401" pin="3" pinfunction="VDD" pintype="power_in"/>
+      <node ref="U501" pin="5" pinfunction="V+" pintype="power_in"/>
+      <node ref="U501" pin="6" pintype="input"/>
+      <node ref="U502" pin="5" pinfunction="V+" pintype="power_in"/>
+      <node ref="U502" pin="6" pintype="input"/>
+      <node ref="U503" pin="23" pinfunction="VCC" pintype="power_in"/>
+      <node ref="U601" pin="19" pinfunction="VDDH" pintype="power_in"/>
+      <node ref="U601" pin="7" pinfunction="VDD" pintype="power_in"/>
+      <node ref="U702" pin="5" pinfunction="V+" pintype="power_in"/>
+      <node ref="U801" pin="1" pinfunction="VDD" pintype="power_in"/>
+    </net>
+    <net code="33" name="/Power Unit/VCC_5V">
+      <node ref="J104" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J104" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="J104" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="R1012" pin="1" pintype="passive"/>
+    </net>
+    <net code="34" name="Net-(AE501-Pad1)">
+      <node ref="AE501" pin="1" pinfunction="A" pintype="input"/>
+      <node ref="D502" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="L501" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="U503" pin="11" pinfunction="RF_IN" pintype="input"/>
+    </net>
+    <net code="35" name="Net-(BT501-Pad1)">
+      <node ref="BT501" pin="1" pinfunction="+" pintype="passive"/>
+      <node ref="U503" pin="22" pinfunction="V_BCKP" pintype="power_in"/>
+    </net>
+    <net code="36" name="Net-(BT1001-Pad2)">
+      <node ref="BT1001" pin="2" pinfunction="-" pintype="passive"/>
+      <node ref="BT1002" pin="1" pinfunction="+" pintype="passive"/>
+      <node ref="Q1002" pin="3" pinfunction="D" pintype="passive"/>
+      <node ref="R1004" pin="2" pintype="passive"/>
+    </net>
+    <net code="37" name="Net-(C201-Pad1)">
+      <node ref="C201" pin="1" pintype="passive"/>
+      <node ref="IC201" pin="4" pinfunction="REF" pintype="passive"/>
+    </net>
+    <net code="38" name="Net-(C404-Pad1)">
+      <node ref="C404" pin="1" pintype="passive"/>
+      <node ref="U401" pin="9" pinfunction="CAP" pintype="passive"/>
+    </net>
+    <net code="39" name="Net-(C502-Pad2)">
+      <node ref="C502" pin="2" pintype="passive"/>
+      <node ref="L501" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R503" pin="1" pintype="passive"/>
+    </net>
+    <net code="40" name="Net-(D201-Pad1)">
+      <node ref="D201" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="L201" pin="1" pintype="passive"/>
+      <node ref="Q201" pin="3" pinfunction="D" pintype="passive"/>
+    </net>
+    <net code="41" name="Net-(D501-Pad1)">
+      <node ref="D501" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="R502" pin="1" pintype="passive"/>
+    </net>
+    <net code="42" name="Net-(IC201-Pad6)">
+      <node ref="IC201" pin="6" pinfunction="CS" pintype="passive"/>
+      <node ref="Q201" pin="2" pinfunction="S" pintype="passive"/>
+      <node ref="R201" pin="2" pintype="passive"/>
+    </net>
+    <net code="43" name="Net-(IC201-Pad7)">
+      <node ref="IC201" pin="7" pinfunction="EXT" pintype="passive"/>
+      <node ref="Q201" pin="1" pinfunction="G" pintype="input"/>
+    </net>
+    <net code="44" name="Net-(J803-Pad1)">
+      <node ref="J803" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="Q801" pin="2" pinfunction="E" pintype="passive"/>
+    </net>
+    <net code="45" name="Net-(J803-Pad2)">
+      <node ref="J803" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="Q801" pin="3" pinfunction="C" pintype="passive"/>
+    </net>
+    <net code="46" name="Net-(J804-Pad1)">
+      <node ref="J804" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="U801" pin="5" pinfunction="B" pintype="passive"/>
+    </net>
+    <net code="47" name="Net-(J804-Pad2)">
+      <node ref="J804" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="U801" pin="6" pinfunction="W" pintype="passive"/>
+    </net>
+    <net code="48" name="Net-(J1001-Pad1)">
+      <node ref="J1001" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="Q1001" pin="2" pinfunction="S" pintype="passive"/>
+    </net>
+    <net code="49" name="Net-(J1001-Pad2)">
+      <node ref="J1001" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="Q1002" pin="2" pinfunction="S" pintype="passive"/>
+    </net>
+    <net code="50" name="Net-(JP501-Pad1)">
+      <node ref="JP501" pin="1" pinfunction="A" pintype="passive"/>
+      <node ref="U503" pin="18" pinfunction="SDA/~{SPI_CS}" pintype="bidirectional"/>
+    </net>
+    <net code="51" name="Net-(JP501-Pad2)">
+      <node ref="JP501" pin="2" pinfunction="C" pintype="passive"/>
+      <node ref="U501" pin="4" pintype="passive"/>
+    </net>
+    <net code="52" name="Net-(JP501-Pad3)">
+      <node ref="JP501" pin="3" pinfunction="B" pintype="passive"/>
+      <node ref="U503" pin="20" pinfunction="TXD/SPI_MISO" pintype="output"/>
+    </net>
+    <net code="53" name="Net-(JP502-Pad1)">
+      <node ref="JP502" pin="1" pinfunction="A" pintype="passive"/>
+      <node ref="U503" pin="19" pinfunction="SCL/SPI_CLK" pintype="input"/>
+    </net>
+    <net code="54" name="Net-(JP502-Pad2)">
+      <node ref="JP502" pin="2" pinfunction="C" pintype="passive"/>
+      <node ref="U502" pin="4" pintype="passive"/>
+    </net>
+    <net code="55" name="Net-(JP502-Pad3)">
+      <node ref="JP502" pin="3" pinfunction="B" pintype="passive"/>
+      <node ref="U503" pin="21" pinfunction="RXD/SPI_MOSI" pintype="input"/>
+    </net>
+    <net code="56" name="Net-(Q501-Pad1)">
+      <node ref="Q501" pin="1" pinfunction="B" pintype="input"/>
+      <node ref="R501" pin="2" pintype="passive"/>
+    </net>
+    <net code="57" name="Net-(Q501-Pad3)">
+      <node ref="Q501" pin="3" pinfunction="C" pintype="passive"/>
+      <node ref="R502" pin="2" pintype="passive"/>
+    </net>
+    <net code="58" name="Net-(Q801-Pad1)">
+      <node ref="Q801" pin="1" pinfunction="B" pintype="input"/>
+      <node ref="R801" pin="2" pintype="passive"/>
+    </net>
+    <net code="59" name="Net-(Q1001-Pad1)">
+      <node ref="Q1001" pin="1" pinfunction="G" pintype="input"/>
+      <node ref="R1001" pin="2" pintype="passive"/>
+    </net>
+    <net code="60" name="Net-(Q1002-Pad1)">
+      <node ref="Q1002" pin="1" pinfunction="G" pintype="input"/>
+      <node ref="R1002" pin="2" pintype="passive"/>
+    </net>
+    <net code="61" name="Net-(Q1003-Pad1)">
+      <node ref="Q1003" pin="1" pinfunction="B" pintype="input"/>
+      <node ref="R1005" pin="2" pintype="passive"/>
+    </net>
+    <net code="62" name="Net-(Q1003-Pad3)">
+      <node ref="Q1003" pin="3" pinfunction="C" pintype="passive"/>
+      <node ref="R1006" pin="1" pintype="passive"/>
+      <node ref="R1007" pin="2" pintype="passive"/>
+    </net>
+    <net code="63" name="Net-(Q1004-Pad1)">
+      <node ref="Q1004" pin="1" pinfunction="G" pintype="input"/>
+      <node ref="R1007" pin="1" pintype="passive"/>
+    </net>
+    <net code="64" name="Net-(Q1005-Pad1)">
+      <node ref="Q1005" pin="1" pinfunction="G" pintype="input"/>
+      <node ref="R1008" pin="1" pintype="passive"/>
+    </net>
+    <net code="65" name="Net-(Q1006-Pad1)">
+      <node ref="Q1006" pin="1" pinfunction="G" pintype="input"/>
+      <node ref="R1011" pin="2" pintype="passive"/>
+    </net>
+    <net code="66" name="Net-(Q1007-Pad1)">
+      <node ref="Q1007" pin="1" pinfunction="B" pintype="input"/>
+      <node ref="R1015" pin="1" pintype="passive"/>
+    </net>
+    <net code="67" name="Net-(Q1007-Pad3)">
+      <node ref="Q1007" pin="3" pinfunction="C" pintype="passive"/>
+      <node ref="SW1001" pin="3" pintype="passive"/>
+    </net>
+    <net code="68" name="Net-(Q1008-Pad1)">
+      <node ref="Q1008" pin="1" pinfunction="B" pintype="input"/>
+      <node ref="R1016" pin="1" pintype="passive"/>
+    </net>
+    <net code="69" name="Net-(Q1008-Pad3)">
+      <node ref="Q1008" pin="3" pinfunction="C" pintype="passive"/>
+      <node ref="SW1001" pin="4" pintype="passive"/>
+    </net>
+    <net code="70" name="Net-(R401-Pad1)">
+      <node ref="R401" pin="1" pintype="passive"/>
+      <node ref="U401" pin="4" pinfunction="~{BOOT_LOAD_PIN}" pintype="input"/>
+    </net>
+    <net code="71" name="Net-(R503-Pad2)">
+      <node ref="R503" pin="2" pintype="passive"/>
+      <node ref="U503" pin="9" pinfunction="VCC_RF" pintype="power_out"/>
+    </net>
+    <net code="72" name="Net-(R701-Pad1)">
+      <node ref="R701" pin="1" pintype="passive"/>
+      <node ref="U701" pin="2" pinfunction="OUT" pintype="output"/>
+      <node ref="U702" pin="1" pinfunction="+" pintype="input"/>
+    </net>
+    <net code="73" name="Net-(R702-Pad2)">
+      <node ref="R702" pin="2" pintype="passive"/>
+      <node ref="R703" pin="1" pintype="passive"/>
+      <node ref="U702" pin="3" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="74" name="unconnected-(U401-Pad1)">
+      <node ref="U401" pin="1" pinfunction="PIN1" pintype="no_connect"/>
+    </net>
+    <net code="75" name="unconnected-(U401-Pad7)">
+      <node ref="U401" pin="7" pinfunction="PIN7" pintype="no_connect"/>
+    </net>
+    <net code="76" name="unconnected-(U401-Pad8)">
+      <node ref="U401" pin="8" pinfunction="PIN8" pintype="no_connect"/>
+    </net>
+    <net code="77" name="unconnected-(U401-Pad10)">
+      <node ref="U401" pin="10" pinfunction="BL_IND" pintype="output+no_connect"/>
+    </net>
+    <net code="78" name="unconnected-(U401-Pad12)">
+      <node ref="U401" pin="12" pinfunction="PIN12" pintype="no_connect"/>
+    </net>
+    <net code="79" name="unconnected-(U401-Pad13)">
+      <node ref="U401" pin="13" pinfunction="PIN13" pintype="no_connect"/>
+    </net>
+    <net code="80" name="unconnected-(U401-Pad21)">
+      <node ref="U401" pin="21" pinfunction="PIN21" pintype="no_connect"/>
+    </net>
+    <net code="81" name="unconnected-(U401-Pad22)">
+      <node ref="U401" pin="22" pinfunction="PIN22" pintype="no_connect"/>
+    </net>
+    <net code="82" name="unconnected-(U401-Pad23)">
+      <node ref="U401" pin="23" pinfunction="PIN23" pintype="no_connect"/>
+    </net>
+    <net code="83" name="unconnected-(U401-Pad24)">
+      <node ref="U401" pin="24" pinfunction="PIN24" pintype="no_connect"/>
+    </net>
+    <net code="84" name="unconnected-(U401-Pad26)">
+      <node ref="U401" pin="26" pinfunction="XOUT32" pintype="output+no_connect"/>
+    </net>
+    <net code="85" name="unconnected-(U401-Pad27)">
+      <node ref="U401" pin="27" pinfunction="XIN32" pintype="input+no_connect"/>
+    </net>
+    <net code="86" name="unconnected-(U501-Pad3)">
+      <node ref="U501" pin="3" pintype="passive+no_connect"/>
+    </net>
+    <net code="87" name="unconnected-(U502-Pad3)">
+      <node ref="U502" pin="3" pintype="passive+no_connect"/>
+    </net>
+    <net code="88" name="unconnected-(U503-Pad1)">
+      <node ref="U503" pin="1" pinfunction="~{SAFEBOOT}" pintype="input+no_connect"/>
+    </net>
+    <net code="89" name="unconnected-(U503-Pad2)">
+      <node ref="U503" pin="2" pinfunction="D_SEL" pintype="input+no_connect"/>
+    </net>
+    <net code="90" name="unconnected-(U503-Pad5)">
+      <node ref="U503" pin="5" pinfunction="USB_DM" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="91" name="unconnected-(U503-Pad6)">
+      <node ref="U503" pin="6" pinfunction="USB_DP" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="92" name="unconnected-(U503-Pad8)">
+      <node ref="U503" pin="8" pinfunction="~{RESET}" pintype="input+no_connect"/>
+    </net>
+    <net code="93" name="unconnected-(U503-Pad12)">
+      <node ref="U503" pin="12" pinfunction="GND" pintype="passive"/>
+    </net>
+    <net code="94" name="unconnected-(U503-Pad13)">
+      <node ref="U503" pin="13" pinfunction="GND" pintype="passive"/>
+    </net>
+    <net code="95" name="unconnected-(U503-Pad14)">
+      <node ref="U503" pin="14" pinfunction="LNA_EN" pintype="output+no_connect"/>
+    </net>
+    <net code="96" name="unconnected-(U503-Pad15)">
+      <node ref="U503" pin="15" pinfunction="RESERVED" pintype="no_connect"/>
+    </net>
+    <net code="97" name="unconnected-(U503-Pad16)">
+      <node ref="U503" pin="16" pinfunction="RESERVED" pintype="no_connect"/>
+    </net>
+    <net code="98" name="unconnected-(U503-Pad17)">
+      <node ref="U503" pin="17" pinfunction="RESERVED" pintype="no_connect"/>
+    </net>
+    <net code="99" name="unconnected-(U503-Pad24)">
+      <node ref="U503" pin="24" pinfunction="GND" pintype="passive"/>
+    </net>
+    <net code="100" name="unconnected-(U601-Pad1)">
+      <node ref="U601" pin="1" pinfunction="DNC" pintype="no_connect"/>
+    </net>
+    <net code="101" name="unconnected-(U601-Pad2)">
+      <node ref="U601" pin="2" pinfunction="DNC" pintype="no_connect"/>
+    </net>
+    <net code="102" name="unconnected-(U601-Pad3)">
+      <node ref="U601" pin="3" pinfunction="DNC" pintype="no_connect"/>
+    </net>
+    <net code="103" name="unconnected-(U601-Pad4)">
+      <node ref="U601" pin="4" pinfunction="DNC" pintype="no_connect"/>
+    </net>
+    <net code="104" name="unconnected-(U601-Pad5)">
+      <node ref="U601" pin="5" pinfunction="DNC" pintype="no_connect"/>
+    </net>
+    <net code="105" name="unconnected-(U601-Pad8)">
+      <node ref="U601" pin="8" pinfunction="DNC" pintype="no_connect"/>
+    </net>
+    <net code="106" name="unconnected-(U601-Pad11)">
+      <node ref="U601" pin="11" pinfunction="DNC" pintype="no_connect"/>
+    </net>
+    <net code="107" name="unconnected-(U601-Pad12)">
+      <node ref="U601" pin="12" pinfunction="DNC" pintype="no_connect"/>
+    </net>
+    <net code="108" name="unconnected-(U601-Pad13)">
+      <node ref="U601" pin="13" pinfunction="DNC" pintype="no_connect"/>
+    </net>
+    <net code="109" name="unconnected-(U601-Pad14)">
+      <node ref="U601" pin="14" pinfunction="DNC" pintype="no_connect"/>
+    </net>
+    <net code="110" name="unconnected-(U601-Pad15)">
+      <node ref="U601" pin="15" pinfunction="DNC" pintype="no_connect"/>
+    </net>
+    <net code="111" name="unconnected-(U601-Pad16)">
+      <node ref="U601" pin="16" pinfunction="DNC" pintype="no_connect"/>
+    </net>
+    <net code="112" name="unconnected-(U601-Pad17)">
+      <node ref="U601" pin="17" pinfunction="DNC" pintype="no_connect"/>
+    </net>
+    <net code="113" name="unconnected-(U601-Pad18)">
+      <node ref="U601" pin="18" pinfunction="DNC" pintype="no_connect"/>
+    </net>
+    <net code="114" name="unconnected-(U701-Pad3)">
+      <node ref="U701" pin="3" pinfunction="3" pintype="no_connect"/>
+    </net>
+    <net code="115" name="unconnected-(U901-Pad3)">
+      <node ref="U901" pin="3" pinfunction="V_{IN}_Pass" pintype="power_out+no_connect"/>
+    </net>
+    <net code="116" name="unconnected-(U1001-Pad7)">
+      <node ref="U1001" pin="7" pinfunction="P3" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="117" name="unconnected-(U1001-Pad9)">
+      <node ref="U1001" pin="9" pinfunction="P4" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="118" name="unconnected-(U1001-Pad13)">
+      <node ref="U1001" pin="13" pinfunction="~{INT}" pintype="open_collector+no_connect"/>
+    </net>
+  </nets>
+</export>
