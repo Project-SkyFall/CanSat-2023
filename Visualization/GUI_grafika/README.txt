@@ -1,0 +1,1 @@
+změna velikosti z toho, co poslal Adam v poměru 25/6
