@@ -19,8 +19,10 @@ Project SkyFall has 2 years of expirience in CanSat competetion
 ## About team
 
   ### Vít Brázda
-  Vít is responsible for data visualization running on ground station, as well as making index of habitability of planet, where CanSat is landing. He has a lot of experience regarding Python.
-  <img src="https://github.com/CreatorJohn/cansat-skyfall/blob/master/foto/Foto%20Jirka/upraven%C3%A9/P1002204.jpg" alt="Vít Brázda profile picture"/>
+<table><tr>
+  <td><img src="docs/Vit_Brazda-profile_picture_2022.jpg" alt="Vít Brázda" width="400"/></td>
+  <td>Vít is responsible for data visualization running on ground station, as well as making index of habitability of planet, where CanSat is landing. He has a lot of experience regarding Python.</td>
+</tr></table>
   
   ### David Haisman
   David handles electronics and programming on our CanSat. He designed PCB’s, made some libraries and wrote the whole CanSat code. During the development of the CanSat he gained a lot of experience regarding PCB design and programming in C++.
