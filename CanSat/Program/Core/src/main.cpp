@@ -81,6 +81,7 @@ OneWire oneWire;
 
 void setup(void) {
   Serial.begin(115200);
+  Serial1.begin(4800, SERIAL_8N2, SM_A_PIN, DUMMY_PIN);
   Wire.begin(21, 22, 400000ul);
   Wire1.begin(19, 18, 100000ul);
   oneWire.begin(4);
@@ -103,9 +104,7 @@ void setup(void) {
   }
 
   spiSemaphore_hadle = xSemaphoreCreateBinary();
-  gpsGetDataDone_semaphore = xSemaphoreCreateBinary();
   ds18GetDataDone_semaphore = xSemaphoreCreateBinary();
-  saveData_semaphore = xSemaphoreCreateBinary();
 
   xSemaphoreGive(spiSemaphore_hadle);
 

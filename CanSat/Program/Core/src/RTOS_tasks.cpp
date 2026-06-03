@@ -64,11 +64,7 @@ void getData(void *pvParameters){
         // Task are done or skiped when pollingDelay passes
 
         lora.sendData();
-        if(sd.mode != Mode::mode_SLEEP){
-            sd.save();
-
-            if(!xSemaphoreTake(saveData_semaphore, dataPrintDelay)) Serial.println("SD save timeout");
-        }
+        sd.save();
 
         neo.updateStatuses();
         vTaskResume(printData_hadle);
@@ -132,33 +128,6 @@ void runServer(void *pvParameters){
     while(true){
         server.handleClient();
         vTaskDelay(1); 
-    }
-}
-
-/*void saveData(void *pvParameters){
-    while(true){
-        vTaskSuspend(NULL);
-        if(xSemaphoreTake(openFile_semaphore, dataPrintDelay)){
-            xSemaphoreTake(spiSemaphore_hadle, portMAX_DELAY);
-            sd.save();
-            xSemaphoreGive(spiSemaphore_hadle);
-            xSemaphoreGive(saveData_semaphore);
-        }
-    }
-}*/
-
-void openFile(void *pvParameters){
-    while(true){
-        
-        vTaskSuspend(NULL);
-        esp_task_wdt_init(5, true); //enable panic so ESP32 restarts
-        esp_task_wdt_add(NULL); //add current thread to WDT watch
-        if(!fileOpened){
-            xSemaphoreTake(spiSemaphore_hadle, portMAX_DELAY);
-            fileOpened = sd.openFile();
-            xSemaphoreGive(spiSemaphore_hadle);
-        }
-        esp_task_wdt_deinit();
     }
 }
 

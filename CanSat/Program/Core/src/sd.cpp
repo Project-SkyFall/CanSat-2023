@@ -25,25 +25,20 @@ MySD::MySD(uint8_t cs):
 }
 
 bool MySD::setup(bool verbose){
-    if(mode == Mode::mode_SLEEP){
-        status = Status::status_SLEEP;
-        return false;
-    }
-    static bool firstTime = true;
-    verbose ? Serial.println("---SDc setup-------------------------------------") : 0;
+
+    static bool initDone;
+
+    if(verbose) Serial.println("---SDc setup-------------------------------------");
 
     if(!SD.begin(_cs)){
         isWorking = IsWorking::isWorking_FALSE;
         return false;
     }
 
-    if(!firstTime){
-        isWorking = IsWorking::isWorking_TRUE;
-        return true;
-    }
+    if(initDone) return true;
 
-    firstTime = false;
-    
+    //-- Initial setup only --------------------------------------------------
+
     while(true){
         postfix++;
         path = ("/datasaves/" + rtc.date_string + "/Project SkyFall-CanSat 2023 - " + rtc.date_string + " - " + postfix + ".csv");
@@ -51,49 +46,57 @@ bool MySD::setup(bool verbose){
             break;
         }
     }
-    verbose ? Serial.print("Creating data file: "): 0;
+
+    if(verbose) Serial.print("Creating data file: ");
     myFile = SD.open(path, FILE_APPEND, true);
     if(!myFile){
         verbose ? Serial.println("FAIL") : 0;
         isWorking = IsWorking::isWorking_FALSE;
         return false;
     }
-    myPrint("Timestamp");
-    myPrint("Temperature"); myPrint("Pressure"); myPrintln("Humidity");
 
-    myFile.close();
+    #ifndef VISU_BACKUP // Default datasaving
+    myPrint("Sensor's status");
+    myPrint("Date & Time");
+    myPrint("Light intensity");
+    myPrint("Temperature"); myPrint("Pressure"); myPrint("Humidity");
+    myPrint("Voltage"); myPrint("Current"); myPrint("Power");
+    myPrint("CO2");
+    myPrint("Latitude"); myPrint("Longitude"); myPrint("Altitude"); myPrint("SIV");
+    myPrint("Roll"); myPrint("Pitch"); myPrint("YaW"); myPrint("Accel X"); myPrint("Accel Y"); myPrint("Accel Z");
+    for(int i = 1; i <= 18; i++) myPrint("ASX " + String(i));
+    myPrintln("Oxygen");
 
-    
-    verbose ? Serial.println(path) : 0;
+    #else // Visualization backup data
+    myPrint("batteryGS");
+    myPrint("tempGS");
+    myPrint("humidityGS");
+    myPrint("pressGS");    
+    myPrint("altGS");
+    myPrint("timeGS");
+    myPrint("latGS"); myPrint("longGS"); myPrint("rangeCan");
+    myPrint("dORa4"); myPrint("dORa0"); myPrint("dORa3"); myPrint("dORa1"); myPrint("dORa2"); myPrint("dORa5"); myPrint("dORa7"); myPrint("dORa10"); myPrint("dORa8"); myPrint("dORa6"); myPrint("dORa9");
+    myPrint("time");
+    myPrint("lightIntensity");
+    myPrint("temperature"); myPrint("pressure"); myPrint("humidity");
+    myPrint("battery"); myPrint("current"); myPrint("power");
+    myPrint("co2");
+    myPrint("lat"); myPrint("long"); myPrint("height_GPS"); myPrint("height"); myPrint("sattelitesNum");
+    myPrint("roll"); myPrint("pitch"); myPrint("yaw");
+    myPrint("oxygen");
+    myPrint("asx0"); myPrint("asx1"); myPrint("asx2");myPrint("asx3"); myPrint("asx4"); myPrint("asx5"); myPrint("asx6"); myPrint("asx7"); myPrint("asx8"); myPrint("asx9"); myPrint("asx10"); myPrint("asx11"); myPrint("asx12"); myPrint("asx13"); myPrint("asx14"); myPrint("asx15"); myPrint("asx16");myPrint("asx17");
+    myPrint("transfer");
+    myPrint("dORa11");
+    myPrintln("time2");
+    #endif
+
+    myFile.flush();
+
+    if(verbose) Serial.println(path);
+
+    initDone = true;
     
     isWorking = IsWorking::isWorking_TRUE;
-    return true;
-}
-
-bool MySD::openFile(){
-
-    static uint8_t tryNumber;
-
-    if(mode == Mode::mode_SLEEP){
-        status = Status::status_SLEEP;
-        return false;
-    }
-
-    //if(isWorking == IsWorking::isWorking_FALSE){
-        if(!setup()){
-            tryNumber = 1;
-            status = Status::status_FAIL;
-            return false;
-        }
-    //}
-
-    myFile = SD.open(path, FILE_APPEND);
-    if(!myFile){
-        SD.end();
-        isWorking = IsWorking::isWorking_FALSE;
-        status = Status::status_FAIL;
-        return false;
-    }
     return true;
 }
 
@@ -104,41 +107,72 @@ bool MySD::save(){
         return false;
     }
 
-    if(isWorking == IsWorking::isWorking_FALSE){
-        status = Status::status_FAIL;
-        return false;
+    xSemaphoreTake(spiSemaphore_hadle, portMAX_DELAY);
+    if(!checkConnection()){ // Sendy dummy byte to check SD presense
+        if(fileOpened){ // If file is still opened, close it and dismount logical drive
+            myFile.close();
+            SD.end();
+            fileOpened = false;
+        }
+        if(!setup()){ // Try to remount logical drive
+            status = Status::status_FAIL;
+            xSemaphoreGive(spiSemaphore_hadle);
+            return false;
+        }
     }
+
+    if(!fileOpened){ // Keep opening file until it is succesfull
+        myFile = SD.open(path, FILE_APPEND);
+        if(!myFile){
+            status = Status::status_FAIL;
+            return false;
+        }
+        fileOpened = true;
+    }
+
 
     /*Saving data*/
-    if(fileOpened){
-        xSemaphoreTake(spiSemaphore_hadle, portMAX_DELAY);
+    #ifndef VISU_BACKUP // Default datasaving
+    myPrint(sensorStatuses());
+    myPrint(rtc.dateTime_short_string);
+    myPrint(bh.lightIntensity);
+    myPrint(bme.temperature); myPrint(bme.pressure); myPrint(bme.humidity);
+    myPrint(ina.voltage); myPrint(ina.current); myPrint(ina.power);
+    myPrint(scd.co2);
+    myPrint(gps.latitude); myPrint(gps.longitude); myPrint(gps.altitude); myPrint(gps.siv);
+    myPrint(bno.roll); myPrint(bno.pitch); myPrint(bno.yaw); myPrint(bno.accel.x); myPrint(bno.accel.y); myPrint(bno.accel.z);
+    for(int i = 0; i < 18; i++) myPrint(asx.data[i]);
+    myPrintln(oxygen.concentration);
 
-        myPrint(cycle);
-        myPrint(sensorStatuses());
-        myPrint(rtc.dateTime_short_string);
-        myPrint(bh.lightIntensity);
-        myPrint(bme.temperature); myPrint(bme.pressure); myPrint(bme.humidity);
-        myPrint(ina.voltage); myPrint(ina.current); myPrint(ina.power);
-        myPrint(scd.co2);
-        myPrint(gps.latitude); myPrint(gps.longitude); myPrint(gps.altitude); myPrint(gps.siv);
-        myPrint(bno.roll); myPrint(bno.pitch); myPrint(bno.yaw); // + posílat přetížení? 
-        myPrint(oxygen.concentration);
-        for(int i = 0; i < 18; i++) myPrint(asx.data[i]);
-        myPrintln(refreshRate);
+    #else // Visualization backup data
+    myPrint(0);
+    myPrint(0);
+    myPrint(0);
+    myPrint(0);    
+    myPrint(0);
+    myPrint(0);
+    myPrint(0); myPrint(0); myPrint(0);
+    myPrint(0); myPrint(0); myPrint(0); myPrint(0); myPrint(0); myPrint(0); myPrint(0); myPrint(0); myPrint(0); myPrint(0); myPrint(0);
+    myPrint(cycle);
+    myPrint(bh.lightIntensity);
+    myPrint(bme.temperature); myPrint(bme.pressure); myPrint(bme.humidity);
+    myPrint(ina.voltage); myPrint(ina.current); myPrint(ina.power);
+    myPrint(scd.co2);
+    myPrint(gps.latitude); myPrint(gps.longitude); myPrint(gps.altitude); myPrint(gps.altitude); myPrint(gps.siv);
+    myPrint(bno.roll); myPrint(bno.pitch); myPrint(bno.yaw);
+    myPrint(oxygen.concentration);
+    myPrint(0); myPrint(0); myPrint(0);myPrint(0); myPrint(0); myPrint(0); myPrint(0); myPrint(0); myPrint(0); myPrint(0); myPrint(0); myPrint(0); myPrint(0); myPrint(0); myPrint(0); myPrint(0); myPrint(0);myPrint(0);
+    myPrint(0);
+    myPrint(0);
+    myPrintln(cycle);
+    #endif
 
-        myFile.close();
-        SD.end();
-        fileOpened = false;
+    myFile.flush();
 
-        xSemaphoreGive(spiSemaphore_hadle);
-        xSemaphoreGive(saveData_semaphore);
-        
-        status = Status::status_OK;
-        return true;
-    }
-
-    return false;
-
+    xSemaphoreGive(spiSemaphore_hadle);
+    
+    status = Status::status_OK;
+    return true;
 }
 
 
@@ -149,6 +183,18 @@ void MySD::printStatus(){
         return;
     }
     status == Status::status_OK ? Serial.println("OK") : Serial.println("FAIL");
+}
+
+bool MySD::checkConnection(){
+
+    digitalWrite(_cs, LOW);
+
+    _spi->beginTransaction(_spiSettings);
+    uint8_t response = _spi->transfer(0xFF);
+    _spi->endTransaction();
+
+    if(response == 0x00) return false;
+    return true;
 }
 
 template <typename T> void /*MyFile::*/myPrint(T input){
