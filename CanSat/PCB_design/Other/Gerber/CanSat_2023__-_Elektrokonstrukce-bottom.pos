@@ -1,0 +1,15 @@
+### Module positions - created on Wed Nov 23 14:58:32 2022 ###
+### Printed by Pcbnew version (6.0.5)
+## Unit = mm, Angle = deg.
+## Side : bottom
+# Ref     Val                    Package                                                  PosX       PosY       Rot  Side
+AE2001    Antenna_Shield         U.FL_Hirose_U.FL-R-SMT-1_Vertical                   -103.0000   -55.3250    0.0000  bottom
+J1901     Micro_SD_Card_823-046  DS1139-05                                            -79.6500   -35.7250    0.0000  bottom
+R512      510R                   R_0402_1005Metric                                   -172.9000    18.2000    0.0000  bottom
+R513      510R                   R_0402_1005Metric                                   -172.9100    19.7000    0.0000  bottom
+R514      510R                   R_0402_1005Metric                                   -172.9000    21.2000    0.0000  bottom
+R515      510R                   R_0402_1005Metric                                   -172.9100    22.7000    0.0000  bottom
+R516      510R                   R_0402_1005Metric                                   -172.9100    24.2000    0.0000  bottom
+SW303     DS04-254-1-03BK-SMT    SW_DIP_SPSTx03_Slide_Omron_A6S-310x_W8.9mm_P2.54mm   -68.0500   -77.8500  -90.0000  bottom
+U2101     RFM96W-433S2           HOPERF_RFM9XW_SMD                                    -91.4000   -62.3500    0.0000  bottom
+## End

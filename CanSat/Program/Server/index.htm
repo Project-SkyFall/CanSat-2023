@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ESP Server</title>
+		<link rel="stylesheet" href="./styles.css" />
+		<style>
+			.sensor-name {
+				user-select: none;
+			}
+		</style>
+	</head>
+	<body class="h-screen w-screen flex flex-col bg-slate-950">
+		<main class="flex flex-col justify-center items-center p-2 gap-2 flex-1">
+			<template id="sensor-template">
+				<div class="max-w-lg w-full flex justify-between p-2 bg-slate-500">
+					<span class="sensor-name text-lg font-bold"></span>
+					<div class="flex items-center gap-2">
+						<label class="label-on font-semibold cursor-pointer" for="">On</label>
+						<input class="sensor-on h-5 w-5 cursor-pointer" type="radio" data-sensor="" name="" id="" />
+						<span>/</span>
+						<label class="label-off font-semibold cursor-pointer" for="">Off</label>
+						<input class="sensor-off h-5 w-5 cursor-pointer" type="radio" data-sensor="" name="" id="" />
+					</div>
+				</div>
+			</template>
+		</main>
+		<script>
+			const dummies = [
+				{ sensor: "A", value: "on" },
+				{ sensor: "B", value: "off" },
+				{ sensor: "C", value: "on" }
+			]
+
+			dummies.forEach(({ sensor, value }) => {
+				const template = document.getElementById("sensor-template")
+				const sensor_element = template.content.cloneNode(true)
+				const sensor_name = sensor_element.querySelector(".sensor-name")
+				const label_on = sensor_element.querySelector(".label-on")
+				const sensor_on = sensor_element.querySelector(".sensor-on")
+				const label_off = sensor_element.querySelector(".label-off")
+				const sensor_off = sensor_element.querySelector(".sensor-off")
+
+				sensor_name.textContent = sensor
+				label_on.for = `${sensor}-on`
+				sensor_on.id = `${sensor}-on`
+				sensor_on.name = sensor
+				sensor_on.dataset.sensor = sensor
+				label_off.for = `${sensor}-off`
+				sensor_off.id = `${sensor}-off`
+				sensor_off.name = sensor
+				sensor_off.dataset.sensor = sensor
+
+				if (value === "on") sensor_on.checked = true
+				else sensor_off.checked = true
+
+				document.querySelector("main")?.appendChild(sensor_element)
+			})
+
+			const sensors_on = Array.from(document.getElementsByClassName("sensor-on"))
+			const sensors_off = Array.from(document.getElementsByClassName("sensor-off"))
+
+			sensors_on.forEach((sensor) => {
+				sensor.addEventListener("change", async (e) => {
+					const sensor_name = sensor.dataset.sensor
+					const { ok } = await fetch("/", {
+						method: "post",
+						body: JSON.stringify({ sensor: sensor_name, value: "on" }),
+						headers: { "Content-Type": "application/json" }
+					})
+
+					if (!ok) {
+						sensor.checked = false
+						sensors_off.find((s) => s.dataset.sensor === sensor_name).checked = true
+						alert("Something went wrong")
+					}
+				})
+			})
+
+			sensors_off.forEach((sensor) => {
+				sensor.addEventListener("change", async (e) => {
+					const sensor_name = sensor.dataset.sensor
+					const { ok } = await fetch("/", {
+						method: "post",
+						body: JSON.stringify({ sensor: sensor_name, value: "off" }),
+						headers: { "Content-Type": "application/json" }
+					})
+
+					if (!ok) {
+						sensor.checked = false
+						const s = (sensors_on.find((s) => s.dataset.sensor === sensor_name).checked = true)
+						alert("Something went wrong")
+					}
+				})
+			})
+
+			get_sensors().then((sensors_status) => {
+				sensors_status.forEach(({ sensor, value }) => {
+					const template = document.getElementById("sensor-template")
+					const sensor_element = template.content.cloneNode(true)
+					const sensor_name = sensor_element.querySelector(".sensor-name")
+					const label_on = sensor_element.querySelector(".label-on")
+					const sensor_on = sensor_element.querySelector(".sensor-on")
+					const label_off = sensor_element.querySelector(".label-off")
+					const sensor_off = sensor_element.querySelector(".sensor-off")
+
+					sensor_name.textContent = sensor
+					label_on.for = `${sensor}-on`
+					sensor_on.id = `${sensor}-on`
+					sensor_on.name = sensor
+					sensor_on.dataset.sensor = sensor
+					label_off.for = `${sensor}-off`
+					sensor_off.id = `${sensor}-off`
+					sensor_off.name = sensor
+					sensor_off.dataset.sensor = sensor
+
+					if (value === "on") sensor_on.checked = true
+					else sensor_off.checked = true
+
+					document.querySelector("main")?.appendChild(sensor_element)
+				})
+			})
+
+			async function get_sensor_status(sensor) {
+				const response = await fetch(`/status?sensor=${sensor}`)
+				const sensor_status = await response.text()
+
+				return sensor_status
+			}
+
+			async function get_sensors() {
+				let sensors = []
+				try {
+					const response = await fetch("/sensors")
+					sensors = await response.json()
+				} catch (e) {
+					console.error(e)
+				}
+				return sensors
+			}
+		</script>
+	</body>
+</html>
+
+<!--
+	On / Off senzory
+	BH1730
+	AS7265X
+	BME280
+	BNO055
+	SCD41
+	INA219
+-->
