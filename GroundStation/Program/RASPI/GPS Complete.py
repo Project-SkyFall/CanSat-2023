@@ -18,6 +18,7 @@ latd = ""
 lon = ""
 lond = ""
 dataword = ""
+gpstime = ""
         
 def gps():
         global msg                              
@@ -26,6 +27,8 @@ def gps():
         global latd
         global lon
         global lond
+        global gpstime
+        
         gps_data=ser.readline()                 #ctení ze seriálu
         #print (gps_data)
         sleep(0.15)
@@ -42,7 +45,7 @@ def gps():
                         lon = float(word[4][0:3]) + (float(word[4][3:12]) / 60.0)
                         lond = word[5]
                         utc = word[1][0:2] + ":" + word[1][2:4] + ":" + word[1][4:6]
-                        
+                        gpstime = word[1]
 def DataWord():
         global utc
         global lat
@@ -50,17 +53,26 @@ def DataWord():
         global lon
         global lond
         global dataword
-
+        global gpstime
+        
         latword = ("%0.8s" % lat)
         lonword = ("%0.8s" % lon)
+
+        if latword == "":
+                latword = 0.0000000
+        if lonword == "":
+                lonword = 0.0000000
+        if gpstime == "":
+                gpstime = 000000
         
         dataword = ("")
         #dataword = ("GPS; ")
-        dataword += ("%s; " % utc)
-        dataword += ("%s; " % latword)
-        dataword += ("%s; " % latd)
-        dataword += ("%s; " % lonword)
-        dataword += ("%s; " % lond)
+        #dataword += ("%s;" % utc)
+        dataword += ("%s;" % latword)
+        #dataword += ("%s;" % latd)
+        dataword += ("%s;" % lonword)
+        #dataword += ("%s;" % lond)
+        dataword += ("%s;" % gpstime)
 
         print(dataword)
 

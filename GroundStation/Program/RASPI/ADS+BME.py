@@ -1,4 +1,3 @@
-
 import time
 import board
 import busio
@@ -14,7 +13,7 @@ i2c = busio.I2C(board.SCL, board.SDA)
 # Create the BME object
 bme280 = adafruit_bme280.Adafruit_BME280_I2C(i2c)
 # change this to match the location's pressure (hPa) at sea level
-bme280.sea_level_pressure = 1013.25
+bme280.sea_level_pressure = 1021
 
 # Create the ADC object using the I2C bus
 ads = ADS.ADS1015(i2c)
@@ -57,14 +56,12 @@ def DataWord():
     global dataword
     
     dataword = ("")
-    #dataword = ("ADSBME; ")
-    dataword +=("%s; " % voltage)
-    dataword +=("%s; " % raw)
-    dataword +=("%s; " % temperature)
-    dataword +=("%s; " % humidity)
-    dataword +=("%s; " % pressure)
-
-    dataword +=("%s; " % altitude)
+    dataword +=("%s;" % voltage)
+    #dataword +=("%s;" % raw)
+    dataword +=("%s;" % temperature)
+    dataword +=("%s;" % humidity)
+    dataword +=("%s;" % pressure)
+    #dataword +=("%s;" % altitude)
 
     print(dataword)
 
