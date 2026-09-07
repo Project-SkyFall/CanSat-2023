@@ -5,3 +5,5 @@
 *.bak
 fp-info-cache
 *.history
+*.kicad_pro.lck
+~*.kicad_pcb.lck
